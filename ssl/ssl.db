@@ -1,0 +1,65 @@
+--- 
+files: 
+  certificate: 
+    Sectigo_RSA_Domain_Validation_Secure_Server_CA_d6733_c5f15_1924991999_ac4c74fc52244c3682de82575cc9d318: 
+      created: '1561536336'
+      domains: 
+        - Sectigo RSA Domain Validation Secure Server CA
+      friendly_name: Sectigo RSA Domain Validation Secure Server CA
+      id: Sectigo_RSA_Domain_Validation_Secure_Server_CA_d6733_c5f15_1924991999_ac4c74fc52244c3682de82575cc9d318
+      is_self_signed: 0
+      issuer.commonName: USERTrust RSA Certification Authority
+      issuer.organizationName: The USERTRUST Network
+      modulus: d67333d6d73c20d000d21745b8d63e07a23fc741ee3230c9b06cfdf49fcb12980f2d3f8d4d010c820f177f622ee9b84879fb16834eadd7322593b707bfb9503fa94cc3402ae939ffd981ca1f163241da8026b9237a87201ee3ff209a3c95446f8775069040b4329316091008233ed2dd870f6f5d51146a0a69c54f017269cfd3934c6d04a0a31b827eb19ab9edc59ec537789f9a0834fb562e58c4090e06645bbc37dcf19f2868a856b092a35c9fbb8898081b241dab3085aeafb02e9e7a9dc1c0421ce202f0eae04ad2ef900eb4c14016f06f85424a64f7a430a0febf2ea3275a8e8b58b8adc319178463ed6f56fd83cb6034c474bee69ddbe1e4e5ca0c5f15
+      modulus_length: 2048
+      not_after: '1924991999'
+      not_before: '1541116800'
+      signature_algorithm: sha384WithRSAEncryption
+      subject.commonName: Sectigo RSA Domain Validation Secure Server CA
+      validation_type: dv
+    greenbro_net_954bc_cd975_1624579199_1a2a53cf27cc82d26cb4a941895a63c7: 
+      created: '1561536328'
+      domains: 
+        - greenbro.net
+        - www.greenbro.net
+      friendly_name: greenbro.net и www.greenbro.net
+      id: greenbro_net_954bc_cd975_1624579199_1a2a53cf27cc82d26cb4a941895a63c7
+      is_self_signed: 0
+      issuer.commonName: Sectigo RSA Domain Validation Secure Server CA
+      issuer.organizationName: Sectigo Limited
+      modulus: 954bc3d0ef513d017eefe65549e9d7af331865383eb7b909a3dc8437ea90a8997652e80d8eeb2339142b76a78cf17ebcf618664db880053f1ff0a77bea0ebaf153cc7b978199114d6c946645e39406407e5ff839efdb86f5e06188123c02099239f5284530a5c625708102e669664fc1fe39a13d0b7ae6f520a7c2378f4f8cb210e795957ee43d73c7adb709ad248b82fbd295974dad71b969dfa25d2aacc2d398fba18945451846f077d0fb6defc9ad6879be077204ca088061307331d51ba1cd4b070bb386cbeaad73f71d7b8ce08bff5c1b5bb932581db939765c967ce1251268d07c7e4a33cb505968ac9bade3b670a151ec251aa39dfb587818031cd975
+      modulus_length: 2048
+      not_after: '1624579199'
+      not_before: '1561420800'
+      signature_algorithm: sha256WithRSAEncryption
+      subject.commonName: greenbro.net
+      validation_type: dv
+  key: 
+    954bc_cd975_bff0787b5377c235ec605386382b60a2: 
+      created: '1561536636'
+      friendly_name: greenbro.net
+      id: 954bc_cd975_bff0787b5377c235ec605386382b60a2
+      modulus: 954bc3d0ef513d017eefe65549e9d7af331865383eb7b909a3dc8437ea90a8997652e80d8eeb2339142b76a78cf17ebcf618664db880053f1ff0a77bea0ebaf153cc7b978199114d6c946645e39406407e5ff839efdb86f5e06188123c02099239f5284530a5c625708102e669664fc1fe39a13d0b7ae6f520a7c2378f4f8cb210e795957ee43d73c7adb709ad248b82fbd295974dad71b969dfa25d2aacc2d398fba18945451846f077d0fb6defc9ad6879be077204ca088061307331d51ba1cd4b070bb386cbeaad73f71d7b8ce08bff5c1b5bb932581db939765c967ce1251268d07c7e4a33cb505968ac9bade3b670a151ec251aa39dfb587818031cd975
+      modulus_length: 2048
+indexes: 
+  certificate: 
+    modulus: 
+      954bc3d0ef513d017eefe65549e9d7af331865383eb7b909a3dc8437ea90a8997652e80d8eeb2339142b76a78cf17ebcf618664db880053f1ff0a77bea0ebaf153cc7b978199114d6c946645e39406407e5ff839efdb86f5e06188123c02099239f5284530a5c625708102e669664fc1fe39a13d0b7ae6f520a7c2378f4f8cb210e795957ee43d73c7adb709ad248b82fbd295974dad71b969dfa25d2aacc2d398fba18945451846f077d0fb6defc9ad6879be077204ca088061307331d51ba1cd4b070bb386cbeaad73f71d7b8ce08bff5c1b5bb932581db939765c967ce1251268d07c7e4a33cb505968ac9bade3b670a151ec251aa39dfb587818031cd975: 
+        greenbro_net_954bc_cd975_1624579199_1a2a53cf27cc82d26cb4a941895a63c7: ~
+      d67333d6d73c20d000d21745b8d63e07a23fc741ee3230c9b06cfdf49fcb12980f2d3f8d4d010c820f177f622ee9b84879fb16834eadd7322593b707bfb9503fa94cc3402ae939ffd981ca1f163241da8026b9237a87201ee3ff209a3c95446f8775069040b4329316091008233ed2dd870f6f5d51146a0a69c54f017269cfd3934c6d04a0a31b827eb19ab9edc59ec537789f9a0834fb562e58c4090e06645bbc37dcf19f2868a856b092a35c9fbb8898081b241dab3085aeafb02e9e7a9dc1c0421ce202f0eae04ad2ef900eb4c14016f06f85424a64f7a430a0febf2ea3275a8e8b58b8adc319178463ed6f56fd83cb6034c474bee69ddbe1e4e5ca0c5f15: 
+        Sectigo_RSA_Domain_Validation_Secure_Server_CA_d6733_c5f15_1924991999_ac4c74fc52244c3682de82575cc9d318: ~
+    subject.commonName: 
+      Sectigo RSA Domain Validation Secure Server CA: 
+        Sectigo_RSA_Domain_Validation_Secure_Server_CA_d6733_c5f15_1924991999_ac4c74fc52244c3682de82575cc9d318: ~
+      greenbro.net: 
+        greenbro_net_954bc_cd975_1624579199_1a2a53cf27cc82d26cb4a941895a63c7: ~
+uniques: 
+  certificate: 
+    friendly_name: 
+      Sectigo RSA Domain Validation Secure Server CA: Sectigo_RSA_Domain_Validation_Secure_Server_CA_d6733_c5f15_1924991999_ac4c74fc52244c3682de82575cc9d318
+      greenbro.net и www.greenbro.net: greenbro_net_954bc_cd975_1624579199_1a2a53cf27cc82d26cb4a941895a63c7
+  key: 
+    friendly_name: 
+      greenbro.net: 954bc_cd975_bff0787b5377c235ec605386382b60a2
+    modulus: 
+      954bc3d0ef513d017eefe65549e9d7af331865383eb7b909a3dc8437ea90a8997652e80d8eeb2339142b76a78cf17ebcf618664db880053f1ff0a77bea0ebaf153cc7b978199114d6c946645e39406407e5ff839efdb86f5e06188123c02099239f5284530a5c625708102e669664fc1fe39a13d0b7ae6f520a7c2378f4f8cb210e795957ee43d73c7adb709ad248b82fbd295974dad71b969dfa25d2aacc2d398fba18945451846f077d0fb6defc9ad6879be077204ca088061307331d51ba1cd4b070bb386cbeaad73f71d7b8ce08bff5c1b5bb932581db939765c967ce1251268d07c7e4a33cb505968ac9bade3b670a151ec251aa39dfb587818031cd975: 954bc_cd975_bff0787b5377c235ec605386382b60a2

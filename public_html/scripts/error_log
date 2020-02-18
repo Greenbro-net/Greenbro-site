@@ -1,0 +1,188 @@
+[02-Jun-2019 17:58:13 UTC] PHP Fatal error:  Call to undefined function utf8() in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 17:58:16 UTC] PHP Fatal error:  Call to undefined function utf8() in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 17:58:16 UTC] PHP Fatal error:  Call to undefined function utf8() in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 17:58:18 UTC] PHP Fatal error:  Call to undefined function utf8() in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 17:58:20 UTC] PHP Fatal error:  Call to undefined function utf8() in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 17:59:19 UTC] PHP Fatal error:  Call to undefined function utf8_general_ci() in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 17:59:20 UTC] PHP Fatal error:  Call to undefined function utf8_general_ci() in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 17:59:21 UTC] PHP Fatal error:  Call to undefined function utf8_general_ci() in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 17:59:21 UTC] PHP Fatal error:  Call to undefined function utf8_general_ci() in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:09:40 UTC] PHP Warning:  mb_convert_encoding() expects at least 2 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:09:41 UTC] PHP Warning:  mb_convert_encoding() expects at least 2 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:09:41 UTC] PHP Warning:  mb_convert_encoding() expects at least 2 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:09:41 UTC] PHP Warning:  mb_convert_encoding() expects at least 2 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:09:41 UTC] PHP Warning:  mb_convert_encoding() expects at least 2 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:09:41 UTC] PHP Warning:  mb_convert_encoding() expects at least 2 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:50 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:50 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:50 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:50 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:50 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:50 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:51 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:51 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:51 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:51 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:51 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:51 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:52 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:52 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:52 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:52 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:52 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:52 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:52 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:52 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:52 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:52 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:52 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:12:52 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 1 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:52 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:52 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:52 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:52 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:52 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:52 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:53 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:53 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:53 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:53 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:53 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:53 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:55 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:55 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:55 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:55 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:55 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:55 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:56 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:56 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:56 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:56 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:56 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:56 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:58 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:58 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:58 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:58 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:58 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:13:58 UTC] PHP Warning:  iconv() expects exactly 3 parameters, 2 given in /home/green64/public_html/scripts/goods.php on line 92
+[02-Jun-2019 18:55:46 UTC] PHP Parse error:  syntax error, unexpected '"', expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/green64/public_html/scripts/goods.php on line 94
+[02-Jun-2019 18:55:47 UTC] PHP Parse error:  syntax error, unexpected '"', expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/green64/public_html/scripts/goods.php on line 94
+[04-Jun-2019 08:02:28 UTC] PHP Fatal error:  Call to a member function query() on null in /home/green64/public_html/scripts/description.php on line 7
+[04-Jun-2019 09:10:48 UTC] PHP Fatal error:  Call to a member function query() on null in /home/green64/public_html/scripts/goods.php on line 88
+[04-Jun-2019 09:10:49 UTC] PHP Fatal error:  Call to a member function query() on null in /home/green64/public_html/scripts/goods.php on line 88
+[04-Jun-2019 09:10:50 UTC] PHP Fatal error:  Call to a member function query() on null in /home/green64/public_html/scripts/goods.php on line 88
+[04-Jun-2019 09:10:50 UTC] PHP Fatal error:  Call to a member function query() on null in /home/green64/public_html/scripts/goods.php on line 88
+[04-Jun-2019 09:23:56 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: YES) in /home/green64/public_html/scripts/link.php on line 7
+[04-Jun-2019 09:23:58 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: YES) in /home/green64/public_html/scripts/link.php on line 7
+[04-Jun-2019 09:23:59 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: YES) in /home/green64/public_html/scripts/link.php on line 7
+[04-Jun-2019 14:00:22 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/green64/public_html/scripts/link.php on line 8
+[04-Jun-2019 14:00:22 UTC] PHP Fatal error:  Call to a member function query() on null in /home/green64/public_html/scripts/goods.php on line 88
+[17-Jul-2019 21:44:24 UTC] PHP Warning:  mysqli_connect(): MySQL server has gone away in /home/green64/public_html/scripts/link.php on line 7
+[17-Jul-2019 21:44:24 UTC] PHP Warning:  mysqli_connect(): Error while reading greeting packet. PID=8421 in /home/green64/public_html/scripts/link.php on line 7
+[17-Jul-2019 21:44:24 UTC] PHP Warning:  mysqli_connect(): (HY000/2006): MySQL server has gone away in /home/green64/public_html/scripts/link.php on line 7
+[17-Jul-2019 21:46:13 UTC] PHP Warning:  mysqli_connect(): MySQL server has gone away in /home/green64/public_html/scripts/link.php on line 7
+[17-Jul-2019 21:46:13 UTC] PHP Warning:  mysqli_connect(): Error while reading greeting packet. PID=9734 in /home/green64/public_html/scripts/link.php on line 7
+[17-Jul-2019 21:46:13 UTC] PHP Warning:  mysqli_connect(): (HY000/2006): MySQL server has gone away in /home/green64/public_html/scripts/link.php on line 7
+[08-Aug-2019 12:24:59 UTC] PHP Warning:  file_get_contents(): Filename cannot be empty in /home/green64/public_html/scripts/contact_manage.php on line 12
+[08-Aug-2019 12:25:06 UTC] PHP Warning:  file_get_contents(): Filename cannot be empty in /home/green64/public_html/scripts/contact_manage.php on line 12
+[08-Aug-2019 12:25:46 UTC] PHP Warning:  file_get_contents(): Filename cannot be empty in /home/green64/public_html/scripts/contact_manage.php on line 12
+[08-Aug-2019 12:46:06 UTC] PHP Warning:  file_get_contents(): Filename cannot be empty in /home/green64/public_html/scripts/contact_manage.php on line 12
+[08-Aug-2019 12:46:59 UTC] PHP Warning:  file_get_contents(): Filename cannot be empty in /home/green64/public_html/scripts/contact_manage.php on line 12
+[08-Aug-2019 12:48:29 UTC] PHP Warning:  file_get_contents(): Filename cannot be empty in /home/green64/public_html/scripts/contact_manage.php on line 12
+[08-Aug-2019 12:49:42 UTC] PHP Warning:  file_get_contents(): Filename cannot be empty in /home/green64/public_html/scripts/contact_manage.php on line 12
+[08-Aug-2019 12:49:54 UTC] PHP Warning:  file_get_contents(): Filename cannot be empty in /home/green64/public_html/scripts/contact_manage.php on line 12
+[08-Aug-2019 12:50:52 UTC] PHP Warning:  file_get_contents(): Filename cannot be empty in /home/green64/public_html/scripts/contact_manage.php on line 12
+[08-Aug-2019 12:56:23 UTC] PHP Warning:  file_get_contents(): Filename cannot be empty in /home/green64/public_html/scripts/contact_manage.php on line 12
+[08-Aug-2019 15:55:51 UTC] PHP Warning:  file_get_contents(www.google.com/recaptcha/api/siteverify?secret=6LeKAbIUAAAAAFKQUYwZf_sOytnhQc7PDGLFG9VS&amp;response=response_string&amp;remoteip=185.11.29.227): failed to open stream: No such file or directory in /home/green64/public_html/scripts/contact_manage.php on line 17
+[08-Aug-2019 15:58:22 UTC] PHP Warning:  file_get_contents(www.google.com/recaptcha/api/siteverify?secret=6LeKAbIUAAAAAFKQUYwZf_sOytnhQc7PDGLFG9VS&amp;response=$_POST[
+    g-recaptcha-response]&amp;remoteip=185.11.29.227): failed to open stream: No such file or directory in /home/green64/public_html/scripts/contact_manage.php on line 18
+[08-Aug-2019 16:03:35 UTC] PHP Warning:  file_get_contents(www.google.com/recaptcha/api/siteverify?secret=6LeKAbIUAAAAAFKQUYwZf_sOytnhQc7PDGLFG9VS&amp;response=&amp;remoteip=): failed to open stream: No such file or directory in /home/green64/public_html/scripts/contact_manage.php on line 18
+[08-Aug-2019 16:04:32 UTC] PHP Warning:  file_get_contents(www.google.com/recaptcha/api/siteverify?secret=6LeKAbIUAAAAAFKQUYwZf_sOytnhQc7PDGLFG9VS&amp;response=&amp;remoteip=): failed to open stream: No such file or directory in /home/green64/public_html/scripts/contact_manage.php on line 18
+[08-Aug-2019 16:05:20 UTC] PHP Warning:  file_get_contents(www.google.com/recaptcha/api/siteverify?secret=6LeKAbIUAAAAAFKQUYwZf_sOytnhQc7PDGLFG9VS&amp;response=&amp;remoteip=): failed to open stream: No such file or directory in /home/green64/public_html/scripts/contact_manage.php on line 18
+[08-Aug-2019 17:21:31 UTC] PHP Warning:  file_get_contents(www.google.com/recaptcha/api/siteverify?secret=6LeKAbIUAAAAAFKQUYwZf_sOytnhQc7PDGLFG9VS&amp;response=$response&amp;remoteip=$remoteip): failed to open stream: No such file or directory in /home/green64/public_html/scripts/contact_manage.php on line 21
+[08-Aug-2019 17:21:47 UTC] PHP Warning:  file_get_contents(www.google.com/recaptcha/api/siteverify?secret=6LeKAbIUAAAAAFKQUYwZf_sOytnhQc7PDGLFG9VS&amp;response=$response&amp;remoteip=$remoteip): failed to open stream: No such file or directory in /home/green64/public_html/scripts/contact_manage.php on line 21
+[08-Aug-2019 17:22:25 UTC] PHP Warning:  file_get_contents(www.google.com/recaptcha/api/siteverify?secret=6LeKAbIUAAAAAFKQUYwZf_sOytnhQc7PDGLFG9VS&amp;response=$response&amp;remoteip=$remoteip): failed to open stream: No such file or directory in /home/green64/public_html/scripts/contact_manage.php on line 21
+[08-Aug-2019 18:50:41 UTC] PHP Warning:  file_get_contents(www.google.com/recaptcha/api/siteverify?secret=6LeKAbIUAAAAAFKQUYwZf_sOytnhQc7PDGLFG9VS&amp;response=$response&amp;remoteip=$remoteip): failed to open stream: No such file or directory in /home/green64/public_html/scripts/contact_manage.php on line 21
+[08-Aug-2019 18:52:10 UTC] PHP Warning:  file_get_contents(www.google.com/recaptcha/api/siteverify?secret=6LeKAbIUAAAAAFKQUYwZf_sOytnhQc7PDGLFG9VS&amp;response=$response&amp;remoteip=$remoteip): failed to open stream: No such file or directory in /home/green64/public_html/scripts/contact_manage.php on line 21
+[08-Aug-2019 20:07:11 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'Gah! CAPTCHA verification failed. Please email me directly at: jstark at jonathanstark dot com' in /home/green64/public_html/scripts/contact_manage.php:53
+Stack trace:
+#0 {main}
+  thrown in /home/green64/public_html/scripts/contact_manage.php on line 53
+[08-Aug-2019 20:08:33 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'Gah! CAPTCHA verification failed. Please email me directly at: jstark at jonathanstark dot com' in /home/green64/public_html/scripts/contact_manage.php:53
+Stack trace:
+#0 {main}
+  thrown in /home/green64/public_html/scripts/contact_manage.php on line 53
+[08-Aug-2019 20:10:26 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'Gah! CAPTCHA verification failed. Please email me directly at: jstark at jonathanstark dot com' in /home/green64/public_html/scripts/contact_manage.php:53
+Stack trace:
+#0 {main}
+  thrown in /home/green64/public_html/scripts/contact_manage.php on line 53
+[08-Aug-2019 20:13:45 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'Gah! CAPTCHA verification failed. Please email me directly at: jstark at jonathanstark dot com' in /home/green64/public_html/scripts/contact_manage.php:53
+Stack trace:
+#0 {main}
+  thrown in /home/green64/public_html/scripts/contact_manage.php on line 53
+[09-Aug-2019 17:56:33 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'Gah! CAPTCHA verification failed. Please email me directly at: jstark at jonathanstark dot com' in /home/green64/public_html/scripts/contact_manage.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/green64/public_html/scripts/contact_manage.php on line 59
+[09-Aug-2019 17:56:41 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'Gah! CAPTCHA verification failed. Please email me directly at: jstark at jonathanstark dot com' in /home/green64/public_html/scripts/contact_manage.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/green64/public_html/scripts/contact_manage.php on line 59
+[09-Aug-2019 17:57:41 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'Gah! CAPTCHA verification failed. Please email me directly at: jstark at jonathanstark dot com' in /home/green64/public_html/scripts/contact_manage.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/green64/public_html/scripts/contact_manage.php on line 59
+[09-Aug-2019 18:04:50 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'Gah! CAPTCHA verification failed. Please email me directly at: jstark at jonathanstark dot com' in /home/green64/public_html/scripts/contact_manage.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/green64/public_html/scripts/contact_manage.php on line 59
+[09-Aug-2019 19:59:54 UTC] PHP Warning:  file_get_contents(www.google.com/recaptcha/api/siteverify?secret=6LeKAbIUAAAAAFKQUYwZf_sOytnhQc7PDGLFG9VS&amp;response=$response&amp;remoteip=$remoteip): failed to open stream: No such file or directory in /home/green64/public_html/scripts/contact_manage.php on line 21
+[09-Aug-2019 20:00:27 UTC] PHP Warning:  file_get_contents(www.google.com/recaptcha/api/siteverify?secret=6LeKAbIUAAAAAFKQUYwZf_sOytnhQc7PDGLFG9VS&amp;response=$response&amp;remoteip=$remoteip): failed to open stream: No such file or directory in /home/green64/public_html/scripts/contact_manage.php on line 21
+[09-Aug-2019 20:00:34 UTC] PHP Warning:  file_get_contents(www.google.com/recaptcha/api/siteverify?secret=6LeKAbIUAAAAAFKQUYwZf_sOytnhQc7PDGLFG9VS&amp;response=$response&amp;remoteip=$remoteip): failed to open stream: No such file or directory in /home/green64/public_html/scripts/contact_manage.php on line 21
+[09-Aug-2019 20:01:22 UTC] PHP Warning:  file_get_contents(www.google.com/recaptcha/api/siteverify?secret=6LeKAbIUAAAAAFKQUYwZf_sOytnhQc7PDGLFG9VS&amp;response=$response&amp;remoteip=$remoteip): failed to open stream: No such file or directory in /home/green64/public_html/scripts/contact_manage.php on line 21
+[09-Aug-2019 20:01:32 UTC] PHP Warning:  file_get_contents(www.google.com/recaptcha/api/siteverify?secret=6LeKAbIUAAAAAFKQUYwZf_sOytnhQc7PDGLFG9VS&amp;response=$response&amp;remoteip=$remoteip): failed to open stream: No such file or directory in /home/green64/public_html/scripts/contact_manage.php on line 21
+[09-Aug-2019 20:22:01 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/green64/public_html/scripts/contact_manage.php on line 47
+[09-Aug-2019 20:25:00 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/green64/public_html/scripts/contact_manage.php on line 47
+[11-Aug-2019 18:48:41 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/green64/public_html/scripts/contact_manage.php on line 90
+[11-Aug-2019 18:50:39 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/green64/public_html/scripts/contact_manage.php on line 90
+[12-Aug-2019 20:52:50 UTC] PHP Warning:  Illegal string offset 'submit' in /home/green64/public_html/scripts/contact_manage.php on line 91
+[12-Aug-2019 21:00:16 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:23) in /home/green64/public_html/scripts/contact_manage.php on line 61
+[12-Aug-2019 21:00:20 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:23) in /home/green64/public_html/scripts/contact_manage.php on line 61
+[14-Aug-2019 19:48:02 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:23) in /home/green64/public_html/scripts/contact_manage.php on line 60
+[14-Aug-2019 19:51:44 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:23) in /home/green64/public_html/scripts/contact_manage.php on line 114
+[14-Aug-2019 20:07:58 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:23) in /home/green64/public_html/scripts/contact_manage.php on line 114
+[14-Aug-2019 20:11:44 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:23) in /home/green64/public_html/scripts/contact_manage.php on line 114
+[14-Aug-2019 20:12:57 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:23) in /home/green64/public_html/scripts/contact_manage.php on line 61
+[14-Aug-2019 20:13:01 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:23) in /home/green64/public_html/scripts/contact_manage.php on line 61
+[14-Aug-2019 20:13:43 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:23) in /home/green64/public_html/scripts/contact_manage.php on line 114
+[14-Aug-2019 20:14:24 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:23) in /home/green64/public_html/scripts/contact_manage.php on line 61
+[14-Aug-2019 20:15:15 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:112) in /home/green64/public_html/scripts/contact_manage.php on line 115
+[15-Aug-2019 14:13:06 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:95) in /home/green64/public_html/scripts/contact_manage.php on line 115
+[15-Aug-2019 14:13:24 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:95) in /home/green64/public_html/scripts/contact_manage.php on line 115
+[15-Aug-2019 14:15:19 UTC] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/green64/public_html/scripts/contact_manage.php on line 78
+[15-Aug-2019 14:28:16 UTC] PHP Fatal error:  Call to undefined function () in /home/green64/public_html/scripts/contact_manage.php on line 80
+[15-Aug-2019 15:54:12 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:99) in /home/green64/public_html/scripts/contact_manage.php on line 119
+[15-Aug-2019 16:03:10 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:101) in /home/green64/public_html/scripts/contact_manage.php on line 122
+[15-Aug-2019 16:16:35 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:102) in /home/green64/public_html/scripts/contact_manage.php on line 127
+[15-Aug-2019 16:18:04 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:102) in /home/green64/public_html/scripts/contact_manage.php on line 127
+[15-Aug-2019 16:24:37 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:90) in /home/green64/public_html/scripts/contact_manage.php on line 91
+[15-Aug-2019 16:26:55 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:90) in /home/green64/public_html/scripts/contact_manage.php on line 91
+[15-Aug-2019 20:37:37 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:90) in /home/green64/public_html/scripts/contact_manage.php on line 91
+[17-Aug-2019 08:20:08 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:90) in /home/green64/public_html/scripts/contact_manage.php on line 91
+[17-Aug-2019 08:29:45 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:90) in /home/green64/public_html/scripts/contact_manage.php on line 91
+[17-Aug-2019 08:35:07 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:90) in /home/green64/public_html/scripts/contact_manage.php on line 91
+[17-Aug-2019 08:36:45 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:90) in /home/green64/public_html/scripts/contact_manage.php on line 92
+[17-Aug-2019 08:51:26 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:13) in /home/green64/public_html/scripts/contact_manage.php on line 14
+[17-Aug-2019 08:52:02 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:13) in /home/green64/public_html/scripts/contact_manage.php on line 20
+[17-Aug-2019 08:55:22 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:13) in /home/green64/public_html/scripts/contact_manage.php on line 20
+[17-Aug-2019 08:55:24 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:13) in /home/green64/public_html/scripts/contact_manage.php on line 20
+[17-Aug-2019 08:55:28 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:13) in /home/green64/public_html/scripts/contact_manage.php on line 20
+[17-Aug-2019 08:55:38 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/green64/public_html/scripts/contact_manage.php:13) in /home/green64/public_html/scripts/contact_manage.php on line 20
+[17-Aug-2019 10:16:50 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/green64/public_html/scripts/contact_manage.php on line 136
+[17-Aug-2019 10:18:07 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/green64/public_html/scripts/contact_manage.php on line 128
+[06-Sep-2019 19:44:19 UTC] PHP Fatal error:  Cannot redeclare check_in() (previously declared in /home/green64/public_html/scripts/contact_manage.php:22) in /home/green64/public_html/scripts/contact_manage.php on line 35
+[21-Sep-2019 17:15:34 UTC] PHP Parse error:  syntax error, unexpected 'basket' (T_STRING) in /home/green64/public_html/scripts/allthings.php on line 131
+[21-Sep-2019 17:15:37 UTC] PHP Parse error:  syntax error, unexpected 'basket' (T_STRING) in /home/green64/public_html/scripts/allthings.php on line 131
+[21-Sep-2019 17:15:38 UTC] PHP Parse error:  syntax error, unexpected 'basket' (T_STRING) in /home/green64/public_html/scripts/allthings.php on line 131

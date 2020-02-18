@@ -1,0 +1,1077 @@
+AWSTATS DATA FILE 7.7 (build 20180105)
+# If you remove this file, all statistics for date 201910 will be lost/reset.
+# Last config file used to build this data file was /home/green64/tmp/awstats/ssl/awstats.greenbro.net.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2012                
+POS_TIME 2690                
+POS_VISITOR 25721               
+POS_DAY 31986               
+POS_DOMAIN 3482                
+POS_LOGIN 4018                
+POS_ROBOT 4173                
+POS_WORMS 5049                
+POS_EMAILSENDER 5180                
+POS_EMAILRECEIVER 5323                
+POS_SESSION 32765               
+POS_SIDER 32954               
+POS_FILETYPES 5458                
+POS_DOWNLOADS 5696                
+POS_OS 5744                
+POS_BROWSER 6013                
+POS_SCREENSIZE 7158                
+POS_UNKNOWNREFERER 7232                
+POS_UNKNOWNREFERERBROWSER 8019                
+POS_ORIGIN 8315                
+POS_SEREFERRALS 8456                
+POS_PAGEREFS 8612                
+POS_SEARCHWORDS 8878                
+POS_KEYWORDS 9074                
+POS_MISC 2354                
+POS_ERRORS 9175                
+POS_CLUSTER 3874                
+POS_SIDER_404 9281                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20191101004951 27 5596 10368505834374
+FirstTime 20191001035817
+LastTime 20191031182914
+LastUpdate 20191101151145 27 0 26 0 0
+TotalVisits 187                 
+TotalUnique 150                 
+MonthHostsKnown 0                   
+MonthHostsUnknown 164                 
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+JavascriptDisabled 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+QuickTimeSupport 0 0 0
+DirectorSupport 0 0 0
+RealPlayerSupport 0 0 0
+JavaEnabled 0 0 0
+TotalMisc 0 0 0
+PDFSupport 0 0 0
+FlashSupport 0 0 0
+AddToFavourites 0 5 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 15 40 1043077 65 103 22720
+1 1 1 2840 51 108 1192762
+2 17 39 930020 37 70 436119
+3 23 40 425035 33 64 25348
+4 47 47 252686 31 52 6310
+5 19 26 256527 23 51 28300
+6 13 57 1697142 39 64 288706
+7 16 40 936673 25 72 810923
+8 5 9 342975 20 45 92327
+9 5 27 834443 22 39 54333
+10 5 34 919981 62 116 956428
+11 14 48 1266323 42 64 30216
+12 1 1 0 22 77 1194785
+13 7 7 84674 13 31 27670
+14 12 56 1715900 25 70 610315
+15 10 41 582823 36 51 85715
+16 25 181 6068277 24 71 1208695
+17 1 8 278126 16 51 178526
+18 22 51 637811 41 95 83993
+19 13 23 809364 40 73 92716
+20 12 12 92329 22 40 3362
+21 11 42 970727 42 63 56165
+22 13 154 4555751 64 87 163558
+23 19 139 4314640 46 87 29857
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 25 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 23
+us 110 254 5367880
+cn 43 518 16224105
+ua 40 184 4256632
+ru 24 24 245193
+de 21 21 53960
+in 21 21 279902
+ro 12 12 159944
+it 9 9 119958
+ca 6 28 880479
+th 6 6 15368
+gb 5 5 57396
+pl 4 4 48876
+kr 4 16 1092919
+kz 3 3 39986
+lt 3 3 39986
+md 3 3 39986
+fr 3 3 73314
+cl 2 2 5680
+sa 2 2 5680
+nl 2 2 5220
+ec 1 1 2840
+au 1 1 0
+lv 1 1 2840
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 25 first Hits must be first (order not required for others)
+BEGIN_ROBOT 19
+bingpreview 117 5038958 20191014015605 0
+SemrushBot/ 88 6336 20191031212010 88
+Sogou[\x20]web[\x20]spider/ 86 230567 20191031223655 2
+bingbot/ 63 211616 20191030051659 22
+DotBot/ 35 10642 20191031193437 34
+Googlebot/ 28 205760 20191030181426 11
+YandexBot/ 25 38000 20191024111956 12
+PhantomJS 24 807163 20191024102832 0
+360Spider 20 56800 20191030182015 0
+bot[\s_+:,\.\;\/\\-] 19 464322 20191030170435 0
+spider 15 120900 20191009100139 0
+MJ12bot/ 12 6580 20191031120257 10
+msnbot/ 10 185697 20191011184841 0
+link 5 0 20191009140610 0
+unknown 4 360 20191030033510 4
+no_user_agent 4 284096 20191030164455 0
+(firefox/)([0-9]\.|[0-1][0]\.) 2 5680 20191021192218 0
+Googlebot\-Image/ 1 0 20191004002629 0
+Apache\-HttpClient/ 1 2840 20191003035437 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 9
+html 218 1490466 0 0
+css 190 1369650 0 0
+jpg 346 11061751 0 0
+php 70 387724 0 0
+js 112 4282202 0 0
+png 120 9935464 0 0
+Unknown 4 796 0 0
+woff2 34 456654 0 0
+svg 29 33437 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 16
+win10 138 106
+macosx8 3 3
+macosx10 2 2
+linuxandroid 171 15
+macosx12 4 4
+win8 6 3
+winxp 44 16
+Unknown 47 47
+macosx9 2 2
+winnt 4 4
+macosx11 1 1
+winlong 59 0
+macosx 20 3
+win8.1 4 4
+linux 314 58
+win7 304 58
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 54
+chrome70.0.3538.110 24 2
+msie10.0 4 1
+firefox68.0 1 1
+opera55.0.2994.44 3 3
+chrome74.0.3729.157 96 8
+chrome67.0.3396.87 4 4
+chrome66.0.3359.181 50 50
+chrome47.0.2526.106 1 1
+msie6.0 32 7
+chrome68.0.3440.84 4 4
+opera54.0.2952.64 6 6
+chrome67.0.3396.99 6 6
+firefox64.0 4 2
+chrome76.0.3809.100 5 5
+chrome49.0.2623.75 5 3
+chrome77.0.3865.90 30 7
+msie9.0 4 4
+safari8.0.7 1 1
+Unknown 23 23
+opera53.0.2907.99 6 6
+msie7.0 63 1
+chrome71.0.3578.80 3 3
+chrome35.0.1916.47 2 2
+chrome73.0.3683.75 183 39
+safari12.0.3 20 3
+firefox66.0 1 1
+chrome22.0.1207.1 1 1
+chrome10.0.648.133 1 1
+chrome26.0.1410.65 3 3
+mozilla 25 25
+msie8.0 5 2
+chrome52.0.2743.116 4 4
+chrome49.0.2623.112 6 6
+chrome34.0.1847.131 1 1
+opera54.0.2952.54 6 6
+chrome67.0.3396.62 3 3
+edge17 3 3
+chrome68.0.3440.75 3 3
+edge18 25 2
+chrome73.0.3683.86 9 2
+chrome68.0.3440.106 3 3
+edge16 3 3
+chrome76.0.3809.132 2 2
+chrome66.0.3359.117 8 8
+chrome40.0.2214.85 3 3
+chrome71.0.3578.98 1 1
+chrome58.0.3029.110 4 4
+firefox47.0 1 1
+chrome74.0.3729.169 240 20
+firefox65.0 2 2
+opera53.0.2907.68 6 6
+chrome72.0.3626.109 2 2
+firefox62.0 1 1
+android 171 15
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 9
+Mozilla/5.0_zgrab/0.x_(compatible;_Researchscan/t13rl;__http://researchscan.comsys.rwth-aachen.de) 20191029235204
+python-requests/2.22.0 20191009002644
+Mozilla/5.0_(compatible;_Dataprovider.com) 20191016131009
+Mozilla/5.0_zgrab/0.x_(compatible;_Researchscan/t12ca;__http://researchscan.comsys.rwth-aachen.de) 20191029215213
+CATExplorador/1.0beta_(sistemes_at_domini_dot_cat;_http://domini.cat/catexplorador.html) 20191013164427
+Mozilla/5.0_zgrab/0.x_(compatible;_Researchscan/t12sns;__http://researchscan.comsys.rwth-aachen.de) 20191030003400
+python-requests/2.21.0 20191016161443
+Go-http-client/1.1 20191024052845
+Mozilla/5.0_(compatible;_NetcraftSurveyAgent/1.0;__info@netcraft.com) 20191009045330
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 4
+python-requests/2.21.0 20191016161443
+CATExplorador/1.0beta_(sistemes_at_domini_dot_cat;_http://domini.cat/catexplorador.html) 20191013164427
+python-requests/2.22.0 20191009002644
+Go-http-client/1.1 20191024052845
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 168 273
+From1 0 0
+From2 11 11
+From3 2 47
+From4 145 792
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 1
+sogou 11 11
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 25 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 2
+http://greenbro.com/scripts/goods.php 2 5
+http://test.net/git/test1/coding_for_myself/Show_images/show_image.php 0 42
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 2
+site+greenbro.net 5
+site+www.greenbro.net 5
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 25 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 3
+site 10
+www.greenbro.net 5
+greenbro.net 5
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 3
+301 4 964
+302 24 0
+404 1052 0
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 504
+/website/wp-login.php 1 http://greenbro.net/website/wp-login.php
+/pic/pica/5133/index.html 1 -
+/pub/tub/1374/index.html 2 -
+/pic/pica/4170/index.html 1 -
+/pic/pica/4769/index.html 1 -
+/pic/pica/1033/index.html 1 -
+/pic/pica/254/index.html 1 -
+/pub/tub/10524/index.html 1 -
+/pic/pica/6838/index.html 1 -
+/pic/pica/6946/index.html 1 -
+/pub/tub/804/index.html 1 -
+/pic/pica/1523/index.html 1 -
+/pic/pica/2522/index.html 1 -
+/blog/wp-login.php 1 -
+/pub/tub/5304/index.html 2 -
+/pub/tub/3774/index.html 1 -
+/images/picture/hello 71 -
+/pic/pica/2212/index.html 1 -
+/oldsite/ 2 -
+/pub/tub/1794/index.html 1 -
+/pic/pica/3270/index.html 1 -
+/pic/pica/8533/index.html 1 -
+/pic/pica/2122/index.html 1 -
+/pic/pica/1282/index.html 1 -
+/pub/tub/84/index.html 1 -
+/pub/tub/5814/index.html 1 -
+/pub/tub/2154/index.html 1 -
+/images/hemp_protein.jpg 9 -
+/pic/pica/1822/index.html 1 -
+/pub/tub/4464/index.html 1 -
+/scripts/recipe.php 3 -
+/pic/pica/1792/index.html 1 -
+/pub/tub/7104/index.html 1 -
+/pub/tub/3564/index.html 1 -
+/pic/pica/8915/index.html 1 -
+/pub/tub/1014/index.html 1 -
+/pub/tub/294/index.html 1 -
+/pub/tub/6114/index.html 1 -
+/pic/pica/7159/index.html 1 -
+/pic/pica/2549/index.html 1 -
+/pub/tub/8034/index.html 1 -
+/pub/tub/4944/index.html 1 -
+/pic/pica/314/index.html 1 -
+/registration/greenbro.net 1 https://greenbro.net/greenbro.net
+/pic/pica/8683/index.html 1 -
+/pub/tub/2094/index.html 1 -
+/pub/tub/3354/index.html 1 -
+/pic/pica/3930/index.html 1 -
+/pic/pica/4380/index.html 1 -
+/pic/pica/1307/index.html 1 -
+/pic/pica/5727/index.html 1 -
+/pic/pica/104/index.html 1 -
+/pub/tub/3146/index.html 1 -
+/pic/pica/4290/index.html 1 -
+/pub/tub/3294/index.html 2 -
+/pic/pica/5191/index.html 1 -
+/pic/pica/7027/index.html 1 -
+/pub/tub/654/index.html 1 -
+/pic/pica/3030/index.html 1 -
+/pic/pica/464/index.html 1 -
+/images/picturehello 2 http://greenbro.com/scripts/goods.php
+/pub/tub/4074/index.html 1 -
+/pub/tub/3804/index.html 1 -
+/pub/tub/7524/index.html 1 -
+/pub/tub/954/index.html 2 -
+/shop/wp-login.php 1 http://greenbro.net/shop/wp-login.php
+/pub/tub/6054/index.html 1 -
+/pub/tub/5094/index.html 1 -
+/pic/pica/1257/index.html 1 -
+/pub/tub/1434/index.html 2 -
+/pub/tub/7584/index.html 1 -
+/pic/pica/2852/index.html 1 -
+/pub/tub/19187/index.html 1 -
+/pub/tub/6684/index.html 1 -
+/imagescarpet.jpg 1 http://greenbro.com/scripts/goods.php
+/pic/pica/2316/index.html 1 -
+/pub/tub/4254/index.html 2 -
+/pic/pica/2970/index.html 1 -
+/pub/tub/6714/index.html 2 -
+/pub/tub/8244/index.html 1 -
+/pub/tub/594/index.html 1 -
+/pub/tub/1854/index.html 2 -
+/pic/pica/15/index.html 1 -
+/pic/pica/14365/index.html 1 -
+/pub/tub/4104/index.html 1 -
+/pic/pica/4909/index.html 1 -
+/images/flour.jpg%20%20alt= 4 http://greenbro.com/scripts/goods.php
+/pub/tub/7464/index.html 1 -
+/pub/tub/4015/index.html 1 -
+/pub/tub/11244/index.html 2 -
+/new/ 2 -
+/pic/pica/1132/index.html 1 -
+/pic/pica/7693/index.html 1 -
+/imageshemp_xalva.jpg 1 http://greenbro.com/scripts/goods.php
+/pub/tub/12443/index.html 1 -
+/pub/tub/2754/index.html 2 -
+/pub/tub/4314/index.html 1 -
+/pub/tub/1194/index.html 1 -
+/pic/pica/1642/index.html 1 -
+/pic/pica/11246/index.html 1 -
+/pub/tub/2814/index.html 1 -
+/pub/tub/5154/index.html 2 -
+/pic/pica/524/index.html 1 -
+/pic/pica/9694/index.html 1 -
+/pub/tub/3174/index.html 1 -
+/pub/tub/2304/index.html 1 -
+/pub/tub/13043/index.html 1 -
+/pic/pica/4050/index.html 1 -
+/pic/pica/6267/index.html 1 -
+/pic/pica/2496/index.html 1 -
+/pic/pica/1467/index.html 1 -
+/pic/pica/7603/index.html 1 -
+/pic/pica/10954/index.html 1 -
+/pic/pica/3990/index.html 1 -
+/pub/tub/144/index.html 1 -
+/pub/tub/6894/index.html 1 -
+/pic/pica/1972/index.html 1 -
+/pic/pica/12415/index.html 1 -
+/pub/tub/18497/index.html 1 -
+/pic/pica/2603/index.html 1 -
+/robots.txt 360 -
+/pub/tub/14657/index.html 1 -
+/pic/pica/2630/index.html 1 -
+/pub/tub/4224/index.html 1 -
+/pic/pica/6734/index.html 1 -
+/pub/tub/3414/index.html 1 -
+/pub/tub/1824/index.html 1 -
+/pub/tub/1164/index.html 1 -
+/pic/pica/5307/index.html 1 -
+/pic/pica/1762/index.html 1 -
+/pub/tub/7494/index.html 1 -
+/images/vysivky_konop.jpg 4 http://greenbro.com/scripts/goods.php
+/images/hemp_bag.jpg 4 http://greenbro.com/scripts/goods.php
+/pic/pica/5907/index.html 1 -
+/pic/pica/5020/index.html 1 -
+/pub/tub/6084/index.html 1 -
+/pub/tub/534/index.html 2 -
+/pic/pica/5577/index.html 1 -
+/pub/tub/15527/index.html 1 -
+/pic/pica/5162/index.html 1 -
+/pic/pica/9574/index.html 1 -
+/pub/tub/9654/index.html 1 -
+/pic/pica/3690/index.html 1 -
+/pub/tub/6024/index.html 1 -
+/pic/pica/10594/index.html 1 -
+/images/flour_hemp.jpg 4 http://greenbro.com/scripts/goods.php
+/pub/tub/474/index.html 1 -
+/pic/pica/3480/index.html 1 -
+/../other_css/normalize.css 3 -
+/imageshemp_bag.jpg 1 http://greenbro.com/scripts/goods.php
+/pub/tub/9024/index.html 1 -
+/pub/tub/4674/index.html 1 -
+/wp/ 2 -
+/pub/tub/714/index.html 2 -
+/pub/tub/2904/index.html 1 -
+/pic/pica/8323/index.html 1 -
+/pic/pica/12595/index.html 1 -
+/pub/tub/3235/index.html 1 -
+/pub/tub/5064/index.html 1 -
+/pub/tub/9144/index.html 1 -
+/pic/pica/4530/index.html 1 -
+/pub/tub/1044/index.html 1 -
+/pub/tub/2784/index.html 2 -
+/images/picture/oil.jpg 1 https://greenbro.net/scripts/foods.php
+/pic/pica/494/index.html 1 -
+/pic/pica/2711/index.html 1 -
+/pub/tub/5184/index.html 1 -
+/pic/pica/4992/index.html 1 -
+/pic/pica/8263/index.html 1 -
+/pic/pica/4799/index.html 1 -
+/pub/tub/2574/index.html 2 -
+/wordpress/wp-admin/install.php 1 -
+/pic/pica/6417/index.html 1 -
+/pub/tub/5124/index.html 1 -
+/pic/pica/3420/index.html 1 -
+/pic/pica/9964/index.html 1 -
+/pub/tub/4914/index.html 1 -
+/pic/pica/4140/index.html 1 -
+/pic/pica/10564/index.html 1 -
+/pic/pica/1912/index.html 1 -
+/pic/pica/344/index.html 1 -
+/pub/tub/8874/index.html 3 -
+/wp-admin/install.php 1 -
+/pic/pica/674/index.html 1 -
+/pub/tub/6504/index.html 1 -
+/pic/pica/8473/index.html 1 -
+/pic/pica/2394/index.html 1 -
+/pub/tub/7914/index.html 1 -
+/pub/tub/4165/index.html 1 -
+/wordpress/wp-login.php 2 -
+/pic/pica/284/index.html 1 -
+/images$row[ 1 http://greenbro.com/scripts/goods.php
+/pic/pica/1582/index.html 1 -
+/test/wp-login.php 1 http://greenbro.net/test/wp-login.php
+/sitemap.xml 1 -
+/pub/tub/15347/index.html 1 -
+/pic/pica/6597/index.html 1 -
+/pub/tub/9504/index.html 1 -
+/pic/pica/10144/index.html 1 -
+/pub/tub/5724/index.html 1 -
+/images/picturegirl_socks.jpg 2 http://greenbro.com/scripts/goods.php
+/pub/tub/2124/index.html 1 -
+/pic/pica/12475/index.html 1 -
+/pic/pica/5517/index.html 1 -
+/pub/tub/864/index.html 1 -
+/pic/pica/3120/index.html 1 -
+/pub/tub/8214/index.html 1 -
+/pub/tub/10944/index.html 1 -
+/2018/wp-login.php 1 http://greenbro.net/2018/wp-login.php
+/backup/ 2 -
+/pub/tub/1974/index.html 1 -
+/pub/tub/5784/index.html 1 -
+/pic/pica/3600/index.html 1 -
+/pic/pica/8293/index.html 1 -
+/pub/tub/2184/index.html 1 -
+/pic/pica/7393/index.html 1 -
+/pic/pica/5607/index.html 1 -
+/pic/pica/3180/index.html 1 -
+/pub/tub/20897/index.html 1 -
+/pic/pica/4649/index.html 1 -
+/pic/pica/4260/index.html 1 -
+/pic/pica/5487/index.html 1 -
+/pic/pica/2471/index.html 1 -
+/imagescannabis.jpg 1 http://greenbro.com/scripts/goods.php
+/images/picturecannabis.jpg 2 http://greenbro.com/scripts/goods.php
+/pub/tub/2694/index.html 1 -
+/pub/tub/4344/index.html 1 -
+/pub/tub/3324/index.html 2 -
+/pub/tub/774/index.html 1 -
+/pub/tub/3834/index.html 1 -
+/pub/tub/414/index.html 1 -
+/pub/tub/17777/index.html 1 -
+/pic/pica/2880/index.html 1 -
+/pub/tub/4554/index.html 1 -
+/pub/tub/11694/index.html 1 -
+/pic/pica/3570/index.html 1 -
+/images/hemp_xalva.jpg 4 http://greenbro.com/scripts/goods.php
+/pic/pica/734/index.html 1 -
+/pic/pica/932/index.html 1 -
+/pic/pica/2342/index.html 1 -
+/images/carpet.jpg 4 http://greenbro.com/scripts/goods.php
+/pub/tub/3594/index.html 1 -
+/pic/pica/4080/index.html 1 -
+/../other_css/goodsNew.css 3 -
+/pub/tub/1614/index.html 1 -
+/pub/tub/624/index.html 1 -
+/pic/pica/6892/index.html 1 -
+/pub/tub/234/index.html 1 -
+/images/pictureflour_hemp.jpg 2 http://greenbro.com/scripts/goods.php
+/pic/pica/3060/index.html 1 -
+/pub/tub/1764/index.html 1 -
+/pub/tub/12024/index.html 1 -
+/pub/tub/3384/index.html 1 -
+/pub/tub/1404/index.html 1 -
+/pub/tub/8964/index.html 1 -
+/pub/tub/924/index.html 1 -
+/images/picturehemp_xalva.jpg 2 http://greenbro.com/scripts/goods.php
+/pic/pica/4230/index.html 1 -
+/pic/pica/3090/index.html 1 -
+/pub/tub/3534/index.html 1 -
+/pic/pica/3720/index.html 1 -
+/pic/pica/13705/index.html 1 -
+/../lib/simplebar.css 3 -
+/news/wp-login.php 1 http://greenbro.net/news/wp-login.php
+/pic/pica/3630/index.html 1 -
+/imageshemp_protein.jpg 1 http://greenbro.com/scripts/goods.php
+/pic/pica/2290/index.html 1 -
+/pub/tub/1254/index.html 1 -
+/pic/pica/2002/index.html 1 -
+/pub/tub/18437/index.html 1 -
+/pic/pica/2092/index.html 1 -
+/pic/pica/4020/index.html 1 -
+/pic/pica/2824/index.html 1 -
+/pub/tub/8844/index.html 1 -
+/pub/tub/4854/index.html 1 -
+/pic/pica/2657/index.html 1 -
+/../lib/simplebar.min.js 3 -
+/pub/tub/2634/index.html 2 -
+/pic/pica/6057/index.html 1 -
+/pic/pica/1439/index.html 1 -
+/pub/tub/2964/index.html 1 -
+/pub/tub/1074/index.html 1 -
+/pic/pica/10684/index.html 1 -
+/pic/pica/9874/index.html 1 -
+/pub/tub/6174/index.html 1 -
+/imagesflour_hemp.jpg 1 http://greenbro.com/scripts/goods.php
+/pic/pica/10384/index.html 1 -
+/pic/pica/2796/index.html 1 -
+/pic/pica/5367/index.html 1 -
+/pic/pica/794/index.html 1 -
+/pub/tub/834/index.html 1 -
+/pic/pica/6177/index.html 1 -
+/pic/pica/1082/index.html 1 -
+/pic/pica/10414/index.html 1 -
+/pic/pica/2739/index.html 1 -
+/pub/tub/9294/index.html 1 -
+/pub/tub/354/index.html 1 -
+/pub/tub/444/index.html 1 -
+/pic/pica/1612/index.html 1 -
+/imagesgirl_socks.jpg 1 http://greenbro.com/scripts/goods.php
+/../js/cart-script.js 3 -
+/pub/tub/3624/index.html 1 -
+/pic/pica/9184/index.html 1 -
+/pub/tub/9804/index.html 1 -
+/pub/tub/4644/index.html 1 -
+/pic/pica/5048/index.html 1 -
+/imageshello 1 http://greenbro.com/scripts/goods.php
+/pic/pica/4936/index.html 1 -
+/pub/tub/8334/index.html 1 -
+/pub/tub/8064/index.html 1 -
+/pub/tub/3684/index.html 1 -
+/images/picturehemp_protein.jpg 2 http://greenbro.com/scripts/goods.php
+/pub/tub/3714/index.html 1 -
+/pub/tub/264/index.html 1 -
+/pic/pica/2910/index.html 1 -
+/pic/pica/4560/index.html 1 -
+/pub/tub/1314/index.html 1 -
+/pub/tub/4194/index.html 1 -
+/pub/tub/4794/index.html 1 -
+/pub/tub/564/index.html 1 -
+/pic/pica/7873/index.html 1 -
+/pub/tub/10584/index.html 1 -
+/pic/pica/2684/index.html 1 -
+/pic/pica/2576/index.html 1 -
+/pub/tub/8784/index.html 1 -
+/pic/pica/1411/index.html 1 -
+/pic/pica/9064/index.html 1 -
+/pic/pica/1232/index.html 1 -
+/pic/pica/6657/index.html 1 -
+/pic/pica/11665/index.html 1 -
+/pub/tub/1464/index.html 1 -
+/pic/pica/11395/index.html 1 -
+/backup/wp-login.php 1 http://greenbro.net/backup/wp-login.php
+/pub/tub/10974/index.html 1 -
+/other_css/bootstrap-grid.min.css.map 1 -
+/pub/tub/9984/index.html 1 -
+/pub/tub/1704/index.html 1 -
+/pic/pica/5697/index.html 1 -
+/pic/pica/1357/index.html 1 -
+/pic/pica/4739/index.html 1 -
+/pub/tub/4374/index.html 1 -
+/pic/pica/7783/index.html 1 -
+/pub/tub/7644/index.html 1 -
+/pub/tub/9924/index.html 3 -
+/pic/pica/4964/index.html 1 -
+/pub/tub/6354/index.html 1 -
+/pic/pica/2419/index.html 1 -
+/pub/tub/2874/index.html 1 -
+/pic/pica/2182/index.html 1 -
+/cms/wp-login.php 1 http://greenbro.net/cms/wp-login.php
+/.well-known/assetlinks.json 1 -
+/pic/pica/2032/index.html 1 -
+/images/cannabis.jpg 4 http://greenbro.com/scripts/goods.php
+/pic/pica/7483/index.html 1 -
+/pub/tub/6924/index.html 1 -
+/pic/pica/1383/index.html 1 -
+/pic/pica/434/index.html 1 -
+/pub/tub/1524/index.html 1 -
+/pub/tub/5484/index.html 1 -
+/pub/tub/1944/index.html 1 -
+/pub/tub/14447/index.html 3 -
+/pic/pica/2152/index.html 1 -
+/pic/pica/3870/index.html 1 -
+/pic/pica/7423/index.html 1 -
+/pub/tub/9774/index.html 1 -
+/pub/tub/5634/index.html 1 -
+/pic/pica/5967/index.html 1 -
+/images/girl_socks.jpg 4 http://greenbro.com/scripts/goods.php
+/images/picturevysivky_konop.jpg 2 http://greenbro.com/scripts/goods.php
+/images/picturehemp_bag.jpg 2 http://greenbro.com/scripts/goods.php
+/pic/pica/644/index.html 1 -
+/images/oil.jpg 5 http://greenbro.com/scripts/goods.php
+/pub/tub/10374/index.html 1 -
+/pic/pica/11605/index.html 1 -
+/pic/pica/3750/index.html 1 -
+/pic/pica/44/index.html 1 -
+/web/wp-login.php 1 http://greenbro.net/web/wp-login.php
+/pub/tub/5544/index.html 1 -
+/pic/pica/5817/index.html 1 -
+/pub/tub/5424/index.html 1 -
+/imagesvysivky_konop.jpg 1 http://greenbro.com/scripts/goods.php
+/images/flour.jpg%20alt= 1 http://greenbro.com/scripts/goods.php
+/pub/tub/9834/index.html 1 -
+/pub/tub/4974/index.html 2 -
+/pub/tub/54/index.html 1 -
+/pub/tub/8814/index.html 1 -
+/pic/pica/3540/index.html 1 -
+/images/hello 4 http://greenbro.com/scripts/goods.php
+/pub/tub/5994/index.html 1 -
+/pub/tub/18587/index.html 1 -
+/back/ 2 -
+/pic/pica/8383/index.html 1 -
+/wordpress/ 2 -
+/images/pictureoil.jpg 2 http://greenbro.com/scripts/goods.php
+/wp/wp-login.php 1 http://greenbro.net/wp/wp-login.php
+/pub/tub/6834/index.html 1 -
+/pic/pica/824/index.html 1 -
+/pub/tub/11514/index.html 1 -
+/pic/pica/6387/index.html 1 -
+/pub/tub/2514/index.html 1 -
+/pic/pica/4709/index.html 1 -
+/pic/pica/884/index.html 1 -
+/../other_css/bootstrap-grid.min.css 3 -
+/pub/tub/17897/index.html 1 -
+/pub/tub/504/index.html 1 -
+/pub/tub/14297/index.html 1 -
+/wp-login.php 18 -
+/pic/pica/4350/index.html 1 -
+/pic/pica/6327/index.html 1 -
+/pic/pica/4500/index.html 1 -
+/pub/tub/324/index.html 1 -
+/pub/tub/8304/index.html 1 -
+/pub/tub/9384/index.html 1 -
+/pub/tub/1134/index.html 1 -
+/pic/pica/2940/index.html 1 -
+/pic/pica/1495/index.html 1 -
+/pub/tub/1494/index.html 1 -
+/pub/tub/684/index.html 1 -
+/pub/tub/11364/index.html 1 -
+/pub/tub/4614/index.html 1 -
+/pic/pica/3780/index.html 1 -
+/2017/wp-login.php 1 http://greenbro.net/2017/wp-login.php
+/pic/pica/3900/index.html 1 -
+/pic/pica/908/index.html 1 -
+/pic/pica/3240/index.html 1 -
+/pub/tub/984/index.html 1 -
+/pic/pica/3150/index.html 1 -
+/pub/tub/7164/index.html 1 -
+/pub/tub/4404/index.html 1 -
+/pic/pica/1732/index.html 1 -
+/pic/pica/2238/index.html 1 -
+/pub/tub/1344/index.html 1 -
+/pub/tub/2244/index.html 1 -
+/pic/pica/9244/index.html 1 -
+/pub/tub/114/index.html 2 -
+/imagesoil.jpg 1 http://greenbro.com/scripts/goods.php
+/pic/pica/8857/index.html 1 -
+/pub/tub/7884/index.html 1 -
+/pub/tub/10344/index.html 1 -
+/pub/tub/1554/index.html 1 -
+/pub/tub/14777/index.html 1 -
+/pic/pica/3300/index.html 1 -
+/pub/tub/2604/index.html 1 -
+/pub/tub/5034/index.html 1 -
+/pic/pica/6207/index.html 1 -
+/pic/pica/6477/index.html 1 -
+/pic/pica/1157/index.html 1 -
+/pub/tub/10644/index.html 1 -
+/pic/pica/5667/index.html 1 -
+/pub/tub/6264/index.html 1 -
+/../lib/jquery-3.3.1.js 3 -
+/pub/tub/2034/index.html 1 -
+/pic/pica/1942/index.html 1 -
+/pic/pica/5877/index.html 1 -
+/pic/pica/9994/index.html 1 -
+/pub/tub/11094/index.html 1 -
+/pic/pica/1207/index.html 1 -
+/pub/tub/174/index.html 1 -
+/pic/pica/10984/index.html 1 -
+/pub/tub/5244/index.html 1 -
+/pub/tub/1284/index.html 2 -
+/pub/tub/894/index.html 1 -
+/pic/pica/2768/index.html 1 -
+/pub/tub/1674/index.html 1 -
+/pic/pica/4470/index.html 1 -
+/pub/tub/7404/index.html 1 -
+/pic/pica/3840/index.html 1 -
+/pub/tub/4824/index.html 1 -
+/pic/pica/8886/index.html 1 -
+/pic/pica/3810/index.html 1 -
+/pic/pica/4855/index.html 1 -
+/pub/tub/12353/index.html 1 -
+/pub/tub/2454/index.html 1 -
+/pic/pica/8443/index.html 1 -
+/images/picturecarpet.jpg 2 http://greenbro.com/scripts/goods.php
+/pic/pica/5076/index.html 1 -
+/pic/pica/6117/index.html 1 -
+/pub/tub/10254/index.html 1 -
+/pub/tub/11994/index.html 1 -
+/pub/tub/3084/index.html 1 -
+/pub/tub/8664/index.html 1 -
+/pub/tub/1734/index.html 1 -
+/pub/tub/11274/index.html 2 -
+/pic/pica/1182/index.html 1 -
+/pub/tub/1914/index.html 1 -
+/old/ 2 -
+/pub/tub/204/index.html 1 -
+/pic/pica/10294/index.html 1 -
+/pic/pica/1672/index.html 1 -
+/pic/pica/9214/index.html 1 -
+/pic/pica/404/index.html 1 -
+/pic/pica/2264/index.html 1 -
+/pic/pica/5337/index.html 1 -
+/blog/ 2 -
+/pic/pica/764/index.html 1 -
+/pub/tub/4044/index.html 1 -
+/pic/pica/8623/index.html 1 -
+/pic/pica/614/index.html 1 -
+/pic/pica/3210/index.html 1 -
+/pub/tub/2994/index.html 1 -
+/pub/tub/24/index.html 2 -
+/pub/tub/3864/index.html 1 -
+/pub/tub/8154/index.html 1 -
+/pic/pica/6567/index.html 1 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 25 first Hits must be first (order not required for others)
+BEGIN_VISITOR 164
+194.183.176.46 20 73 1357832 20191031182914
+220.181.77.162 15 171 5979247 20191025160356
+185.11.29.251 9 67 2122968 20191019230116
+137.226.113.28 8 8 22720 20191020105631
+137.226.113.26 7 7 19880 20191029235204
+45.133.88.24 6 6 79972 20191026040437
+65.154.226.220 6 72 2412975 20191023141159
+37.120.142.147 6 6 79972 20191014160957
+110.77.189.251 5 5 12988 20191027200703
+185.11.29.253 5 20 302589 20191007003452
+83.31.56.247 4 4 48876 20191021200040
+185.11.29.246 4 14 170164 20191031160741
+123.125.125.79 4 49 1611696 20191026221130
+109.126.206.232 4 4 62989 20191013025314
+115.89.74.126 4 16 1092919 20191021193644
+137.226.113.27 4 4 11360 20191030003400
+37.120.156.21 3 3 39986 20191023180934
+85.206.165.8 3 3 39986 20191016160317
+185.245.85.236 3 3 39986 20191021145757
+45.132.192.23 3 3 39986 20191018072714
+185.216.33.184 3 3 39986 20191031110128
+37.120.142.157 3 3 39986 20191017044328
+45.133.88.17 3 3 39986 20191023155356
+45.139.50.6 3 3 39986 20191029062322
+45.132.192.17 3 3 39986 20191022111410
+106.75.254.29 1 1 2840 20191013182145
+142.93.66.207 1 1 24438 20191009040149
+66.220.149.10 1 8 218944 20191002114435
+198.20.103.242 2 2 5680 20191029133723
+188.166.22.77 2 2 5220 20191003103934
+64.233.172.224 1 2 3291 20191018080815
+18.237.208.153 1 1 2840 20191005051440
+34.214.114.227 2 2 5680 20191020041030
+207.102.138.158 2 24 804325 20191028061707
+108.3.149.168 1 1 2840 20191013071054
+51.158.178.50 1 1 2840 20191026040537
+36.110.147.90 2 24 804325 20191002221202
+163.172.71.49 2 2 48876 20191006133922
+123.126.113.19 1 1 2840 20191001035818
+54.214.182.235 1 1 2840 20191019055914
+54.191.157.7 2 2 5680 20191030030648
+85.115.54.140 1 1 2840 20191021192533
+45.55.33.40 1 1 24438 20191009045330
+34.218.246.155 2 2 5680 20191013041515
+107.178.194.37 2 2 5680 20191021192536
+34.219.12.3 1 1 2840 20191003182335
+207.102.138.11 1 1 2840 20191002023826
+66.102.6.126 1 1 2840 20191021192533
+199.244.88.124 1 1 2840 20191030225205
+92.63.111.27 2 2 5680 20191030004341
+182.52.51.20 1 1 2380 20191016054803
+178.171.61.31 1 1 2840 20191003044143
+52.36.5.192 1 1 2840 20191008043218
+159.89.183.246 1 1 24438 20191008113224
+120.132.29.138 1 1 2840 20191013053627
+52.12.156.58 1 1 2840 20191024052845
+69.175.97.170 1 1 2840 20191023131111
+54.190.210.162 1 1 2840 20191021033135
+123.126.68.113 2 24 804325 20191014221208
+107.6.183.162 1 1 2840 20191018023408
+106.120.188.150 0 1 6025 
+107.178.194.63 1 1 2840 20191021192533
+54.245.159.229 1 1 2840 20191017040735
+167.71.178.141 1 1 24438 20191008111442
+123.125.125.83 2 25 806063 20191013234203
+213.159.213.137 1 1 2840 20191021090432
+66.220.149.49 0 8 173130 
+36.110.147.102 0 1 1153 
+34.219.95.20 2 2 5680 20191025041629
+52.13.92.87 2 2 5680 20191023035843
+54.213.246.181 1 1 2840 20191016161443
+52.27.141.173 2 2 5680 20191014035545
+36.110.147.85 0 2 83820 
+172.241.83.105 1 1 2840 20191011020333
+54.200.159.169 2 2 5680 20191008041051
+178.171.38.198 1 1 2840 20191024034511
+54.185.85.83 2 2 5680 20191029025625
+54.213.20.165 2 2 5680 20191019041107
+34.209.226.248 2 2 5680 20191027035712
+34.209.211.234 2 2 5680 20191031030325
+66.102.6.99 1 2 3291 20191021192215
+123.126.113.22 2 24 804325 20191025232905
+36.110.147.86 2 24 804325 20191001235455
+111.202.102.69 1 1 13431 20191001035824
+36.110.147.75 0 1 3906 
+35.187.132.55 1 1 2840 20191018080815
+207.99.15.87 1 1 2840 20191029205850
+94.130.131.80 1 1 24438 20191016045653
+54.38.183.107 1 1 2840 20191008040758
+183.238.79.14 2 25 804840 20191025074953
+34.211.158.48 2 2 5680 20191015040446
+167.114.65.240 1 1 24438 20191016131009
+34.219.97.104 2 2 5680 20191022035706
+106.120.188.149 2 24 804325 20191008224123
+181.112.224.6 1 1 2840 20191016054801
+52.12.197.129 2 2 5680 20191026041248
+107.6.183.226 2 2 5680 20191005010011
+34.217.83.141 1 1 2840 20191011060035
+144.168.162.250 1 1 24438 20191012140338
+3.15.139.95 2 24 804325 20191009095650
+34.214.79.211 1 1 2840 20191002233403
+34.215.200.240 2 2 5680 20191028032353
+36.110.147.95 0 1 14425 
+52.24.153.227 1 1 2840 20191012041630
+212.83.147.249 2 2 48876 20191013215054
+66.220.149.45 1 9 412766 20191002114431
+188.92.72.129 1 1 2840 20191012100457
+191.101.99.184 1 1 2840 20191010131607
+199.244.88.132 1 1 2840 20191010030518
+123.126.68.115 0 1 13272 
+106.120.188.141 1 2 3876 20191001035817
+54.190.40.217 2 2 5680 20191009041718
+45.76.128.229 2 9 124177 20191021052629
+157.55.169.185 2 4 49906 20191024111446
+75.126.32.182 1 1 2840 20191001144348
+181.215.145.124 1 1 2840 20191031045740
+52.34.183.195 1 1 24438 20191021203349
+198.199.65.176 2 2 5680 20191006035942
+34.208.184.27 2 2 5680 20191011040741
+106.38.241.66 0 59 998415 
+46.243.221.86 2 2 5220 20191029183511
+54.244.104.91 2 2 5680 20191010042105
+34.222.9.67 1 1 2840 20191006041831
+106.120.188.131 0 1 2520 
+107.6.171.130 1 1 2840 20191023133522
+208.87.233.140 1 1 2840 20191021192538
+138.246.253.5 2 2 0 20191024075540
+54.202.135.249 1 1 2840 20191014031729
+36.110.147.96 0 1 51387 
+129.78.110.131 1 1 0 20191008120058
+106.120.188.162 2 25 894090 20191020220838
+36.110.147.103 2 24 804325 20191007232950
+178.175.142.131 3 3 39986 20191020075756
+54.70.55.105 1 1 2840 20191013051702
+94.242.54.119 3 3 39986 20191028053614
+60.191.38.77 1 1 24438 20191011050956
+123.126.68.110 0 1 2665 
+35.167.7.76 1 1 2840 20191014055444
+34.212.75.229 2 2 5680 20191021041536
+5.253.204.29 3 3 39986 20191023072616
+184.154.47.2 1 1 2840 20191019183544
+45.133.88.9 3 3 39986 20191030000135
+123.126.113.18 0 1 15936 
+123.126.68.126 0 1 56592 
+94.242.54.131 3 3 39986 20191027024806
+52.42.152.99 1 1 2840 20191025230947
+84.17.47.171 3 3 39986 20191026142206
+65.154.226.100 2 24 804325 20191023140050
+34.69.95.171 1 1 2840 20191009002644
+195.154.220.28 1 1 24438 20191028092914
+54.202.20.75 1 1 2840 20191010050937
+52.38.66.207 2 2 5680 20191018040423
+106.120.188.156 0 1 1838 
+84.17.51.113 3 3 39986 20191005050923
+35.164.172.2 1 1 24438 20191021203135
+52.37.211.217 2 2 0 20191017040737
+163.172.170.252 1 1 2840 20191029152431
+35.162.214.175 1 1 0 20191015040444
+84.17.47.15 3 3 39986 20191029184058
+34.209.108.24 1 1 2840 20191017033236
+34.210.43.157 2 2 5680 20191024042138
+85.208.22.182 2 2 5680 20191013164427
+185.11.29.236 1 9 278641 20191002174205
+82.202.161.133 1 1 2840 20191005201433
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 31
+20191001 6 48 1236085 5
+20191002 7 59 1892971 6
+20191003 7 7 19420 6
+20191004 2 3 27793 2
+20191005 7 7 51346 5
+20191006 8 28 409524 6
+20191007 4 30 872972 2
+20191008 10 36 934224 8
+20191009 8 34 952982 6
+20191010 18 36 370442 8
+20191011 8 52 1422762 6
+20191012 4 4 30118 4
+20191013 22 48 1027308 14
+20191014 9 36 936919 5
+20191015 4 8 75343 3
+20191016 8 8 96922 6
+20191017 18 42 867919 8
+20191018 9 13 385801 6
+20191019 7 24 797831 4
+20191020 10 58 1723979 5
+20191021 27 70 1926509 16
+20191022 6 7 62931 3
+20191023 20 86 2547133 10
+20191024 7 13 128089 5
+20191025 28 243 7873367 7
+20191026 11 33 892817 5
+20191027 10 10 58654 3
+20191028 8 30 874429 4
+20191029 15 20 186320 9
+20191030 8 11 117079 5
+20191031 10 19 218155 5
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 5
+5mn-15mn 1
+2mn-5mn 3
+30mn-1h 3
+30s-2mn 2
+0s-30s 178
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 25 first Pages must be first (order not required for others)
+BEGIN_SIDER 11
+/ 212 1486476 172 130
+/scripts/contact.php 49 343336 1 24
+/fonts/OleoScript/Oleoscript.woff2 34 456654 3 22
+/scripts/description.php 9 6410 3 3
+/scripts/foods.php 6 14521 2 0
+/site.webmanifest 4 796 0 3
+/scripts/payment_and_delivery.php 4 9344 2 1
+/images/ 3 2376 1 2
+/images/picture/ 3 1614 3 2
+/registration/success.php 1 6678 0 0
+/registration/registration.php 1 7435 0 0
+END_SIDER

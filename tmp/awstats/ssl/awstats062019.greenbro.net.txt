@@ -1,0 +1,391 @@
+AWSTATS DATA FILE 7.7 (build 20180105)
+# If you remove this file, all statistics for date 201906 will be lost/reset.
+# Last config file used to build this data file was /home/green64/tmp/awstats/ssl/awstats.greenbro.net.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2012                
+POS_TIME 2677                
+POS_VISITOR 8539                
+POS_DAY 10056               
+POS_DOMAIN 3325                
+POS_LOGIN 3663                
+POS_ROBOT 3818                
+POS_WORMS 4365                
+POS_EMAILSENDER 4496                
+POS_EMAILRECEIVER 4639                
+POS_SESSION 10389               
+POS_SIDER 10577               
+POS_FILETYPES 4774                
+POS_DOWNLOADS 4999                
+POS_OS 5047                
+POS_BROWSER 5225                
+POS_SCREENSIZE 5694                
+POS_UNKNOWNREFERER 5768                
+POS_UNKNOWNREFERERBROWSER 6232                
+POS_ORIGIN 6348                
+POS_SEREFERRALS 6483                
+POS_PAGEREFS 6637                
+POS_SEARCHWORDS 6785                
+POS_KEYWORDS 6957                
+POS_MISC 2341                
+POS_ERRORS 7038                
+POS_CLUSTER 3519                
+POS_SIDER_404 7124                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20190701042522 24 4604 12399034648125
+FirstTime 0
+LastTime 20190630144150
+LastUpdate 20190701154338 24 0 23 0 0
+TotalVisits 41                  
+TotalUnique 36                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 38                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+PDFSupport 0 0 0
+TotalMisc 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+DirectorSupport 0 0 0
+RealPlayerSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+FlashSupport 0 0 0
+AddToFavourites 0 0 0
+QuickTimeSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 1 1 5467 0 0 0
+1 1 1 1515 1 1 5467
+2 4 4 17891 1 1 0
+3 2 2 3030 1 4 1515
+4 0 0 0 2 3 7042
+5 1 1 1515 6 17 107205
+6 0 0 0 5 10 6039
+7 2 2 3030 2 3 1945
+8 5 5 8557 24 26 14566
+9 4 11 125409 0 0 0
+10 6 14 128954 3 4 8536
+11 11 30 302113 5 10 7486
+12 3 3 12364 3 6 1515
+13 54 128 1217431 5 16 113999
+14 5 17 176320 3 5 3000
+15 27 54 452665 12 19 11177
+16 1 1 1515 5 7 7545
+17 0 0 0 6 7 3030
+18 1 1 0 7 19 424187
+19 1 1 1515 15 16 7042
+20 1 1 5467 8 15 11599
+21 0 0 0 5 5 1515
+22 3 7 82127 9 10 12030
+23 1 1 1515 3 12 10314
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 25 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 9
+ua 80 200 1871915
+us 27 27 86637
+de 6 6 4545
+fr 5 5 23383
+cn 5 28 401964
+nl 4 4 13849
+ru 3 3 12364
+ie 2 10 122894
+cz 2 2 10849
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 25 first Hits must be first (order not required for others)
+BEGIN_ROBOT 10
+AhrefsBot/ 24 37902 20190611174150 0
+Googlebot/ 18 220926 20190630230008 0
+YandexBot/ 11 16073 20190630174826 0
+Sogou[\x20]web[\x20]spider/ 8 12120 20190629151606 0
+bingpreview 8 419642 20190630184352 0
+Googlebot\-Image/ 7 2983 20190630230013 0
+bot[\s_+:,\.\;\/\\-] 7 38569 20190629013801 0
+bingbot/ 3 4515 20190630183907 0
+360Spider 2 3030 20190629051853 0
+(firefox/)([0-9]\.|[0-1][0]\.) 2 10994 20190624082437 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 9
+woff2 13 174603 0 0
+Unknown 4 796 0 0
+js 39 1255410 0 0
+png 15 9827 0 0
+php 52 134579 0 0
+jpg 18 429543 0 0
+svg 9 10377 0 0
+css 70 405433 0 0
+html 65 127832 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 9
+linuxandroid 44 17
+win8 2 2
+win8.1 2 2
+winlong 16 0
+linux 162 69
+Unknown 6 6
+win10 27 19
+macosx11 3 3
+win7 23 16
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 21
+mozilla 3 3
+chrome75.0.3770.101 17 5
+chrome41.0.2228.0 9 9
+edge18 10 2
+chrome40.0.2214.85 3 3
+chrome66.0.3359.181 8 8
+Unknown 3 3
+chrome74.0.3729.169 9 2
+firefox58.0 4 4
+chrome67.0.3396.87 2 2
+msie7.0 16 0
+chrome60.0.3112.116 27 12
+chrome73.0.3683.75 156 63
+firefox64.0 1 1
+firefox47.0 3 3
+chrome67.0.3396.79 2 2
+chrome71.0.3578.80 2 2
+chrome65.0.3325.181 2 2
+firefox62.0.2 1 1
+chrome66.0.3359.117 6 6
+firefox65.0 1 1
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 4
+Mozilla/5.0_zgrab/0.x_(compatible;_Researchscan/t12ca;__http://researchscan.comsys.rwth-aachen.de) 20190627153706
+Go-http-client/1.1 20190630071414
+Mozilla/5.0_zgrab/0.x_(compatible;_Researchscan/t12sns;__http://researchscan.comsys.rwth-aachen.de) 20190627153732
+Mozilla/5.0_zgrab/0.x_(compatible;_Researchscan/t13rl;__http://researchscan.comsys.rwth-aachen.de) 20190627162359
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 1
+Go-http-client/1.1 20190630071414
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 53 77
+From1 0 0
+From2 1 1
+From3 0 0
+From4 80 207
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 1
+sogou 1 1
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 25 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 0
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 1
+site+greenbro.net 1
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 25 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 2
+site 1
+greenbro.net 1
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 1
+404 123 0
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 37
+/magento/errors/503.php 3 -
+/pub/tub/18887/index.html 3 -
+/shop/downloader/index.php 3 -
+/.well-known/assetlinks.json 4 -
+/errors/503.php 2 -
+/store/index.php/admin/ 3 -
+/admin/login.php 1 -
+/shop/index.php/admin/ 3 -
+/pub/tub/4404/index.html 1 -
+/pub/tub/5244/index.html 1 -
+/magento/index.php/admin/ 3 -
+/pub/tub/15137/index.html 1 -
+/foods.php 1 -
+/job/j/list-1.html 1 -
+/pub/tub/1224/index.html 1 -
+/pub/tub/14447/index.html 5 -
+/wp-login.php 1 http://www.google.com.hk
+/store/errors/503.php 3 -
+/shop/errors/503.php 3 -
+/pub/tub/4944/index.html 1 -
+/../index.php 1 -
+/400.shtml 1 http://greenbro.net/../images/safari-pinned-tab.svg
+/pub/tub/5484/index.html 2 -
+/pub/tub/11874/index.html 7 -
+/admin/images/cal_date_over.gif 1 -
+/books.php 1 -
+/magento/downloader/index.php 3 -
+/store/downloader/index.php 3 -
+/pub/tub/234/index.html 1 -
+/robots.txt 51 -
+/pub/tub/17567/index.html 1 -
+/downloader/index.php 2 -
+/fckeditor/editor/filemanager/connectors/php/upload.php 1 -
+/pub/tub/7284/index.html 1 -
+/admin/ 1 http://greenbro.net/admin/
+/templates/system/css/system.css 1 -
+/pub/tub/204/index.html 1 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 25 first Hits must be first (order not required for others)
+BEGIN_VISITOR 38
+95.158.53.202 63 156 1508610 20190626132908
+37.73.191.55 12 27 186985 20190629152912
+34.77.170.23 8 8 53900 20190627153948
+128.124.176.129 5 17 176320 20190630144150
+138.246.253.5 3 3 0 20190627081918
+60.191.38.77 3 3 16581 20190606022716
+188.166.114.112 2 2 3000 20190628154547
+34.213.40.182 2 2 3030 20190630095136
+83.97.23.108 2 2 10849 20190628223455
+185.93.3.114 2 2 10849 20190630021534
+18.237.17.158 2 2 3030 20190629104345
+185.128.27.171 2 2 10849 20190629125204
+137.226.113.27 2 2 3030 20190627162359
+34.213.199.188 2 2 3030 20190628102126
+34.220.193.40 2 2 3030 20190627080553
+123.126.68.116 2 9 122379 20190627090050
+62.4.14.198 1 1 5467 20190630130158
+31.13.127.11 1 5 87587 20190628104841
+195.201.171.107 1 1 1515 20190605024228
+35.205.153.67 1 1 5467 20190627153944
+34.220.119.46 1 1 1515 20190630071414
+34.220.13.85 1 1 1515 20190628032548
+96.127.158.234 1 1 1515 20190629034149
+212.83.146.233 1 1 5467 20190627001621
+107.6.169.250 1 1 1515 20190618230627
+31.13.127.31 0 1 2064 
+34.215.161.65 1 1 1515 20190628071619
+195.154.61.206 1 1 5467 20190626204317
+54.218.149.30 1 1 1515 20190626155640
+62.4.14.206 1 1 5467 20190630132937
+69.175.97.170 1 1 1515 20190627015242
+137.226.113.28 1 1 1515 20190627153732
+184.154.189.90 1 1 1515 20190629150306
+106.120.173.133 0 16 263004 
+31.13.127.32 1 4 33243 20190628104842
+62.210.249.242 1 1 1515 20190615123608
+107.6.183.226 1 1 1515 20190606190809
+198.20.103.242 1 1 1515 20190606052037
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 13
+20190602 1 1 5527 1
+20190604 1 1 5527 1
+20190605 1 1 1515 1
+20190606 3 3 8557 3
+20190612 1 1 0 1
+20190615 1 1 1515 1
+20190618 1 1 1515 1
+20190620 1 1 0 1
+20190626 65 166 1647094 4
+20190627 19 30 262054 9
+20190628 10 18 142803 7
+20190629 18 37 269645 5
+20190630 12 24 202648 6
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 5
+5mn-15mn 1
+30mn-1h 1
+0s-30s 37
+2mn-5mn 1
+30s-2mn 1
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 25 first Pages must be first (order not required for others)
+BEGIN_SIDER 13
+/ 48 115779 38 30
+/scripts/goods.php 18 49812 2 0
+/images/ 17 12053 0 1
+/fonts/OleoScript/Oleoscript.woff2 13 174603 1 2
+/scripts/contact.php 9 28953 0 4
+/scripts/foods.php 5 11322 0 0
+/scripts/clothes.php 4 9842 0 0
+/site.webmanifest 4 796 0 1
+/scripts/description.php 4 2452 0 0
+/scripts/allthings.php 3 8352 0 0
+/index.php 3 4545 0 0
+/scripts/books.php 3 8352 0 0
+/registration/registration.php 3 10949 0 3
+END_SIDER

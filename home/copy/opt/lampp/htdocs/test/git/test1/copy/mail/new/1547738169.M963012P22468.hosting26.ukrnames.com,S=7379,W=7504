@@ -1,0 +1,125 @@
+Return-Path: <mdcjngi@rfdr.com>
+Delivered-To: green64@hosting26.ukrnames.com
+Received: from hosting26.ukrnames.com
+	by hosting26.ukrnames.com with LMTP id 2CfcNzmcQFzEVwAAw6cijw
+	for <green64@hosting26.ukrnames.com>; Thu, 17 Jan 2019 17:16:09 +0200
+Return-path: <mdcjngi@rfdr.com>
+Envelope-to: hiro@greenbro.net
+Delivery-date: Thu, 17 Jan 2019 17:16:09 +0200
+Received: from [125.111.84.250] (port=14443 helo=rfdr.com)
+	by hosting26.ukrnames.com with esmtp (Exim 4.91)
+	(envelope-from <mdcjngi@rfdr.com>)
+	id 1gk9OV-0005we-M2
+	for hiro@greenbro.net; Thu, 17 Jan 2019 17:16:09 +0200
+Received: from lenovo-PC ([127.0.0.1]) by localhost via TCP with ESMTPA; Thu, 17 Jan 2019 23:14:36 +0800
+MIME-Version: 1.0
+From: "=?utf-8?Q?Q:3522492890
+ Rocky/=E5=AE=81=E6=B3=A2=E5=AD=90=E5=B7=9D=E5=9B=BD=E9=99=85=E7=89=A9=E6=B5=81=E6=9C=89=E9=99=90=E5=85=AC=E5=8F=B8  |?=" <zichuanrocky@163.com>
+Sender: "=?utf-8?Q?Q:3522492890
+ Rocky/=E5=AE=81=E6=B3=A2=E5=AD=90=E5=B7=9D=E5=9B=BD=E9=99=85=E7=89=A9=E6=B5=81=E6=9C=89=E9=99=90=E5=85=AC=E5=8F=B8  |?=" <mdcjngi@rfdr.com>
+To: hiro@greenbro.net
+Reply-To: "=?utf-8?Q?Q:3522492890
+ Rocky/=E5=AE=81=E6=B3=A2=E5=AD=90=E5=B7=9D=E5=9B=BD=E9=99=85=E7=89=A9=E6=B5=81=E6=9C=89=E9=99=90=E5=85=AC=E5=8F=B8  |?=" <zichuanrocky@163.com>
+Date: 17 Jan 2019 23:14:36 +0800
+Content-Type: multipart/alternative;
+ boundary=--boundary_10427_dc01413a-98b7-49a5-9f83-4060dce24c92
+X-Spam-Status: Yes, score=5.3
+X-Spam-Score: 53
+X-Spam-Bar: +++++
+X-Spam-Report: Spam detection software, running on the system "hosting26.ukrnames.com",
+ has identified this incoming email as possible spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ 
+ Content preview:  RE： 没有车子 没有仓位 我来帮你搞定 博客：http://blog.sina.com.cn/6687488767
+    买单免费！！！ 附件为最新舱单和报关资料的模板 欢垂迎询哦联系人小军：qq�
+    [...] 
+ 
+ Content analysis details:   (5.3 points, 5.0 required)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 BAD_ENC_HEADER         Message has bad MIME encoding in the header
+  0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
+                             blocked.  See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URIs: sina.com.cn]
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+                             provider (zichuanrocky[at]163.com)
+  0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+                             mail domains are different
+  1.6 SUBJ_ALL_CAPS          Subject is all capitals
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  2.0 RDNS_NONE              Delivered to internal network by a host with no rDNS
+  1.0 KAM_LAZY_DOMAIN_SECURITY Sending domain does not have any
+                             anti-forgery methods
+  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+                             EnvelopeFrom freemail headers are
+                             different
+X-Spam-Flag: YES
+Subject:  ***SPAM***  =?utf-8?B?UTozNTIyNDkyODkwICDlhY3otLnkubDljZXvvIHvvIHvvIEg5a6B5rOi6LSn5LujIOayoeaciei9puWtkCDmsqHmnInku5PkvY0g5oiR5p2l5biu5L2g5pCe5a6aICBc?=
+
+
+----boundary_10427_dc01413a-98b7-49a5-9f83-4060dce24c92
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: base64
+
+DQpSRe+8mg0K5rKh5pyJ6L2m5a2QIOayoeacieS7k+S9jSDmiJHmnaXluK7kvaDmkJ7lrpoN
+CuWNmuWuou+8mmh0dHA6Ly9ibG9nLnNpbmEuY29tLmNuLzY2ODc0ODg3NjcNCuS5sOWNleWF
+jei0ue+8ge+8ge+8gSDpmYTku7bkuLrmnIDmlrDoiLHljZXlkozmiqXlhbPotYTmlpnnmoTm
+qKHmnb8NCuasouWegui/juivouWTpuiBlOezu+S6uuWwj+WGm++8mnFx77yaMzUyMjQ5Mjg5
+MCB0MTMwMDM3ODAyMjYNCuWugeazoui0p+S7oyDkuJzljZfkupog5Lit5LicIOWNsOW3tCZu
+YnNwOyZuYnNwOyDkubDljZUg5Lqn5Zyw6K+BIOWVhuajgCDnrYkNCiZuYnNwO+aLlui9puaK
+peWFsyDku5PlupPlhoXoo4UmbmJzcDvvvJrlroHms6Ig5LiK5rW36YO95Y+vIA0K5pu86LC3
+MjI1IDQ1MA0K6IOh5b+X5piOIDE1MCAzMDANCumbheWKoOi+viAxNTAgMjUwDQoNCiZuYnNw
+Ow0K5a6B5rOi5a2Q5bed5Zu96ZmF54mp5rWB5pyJ6ZmQ5YWs5Y+4DQrlroHms6LluILnmb7k
+uIjot68xNjgg5Y+35Lya5bGV5Lit5b+DMjFENCANCiZuYnNwOw0KI3vlj5jph499
+----boundary_10427_dc01413a-98b7-49a5-9f83-4060dce24c92
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: base64
+
+PFNQQU4gc3R5bGU9IkZPTlQtRkFNSUxZOiBWZXJkYW5hOyBDT0xPUjogcmdiKDEyNywxMjcs
+MTI3KTsgQkFDS0dST1VORC1DT0xPUjogcmdiKDIzOSwyNDUsMjUxKSI+PFNQQU4gc3R5bGU9
+IkZPTlQtU0laRTogMTRweDsgRk9OVC1GQU1JTFk6IEFyaWFsOyBXSElURS1TUEFDRTogbm9y
+bWFsOyBXT1JELVNQQUNJTkc6IDBweDsgVEVYVC1UUkFOU0ZPUk06IG5vbmU7IEZPTlQtV0VJ
+R0hUOiBub3JtYWw7IENPTE9SOiByZ2IoMCwwLDApOyBGT05ULVNUWUxFOiBub3JtYWw7IFRF
+WFQtQUxJR046IGp1c3RpZnk7IE9SUEhBTlM6IDI7IFdJRE9XUzogMjsgTEVUVEVSLVNQQUNJ
+Tkc6IG5vcm1hbDsgVEVYVC1JTkRFTlQ6IDBweDsgZm9udC12YXJpYW50LWxpZ2F0dXJlczog
+bm9ybWFsOyBmb250LXZhcmlhbnQtY2Fwczogbm9ybWFsOyAtd2Via2l0LXRleHQtc3Ryb2tl
+LXdpZHRoOiAwcHgiPjxTUEFOIHN0eWxlPSJGT05ULUZBTUlMWTogVmVyZGFuYTsgQ09MT1I6
+ICM3ZjdmN2Y7IEJBQ0tHUk9VTkQtQ09MT1I6IHJnYigyMzksMjQ1LDI1MSkiPjxGT05UIHN0
+eWxlPSJGT05ULVNJWkU6IDE0cHg7IFdISVRFLVNQQUNFOiBub3JtYWw7IFdPUkQtU1BBQ0lO
+RzogMHB4OyBURVhULVRSQU5TRk9STTogbm9uZTsgRk9OVC1XRUlHSFQ6IG5vcm1hbDsgRk9O
+VC1TVFlMRTogbm9ybWFsOyBURVhULUFMSUdOOiBqdXN0aWZ5OyBPUlBIQU5TOiAyOyBXSURP
+V1M6IDI7IExFVFRFUi1TUEFDSU5HOiBub3JtYWw7IEJBQ0tHUk9VTkQtQ09MT1I6IHJnYigy
+NTUsMjU1LDI1NSk7IFRFWFQtSU5ERU5UOiAwcHg7IGZvbnQtdmFyaWFudC1saWdhdHVyZXM6
+IG5vcm1hbDsgZm9udC12YXJpYW50LWNhcHM6IG5vcm1hbDsgLXdlYmtpdC10ZXh0LXN0cm9r
+ZS13aWR0aDogMHB4IiBjb2xvcj0jMDAwMDAwIGZhY2U9QXJpYWw+DQo8UD5SRe+8mjwvUD4N
+CjxQPuayoeaciei9puWtkCDmsqHmnInku5PkvY0g5oiR5p2l5biu5L2g5pCe5a6aPC9QPg0K
+PFA+5Y2a5a6i77yaPEEgaHJlZj0iaHR0cDovL2Jsb2cuc2luYS5jb20uY24vNjY4NzQ4ODc2
+NyI+aHR0cDovL2Jsb2cuc2luYS5jb20uY24vNjY4NzQ4ODc2NzwvQT48L1A+DQo8UD7kubDl
+jZXlhY3otLnvvIHvvIHvvIEg6ZmE5Lu25Li65pyA5paw6Iix5Y2V5ZKM5oql5YWz6LWE5paZ
+55qE5qih5p2/PC9QPg0KPFA+5qyi5Z6C6L+O6K+i5ZOm6IGU57O75Lq65bCP5Yab77yacXHv
+vJozNTIyNDkyODkwIHQxMzAwMzc4MDIyNjwvUD4NCjxQPuWugeazoui0p+S7oyDkuJzljZfk
+upog5Lit5LicIOWNsOW3tCZuYnNwOyZuYnNwOyDkubDljZUg5Lqn5Zyw6K+BIOWVhuajgCDn
+rYk8L1A+DQo8UD4mbmJzcDvmi5bovabmiqXlhbMg5LuT5bqT5YaF6KOFJm5ic3A777ya5a6B
+5rOiIOS4iua1t+mDveWPryA8L1A+DQo8UD7mm7zosLcyMjUgNDUwPC9QPg0KPFA+6IOh5b+X
+5piOIDE1MCAzMDA8L1A+DQo8UD7pm4XliqDovr4gMTUwIDI1MDwvUD4NCjxQPjwvUD4NCjxQ
+PiZuYnNwOzwvUD4NCjxQPuWugeazouWtkOW3neWbvemZheeJqea1geaciemZkOWFrOWPuDwv
+UD4NCjxQPuWugeazouW4gueZvuS4iOi3rzE2ODwhLS1TdGFydEZyYWdtZW50LS0+IOWPt+S8
+muWxleS4reW/gzIxRDQgPC9QPg0KPFA+Jm5ic3A7PC9QPg0KPERJViBjbGFzcz1ORVRFQVNF
+TUFJTE1BU1RFUkxPQ0FMU0lHTkFUVVJFIHN0eWxlPSJGT05ULVNJWkU6IDE0cHg7IEZPTlQt
+RkFNSUxZOiBBcmlhbDsgV0hJVEUtU1BBQ0U6IG5vcm1hbDsgV09SRC1TUEFDSU5HOiAwcHg7
+IFRFWFQtVFJBTlNGT1JNOiBub25lOyBGT05ULVdFSUdIVDogbm9ybWFsOyBDT0xPUjogcmdi
+KDAsMCwwKTsgRk9OVC1TVFlMRTogbm9ybWFsOyBURVhULUFMSUdOOiBqdXN0aWZ5OyBPUlBI
+QU5TOiAyOyBXSURPV1M6IDI7IExFVFRFUi1TUEFDSU5HOiBub3JtYWw7IEJBQ0tHUk9VTkQt
+Q09MT1I6IHJnYigyNTUsMjU1LDI1NSk7IFRFWFQtSU5ERU5UOiAwcHg7IGZvbnQtdmFyaWFu
+dC1saWdhdHVyZXM6IG5vcm1hbDsgZm9udC12YXJpYW50LWNhcHM6IG5vcm1hbDsgLXdlYmtp
+dC10ZXh0LXN0cm9rZS13aWR0aDogMHB4Ij4je+WPmOmHj308L0RJVj48L0ZPTlQ+PC9TUEFO
+PjwvU1BBTj48L1NQQU4+
+----boundary_10427_dc01413a-98b7-49a5-9f83-4060dce24c92--
+
+

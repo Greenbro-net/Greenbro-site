@@ -1,0 +1,1057 @@
+AWSTATS DATA FILE 7.7 (build 20180105)
+# If you remove this file, all statistics for date 201908 will be lost/reset.
+# Last config file used to build this data file was /home/green64/tmp/awstats/ssl/awstats.greenbro.net.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2012                
+POS_TIME 2692                
+POS_VISITOR 24693               
+POS_DAY 30814               
+POS_DOMAIN 3547                
+POS_LOGIN 4051                
+POS_ROBOT 4206                
+POS_WORMS 4931                
+POS_EMAILSENDER 5062                
+POS_EMAILRECEIVER 5205                
+POS_SESSION 31641               
+POS_SIDER 31848               
+POS_FILETYPES 5340                
+POS_DOWNLOADS 5606                
+POS_OS 5654                
+POS_BROWSER 5896                
+POS_SCREENSIZE 7670                
+POS_UNKNOWNREFERER 7744                
+POS_UNKNOWNREFERERBROWSER 8565                
+POS_ORIGIN 8861                
+POS_SEREFERRALS 9003                
+POS_PAGEREFS 9168                
+POS_SEARCHWORDS 9353                
+POS_KEYWORDS 9571                
+POS_MISC 2355                
+POS_ERRORS 9696                
+POS_CLUSTER 3907                
+POS_SIDER_404 9814                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20190901000208 96 21688 11635912660165
+FirstTime 20190801000104
+LastTime 20190831235623
+LastUpdate 20190901155805 96 0 95 0 0
+TotalVisits 231                 
+TotalUnique 137                 
+MonthHostsKnown 0                   
+MonthHostsUnknown 163                 
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+AddToFavourites 0 92 0
+WindowsMediaPlayerSupport 0 0 0
+RealPlayerSupport 0 0 0
+JavascriptDisabled 0 0 0
+DirectorSupport 0 0 0
+PDFSupport 0 0 0
+JavaEnabled 0 0 0
+FlashSupport 0 0 0
+QuickTimeSupport 0 0 0
+TotalMisc 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 73 253 2993632 44 65 50898
+1 2 2 47510 47 86 165118
+2 8 15 149650 37 89 603516
+3 15 25 191397 36 79 767007
+4 9 34 569593 97 160 612554
+5 6 10 81870 44 86 406265
+6 14 14 33992 35 70 119337
+7 9 9 43817 32 61 87650
+8 15 58 1083323 22 52 68855
+9 20 38 508942 33 58 94247
+10 30 82 1164972 50 98 164408
+11 86 188 1567922 39 64 51078
+12 44 64 313099 112 200 1261364
+13 33 75 695020 48 108 1188911
+14 27 108 1848301 38 82 810261
+15 92 306 3851111 80 168 1490767
+16 99 304 3669112 56 142 2088344
+17 304 1318 16206733 170 224 547444
+18 297 1299 13787274 83 131 515824
+19 199 532 4638072 140 199 399016
+20 81 281 3423357 45 91 231625
+21 79 303 1998561 40 102 485910
+22 113 358 4358675 105 250 403667
+23 434 1216 12719495 190 1060 487759
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 25 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 20
+ua 1620 5679 59799003
+by 192 439 3650110
+us 100 196 2480843
+cn 63 408 7897649
+de 38 56 598639
+cl 16 16 42507
+ru 14 14 158922
+it 10 29 572408
+fr 5 5 44635
+nl 5 5 43744
+ca 5 24 457179
+pt 4 4 41962
+gb 4 4 50604
+sa 4 4 33944
+cz 3 3 39289
+br 2 2 5053
+sc 1 1 2663
+lv 1 1 2522
+au 1 1 0
+se 1 1 23754
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 25 first Hits must be first (order not required for others)
+BEGIN_ROBOT 14
+bingpreview 319 10074353 20190831231909 0
+bingbot/ 110 574787 20190831231850 0
+Sogou[\x20]web[\x20]spider/ 89 230299 20190831222148 0
+spider 60 678919 20190821112622 0
+Googlebot/ 58 404968 20190831003810 0
+YandexBot/ 44 76453 20190830235019 0
+360Spider 22 58313 20190830192306 0
+bot[\s_+:,\.\;\/\\-] 21 497768 20190831172739 0
+MJ12bot/ 11 80898 20190826072846 0
+MegaIndex\.ru/ 9 20306 20190808125723 0
+Googlebot\-Image/ 7 216131 20190802155410 0
+no_user_agent 5 95022 20190821180307 0
+(firefox/)([0-9]\.|[0-1][0]\.) 3 29100 20190826075124 0
+DuckDuckGo\-Favicons\-Bot/ 2 5346 20190817200504 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 10
+css 2168 5229153 0 0
+php 1458 2918684 0 0
+Unknown 12 1990 0 0
+svg 55 62262 0 0
+png 498 257006 0 0
+woff2 336 4499385 0 0
+jpg 1050 28094551 0 0
+html 279 1643571 0 0
+woff 4 65076 0 0
+js 1032 33173752 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 13
+winunknown 20 2
+winxp 5 5
+ios_iphone 5 0
+linux 6040 1762
+win10 147 70
+macosx11 20 20
+macosx12 2 2
+Unknown 83 83
+winlong 56 0
+win8 5 5
+win7 373 83
+linuxandroid 134 55
+winnt 2 2
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 78
+msie7.0 56 0
+chrome43.0.3425.1141 1 0
+chrome40.0.2214.85 26 7
+firefox27.0 1 1
+chrome42.0.3903.1099 1 0
+firefox38.0 20 2
+chrome76.0.3809.100 82 14
+mozilla 37 37
+chrome73.0.3683.75 5954 1743
+firefox67.0 1 1
+chrome56.0.3972.1573 1 0
+opera54.0.2952.51 3 3
+chrome46.0.1219.1101 1 0
+msie9.0 1 1
+chrome57.0.7523.1067 1 0
+chrome47.0.8970.1573 1 0
+chrome76.0.3809.132 53 14
+chrome74.0.3729.131 1 1
+chrome58.0.3029.110 2 2
+chrome39.0.9017.1336 1 0
+chrome46.0.8285.1782 1 0
+chrome39.0.6732.1841 1 0
+chrome60.0.3112.113 4 4
+chrome52.0.2743.116 2 2
+chrome66.0.3359.181 23 23
+chrome67.0.3396.99 1 1
+chrome74.0.3729.169 201 23
+chrome70.0.3538.77 8 8
+chrome51.0.2704.103 1 1
+chrome26.0.1410.63 1 1
+chrome68.0.3440.84 6 6
+chrome47.0.2733.1495 1 0
+msie8.0 1 1
+chrome70.0.3538.110 20 2
+chrome10.0.612.1 1 1
+chrome59.0.9885.1882 1 0
+chrome71.0.3578.80 2 2
+chrome60.0.5555.1357 1 0
+chrome43.0.4908.1421 1 0
+opera11.61 1 1
+chrome53.0.2332.1357 1 0
+chrome43.0.2193.1889 1 0
+chrome49.0.6486.1614 1 0
+chrome60.0.1059.1603 1 0
+firefox57.0 1 1
+chrome52.0.8182.1009 1 0
+firefox62.0 1 1
+chrome22.0.1207.1 1 1
+chrome60.0.6470.1726 1 0
+chrome47.0.6704.1086 1 0
+chrome67.0.3396.87 3 3
+firefox35.0 1 1
+msie6.0 2 2
+Unknown 46 46
+chrome43.0.2047.1686 1 0
+chrome41.0.2228.0 1 1
+edge17 3 3
+chrome66.0.3359.117 7 7
+chrome51.0.6575.1322 1 0
+firefox47.0 20 20
+chrome69.0.2755.10 1 1
+firefox64.0 5 5
+opera54.0.2952.64 3 3
+opera62.0.3331.99 1 1
+chrome60.0.3112.116 111 55
+chrome51.0.9425.1603 1 0
+opera53.0.2907.99 3 3
+msie11.0 23 4
+chrome74.0.3729.157 1 1
+chrome48.0.5336.1362 1 0
+chrome57.0.1733.1174 1 0
+chrome48.0.9817.1371 1 0
+opera53.0.2907.68 2 2
+chrome69.0.3497.92 114 21
+opera54.0.2952.60 2 2
+chrome44.0.7378.1066 1 0
+chrome40.0.1144.1921 1 0
+msie10.0 3 3
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 10
+Mozilla/5.0_zgrab/0.x_(compatible;_Researchscan/t12sns;__http://researchscan.comsys.rwth-aachen.de) 20190829065642
+CATExplorador/1.0beta_(sistemes_at_domini_dot_cat;_http://domini.cat/catexplorador.html) 20190826231747
+Mozilla/5.0_zgrab/0.x_(compatible;_Researchscan/t13rl;__http://researchscan.comsys.rwth-aachen.de) 20190829065948
+Mozilla/5.0_zgrab/0.x_(compatible;_Researchscan/t12ca;__http://researchscan.comsys.rwth-aachen.de) 20190829072106
+Go-http-client/1.1 20190829043507
+Mozilla/5.0_(compatible;_NetcraftSurveyAgent/1.0;__info@netcraft.com) 20190806101633
+python-requests/2.21.0 20190810200356
+python-requests/2.22.0 20190826032955
+Mozilla/5.0_(compatible;_ips-agent) 20190823195638
+Mozilla/5.0_Firefox/35.0 20190814195239
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 4
+python-requests/2.22.0 20190826032955
+CATExplorador/1.0beta_(sistemes_at_domini_dot_cat;_http://domini.cat/catexplorador.html) 20190826231747
+python-requests/2.21.0 20190810200356
+Go-http-client/1.1 20190829043507
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 526 630
+From1 0 0
+From2 13 13
+From3 1 1
+From4 1549 6248
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 2
+sogou 10 10
+bing 3 3
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 25 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 1
+https://portal.fondy.eu/mportal/ 1 1
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 3
+site+www.greenbro.net 5
+site+greenbro.net 5
+greenbro+properties 3
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 25 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 5
+site 10
+www.greenbro.net 5
+greenbro.net 5
+greenbro 3
+properties 3
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 4
+404 2655 0
+500 12 0
+421 1 322
+302 205 418
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 447
+/templates/beez5/error.php 1 -
+/pub/tub/14687/index.html 2 -
+/pub/tub/9204/index.html 4 -
+/other_css/bootstrap-grid.min.css.map 36 -
+/pub/tub/1674/index.html 3 -
+/pub/tub/4614/index.html 6 -
+/js/ckeditor/kcfinder/upload.php 1 -
+/wp-login.php 8 http://greenbro.net/wp-login.php
+/RxR.php 1 -
+/fckeditor/editor/filemanager/connectors/php/connector.php 1 -
+/web/image/Images/up.php 1 -
+/pub/tub/11154/index.html 1 -
+/pub/tub/834/index.html 2 -
+/scripts/jquery/kcfinder/upload/files/up.php.jd 1 -
+/application/configs/application.ini 1 -
+/wp-config.html 1 -
+/wp-config.old 1 -
+/pub/tub/5994/index.html 2 -
+/oldsite/ 4 -
+/home/green64/public_html/bootstrap-grid.min.css 47 https://greenbro.net/messages/success_contact.php
+/web/wp-includes/wlwmanifest.xml 1 -
+/js/ckeditor/kcfinder/upload/files/up.php.jd 1 -
+/pub/tub/8004/index.html 1 -
+/pub/tub/2814/index.html 6 -
+/pub/tub/534/index.html 2 -
+/wp-config.phpb 1 -
+/user/register 1 -
+/assets/global/plugins/jquery-file-upload/server/php/files/up.php 1 -
+/new_license.php 1 -
+/templates/protostar/index.php 1 -
+/books.php 1 -
+/wp-config-backup4.txt 1 -
+/cms/wp-includes/wlwmanifest.xml 1 -
+/wp-config-sample.php~~ 1 -
+/libraries/jscripts/kcfinder/upload/files/up.php.jd 1 -
+/messages/greenbro.net/images/favicon-32x32.png 48 https://greenbro.net/messages/success_contact.php
+/wp-config.phpd 1 -
+/home/green64/public_html/js/cart-script.js 140 https://greenbro.net/messages/success_contact.php
+/pub/tub/9084/index.html 3 -
+/pub/tub/1464/index.html 2 -
+/images/vuln.php 1 -
+/wp-config 1 -
+/pub/tub/19577/index.html 1 -
+/pub/tub/11754/index.html 1 -
+/pub/tub/4734/index.html 7 -
+/wp-config.phpr 1 -
+/config.public 1 -
+/pub/tub/4944/index.html 3 -
+/wp-config.php.resetwp_bak 1 -
+/wp-config.php.public 1 -
+/wp-config%20 1 -
+/wp-content/plugins/ppus/up.php 1 -
+/pub/tub/3804/index.html 1 -
+/libraries/joomla/jmails.php 1 -
+/pub/tub/1734/index.html 4 -
+/pub/tub/594/index.html 1 -
+/home/green64/public_html/other_css/normalize.css 7 https://greenbro.net/messages/success_contact.php
+/home/green64/public_html/lib/simplebar.min.js 111 https://greenbro.net/messages/success_contact.php
+/wp2/wp-includes/wlwmanifest.xml 2 -
+/pub/tub/9924/index.html 2 -
+/modules/mod_simplefileuploadv1.3/elements/udd.php 1 -
+/admin/images/cal_date_over.gif 1 -
+/pub/tub/14657/index.html 1 -
+/pub/tub/16697/index.html 1 -
+/blog/ 4 -
+/templates/beez/index.php 1 -
+/wp-content/plugins/theme-configurator/mini.php 1 -
+/administrator 1 -
+/pub/tub/4704/index.html 4 -
+/templates/beez_20/error.php 1 -
+/pub/tub/12353/index.html 2 -
+/wp-config-sample.php.bak 1 -
+/wp-admin/network/wp-footer.php 1 -
+/pub/tub/18437/index.html 1 -
+/scripts/lib/jquery-3.3.1.js 2 -
+/pub/tub/6054/index.html 1 -
+/pub/tub/2724/index.html 1 -
+/wp-config.php-o 1 -
+/config.backup 1 -
+/pub/tub/4344/index.html 2 -
+/pub/tub/5154/index.html 2 -
+/tpl/plugins/upload9.1.0/server/php/up.php 1 -
+/../index.php 2 https://greenbro.net/
+/public/upload_nhieuanh/server/php/files/up.php 1 -
+/wp-config.php_ 1 -
+/pub/tub/5034/index.html 3 -
+/pub/tub/6174/index.html 3 -
+/pub/tub/8154/index.html 2 -
+/pub/tub/2244/index.html 1 -
+/messages/greenbro.net/other_css/bootstrap-grid.min.css 31 https://greenbro.net/messages/success_contact.php
+/simpla/ 1 -
+/pub/tub/17717/index.html 1 -
+/home/wp-includes/wlwmanifest.xml 1 -
+/messages/greenbro.net/other_css/normalize.css 54 https://greenbro.net/messages/success_contact.php
+/wp-config.php.us 1 -
+/pub/tub/10044/index.html 1 -
+/pdf/ 1 -
+/wp-config%20fix.txt 1 -
+/messages/greenbro.net/other_css/goodsNew.css 10 https://greenbro.net/messages/success_contact.php
+/bb-config.php.bak 1 -
+/pub/tub/7344/index.html 3 -
+/pub/tub/6504/index.html 8 -
+/pub/tub/2634/index.html 4 -
+/.well-known/assetlinks.json 3 -
+/up.php 3 -
+/newsite/wp-includes/wlwmanifest.xml 2 -
+/wp-content/plugins/xichang/x.php 1 -
+/wp-config.bak 1 -
+/administrator/templates/hathor/index.php 1 -
+/pub/tub/3654/index.html 3 -
+/config. 1 -
+/../images/favicon-32x32.png 2 https://greenbro.net/../images/favicon-32x32.png
+/pub/tub/3564/index.html 2 -
+/themes/dashboard/assets/plugins/jquery-file-upload/server/php/ 1 -
+/wp-config.php.fr 1 -
+/pub/tub/5304/index.html 2 -
+/config.phpnew 1 -
+/home/green64/public_html/lib/jquery-3.3.1.js 138 https://greenbro.net/messages/success_contact.php
+/v2/wp-includes/wlwmanifest.xml 1 -
+/wp-config.data 1 -
+/pub/tub/804/index.html 3 -
+/config.php~~ 1 -
+/tpl/plugins/upload9.1.0/server/php/ 3 -
+/wp-content/uploads/2019/08/ 1 -
+/wp-config.save 1 -
+/wp-config.php.backup 1 -
+/.env 1 -
+/wp-config.phptmp 1 -
+/wp-admin/shapes.php 1 -
+/2019/wp-includes/wlwmanifest.xml 1 -
+/pub/tub/84/index.html 5 -
+/wp-config.php.backup.txt 1 -
+/config.txt 1 -
+/docs/ 1 -
+/wp-config.phpc 1 -
+/pub/tub/174/index.html 4 -
+/pub/tub/7794/index.html 3 -
+/plugins/fckeditor/editor/filemanager/connectors/php/upload.php 1 -
+/wp-config.phpo 1 -
+/wp-config-backup2.txt 1 -
+/beta/wp-includes/wlwmanifest.xml 1 -
+/wp-config.php.orig 1 -
+/ckeditor/kcfinder/upload/files/up.php.jd 1 -
+/config.save 1 -
+/XxX.php 1 -
+/staging/wp-includes/wlwmanifest.xml 1 -
+/language/en-GB/en-GB.xml 1 -
+/templates/beez5/index.php 1 -
+/AndroidFileUpload/uploads/up.php 1 -
+/assets/plugins/ckeditor/kcfinder/upload/files/up.php.jd 1 -
+/pub/tub/3146/index.html 4 -
+/wp-admin/setup-config.php 1 -
+/main/wp-includes/wlwmanifest.xml 1 -
+/wp-info.php 1 -
+/pub/tub/6024/index.html 2 -
+/kcfinder-2.51/upload.php 1 -
+/pub/tub/2754/index.html 1 -
+/manager/ 1 -
+/pub/tub/5124/index.html 3 -
+/pub/tub/12263/index.html 4 -
+/pub/tub/924/index.html 3 -
+/other_css/contact_css.css 1 https://greenbro.net/scripts/contact.php
+/pub/tub/2364/index.html 3 -
+/messages/greenbro.net/lib/jquery-3.3.1.js 34 https://greenbro.net/messages/success_contact.php
+/scripts/jquery/kcfinder/upload.php 1 -
+/pub/tub/624/index.html 3 -
+/home/green64/public_html/other_css/goodsNew.css 78 https://greenbro.net/messages/success_contact.php
+/pub/tub/1854/index.html 3 -
+/administrator/manifests/files/joomla.xml 1 -
+/pub/tub/9024/index.html 1 -
+/pub/tub/8304/index.html 4 -
+/pub/tub/10344/index.html 2 -
+/pub/tub/504/index.html 3 -
+/user/login 1 -
+/pub/tub/4044/index.html 3 -
+/wso.php 3 -
+/home/green64/public_html/other_css/contact_css.css 39 https://greenbro.net/messages/success_contact.php
+/modules/mod_simplefileuploadv1.3/elements/Clean.php 1 -
+/wp-config.php.sample 1 -
+/config.php.txt 1 -
+/wp/wp-admin/ 1 -
+/pub/tub/12443/index.html 4 -
+/pub/tub/954/index.html 4 -
+/wp-config-backup1.txt 1 -
+/pub/tub/1884/index.html 2 -
+/config.php~ 1 -
+/pub/tub/8334/index.html 2 -
+/pub/tub/4854/index.html 1 -
+/messages/greenbro.net/other_css/contact_css.css 49 https://greenbro.net/messages/success_contact.php
+/pub/tub/654/index.html 2 -
+/server/php/files/up.php 1 -
+/pub/tub/9354/index.html 1 -
+/wp-config-backup5.txt 1 -
+/modules/modules/modules.php 1 -
+/vehiculo_photos/server/php/files/up.php 1 -
+/pub/tub/2784/index.html 2 -
+/wp-config.phpn 1 -
+/wp-config.php~~ 1 -
+/config.data 1 -
+/bootstrap-grid.min.css 6 https://greenbro.net/messages/success_contact.php
+/old/ 4 -
+/%22//greenbro.net/other_css/normalize.css%22 6 https://greenbro.net/messages/success_contact.php
+/admin/login.php 1 -
+/shop/wp-includes/wlwmanifest.xml 1 -
+/wp-config.php.txt 1 -
+/pub/tub/474/index.html 3 -
+/administrator/templates/hathor/error.php 1 -
+/wp-config.htm 1 -
+/pub/tub/5094/index.html 3 -
+/pub/tub/11544/index.html 2 -
+/wp-config-backup3.txt 1 -
+/backup/ 4 -
+/1/wp-includes/wlwmanifest.xml 1 -
+/html_products/SMD-LED-Candle-Light-22.html 3 -
+/pub/tub/5484/index.html 1 -
+/images/picture/hello 234 https://greenbro.net/scripts/foods.php
+/wp-config.php.org 1 -
+/pub/tub/9294/index.html 3 -
+/index_en.html 1 -
+/indoxploit.php 4 -
+/config-backup 1 -
+/pub/tub/2694/index.html 3 -
+/admin/ckeditor/kcfinder/upload/files/up.php.jd 1 -
+/kcfinder-2.51/upload/files/up.php.jd 1 -
+/vendor/phpunit/phpunit/phpunit.xsd 1 -
+/config.bak 1 -
+/pub/tub/11244/index.html 3 -
+/messages/greenbro.net 1 https://greenbro.net/messages/success_contact.php
+/wp-content/plugins/widget-logic/mini.php 1 -
+/pub/tub/2994/index.html 1 -
+/wp-config.php.uk 1 -
+/pub/tub/8064/index.html 3 -
+/pub/tub/2004/index.html 2 -
+/templates/ja_purity/index.php 1 -
+/pub/tub/414/index.html 3 -
+/libraries/joomla/css.php 1 -
+/pub/tub/8814/index.html 5 -
+/wp-config.php-n 1 -
+/templates/beez3/error.php 1 -
+/installation/index.php 1 -
+/templates/protostar/error.php 1 -
+/vehiculo_photos/server/php/ 1 -
+/backup/wp-includes/wlwmanifest.xml 1 -
+/pub/tub/14447/index.html 4 -
+/home/green64/public_html/simplebar.css 52 https://greenbro.net/messages/success_contact.php
+/templates/atomic/index.php 1 -
+/administrator/templates/isis/index.php 1 -
+/Marvins.php 1 -
+/js/mage/cookies.js 1 -
+/news/wp-includes/wlwmanifest.xml 1 -
+/libraries/jscripts/kcfinder/upload.php 1 -
+/templates/atomic/error.php 1 -
+/home/green64/public_html/other_css/normalize.css%22 36 https://greenbro.net/messages/success_contact.php
+/assets/plugins/ckeditor/kcfinder/upload.php 1 -
+/config.old 1 -
+/pub/tub/7284/index.html 1 -
+/pub/tub/4434/index.html 1 -
+/pub/tub/17567/index.html 1 -
+/wp-config.php_old 1 -
+/pub/tub/1584/index.html 2 -
+/pub/tub/11274/index.html 3 -
+/wp-config.php~~~~ 1 -
+/pub/tub/14777/index.html 1 -
+/vendor/phpunit/phpunit/src/Util/PHP/kill.php 1 -
+/scripts/js/cart-script.js 2 -
+/error.php 1 -
+/pub/tub/1194/index.html 2 -
+/pub/tub/6684/index.html 4 -
+/test/wp-includes/wlwmanifest.xml 1 -
+/pub/tub/714/index.html 4 -
+/ficheiros/conteudos/spy.txt 1 -
+/upload/ 1 -
+/pub/tub/12233/index.html 1 -
+/pub/tub/5064/index.html 1 -
+/wp-config-backup.txt 1 -
+/wp-admin/install.php 1 -
+/wp-includes/css/modules.php 1 -
+/config 1 -
+/scripts/contact_manage.php 3 https://greenbro.net/scripts/contact.php
+/gallery/ 1 -
+/pub/tub/6264/index.html 3 -
+/wp-config.cfg 1 -
+/pub/tub/4284/index.html 1 -
+/templates/beez3/index.php 1 -
+/c_order/ 8 -
+/ckeditor/kcfinder/upload.php 1 -
+/pub/tub/684/index.html 1 -
+/pub/tub/3294/index.html 2 -
+/libraries/joomla/jmail.php 1 -
+/pub/tub/11214/index.html 1 -
+/update.php 2 -
+/wordpress/ 4 -
+/pub/tub/1284/index.html 4 -
+/site/wp-includes/wlwmanifest.xml 1 -
+/store/wp-includes/wlwmanifest.xml 1 -
+/pub/tub/4254/index.html 4 -
+/wp-config.phpe 1 -
+/wp-content/plugins/ubh/index.php 1 -
+/files/ 1 -
+/wp/ 4 -
+/pub/tub/7764/index.html 1 -
+/pub/tub/7404/index.html 1 -
+/server/php/ 1 -
+/wp-config.prod.php.txt 1 -
+/wp-config.phpOLD 1 -
+/wp-config.php~ 1 -
+/wp-content/vuln.php 1 -
+/wp-config.php.com 1 -
+/pub/tub/15527/index.html 3 -
+/xmlrpc.php 1 -
+/pub/tub/294/index.html 4 -
+/pub/tub/1554/index.html 4 -
+/wp-config-sample.php~ 1 -
+/pub/tub/4584/index.html 3 -
+/wp-config. 1 -
+/pub/tub/5634/index.html 2 -
+/pub/tub/3384/index.html 2 -
+/assets/js/mylibs/kcfinder/upload.php 1 -
+/admin/content/sitetree/ 1 -
+/administrator/templates/bluestork/index.php 1 -
+/foods.php 1 -
+/pub/tub/3864/index.html 3 -
+/pub/tub/1434/index.html 3 -
+/robots.txt 647 -
+/wp-content/uploads/ 1 -
+/wp-content/plugins/vwcleanerplugin/bump.php 1 -
+/pub/tub/4764/index.html 2 -
+/pub/tub/17507/index.html 2 -
+/pub/tub/4404/index.html 1 -
+/dev/wp-includes/wlwmanifest.xml 1 -
+/pub/tub/114/index.html 3 -
+/sitemap.xml 2 -
+/wp-content/plugins/html404/index.html 1 -
+/pub/tub/3024/index.html 2 -
+/assets/js/mylibs/kcfinder/upload/files/up.php.jd 1 -
+/wp-config.php~~~ 1 -
+/messages/greenbro.net/images/favicon-16x16.png 48 https://greenbro.net/messages/success_contact.php
+/wp-config.php.de 1 -
+/pub/tub/3474/index.html 2 -
+/pub/tub/8874/index.html 1 -
+/pub/tub/19187/index.html 1 -
+/templates/rhuk_milkyway/index.php 1 -
+/pub/tub/5244/index.html 3 -
+/wp-config.php.bak 1 -
+/pub/tub/3954/index.html 1 -
+/pub/tub/2034/index.html 1 -
+/assets/admin/ckeditor/kcfinder/upload.php 1 -
+/pub/tub/2424/index.html 2 -
+/pub/tub/2934/index.html 4 -
+/scripts/other.php 6 -
+/pub/tub/4974/index.html 2 -
+/pub/tub/8754/index.html 4 -
+/pub/tub/10014/index.html 4 -
+/wp-config.phpa 1 -
+/wp-config.php.info 1 -
+/assets/ckeditor/kcfinder/upload.php 1 -
+/rxr.php 1 -
+/tmp/vuln.php 1 -
+/wp-config.phpold 1 -
+/wp-config-backup 1 -
+/pub/tub/11844/index.html 2 -
+/assets/ckeditor/kcfinder/upload/files/up.php.jd 1 -
+/pub/tub/9804/index.html 2 -
+/wp-config.php1 1 -
+/scripts/contact.php 18 https://greenbro.net/scripts/payment_and_delivery.php
+/pub/tub/7224/index.html 2 -
+/pub/tub/2304/index.html 5 -
+/pub/tub/15797/index.html 1 -
+/v1/wp-includes/wlwmanifest.xml 1 -
+/blog/wp-includes/wlwmanifest.xml 1 -
+/pub/tub/10524/index.html 3 -
+/V5.php 2 -
+/pub/tub/4314/index.html 1 -
+/pub/tub/1374/index.html 3 -
+/administrator/templates/bluestork/error.php 1 -
+/olux.php 3 -
+/wordpress/wp-admin/ 1 -
+/upload.php 3 -
+/uploads/ 3 -
+/assets/global/plugins/jquery-file-upload/server/php/ 1 -
+/pub/tub/1134/index.html 4 -
+/templates/system/error.php 1 -
+/pub/tub/1524/index.html 3 -
+/administrator/templates/isis/error.php 1 -
+/pub/tub/2124/index.html 2 -
+/adminside/server/php/ 1 -
+/pub/tub/10374/index.html 4 -
+/pub/tub/2574/index.html 1 -
+/pub/tub/15347/index.html 1 -
+/pub/tub/9624/index.html 4 -
+/wp-config.phpnew 1 -
+/pub/tub/24/index.html 3 -
+/templates/system/index.php 1 -
+/pub/tub/13817/index.html 3 -
+/pub/tub/7494/index.html 4 -
+/pub/tub/12204/index.html 1 -
+/upel.php 1 -
+/pub/tub/11874/index.html 3 -
+/pub/tub/1644/index.html 2 -
+/pub/tub/144/index.html 4 -
+/wp-config.phpbak 1 -
+/admin/ckeditor/kcfinder/upload.php 1 -
+/pub/tub/3114/index.html 3 -
+/AndroidFileUpload/fileUpload.php 1 -
+/new/ 4 -
+/pub/tub/9144/index.html 3 -
+/pub/tub/1224/index.html 3 -
+/V3.php 1 -
+/components/com_b2jcontact/izoc.php 1 -
+/shell.php 3 -
+/pub/tub/8694/index.html 3 -
+/img/ 1 -
+/pub/tub/2274/index.html 1 -
+/wp-config.local.php 1 -
+/098.php 1 -
+/config.phptmp 1 -
+/wp-config.txt 1 -
+/oldsite/wp-includes/wlwmanifest.xml 1 -
+/uv-config.php.public 1 -
+/pub/tub/744/index.html 3 -
+/wp-config.backup 1 -
+/pub/tub/2844/index.html 3 -
+/pub/tub/4374/index.html 1 -
+/back/ 4 -
+/pub/tub/5694/index.html 1 -
+/pub/tub/1314/index.html 1 -
+/wp-content/plugins/upspy/index.php 1 -
+/images/block/up.php 1 -
+/wp-includes/wlwmanifest.xml 1 -
+/wp-config.php.in 1 -
+/pub/tub/3324/index.html 2 -
+/pub/tub/3744/index.html 4 -
+/userfiles/file/spy.txt 1 -
+/public/upload_nhieuanh/server/php/_index.php 1 -
+/web/image/upload.php 1 -
+/pub/tub/2484/index.html 2 -
+/tpl/plugins/upload9.1.0/server/php/files/up.php 1 -
+/messages/greenbro.net/lib/simplebar.css 38 https://greenbro.net/messages/success_contact.php
+/pub/tub/2904/index.html 3 -
+/assets/admin/ckeditor/kcfinder/upload/files/up.php.jd 1 -
+/wp-config.php.ca 1 -
+/templates/beez_20/index.php 1 -
+/pub/tub/6714/index.html 3 -
+/pub/tub/4914/index.html 6 -
+/pub/tub/8964/index.html 2 -
+/pub/tub/2094/index.html 1 -
+/pub/tub/8784/index.html 3 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 25 first Hits must be first (order not required for others)
+BEGIN_VISITOR 163
+185.11.29.227 666 2031 19642918 20190813235941
+185.11.29.251 584 2206 24104960 20190815233752
+178.120.29.129 192 439 3650110 20190817234835
+185.11.29.233 158 859 9806871 20190804180608
+185.11.29.228 147 423 5035827 20190831235623
+193.201.216.136 33 65 103670 20190812204354
+60.191.38.77 20 20 473478 20190827173043
+193.201.216.145 18 42 191102 20190819194005
+193.106.63.125 14 53 913655 20190830145909
+104.192.74.244 13 62 1207758 20190828154526
+69.58.178.59 10 10 22717 20190823195638
+137.226.113.26 10 10 26106 20190829072106
+64.202.160.250 8 8 18282 20190808175049
+137.226.113.27 8 8 21062 20190823231518
+35.232.53.43 7 7 18711 20190817125931
+137.226.113.28 6 6 16028 20190829065948
+35.197.37.212 4 4 8784 20190813194608
+82.165.113.28 4 4 10692 20190826032955
+184.67.169.254 4 23 454506 20190816173723
+138.246.253.5 4 4 0 20190829094958
+93.63.162.100 4 23 493830 20190827221153
+185.253.97.237 3 3 39036 20190811224421
+36.99.136.132 3 8 59582 20190811185613
+84.17.58.14 3 3 39289 20190821133031
+83.97.23.233 3 3 38798 20190813000124
+148.251.151.248 1 1 23754 20190813205857
+191.96.84.176 1 1 2522 20190803020246
+173.252.127.49 0 5 232106 
+184.154.47.2 1 1 2663 20190809092704
+66.249.137.231 1 1 2673 20190813062435
+54.223.250.111 0 2 93922 
+54.223.154.83 0 2 15010 
+181.215.78.52 1 1 2673 20190813034816
+52.80.73.169 0 1 1738 
+54.223.39.215 0 1 2660 
+173.252.127.30 1 7 93216 20190817113323
+13.56.227.118 1 1 2673 20190828131821
+36.99.136.130 2 9 112784 20190811174505
+54.186.13.14 2 2 5326 20190806055157
+167.114.100.160 1 1 2673 20190823145743
+54.185.153.158 2 2 5326 20190805080011
+34.217.134.120 1 1 2663 20190810200356
+38.145.111.68 1 1 2663 20190810065844
+198.20.103.242 1 1 2673 20190814152028
+5.9.60.220 1 1 23754 20190814160850
+52.80.165.95 0 1 1036 
+36.99.136.134 1 7 64426 20190811174508
+123.126.113.18 2 20 445740 20190808175707
+36.99.136.138 1 13 217127 20190811124417
+106.120.188.156 2 20 445796 20190814155130
+34.214.119.116 1 1 2522 20190801215123
+181.215.77.77 1 1 2663 20190805180155
+191.101.212.15 1 1 2663 20190806231602
+111.202.102.73 2 20 445807 20190820145709
+123.125.125.81 2 20 445807 20190826163909
+191.37.0.195 2 2 5053 20190828022000
+181.215.81.150 1 1 2663 20190808034203
+82.102.27.195 1 1 2673 20190827221607
+54.187.177.236 2 2 5044 20190802093757
+34.236.55.223 1 1 2673 20190815073723
+128.14.209.234 1 1 2522 20190803000646
+123.126.68.111 2 19 414452 20190803092215
+176.9.150.60 2 20 448645 20190815082013
+212.103.50.78 3 3 39289 20190829161704
+34.213.186.79 1 1 2673 20190826070139
+54.189.19.158 1 1 2673 20190828040549
+107.6.183.162 1 1 2663 20190812162002
+54.223.243.199 0 1 1036 
+35.160.55.106 1 1 2673 20190824032516
+36.99.136.142 2 7 97023 20190811200716
+184.154.189.90 1 1 2522 20190802033139
+106.120.188.160 2 20 445807 20190828235416
+62.210.83.78 1 1 2673 20190816031534
+34.219.189.140 2 2 5326 20190809064755
+34.236.202.207 1 1 2673 20190815101538
+196.196.39.58 1 1 2663 20190810201505
+181.214.42.47 1 1 2673 20190829100911
+188.165.192.220 1 1 2673 20190819190025
+178.162.208.250 2 2 28598 20190801000105
+66.249.138.111 1 1 2663 20190808070431
+54.223.138.14 0 1 80650 
+181.214.189.28 1 1 2663 20190811032638
+129.78.110.131 1 1 0 20190804045118
+128.14.209.226 1 1 2522 20190803120302
+52.81.131.79 0 2 8422 
+36.99.136.140 2 5 50790 20190811222932
+185.90.57.171 3 3 39289 20190826213549
+181.215.51.16 1 1 2663 20190812045513
+181.215.64.242 1 1 2663 20190807034327
+106.120.188.152 2 20 445807 20190816005234
+123.126.68.124 2 19 414452 20190802083831
+34.217.57.149 2 2 5326 20190807082050
+18.221.206.247 1 1 2673 20190816142327
+51.15.183.122 1 1 23754 20190831102721
+18.211.168.128 1 1 2663 20190805182147
+191.96.241.195 1 1 2663 20190809043857
+36.110.147.76 2 20 445740 20190808230800
+124.206.180.180 1 1 23754 20190814195239
+185.253.96.198 3 3 39289 20190820134318
+85.208.22.181 2 2 5346 20190826231747
+35.232.16.120 1 1 2663 20190809002236
+191.101.212.17 1 1 2663 20190807163239
+84.17.47.136 3 3 39289 20190825095554
+54.201.145.14 1 1 2673 20190825061713
+89.108.88.240 3 3 25070 20190818122903
+107.6.169.250 1 1 2673 20190829231921
+181.215.78.5 1 1 2673 20190814032905
+106.120.173.133 0 56 932989 
+54.222.217.120 0 2 8422 
+34.221.161.142 2 2 5044 20190801094900
+36.99.136.141 2 9 195626 20190811200531
+188.92.72.129 1 1 2522 20190802165105
+52.24.72.9 1 1 2673 20190821065659
+181.214.187.196 1 1 2663 20190810032538
+118.25.17.135 1 1 23754 20190826134446
+205.237.94.53 1 1 2522 20190804000319
+36.99.136.133 2 6 31045 20190811074814
+34.220.27.169 2 2 5044 20190804054922
+167.99.124.245 1 1 23756 20190806090647
+54.223.83.127 0 1 2454 
+54.223.70.23 0 2 83310 
+188.166.114.112 2 2 4946 20190816054710
+185.242.87.42 1 1 23754 20190813173815
+54.223.87.215 0 1 2660 
+167.71.105.65 1 1 23756 20190806101633
+34.209.50.173 2 2 5044 20190803080324
+46.246.45.175 1 1 23754 20190829011622
+54.222.226.231 0 1 1738 
+52.80.171.43 0 1 1738 
+52.80.242.129 0 1 13272 
+54.186.152.126 1 1 2522 20190803033259
+54.185.109.114 2 2 5326 20190808061409
+45.32.196.143 1 1 2673 20190815032556
+36.99.136.139 0 13 281663 
+5.188.84.125 1 1 23754 20190831214823
+36.110.147.94 2 20 445807 20190822044854
+191.96.241.213 1 1 2663 20190804192902
+34.221.29.193 1 1 2673 20190829043507
+51.68.152.26 2 2 3096 20190817152033
+52.15.212.3 1 1 2673 20190815165805
+52.80.38.97 0 1 6025 
+173.252.127.14 1 9 121000 20190817113320
+36.99.136.143 0 11 207956 
+54.222.165.45 0 1 1036 
+185.93.3.114 3 3 39289 20190830163522
+107.6.171.130 1 1 2673 20190818043756
+36.99.136.135 3 10 132855 20190811145018
+52.80.170.32 0 1 13272 
+128.14.209.178 2 2 5044 20190804025054
+36.99.136.131 3 16 294963 20190811222935
+52.81.134.248 0 1 2397 
+54.222.237.251 0 1 2660 
+198.143.155.138 1 1 2673 20190826090906
+185.220.101.3 3 3 8019 20190827020400
+54.250.87.247 1 1 2673 20190815102037
+54.223.110.254 0 2 7061 
+38.131.159.122 1 1 2663 20190812033050
+52.15.95.97 2 20 445807 20190821102245
+181.214.191.106 1 1 2673 20190815062750
+191.101.215.204 1 1 2663 20190811043609
+52.80.45.223 0 1 80650 
+163.172.71.49 1 1 23754 20190812231700
+85.209.90.108 2 2 28598 20190801203811
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 31
+20190801 14 15 100873 11
+20190802 10 27 476016 8
+20190803 10 32 442595 8
+20190804 189 963 9953530 8
+20190805 6 18 113281 4
+20190806 10 21 232680 6
+20190807 7 25 518689 6
+20190808 163 562 6112215 14
+20190809 56 206 2627442 7
+20190810 4 4 10652 4
+20190811 171 498 5547511 26
+20190812 194 544 5403722 8
+20190813 153 374 2791387 10
+20190814 321 1401 15068561 9
+20190815 280 862 10137685 13
+20190816 12 60 1090477 7
+20190817 205 479 4278048 9
+20190818 5 5 51497 3
+20190819 24 55 345595 4
+20190820 72 258 3196333 5
+20190821 8 30 601968 4
+20190822 16 53 961849 5
+20190823 17 26 243320 7
+20190824 6 7 138264 6
+20190825 34 55 535714 4
+20190826 11 29 522215 7
+20190827 8 33 483663 5
+20190828 29 119 2195498 7
+20190829 11 11 79081 8
+20190830 17 56 952944 2
+20190831 26 64 732125 6
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+0s-30s 188
+15mn-30mn 9
+5mn-15mn 6
+30mn-1h 6
+30s-2mn 9
+1h+ 9
+2mn-5mn 4
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 25 first Pages must be first (order not required for others)
+BEGIN_SIDER 28
+/scripts/contact.php 654 1590747 18 28
+/fonts/OleoScript/Oleoscript.woff2 336 4499385 9 22
+/messages/success_contact.php 315 569053 5 3
+/ 276 1641067 167 134
+/scripts/contact_manage.php 165 16183 5 7
+/scripts/payment_and_delivery.php 68 158938 3 6
+/scripts/foods.php 61 146730 6 5
+/scripts/goods.php 38 75719 3 2
+/scripts/allthings.php 38 98549 2 2
+/scripts/books.php 34 66728 3 2
+/scripts/clothes.php 28 57596 1 3
+/index.php 15 40003 1 3
+/site.webmanifest 12 1990 0 0
+/scripts/oferta.php 10 63451 1 1
+/scripts/description.php 8 4533 0 1
+/scripts/success_contact.php 7 13325 0 0
+/scripts/recipe.php 5 8060 2 2
+/fonts/OleoScript/Oleoscript.woff 4 65076 2 3
+/captcha/captcha.php 3 3452 1 3
+/captcha/write.php 2 434 1 0
+/scripts/payment_success.php 2 3265 0 0
+/admin/ 2 1739 0 2
+/admin/admin.php 1 279 1 0
+/scripts/payment/chargeback_callback.php 1 0 0 1
+/scripts/dbhandler.php 1 0 0 0
+/images/ 1 765 0 0
+/scripts/payment_unsuccess.php 1 1639 0 1
+/scripts/payment/callback_payment.php 1 0 0 0
+END_SIDER

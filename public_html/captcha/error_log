@@ -1,0 +1,8 @@
+[29-Jul-2019 19:57:30 UTC] PHP Warning:  imagettftext(): Could not find/open font in /home/green64/public_html/captcha/captcha.php on line 19
+[29-Jul-2019 19:57:30 UTC] PHP Warning:  imagettftext(): Could not find/open font in /home/green64/public_html/captcha/captcha.php on line 21
+[30-Jul-2019 05:48:07 UTC] PHP Warning:  imagettftext(): Could not find/open font in /home/green64/public_html/captcha/captcha.php on line 19
+[30-Jul-2019 05:48:07 UTC] PHP Warning:  imagettftext(): Could not find/open font in /home/green64/public_html/captcha/captcha.php on line 21
+[30-Jul-2019 05:48:14 UTC] PHP Warning:  imagettftext(): Could not find/open font in /home/green64/public_html/captcha/captcha.php on line 19
+[30-Jul-2019 05:48:14 UTC] PHP Warning:  imagettftext(): Could not find/open font in /home/green64/public_html/captcha/captcha.php on line 21
+[30-Jul-2019 05:50:27 UTC] PHP Warning:  imagettftext(): Could not find/open font in /home/green64/public_html/captcha/captcha.php on line 19
+[30-Jul-2019 05:50:27 UTC] PHP Warning:  imagettftext(): Could not find/open font in /home/green64/public_html/captcha/captcha.php on line 21
