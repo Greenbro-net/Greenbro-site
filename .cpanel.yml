@@ -1,0 +1,5 @@
+---
+deployments:
+  tasks:
+    - export DEPLOYPATH=/home/green64/public_html/
+    - /bin/cp index.php $DEPLOYPATH
