@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/green64
+    - export DEPLOYPATH=/home/green64/public_html
 #this variant below is working well
 #    - /bin/cp  public_html/index.php $DEPLOYPATH
 
