@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  /*body {*/
+  /*  padding: 20px;*/
+  /*}*/
+  #form {
+    border: 1px solid grey;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  label, p {
+    display: inline-block;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    position: relative;
+    width: 100px;
+  }
+  p {
+    width: 250px;
+  }
+  #form .pic {
+    width: 100px;
+    height: 30px;
+    background: url(http://htmlbook.ru/files/images/practical/24.png);
+    background-position: -2px 105px;
+  }
+  
+  #number {
+    position: relative;
+    top: -20px;
+  }
+  .menu, .picinput {
+    width: 200px;
+    height: 20px;
+  }
+  .menu:invalid + span:after {
+    content: '\2718';
+    color: red;
+    margin-left: 7px;
+  }
+  .menu:valid + span:after {
+    content: '\2714';
+    color: green;
+    margin-left: 7px;
+  }
+  .picinput:focus + span:after {
+    content: '\2718  Невірне число';
+    font-size: 14px;
+    color: red;
+    position: relative;
+    top: -20px;
+    margin-left: 7px;
+  }
+  .picinput:valid + span:after {
+    content: '\2714';
+    color: green;
+    position: relative;
+    top: -20px;
+    margin-left: 7px;
+  }
+  .button {
+    width: 100%;
+    text-align: center;
+    background: lightgrey;
+    border-radius: 5px;
+    padding: 10px 0;
+  }
+  
+  .qwe {
+    border: 1px solid green;
+    width: 180px;
+    border-radius: 50px;
+    background: linear-gradient(to bottom, green, lightgreen, green);
+    line-height: 2em;
+    margin: 0;
+    font-weight: normal;
+  } 
+  #button {
+    display: none;
+  }
+  #form label:nth-of-type(3n) {
+    margin-bottom: 30px;
+  }
+  
+  #un_messages
+{ 
+  margin: 20px;
+  text-align: center;
+  height:180px; 
+}
+
+  #un_words
+  { 
+    width: 40%;
+    margin-top: 14px;
+    font-size: 20px;
+    background-color: #fd010181;
+  }
+  #success_messages
+{ 
+  margin: 20px;
+  text-align: center;
+  height:180px; 
+}
+  #success_words
+  { 
+    
+    width: 40%;
+    margin-top: 14px;
+    font-size: 20px;
+    background-color: #01fd4081;
+  }
+  
+  
+  
+  /* for manage.php */
+  #manage_goods 
+  {
+    /* background-color: rgb(30, 255, 0); */
+
+   size: 100px;
+  }
+   #products_name {
+    margin: 30px;
+     width: 450px;
+     height: 30px;
+
+  }
+
+  #brand_name {
+    margin: 30px;
+    width: 450px;
+    height: 30px;
+  }
+
+  #category_of_products {
+    margin: 30px;
+    background-color: azure;
+  }
+
+  #mini_description {
+    margin: 30px;
+    width: 450px;
+    height: 60px;
+  }
+
+  /* this is for part of description */
+  #description_name {
+    display: inline-block;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    width: 100px;
+  }
+  #description {
+    margin: 30px;
+    margin-left:153px;
+    width: 450px;
+    height: 180px;
+  }
+  
+  #upload_image {
+    margin: 30px;
+    width: 450px;
+    height: 30px;
+  }
+
+  #set_price {
+    margin: 30px;
+    height: 30px;
+  }
+
+  #sale {
+    margin: 30px;
+    height: 30px;
+  }
+
+  #quantity {
+    margin: 30px;
+    height: 30px;
+  }
+
+  #datetime {
+    margin: 30px;
+    height: 30px;
+  }
+
+  #visible {
+    margin: 30px;
+    height: 30px;
+  }
