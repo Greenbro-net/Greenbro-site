@@ -9,7 +9,7 @@ deployment:
     - /bin/cp  public_html/scripts/contact.php $DEPLOYPATH1
 
 #code below for deploing to scripts folder 
-    -/bin/cp public_html/scripts/* $DEPLOYPATH1
+    -/bin/cp public_html/scripts/-r * $DEPLOYPATH1
 
 #this code is for deploying all forder
 #     -/bin/cp -R new_folder $DEPLOYPATH
