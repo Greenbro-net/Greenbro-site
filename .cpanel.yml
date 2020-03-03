@@ -6,7 +6,7 @@ deployment:
 #    - /bin/cp  public_html/index.php $DEPLOYPATH
 
 #code below for another folder
-    -/bin/cp public_html/new_folder/index.php $DEPLOYPATH
+    -/bin/cp delete.html $DEPLOYPATH
 
 #this code is for deploying all forder
 #     -/bin/cp -R new_folder $DEPLOYPATH
