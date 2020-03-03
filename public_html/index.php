@@ -79,7 +79,7 @@ require_once "scripts/header.php";
 <!--Show all products-->
 <section class="catalog" id="catalog">
     <h2>Наши товары</h2>
-    <!-- delete it in the future --><h1>New version example1!!!</h1><!-- delete it in the future -->
+    <!-- delete it in the future --><h1>New version example2!!!</h1><!-- delete it in the future -->
     <div class="container">
         <div class="row">
             <?php
