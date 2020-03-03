@@ -3,7 +3,7 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/green64/public_html
 #this variant below is working well
-#    - /bin/cp  public_html/index.php $DEPLOYPATH
+    - /bin/cp  public_html/index.php $DEPLOYPATH
 
 #this code is for deploying all forder
-     -/bin/cp -R new_folder $DEPLOYPATH
+#     -/bin/cp -R new_folder $DEPLOYPATH
