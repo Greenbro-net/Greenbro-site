@@ -6,4 +6,4 @@ deployment:
 #    - /bin/cp  public_html/index.php $DEPLOYPATH
 
 #this code is for deploying all forder
-     -/bin/cp -R public_html/new_folder $DEPLOYPATH
+     -/bin/cp -R new_folder $DEPLOYPATH
