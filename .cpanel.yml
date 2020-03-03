@@ -5,5 +5,8 @@ deployment:
 #this variant below is working well
 #    - /bin/cp  public_html/index.php $DEPLOYPATH
 
+#code below for another folder
+    -/bin/cp public_html/new_folder/index.php $DEPLOYPATH
+
 #this code is for deploying all forder
-     -/bin/cp -R new_folder $DEPLOYPATH
+#     -/bin/cp -R new_folder $DEPLOYPATH
