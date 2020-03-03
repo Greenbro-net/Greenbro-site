@@ -95,7 +95,7 @@ require_once "header.php";
 
 <div id="list_payment_delivery">
     <h4>Телефон:</h4>
-    <p>(093) 770-72-715551</p>
+    <p>(093) 770-72-71</p>
 </div>
 
 <div id="list_payment_delivery">
