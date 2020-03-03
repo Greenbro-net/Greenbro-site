@@ -4,7 +4,7 @@ deployment:
     - export DEPLOYPATH=/home/green64/public_html
 #this variant below is working well
     - /bin/cp  public_html/index.php $DEPLOYPATH
-
+    - /bin/cp  public_html/scripts/contact.php $DEPLOYPATH
 #code below for another folder
 #    -/bin/cp public_html/scripts/contact.php $DEPLOYPATH
 
