@@ -18,3 +18,5 @@ deployment:
     - /bin/cp -R public_html/database_connection $DEPLOYPATH
 #this code is for deploing to admin folder
     - /bin/cp -R public_html/admin $DEPLOYPATH
+#this code is for deploing to images folder
+    - /bin/cp -R public_html/images $DEPLOYPATH

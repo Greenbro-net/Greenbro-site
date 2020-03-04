@@ -5,7 +5,7 @@ echo
         <div class=\"container\">
             <div class=\"row\">
                 <div class=\"col-lg-2 col-md-2 col-sm-12  header__logo\">
-                   <span> <a id=\"logo\" href=\"../index.php\"><img src=\"images/imgonline-com-ua-Crop-oeaYXY1h2v0.jpg\" width=\"140px\" alt=\"Logo_of_Greenbro\"></a> </span>
+                   <span> <a id=\"logo\" href=\"../index.php\"><img src=\"https://greenbro.net/images/imgonline-com-ua-Crop-oeaYXY1h2v0.jpg\" width=\"140px\" alt=\"Logo_of_Greenbro\"></a> </span>
                     
                     
                     
