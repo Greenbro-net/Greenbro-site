@@ -15,4 +15,6 @@ deployment:
 #this code is for deploing to js
     - /bin/cp -R public_html/js $DEPLOYPATH
 #this code is for deploing to database_connection
-    - /bin/cp -R public_html/database_connection
+    - /bin/cp -R public_html/database_connection $DEPLOYPATH
+#this code is for deploing to admin folder
+    - /bin/cp -R public_html/admin $DEPLOYPATH
