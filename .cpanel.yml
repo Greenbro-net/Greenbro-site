@@ -6,10 +6,13 @@ deployment:
 #this variant below is working well
     - /bin/cp  public_html/index.php $DEPLOYPATH
 #the code below works fine
-    - /bin/cp  public_html/scripts/contact.php $DEPLOYPATH1
 
 #code below for deploing to scripts folder(working well) 
-    - /bin/cp  -R public_html/scripts $DEPLOYPATH
+    - /bin/cp -R public_html/scripts $DEPLOYPATH
 
 #this code is for deploing to other_css
     - /bin/cp -R public_html/other_css $DEPLOYPATH
+#this code is for deploing to js
+    - /bin/cp -R public_html/js $DEPLOYPATH
+#this code is for deploing to database_connection
+    - /bin/cp -R public_html/database_connection
