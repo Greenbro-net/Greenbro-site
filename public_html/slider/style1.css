@@ -1,0 +1,149 @@
+/* location of slider */
+#slider { 
+    position: relative;
+    text-align: center;
+    top: 10px;
+}
+
+/* slider into centr */
+#slider {
+    margin: 0 auto;
+}
+
+/* all images are on the right of each other */
+#slider article {
+    width: 20%;
+    float: left; 
+}
+
+/* set one size of block with images */
+#slides .image {
+    width: 50%;
+    line-height: 0;
+}
+
+/* hide everything which locate outside the block */
+#overflow {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* size images of slider */
+article img {
+    width: 100%;
+}
+
+/* size of slider */
+#desctop:checked ~ #slider {
+    max-width: 960px;
+}
+
+/* seting up switch and position for left arrow*/
+#switch1:checked ~ #controls label:nth-child(5),
+#switch1:checked ~ #controls label:nth-child(1),
+#switch1:checked ~ #controls label:nth-child(2),
+#switch1:checked ~ #controls label:nth-child(3),
+#switch1:checked ~ #controls label:nth-child(4){
+    background: url('prev.png') no-repeat;
+    float: left;
+    margin: 0 0 0 -84px; /* move to left */
+    display: block;
+    height: 68px;
+    width: 68px;
+}
+
+
+/* seting up switch and position for right arrow*/
+#switch1:checked ~ #controls label:nth-child(2),
+#switch1:checked ~ #controls label:nth-child(3),
+#switch1:checked ~ #controls label:nth-child(4),
+#switch1:checked ~ #controls label:nth-child(5),
+#switch1:checked ~ #controls label:nth-child(1){
+    background: url('next.png') no-repeat;
+    float: right;
+    margin: 0 -84px 0 0; /* move to left */
+    display: block;
+    height: 68px;
+    width: 68px;
+}
+
+/* when you pointed of arrow or switch cursor will change  */
+label, a {
+    cursor: pointer;
+}
+
+/* hide stardart input(checkboxes) on page */
+.all input {
+    display: none;
+}
+
+/* position image if switch is active */
+#switch1:checked ~#slides .image {
+    margin-left: 0;
+}
+
+#switch2:checked ~#slides .image {
+    margin-left: -100%;
+}
+
+#switch3:checked ~#slides .image {
+    margin-left: -200%;
+}
+
+#switch4:checked ~#slides .image {
+    margin-left: -300%;
+}
+
+#switch5:checked ~#slides .image {
+    margin-left: -400%;
+}
+
+/* position block for all managed elements */
+#controls {
+    margin: -25% 0 0 0;
+    width: 100%;
+    height: 50px;
+}
+
+/* style of separate switch */
+#active label {
+    border-radius: 10px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: #bbb;
+}
+
+/* position block with switches */
+#active {
+    margin: 23% 0 0;
+    text-align: center;
+}
+
+/* behavior of cursor if it was chosed */
+#active label:hover {
+    background: #76c8ff;
+    border-color: #777 !important;
+}
+
+/* color of active switch(checkbox) */
+#switch1:checked ~ #active label:nth-child(1),
+#switch1:checked ~ #active label:nth-child(2),
+#switch1:checked ~ #active label:nth-child(3),
+#switch1:checked ~ #active label:nth-child(4),
+#switch1:checked ~ #active label:nth-child(5){
+        background: #18a3dd;
+        border-color: #18a3dd !important;
+}
+
+#slides .image {
+    transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+#controls label:hover {
+    opacity: 0.6;
+}
+
+#controls label {
+    transition: opasity 0.2s ease-out;
+}

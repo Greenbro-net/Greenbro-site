@@ -1,0 +1,13 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/green64/public_html
+    - export DEPLOYPATH1=/home/green64/public_html/scripts
+#this variant below is working well
+    - /bin/cp  public_html/index.php $DEPLOYPATH
+#the code below works fine
+    - /bin/cp  public_html/scripts/contact.php $DEPLOYPATH1
+#code below for another folder#    -/bin/cp public_html/scripts/contact.php $DEPLOYPATH
+
+#this code is for deploying all forder
+#     -/bin/cp -R new_folder $DEPLOYPATH

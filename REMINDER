@@ -1,0 +1,1 @@
+1. before pushing code to the remote repository change url in /opt/lampp/htdocs/greenbro.net/public_html/js/cart-script.js on this: '../scripts/description.php' 

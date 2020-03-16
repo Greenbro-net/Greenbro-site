@@ -2,10 +2,10 @@
 <!-- there we add image about fondy paying -->
             
 <div style="height:20%; width:100%; " id="logo_pay_system">
-            <img style="height:30px; width:8%;" src="../images/footer_images/mastercard.png"  alt="logo_pay_system">
-            <img style="height:30px; width:6%;  margin-left:40px;" src="../images/footer_images/fondy.png"  alt="logo_pay_system">
-            <img style="height:30px; width:10%; margin-left:40px;" src="../images/footer_images/visa_logo.png"  alt="logo_pay_system">
-            <img style="height:30px; width:8%; margin-left:40px;" src="../images/footer_images/private24.png"  alt="logo_pay_system">
+            <img style="height:30px; width:8%;" src="https://greenbro.net/images/footer_images/mastercard.png"  alt="logo_pay_system">
+            <img style="height:30px; width:6%;  margin-left:40px;" src="https://greenbro.net/images/footer_images/fondy.png"  alt="logo_pay_system">
+            <img style="height:30px; width:10%; margin-left:40px;" src="https://greenbro.net/images/footer_images/visa_logo.png"  alt="logo_pay_system">
+            <img style="height:30px; width:8%; margin-left:40px;" src="https://greenbro.net/images/footer_images/private24.png"  alt="logo_pay_system">
             </div>
     <!-- <div class="container"> -->
         <!-- <div class="row">
