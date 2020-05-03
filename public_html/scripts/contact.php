@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if(empty($_SESSION['contact']))
+{   
+    $_SESSION['contact'] = 1;
+}
 ?>
 
 <!DOCTYPE html>
@@ -65,10 +70,6 @@ session_start();
             <div class="col-lg-12 ">
                 <span id="closeDescription" class="close">&times;</span>
             </div>
-            <div class="container">
-            <?php 
-            // $_POST["id"] = 1;
-            // var_dump($_POST["id"]); ?>
                 <div class="row">
                     <div class="description col-lg-8 offset-lg-2 col-md-12">
                         <div class="description_block">
@@ -95,7 +96,7 @@ require_once "header.php";
 
 <div id="list_payment_delivery">
     <h4>Телефон:</h4>
-    <p>(093) 770-72-715551</p>
+    <p>(093) 770-72-71</p>
 </div>
 
 <div id="list_payment_delivery">

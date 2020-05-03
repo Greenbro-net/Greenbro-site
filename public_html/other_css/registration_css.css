@@ -1,11 +1,10 @@
+/* this symbol influent for all things in the page */
 * {
-    margin: 0;
-    padding: 0;
+    
     font-family: sans-serif;
   }
-  /*body {*/
-  /*  padding: 20px;*/
-  /*}*/
+
+
   #form {
     border: 1px solid grey;
     padding: 10px;
@@ -198,4 +197,18 @@
   #visible {
     margin: 30px;
     height: 30px;
+  }
+
+  /* for part of download images */
+  .for_images {
+    background-color: cornsilk;
+    height: 20%;
+  }
+
+  #main_image {
+    margin: 30px;
+  }
+
+  #multi_image {
+    margin: 30px;
   }

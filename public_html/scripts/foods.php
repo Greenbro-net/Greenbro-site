@@ -1,5 +1,5 @@
 <?php
-require_once('link.php');
+require_once('../database_connection/link.php');
 ?>
 
 <!DOCTYPE html>

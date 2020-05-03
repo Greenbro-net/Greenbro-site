@@ -5,7 +5,8 @@ or die("<p>Mistake of connect with database: " .
    mysqli_error() . "</p>");
    
    //  This string below set a correct encoding
-         mysqli_query($link1, "SET NAMES `utf8`");
+  //  it was changed 
+         mysqli_query($link, "SET NAMES `utf8`");
 
 
 mysqli_select_db($link, DATABASE_NAME)
@@ -27,7 +28,7 @@ $link1 = mysqli_connect(DATABASE_HOST,DATABASE_USERNAME, DATABASE_PASSWORD)
         
            
 mysqli_select_db($link1, DATABASE_NAME1)
-        or die("<p>Mistake with connection to database " . DATABASE_NAME1 .
+        or die("<p>Mistake with connection to database  from 21" . DATABASE_NAME1 .
             mysqli_error($link1) . "</p>");
 
 

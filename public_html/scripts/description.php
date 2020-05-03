@@ -19,7 +19,7 @@ if(isset($id)) {
     echo json_encode($arr);
     exit;
 }
-else echo json_encode("Hello there ");
+else echo json_encode("We have mistake with goods card");
 
 exit;
 

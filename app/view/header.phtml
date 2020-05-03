@@ -1,0 +1,147 @@
+<?php
+$action = $this->getAction();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+     <!-- from index.php older version -->
+     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/other_css/normalize.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/other_css/bootstrap-grid.min.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/other_css/goodsNew.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/lib/simplebar.css" media="all">
+    
+    <!-- testing code for navigation panel -->
+    <!-- <link rel="stylesheet" type="text/css" href="/style.css" media="all"> -->
+
+    <!-- css_for_contact.php -->
+    <link rel="stylesheet" type="text/css" href="../other_css/contact_css.css">
+    <!--js-script captcha by google for contact page-->
+   <script src='https://www.google.com/recaptcha/api.js?hl=uk' async defer></script>
+
+   <!-- this part was in footer in older version  -->
+    <script defer src="/lib/jquery-3.3.1.js"></script>
+    <script defer src="/js/cart-script.js"></script>
+    <script defer src="/lib/simplebar.min.js"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="apple-mobile-web-app-title" content="GreenBro">
+    <meta name="application-name" content="GreenBro">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
+
+
+
+    <title><?php echo (isset($this->page_title) ? $this->page_title : 'Welcome to my site');?></title>
+</head>
+<body>
+<!-- Checkout popup window -->
+<div id="checkoutPopup" class="popup">
+    <div class="container popup-content" data-simplebar>
+        <div class="row">
+            <div class="col-lg-12">
+                <span class="close">&times;</span>
+                <h2>Ваш заказ:</h2>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class=" checkout-cart col-lg-10 offset-lg-1 col-md-12"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="checkout__end col-lg-10 offset-lg-1 col-md-12">
+                <p>Итого $<span id="total"></span></p>
+                <button class="btn checkout__end-btn">Оформить заказ</button>     
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of checkout popup -->
+
+<!-- Description popup window -->
+<div id="descriptionPopup" class="popup">
+    <div class="container popup-content" data-simplebar>
+        <div class="row">
+            <div class="col-lg-12 ">
+                <span id="closeDescription" class="close">&times;</span>
+            </div>
+    
+            <div class="container">
+                <div class="row">
+                    <div class="description col-lg-8 offset-lg-2 col-md-12">
+                        <div class="description_block">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of checkout popup -->
+
+
+<!-- we add this empty tag only for footer function "up" -->
+<section id="catalog">
+</section>
+    
+</body>
+</html>
+
+<?php 
+
+echo
+"<header class=\"header\" id=\"header\">
+        <div class=\"container\">
+            <div class=\"row\">
+                <div class=\"col-lg-2 col-md-2 col-sm-12  header__logo\">
+                   <span> <a id=\"logo\" href=\"../index.php\"><img src=\"https://greenbro.net/images/imgonline-com-ua-Crop-oeaYXY1h2v0.jpg\" width=\"140px\" alt=\"Logo_of_Greenbro\"></a> </span>
+                    
+                    
+                    
+                    
+                    <div id=\"burger-menu-button\">
+                        <div id=\"line-1\"></div>
+                        <div id=\"line-2\"></div>
+                        <div id=\"line-3\"></div>
+                        
+                    </div>
+                    
+                </div>
+                <div class=\"col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-12 navigation\" >
+                    <nav>";
+                    
+require_once "sidebar.php";
+// ($action == 'foodsPage' ? 'class=active' : '');
+// sandwich menu doesn't work properly
+echo
+"</nav>
+                </div>
+            </div>
+            
+        <div id=\"burger-menu\">
+        <ul>
+        <li><a href=\"//greenbro.$domain/food/show_food\">Продукти</a></li>
+        <li><a href=\"//greenbro.$domain/home/clothesPage\">Одяг</a></li>    
+        <li><a href=\"//greenbro.$domain/home/goodsPage\">Речі</a></li>
+        <li><a href=\"//greenbro.$domain/home/booksPage\">Література</a></li>
+        <li><a href=\"//greenbro.$domain/home/allThings\">Все разом</a></li>
+        <li><a href=\"//greenbro.$domain/home/paymentShipping\">Оплата і доставка</a></li>
+        <li><a href=\"//greenbro.$domain/home/contactUs\">Контакти</a></li>	
+   
+            
+        </ul>
+    </div>
+    </header> ";
+    
+    

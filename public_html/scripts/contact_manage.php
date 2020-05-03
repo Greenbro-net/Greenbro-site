@@ -5,18 +5,18 @@ session_start();
 if ($_POST['submit']) {
     if($_POST['submit'] && (!preg_match("/^[Іа-яА-ЯёЁa-zA-Z0-9і]+$/",$_POST['contact_textarea'])) ) {
         check_in1();
-        header('Location: contact.php' );
+        header('Location: /home/contactUs' );
         die;
     }
     
     if( !$_POST['g-recaptcha-response'] && $_POST['submit'])  {
     check_in();
-    header('Location: contact.php' );
+    header('Location: /home/contactUs' );
     // exit('Do captcha');
     die;
     }
 }
-
+//contact and cuntact_num != 3
 // this function for show message if not correct data in form
 function check_in(){
         $_SESSION['contact'] = 65;

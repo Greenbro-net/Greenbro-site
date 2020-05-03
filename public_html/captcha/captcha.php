@@ -14,7 +14,7 @@
 
 	//path to font - this is just an example you can use any font you like:
 	
-	$font = '/home/green64/public_html/captcha/font/karate/Karate.ttf';
+	$font = 'font/karate/Karate.ttf';
 
 	imagettftext($im, 20, 4, 22, 30, $grey, $font, $randomnr);
  

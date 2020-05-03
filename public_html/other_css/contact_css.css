@@ -4,11 +4,11 @@
     color:#006400;
 }
 
-h2_сontact {
+#h2_сontact {
 font-family: 'Raleway',sans-serif;
 }
 
-input {
+.input_contact {
     width:100%;
     margin-bottom: 20px;
     padding:5px;
