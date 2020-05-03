@@ -1,17 +1,20 @@
 
 <!-- This code add captcha to this file -->
-<!-- <?php  
+<?php  
 session_start();
-require_once '/home/green64/public_html/captcha/write.php' ?>  -->
+if ($_SESSION['one'] !== 1) {
+    require_once '../captcha/write.php';
+    }
+ ?>  
+
 <a   href="../captcha/write.php">Go to admin page</a>
 <?php 
 
 // var_dump($_SESSION['one']);
       if(!isset($_SESSION['one'])){
-
           die;
       } 
-      ?>
+?>
 
 
 

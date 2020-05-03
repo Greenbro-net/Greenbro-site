@@ -1,0 +1,77 @@
+<?php 
+session_start();
+include VIEW . 'header.phtml'; 
+
+// a function below protects us from Notice undefined variable "contact"
+if(empty($_SESSION['contact']))
+{   
+    $_SESSION['contact'] = 1;
+}
+?>
+
+
+
+
+<div id="list_payment_delivery">
+    <h2 id="title">Контакти</h2>
+       <h4>Адреса:</h4>
+       <p>м. Ірпінь, вул.Єсеніна 30</p>
+       <p>Понеділок - П'ятниця з 9:00 до 18:00</p>
+</div>
+
+<div id="list_payment_delivery">
+    <h4>Телефон:</h4>
+    <p>(093) 770-72-71</p>
+</div>
+
+<div id="list_payment_delivery">
+    <h4>Електронна адреса:</h4>
+    <p>greenbro.net@gmail.com</p>
+</div>
+
+<!-- callback_form -->
+    
+<div class="contact_container">
+    <!--#feedback -->
+    <div id="contact_feedback">
+    <!-- .head -->
+    <div class="contact_head">
+     <h4 id="contact_h4">Контактна форма</h4>
+    </div>
+<form action="/scripts/contact_manage.php" id="form" method="POST" name="form">
+   <input class="input_contact" name="contact_name" pattern="^[А-Яа-яЁё\s]+$ 0-9]{3,25}" placeholder="Ім’я:" type="text" value="">
+   <input class="input_contact" name="contact_email" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Введіть свою електронну адресу" value="">
+   <textarea id="contact_textarea" name="contact_textarea" pattern="^[А-Яа-яЁё\s]+$  0-9]{5,200}" placeholder="Текст листа"></textarea>
+   
+   <!-- this is for captcha -->
+   <div class="g-recaptcha" data-sitekey="6LeKAbIUAAAAABOVTP-FERWRoVC_EU28uHUzcpYU"></div> 
+   <!--element which enter the mistakes-->
+   <div class="text-danger" id="recaptchaError"></div>
+   
+   <!--code top is for captcha-->
+     <input  class="input_contact" id="send" name="submit" type="submit" value="Надіслати">  
+   
+</form>
+
+    </div>
+</div>
+
+
+
+
+<?php
+//this code whow error message if user doing something wrong
+    if($_SESSION['contact'] == 65 && $_SESSION['contact_num'] >=2) {
+      echo "<script> alert('Підтвердіть що ви не робот, заповніть всі поля форми та  натисніть `Надіслати`.'); </script>";
+       unset($_SESSION['contact_num']);
+       $_SESSION['contact'] = 1;
+    }
+    
+//this code whow error message if user doing something wrong in textarea
+    if($_SESSION['contact'] == 66 && $_SESSION['contact_num'] >=2) {
+      echo "<script> alert('Були введені недопустимі символи, заповніть всі поля форми та  натисніть `Надіслати`.'); </script>";
+       unset($_SESSION['contact_num']);
+       $_SESSION['contact'] = 1;
+    }
+?>
+<?php include VIEW . 'footer.phtml'; ?>

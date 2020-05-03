@@ -75,7 +75,7 @@
 require_once "../scripts/header.php";
 ?>
 
-<h3>  calm down and go to work))</h3>
+<!-- <h3>  calm down and go to work))</h3> -->
 
 <!-- This part of page below for adding new goods -->
 <form id= "manage_goods" name="manage_goods" action="add_to_db.php " method="POST"
@@ -107,10 +107,73 @@ require_once "../scripts/header.php";
             <hr>
             <!-- For description -->
             
-        <!-- Upload image file -->
+
+
+
+
+        <!-- Upload images -->
         <!-- You add this only image name, after that you have to upload image into folder image of host -->
-        <label for="upload_image">Image name</label>
-       <input id="upload_image"  type="text" name="upload_image" class="menu" pattern="^[А-Яа-яЁё\s]+$  0-9]{5,25}"  placeholder="Ім'я файла зображення" required><span></span><br>
+       
+       <!-- <input id="upload_image"  type="text" name="upload_image" class="menu" pattern="^[А-Яа-яЁё\s]+$  0-9]{5,25}"  placeholder="Ім'я файла зображення" required><span></span><br> -->
+       
+       <!-- new version  below -->
+       <div class="for_images">
+                                  <!-- the code below for uploading main image -->
+       <label id="main_image">Main image download</label>
+           <div>
+           
+        <p><input type="file"  name="main_image"  accept=".jpg, .jpeg, .png" onchange="loadFile(event)"></p>
+        <img id="output"/>
+           </div><br>
+        <!-- the code below for uploading images -->
+         <p id="multi_image">Multiple download additional images:</p>
+        <!-- the code below makes limitation for file size -->
+        <div>
+        <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+        <p><input type="file" id="fileMulti" name="fileMulti[]" accept=".jpg, .jpeg, .png"  multiple/></p>
+        <span id="outputMulti"></span>
+          </div>
+            </div>
+
+           <script>
+           function handleFileSelect(evt) {
+        var files = evt.target.files; // FileList object
+                   // Loop through the FileList and render image files as thumbnails.
+          for (var i = 0, f; f = files[i]; i++) {
+          // Only process image files.
+        if (!f.type.match('image.*')) {
+            alert("Image only please....");
+        }
+        var reader = new FileReader();
+        // Closure to capture the file information.
+        reader.onload = (function (theFile) {
+            return function (e) {
+                // Render thumbnail.
+                var span = document.createElement('span');
+                span.innerHTML = ['<img class="thumb" title="', escape(theFile.name), '" src="', e.target.result, '" />'].join('');
+                document.getElementById('outputMulti').insertBefore(span, null);
+            };
+        })(f);
+        // Read in the image file as a data URL.
+        reader.readAsDataURL(f);
+              }
+            }
+         document.getElementById('fileMulti').addEventListener('change', handleFileSelect, false);
+
+
+       //function for main_image
+          var loadFile = function(event) {
+          var output = document.getElementById('output');
+          output.src = URL.createObjectURL(event.target.files[0]);
+          output.onload = function() {
+          URL.revokeObjectURL(output.src) // free memory
+                }
+            };
+    </script><br>
+         <hr>
+      <!-- new version above -->
+
+
        <!-- Set a price -->
        <label for="set_price">Set price</label>
        <input id="set_price"  type="text" name="set_price" class="menu" pattern="[0-9]{2-10}"  placeholder="Встановіть ціну" required><span></span><br>
@@ -134,6 +197,7 @@ require_once "../scripts/header.php";
 
  <div class="button">
 <input type="submit" value="Enter" /> 
+ </div>
 </form>
 <!-- end of adding part of page -->
 
@@ -146,6 +210,8 @@ require_once "../scripts/footer.php";
 <script defer src="../lib/jquery-3.3.1.js"></script>
 <script defer src="../js/cart-script.js"></script>
 <script defer src="../lib/simplebar.min.js"></script>
+<!-- this script below has some function for adding and deleting windows of images -->
+<script src="../js/adding_image.js"></script>
 
 </body>
 </html>
