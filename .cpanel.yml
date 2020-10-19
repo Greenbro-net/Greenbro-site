@@ -21,4 +21,4 @@ deployment:
 #this code is for deploing to images folder
     # - /bin/cp -R public_html/images $DEPLOYPATH
 #this code is for deploing to public_html folder
-    - /bin/cp -R public_html $DEPLOYPATH
+    - /bin/cp -R  $DEPLOYPATH
