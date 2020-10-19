@@ -22,7 +22,7 @@
       let id = $(this).parents(".product").attr('data-product-id');
 
       drawDescription();
-
+//  the function below posts id from description.php 
       $.ajax({
          url: '../scripts/description.php',
          type: 'POST',
@@ -70,6 +70,7 @@
       });
    }
 
+   // the function below change visibility of description block
    function drawDescription() {
       descriptionPopup.css({"display": "block"});
       $("body").css("overflow", "hidden");
@@ -183,8 +184,11 @@
 
    let sale = [];//обнуляет массив для предотвращения повторного добавления в корзину
    let save = [];//конечный массив в коротом хранится информация о товарах корзины
+
+   // the function below displays us cart item 
    function showPopup() {
-      if(cart.length > 0) {
+      // the code below checks if item cart has more then one item inside it will display or nor 
+      // if(cart.length > 0) {
          checkoutPopup.css({"display": "block"});
          $("body").css("overflow", "hidden");
          for(let i = 0; i < cart.length; i++) {
@@ -209,20 +213,13 @@
 
 
 
-                   // "<input class=\"checkout-quantity input-text quantity text\" value=\""+ productQuantity +"\" size=\"4\">" +
-                   // "<p class=\"checkout-maxquantity\">На складе: " + productMaxQuantity + "</p>" +
-                   // "<p class=\"checkout-price\">Цена: " + productPrice + "</p>" +
-                   // "<button class=\"checkout-cancel\">Удалить</button>" +
-                   // "<h3 class=\"checkout-total\">Сумма: $" + ( Math.ceil( productPrice * productQuantity * 10 ) / 10 ) + "</h3>" +
-                   // "</div>";
-
                   "<div class=\"quantity-input\" style=\"margin: auto 0; text-align: center;\">" +
                "<input class=\"minus btn\" type=\"button\" value=\"-\">" +
                "<input class=\"input-text quantity text\" value=\""+ productQuantity +"\" size=\"4\" data-quantity=\""+productMaxQuantity+"\">" +
                "<input class=\"plus btn\" type=\"button\" value=\"+\">" +
                "<div class=\"stock\">На складе " + productMaxQuantity + " товаров</div>" +
                "</div>"+
-               "<p class=\"checkout-price\">Цена: " + productPrice + " грн</p>" +
+               "<p class=\"checkout-price\">Ціна: " + productPrice + " грн</p>" +
                "<button class=\"checkout-cancel\">Удалить</button>" +
                "<h3 class=\"checkout-total\">Сумма: $" + ( Math.ceil( productPrice * productQuantity * 10 ) / 10 ) + "</h3>" +
                "</div>";
@@ -239,7 +236,7 @@
                }
             }
          }
-      }
+      // }
    }
 
    function closePopup(event) {

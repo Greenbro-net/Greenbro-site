@@ -1,6 +1,6 @@
 <?php
-require_once('link.php');
-// $_POST["id"] =1;
+require_once('../database_connection/link.php');
+// $_POST["id"] =100;
 
 $id = isset($_POST["id"]) ? $_POST["id"] : null;
 

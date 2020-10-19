@@ -1,0 +1,13 @@
+<?php include CONTENT . 'header.phtml'; 
+$final_order_object = new FinalOrderController();
+?> 
+
+  <div id="successful_order">
+    <p>Замовлення успішно оформлено, номер вашого замовлення: <strong><?php echo $final_order_object->get_order_number(); ?>
+                                                              </strong> очікуйте повідомлення про прибуття:)
+    </p>
+  </div>
+
+ <?php include CONTENT . 'footer.phtml';
+ $final_order_object->unset_session();
+  ?>

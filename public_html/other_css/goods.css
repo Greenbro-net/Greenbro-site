@@ -1,33 +1,9 @@
-/*@font-face {
-    font-family: "FontAwesome-brands";
-    src: url("../lib/fontawesome/webfonts/fa-brands-400.woff2") format("woff2"),
-    url("../lib/fontawesome/webfonts/fa-brands-400.woff") format("woff"),
-    url("../lib/fontawesome/webfonts/fa-brands-400.ttf") format("truetype"),
-    url("../lib/fontawesome/webfonts/fa-brands-400.eot") format("embedded-opentype");
-}
-@font-face {
-    font-family: "FontAwesome-regular";
-    src: url("../lib/fontawesome/webfonts/fa-regular-400.woff2") format("woff2"),
-    url("../lib/fontawesome/webfonts/fa-regular-400.woff") format("woff"),
-    url("../lib/fontawesome/webfonts/fa-regular-400.ttf") format("truetype"),
-    url("../lib/fontawesome/webfonts/fa-regular-400.eot") format("embedded-opentype");
-}
-@font-face {
-    font-family: "FontAwesome-solid";
-    src: url("../lib/fontawesome/webfonts/fa-solid-900.woff2") format("woff2"),
-    url("../lib/fontawesome/webfonts/fa-solid-900.woff") format("woff"),
-    url("../lib/fontawesome/webfonts/fa-solid-900.ttf") format("truetype"),
-    url("../lib/fontawesome/webfonts/fa-solid-900.eot") format("embedded-opentype");
-}*/
-
 body{
     font-family: 'Roboto', sans-serif;
     background: #ececec;
+    height: 100%;
    }
-   /*img {
-    height: auto;
-    max-width: 100%;
-   }*/
+
    .content{
     margin-top: 50px;
    }
@@ -73,44 +49,15 @@ body{
    }
 
     #one{
-       
        margin-left: 10px;
-       /* width:25%; */
-       
    }
-   /* #two{
-       margin: 10px;
-       width: 25%;
-       
-   }
-
-   #three{
-       margin: 10px;
-       width:25%;
-   }
-
-   #four{
-       margin: 10px;
-       width:25%;
-   } 
-
-   #image{
-       margin:10px;
-       width: 155px;
-       height: 125px;
-   }
-
-   #block{
-       width:140px;
-   } */
-
+   
    #test{
        background-color: #d51e08;
    }
 
    .nav{
        display: inline-block;
-       /* background: dodgerblue; */
        width: 17%;
    }
 

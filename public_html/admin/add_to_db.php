@@ -93,7 +93,7 @@ foreach ($yourArray as $array) {
 $pdo = new PDO('mysql:host=hosting26.ukrnames.com;dbname=green64_products',
 DATABASE_USERNAME, DATABASE_PASSWORD, array(
     PDO::ATTR_PERSISTENT => true, 
-// This thing below very important and set right endoding
+// This thing below is very important and set right endoding
 PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -175,7 +175,7 @@ var_dump($user1);
 echo "<pre>";
 var_dump($_FILES["fileMulti"]);
 
-$target_dir = "../images/additional_images/";
+$target_dir = "../images/item_images/";
 
 if(isset($_FILES["main_image"]["name"]) && $_FILES["main_image"]["name"] != "") {
     // the loop below for adds main_image  values to fileMulti array 
@@ -187,7 +187,7 @@ if(isset($_FILES["main_image"]["name"]) && $_FILES["main_image"]["name"] != "") 
     die;
 }
 
-// the code below adds images, after it's puting images in additional_images folder an names they
+// the code below adds images, after it's puting images in item_images folder an names they
 // in order like in folder from where they were download
 // images with number 0 will be main image
 
@@ -240,7 +240,7 @@ foreach ($_FILES["fileMulti"]["name"] as $key => $error) {
             $dir_name = $id;
             if(!isset($result_mkdir)) {
                 
-              $result_mkdir =   mkdir("../images/additional_images/$dir_name", 0755);
+              $result_mkdir =   mkdir("../images/item_images/$dir_name", 0755);
             }
             
             
@@ -249,7 +249,7 @@ foreach ($_FILES["fileMulti"]["name"] as $key => $error) {
             $ext = end($tmp);
 
             $name = $key. '.' . $ext;
-            $path = "../images/additional_images/$dir_name/" . $name;
+            $path = "../images/item_images/$dir_name/" . $name;
 
             if(move_uploaded_file($_FILES["fileMulti"]["tmp_name"][$key],
             $path)) {

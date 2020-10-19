@@ -1,5 +1,5 @@
 <?php
-require_once('link.php');
+require_once('../database_connection/link.php');
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +54,7 @@ require_once('link.php');
 </div>
 <!-- End of checkout popup -->
 
-<!-- Description popup window -->
+<!-- Description popup window for goods on the page-->
 <div id="descriptionPopup" class="popup">
     <div class="container popup-content" data-simplebar>
         <div class="row">

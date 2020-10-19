@@ -1,4 +1,8 @@
-<?php include VIEW . 'header.phtml'; ?>
-<h1>Home page</h1>
-<h2>this is our main page like index.php in previous version</h2>
-<?php include VIEW . 'footer.phtml'; ?>
+<?php include CONTENT . 'header.phtml'; ?>
+
+<?php
+$allProductsObj = new AllProductsModel();
+$allProductsObj->showAllProducts();
+?>
+
+<?php include CONTENT . 'footer.phtml'; ?>

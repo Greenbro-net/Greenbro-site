@@ -31,6 +31,7 @@ require_once('../database_connection/link.php');
 <body>
 
 <!-- Checkout popup window -->
+<!-- item cart  -->
 <div id="checkoutPopup" class="popup">
     <div class="container popup-content" data-simplebar>
         <div class="row">
@@ -65,6 +66,8 @@ require_once('../database_connection/link.php');
             <div class="container">
                 <div class="row">
                     <div class="description col-lg-8 offset-lg-2 col-md-12">
+
+                   <!-- in the div below will displays description about goods  -->
                         <div class="description_block">
                             
                         </div>

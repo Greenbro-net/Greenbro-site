@@ -1,0 +1,10 @@
+Message:SQLSTATE[HY000] [2006] MySQL server has gone away<br />File: /opt/lampp/htdocs/greenbro.net/app/data/Database.data.php<br />Line: 17<br />Trace: #0 /opt/lampp/htdocs/greenbro.net/app/data/Database.data.php(17): PDO->__construct('mysql:host=gree...', 'green64_one', '123456')
+#1 /opt/lampp/htdocs/greenbro.net/app/model/AllProductsModel.model.php(9): Database::connect()
+#2 /opt/lampp/htdocs/greenbro.net/app/model/AllProductsModel.model.php(27): AllProductsModel->getAllProducts()
+#3 /opt/lampp/htdocs/greenbro.net/app/view/home/index.view.phtml(5): AllProductsModel->showAllProducts()
+#4 /opt/lampp/htdocs/greenbro.net/app/core/View.controller.php(21): include('/opt/lampp/htdo...')
+#5 /opt/lampp/htdocs/greenbro.net/app/controller/homeController.controller.php(20): View->render()
+#6 /opt/lampp/htdocs/greenbro.net/app/core/Application.controller.php(17): HomeController->allThings()
+#7 /opt/lampp/htdocs/greenbro.net/public_html/index.php(78): Application->__construct()
+#8 /opt/lampp/htdocs/greenbro.net/public_html/index.php(114): checkout_url()
+#9 {main}

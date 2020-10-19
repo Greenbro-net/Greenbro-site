@@ -7,6 +7,9 @@
 
 
 body{
+	/* testing code below  */
+	/* height: 100%; */
+
 	width: 100%;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -205,18 +208,8 @@ h1, h2, h3, h4, h5{
 	
 }
 
-.product-menu{
 
-}
-.product-price{
-	margin: 10px auto;
-	padding: 5px;
-	border-radius: 5px;
-	background-color: #EDF246;
-	width: 100px;
-    position: relative;
-	font-weight: 700;
-}
+
 
 .sale::after {
     content: 'SALE!';
@@ -321,33 +314,29 @@ h1, h2, h3, h4, h5{
 	cursor: pointer;
 }
 
-/*TODO Restyle numeric-circlied counters */
 
-.basket {
+.basket_checkout_button {
     width: 55px;
     position: fixed;
     bottom: 10px;
     right: 20px;
     padding: 5px;
-    background-color: #53A630;
+    background-color:wheat;
     -webkit-border-radius: 27px;
     -moz-border-radius: 27px;
     border-radius: 27px;
     cursor: pointer;
 	z-index: 1;
+	
+        font-size: 20px;
+		transition: all .3s;
 }
 
-/* Checkout */
-.checkout-button{
-	font-size: 20px;
-	transition: all .3s;
-}
+
 .checkout-button:hover{
 	color: #ffa300;
 }
-.checkout-cart{
-	 
-}
+
 .checkout-item {
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -458,8 +447,7 @@ h1, h2, h3, h4, h5{
 
 	width: 100%;
 }
-.descr_name{
-}
+
 .descr_name p{
 	margin: 0 auto; 
 	font-size: 20px;
@@ -468,12 +456,7 @@ h1, h2, h3, h4, h5{
 .descr_name h4{
 	font-size: 24px;
 }
-.descr_brand{
-	
-}
-.descr_main{
 
-}
 .descr_main p{
 	font-weight: 700;
 }
@@ -506,12 +489,6 @@ h1, h2, h3, h4, h5{
 #logo {
 	margin: 1px;
 	position: absolute;
-	/* float: left!important; */
-	/* float: left; */
-	/* margin-right: -300px; */
-	/* margin-left: -200px; */
-	/* margin-top: -10px;
-	position: left; */
     left: -55%; /* Расстояние от правого края окна браузера */
      top: -11%; /*Расстояние сверху */ 
     
@@ -520,8 +497,6 @@ h1, h2, h3, h4, h5{
   /* Structure for page payment_and_delivery */
 #come_back {
 	padding: 50px;
-	/* margin:450px; */
-	/* position: left; */
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	margin-left: 500px;
 	margin-top: 400px;
@@ -550,4 +525,31 @@ h1, h2, h3, h4, h5{
 /*For html document oferta*/
 #oferta {
     margin: 30px;
+}
+
+/* For page with 404 error */
+section.cases-links {
+	width: 80%;
+	padding: 10px;
+	height: 650px;
+}
+
+
+.user_information {
+	padding: 15px;
+	width: 20%;
+	margin-left: 100px;
+}
+
+.field_title {
+	display: inline-block;
+	width: 100px;
+	margin-left: 15px;
+	padding-right: 100px;
+}
+
+/* the code below for located submit button  */
+#user_ordering_submit {
+	margin-left: 18.6%;
+	padding: 20px;
 }

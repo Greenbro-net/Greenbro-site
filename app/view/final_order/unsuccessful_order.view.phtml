@@ -1,0 +1,23 @@
+<?php include CONTENT . 'header.phtml'; 
+$final_order_object = new FinalOrderController();
+?> 
+
+  <div id="unsuccessful_order">
+    <p>Виникли певні складнощі при оформленні замовлення, спробуйте ще раз.</p>
+    <p>Для допомоги або поради ви можете написати нам перейшовши за посиланням 
+     <a href="http://greenbro.com/home/contactUs"><strong>Зворотній зв'язок:)</strong></a>                                                         
+    </p>
+  </div>
+
+ <?php include CONTENT . 'footer.phtml'; 
+ $final_order_object->unset_session();
+
+ //the block of code below create exception and write in our errors file if function in orderController was not successful
+    try {
+        throw new Exception("Function adding_order_info wasn't successful in orderController.controller.php");
+        }  catch (Exception $exception) {
+            file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+            'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+                                        }
+?>
+    
