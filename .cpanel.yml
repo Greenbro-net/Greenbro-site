@@ -20,3 +20,5 @@ deployment:
     - /bin/cp -R public_html/admin $DEPLOYPATH
 #this code is for deploing to images folder
     - /bin/cp -R public_html/images $DEPLOYPATH
+#this code is for deploing to app folder
+    - /bin/cp -R public_html/app $DEPLOYPATH
