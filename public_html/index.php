@@ -2,16 +2,16 @@
 session_start();
 
 define('ROOT', dirname(__DIR__) . DIRECTORY_SEPARATOR);
-define('APP', ROOT . 'app' .  DIRECTORY_SEPARATOR);
-define('VIEW', ROOT . 'app' . DIRECTORY_SEPARATOR . 'view' . DIRECTORY_SEPARATOR);
+define('APP', ROOT . 'public_html/app' .  DIRECTORY_SEPARATOR);
+define('VIEW', ROOT . 'public_html/app' . DIRECTORY_SEPARATOR . 'view' . DIRECTORY_SEPARATOR);
 // for library
-define('LIBRARY', ROOT . 'app' . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR);
+define('LIBRARY', ROOT . 'public_html/app' . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR);
 // for content folder
-define('CONTENT', ROOT . 'app' . DIRECTORY_SEPARATOR . 'content' . DIRECTORY_SEPARATOR);
-define('MODEL', ROOT . 'app' . DIRECTORY_SEPARATOR . 'model' . DIRECTORY_SEPARATOR);
-define('DATA', ROOT . 'app' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR);
-define('CORE', ROOT . 'app' . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR);
-define('CONTROLLER', ROOT . 'app' . DIRECTORY_SEPARATOR . 'controller' . DIRECTORY_SEPARATOR);
+define('CONTENT', ROOT . 'public_html/app' . DIRECTORY_SEPARATOR . 'content' . DIRECTORY_SEPARATOR);
+define('MODEL', ROOT . 'public_html/app' . DIRECTORY_SEPARATOR . 'model' . DIRECTORY_SEPARATOR);
+define('DATA', ROOT . 'public_html/app' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR);
+define('CORE', ROOT . 'public_html/app' . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR);
+define('CONTROLLER', ROOT . 'public_html/app' . DIRECTORY_SEPARATOR . 'controller' . DIRECTORY_SEPARATOR);
 $modules = [ROOT,APP,CORE,CONTROLLER,DATA,CONTENT];
 
 
@@ -25,7 +25,7 @@ $modules = [ROOT,APP,CORE,CONTROLLER,DATA,CONTENT];
 $url = (explode( '/', $_SERVER['REQUEST_URI']));
 
 // folder where we store our classes 
-$files_name = scandir('../app/controller');
+$files_name = scandir('app/controller');
 
 foreach($files_name as $array_key => $file_name ) {
 
@@ -125,7 +125,7 @@ checkout_url();
 
 
 // we require php script below for escaping notice undefined index "action"
-require_once "../app/controller/itemController.controller.php";
+require_once "app/controller/itemController.controller.php";
 
 // we fixed notice Undefined action with @
 ?>
