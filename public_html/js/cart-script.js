@@ -42,17 +42,6 @@
             let quantity = data["quantity"];
             let sale = data["sale"];
 
-          
-            // console.log("brand - " + brand);
-            // console.log("brandId - " + brandId);
-            // console.log("datetime - " + datetime);
-            // console.log("description - " + description);
-            // console.log("image - " + image);
-            // console.log("miniDescription - " + miniDescription);
-            // console.log("name - " + name);
-            // console.log("price - " + price);
-            // console.log("quantity - " + quantity);
-            // console.log("sale - " + sale);
             
              let srcImg = "../images/picture/" + image;
            
