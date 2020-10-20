@@ -1,5 +1,7 @@
       // the code below for developing procees 
       var domain = "com";
+      // the code below for production
+      // var domain = "net";
 
       // the url below works fine 
       // the code below can reload a page 
@@ -16,7 +18,7 @@ $('#basket_checkout_button, #shopping-cart-container').click(function(ee) {    /
     }
 
    // the code below reload shopping-cart-container and displays correct info of item after updating 
-   $("#display_reload_cart_item").load("http://greenbro.{domain}/cart/show_cart_item/" + ' #cart_item_code', show_pager
+   $("#display_reload_cart_item").load("http://greenbro."+domain+"/cart/show_cart_item/" + ' #cart_item_code', show_pager
    );
 
     // stop spreading method below
@@ -130,7 +132,7 @@ $('body').click(function() {
     });
                       //  the code below has to be fixining in some way 
     // the code below reload shopping-cart-container and displays correct info of item after updating 
-    $("#display_reload_cart_item").load("http://greenbro.{domain}/cart/show_cart_item/" + ' #cart_item_code');
+    $("#display_reload_cart_item").load("http://greenbro."+domain+"/cart/show_cart_item/" + ' #cart_item_code');
 }
 
 // the function below calls in product-list.content.php and remove item from order_items table
@@ -151,9 +153,9 @@ function removeItem(product_id) {
   });
 
     // the code below reload shopping-cart-container and displays correct info of item after updating 
-    $("#display_reload_cart_item").load("http://greenbro.{domain}/cart/show_cart_item/" + ' #cart_item_code', show_pager);
+    $("#display_reload_cart_item").load("http://greenbro."+domain+"/cart/show_cart_item/" + ' #cart_item_code', show_pager);
     // the code below reload page delivery_payment_type 
-    $("#cart_item_editor").load("http://greenbro.{domain}/order/delivery_payment_type/" + ' #cart_item_editor', show_pager);
+    $("#cart_item_editor").load("http://greenbro."+domain+"/order/delivery_payment_type/" + ' #cart_item_editor', show_pager);
   }
 
 
@@ -172,7 +174,7 @@ function empty_cart_item(united_order_items) {
       }
   });
     // the code below reload shopping-cart-container and displays correct info of item after updating 
-    $("#display_reload_cart_item").load("http://greenbro.{domain}/cart/show_cart_item/" + ' #cart_item_code', show_pager
+    $("#display_reload_cart_item").load("http://greenbro."+domain+"/cart/show_cart_item/" + ' #cart_item_code', show_pager
        );
     }
 
