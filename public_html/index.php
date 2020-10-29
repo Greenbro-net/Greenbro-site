@@ -117,6 +117,8 @@ checkout_url();
 
 
 // testing code 
+var_dump($_POST['user_name'],$_POST['user_password'], $_POST['user_email'], $_POST['validation_submit'] );
+// var_dump($_POST);
 // @var_dump($_SESSION["last_customer_id"]);
 
 // the code below show number of customer order 

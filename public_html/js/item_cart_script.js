@@ -20,13 +20,13 @@ $(document).ready(function () {
 
 $('#basket_checkout_button, #shopping-cart-container').click(function(ee) {    // Added .box to the click-function
 
+  
     if ($(this).attr("class") == "box") { // check if the clicked element is .box(box what was opened does not closes after click on it)
       return false;                       // do nothing like return false
     }
 
    // the code below reload shopping-cart-container and displays correct info of item after updating 
-   $("#display_reload_cart_item").load(https+"://greenbro."+domain+"/cart/show_cart_item/" + ' #cart_item_code', show_pager
-   );
+   $("#display_reload_cart_item").load(https+"://greenbro."+domain+"/cart/show_cart_item/" + ' #cart_item_code', show_pager);
 
     // stop spreading method below
     ee.stopPropagation();
@@ -44,6 +44,7 @@ $('#basket_checkout_button, #shopping-cart-container').click(function(ee) {    /
     $(".box").hide();
     // hide active color for element(icon item cart)
     $("#basket_checkout_button").removeClass('active');
+    // checkoutButton.off().click(function(){});
   });
 });
 
@@ -86,7 +87,7 @@ $(document).ready(function () {
               // thd code below adds img fields in #images
                 
                 $("#images"+ $id).append("<img  src='" + filename + "'>");
-                alert(data);
+                // alert(data);
 
             });
          }
@@ -305,9 +306,36 @@ function show_pager() {
 
 
 
+// the function below display burger_menu in small scrin 
 
+// $(document).ready(function () {
 
-
+//   $('#burger-menu-button, #burger-menu').click(function(ee) {    // Added .box to the click-function
+  
+//       if ($(this).attr("class") == "box") { // check if the clicked element is .box(box what was opened does not closes after click on it)
+//         return false;                       // do nothing like return false
+//       }
+  
+  
+//       // stop spreading method below
+//       ee.stopPropagation();
+//       // Toggle between adding and removing the "some" class name for all "some" elements in this example for cart basket
+//       $(this).toggleClass('active');
+//       // $(".box").slideToggle();
+//     });
+//       // the code below hides cart item when clicked was outside of cart item block 
+//     $('body').click(function(ee) {
+//       if ($(ee.target).hasClass('box') || $(ee.target).hasClass("remove_button") || 
+//          $(ee.target).hasClass("btn-increment-decrement") || $(ee.target).hasClass("float-right"))
+//       {
+//         return false;
+//       }
+//       $(".box").hide();
+//       // hide active color for element(icon item cart)
+//       $("#basket_checkout_button").removeClass('active');
+//     });
+//   });
+  
 
 
 

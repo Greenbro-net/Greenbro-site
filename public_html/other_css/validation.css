@@ -1,0 +1,40 @@
+.text-danger {
+    color: red;
+    
+    font-size: 20px;
+    
+}
+
+#validation_block {
+    width: 40%;
+    height: 30%;
+    background-color: burlywood;
+}
+
+#button_submit {
+    color: green;
+    text-align: center;
+    /* left: 100px; */
+    margin-left: 100px;
+    /* position: absolute; */
+
+}
+
+#user_validation img {
+    width: 8%;
+    height: 8%;
+    float: right;
+}
+
+#test {
+    width: 30px;
+    height: 30px;
+    /* float: right; */
+    border-radius: 50%;
+    position: relative;
+}
+
+#text {
+    text-align: center;
+    position: relative;
+}

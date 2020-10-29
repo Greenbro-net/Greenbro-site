@@ -1,6 +1,6 @@
 <?php
 
-    // TO DO create method and display a page which will be show after unsuccessful adding new order to DB
+    // TO DO 
     // create a link which can help our customer if he has some troubles with ordering
 class FinalOrderController extends Controller
 {

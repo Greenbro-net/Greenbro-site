@@ -1,6 +1,6 @@
 {
-    "name": "GreenBro",
     "short_name": "GreenBro",
+    "name": "GreenBro",
     "icons": [
         {
             "src": "images/android-chrome-192x192.png",

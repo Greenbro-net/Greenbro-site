@@ -1,5 +1,4 @@
 <?php
-// TO DO after confirmation we will show successful message for our customer and unset $_SESSION["united_order"];
 
 declare(strict_types=1);
 // 1.united_order                                      gets it from SESSION
@@ -67,11 +66,6 @@ class OrderController extends Controller
       return date("Y-m-d H:i:s"); 
     }
 
-   
-
-
-
-
     public function get_order_date()
      {
          return $this->order_date;
@@ -98,11 +92,8 @@ class OrderController extends Controller
          return $this->delivery_address;
      }
 
-
-    // TO DO the notes below
     // this functions below in Controller makes URL name for calling page
     // the function below displays successful message about order and the method should call to funciton which sends email to greenbro.net@gmail.com
-
 
 
     // the function below gathers all order data then checks it and after "final submiting" add data in orders table
@@ -126,9 +117,6 @@ class OrderController extends Controller
                                              }
                         
                     // TO DO the code above doesn't work properly it should be rafactoring  as soon as possible
-
-                    // TO DO create function which unset $_SESSION["united_order"] and displays successful message for customer
-                    // if action wasn't successful displays unsuccessful message for customer
 
                 } else {
                     throw new Exception("Function gather_order_data wasn't executed successfully");
@@ -186,9 +174,5 @@ class OrderController extends Controller
         $object_mailer_model = new PHPMailerModel();
         return $object_mailer_model;
     }
-
-
-
-    
 
 }

@@ -16,13 +16,11 @@ $action = $this->getAction();
     <link rel="stylesheet" type="text/css" href="/other_css/normalize.css" media="all">
     <link rel="stylesheet" type="text/css" href="/other_css/bootstrap-grid.min.css" media="all">
     <link rel="stylesheet" type="text/css" href="/other_css/goodsNew.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/other_css/validation.css" media="all">
     <link rel="stylesheet" type="text/css" href="/lib/simplebar.css" media="all">
     <!-- css for product-list.model.php  -->
     <link rel="stylesheet" type="text/css" href="/other_css/products-item.css" media="all">
 
-    
-    <!-- testing code for navigation panel -->
-    <!-- <link rel="stylesheet" type="text/css" href="/style.css" media="all"> -->
 
     <!-- css_for_contact.php -->
     <link rel="stylesheet" type="text/css" href="../other_css/contact_css.css">
@@ -51,53 +49,6 @@ $action = $this->getAction();
 </head>
 <body>
 
-<!-- the code below displays us items cart  -->
-<!-- Checkout popup window -->
-<div id="checkoutPopup" class="popup">
-    <div class="container popup-content" data-simplebar>
-        <div class="row">
-            <div class="col-lg-12">
-                <span class="close">&times;</span>
-                <h2>Кошик покупок:</h2>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class=" checkout-cart col-lg-10 offset-lg-1 col-md-12"></div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="checkout__end col-lg-10 offset-lg-1 col-md-12">
-                <p>Всього $<span id="total"></span></p>
-                <button class="btn checkout__end-btn">Оформити замовлення</button>     
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End of checkout popup -->
-<!-- item cart above -->
-
-<!-- Description item popup window -->
-<div id="descriptionPopup" class="popup">
-    <div class="container popup-content" data-simplebar>
-        <div class="row">
-            <div class="col-lg-12 ">
-                <span id="closeDescription" class="close">&times;</span>
-            </div>
-    
-            <div class="container">
-                <div class="row">
-                    <div class="description col-lg-8 offset-lg-2 col-md-12">
-                        <div class="description_block">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End of checkout popup -->
 
 
 <!-- we add this empty tag only for footer function "up" -->
@@ -111,10 +62,14 @@ $action = $this->getAction();
 
 echo
 "<header class=\"header\" id=\"header\">
-        <div class=\"container\">
-            <div class=\"row\">
-                <div class=\"col-lg-2 col-md-2 col-sm-12  header__logo\">
-                   <span> <a id=\"logo\" href=\"\home/index\"><img src=\"https://greenbro.net/images/imgonline-com-ua-Crop-oeaYXY1h2v0.jpg\" width=\"140px\" alt=\"Logo_of_Greenbro\"></a> </span>
+      <div id=\"main_container\">
+            
+                
+                   <a id=\"link_logo\" href=\"\home/index\">
+                   <img id=\"logo_img\" src=\"https://greenbro.net/images/imgonline-com-ua-Crop-oeaYXY1h2v0.jpg\" width=\"140px\" alt=\"Logo_of_Greenbro\">
+                   </a>
+                  
+                   
                     
                     <div id=\"burger-menu-button\">
                         <div id=\"line-1\"></div>
@@ -123,18 +78,21 @@ echo
                         
                     </div>
                     
-                </div>
-                <div class=\"col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-12 navigation\" >
-                    <nav>";
+                
+                <div class=\"main_menu\">
+                    ";
                     
 require_once "sidebar.php";
 
+
+
+// TO DO burger menu doesn't work 
 echo
-"</nav>
-                </div>
+"
+            
             </div>
             
-        <div id=\"burger-menu\">
+    <div id=\"burger-menu\">
         <ul>
         <li><a href=\"//greenbro.$domain/food/show_food\">Продукти</a></li>
         <li><a href=\"//greenbro.$domain/clothes/show_clothes\">Одяг</a></li>    
@@ -143,10 +101,13 @@ echo
         <li><a href=\"//greenbro.$domain/home/allThings\">Все разом</a></li>
         <li><a href=\"//greenbro.$domain/home/paymentShipping\">Оплата і доставка</a></li>
         <li><a href=\"//greenbro.$domain/home/contactUs\">Контакти</a></li>	
-   
-            
         </ul>
     </div>
+
+    
+      </div>
     </header> ";
+
+
     
     

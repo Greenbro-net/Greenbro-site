@@ -7,9 +7,6 @@
 
 
 body{
-	/* testing code below  */
-	/* height: 100%; */
-
 	width: 100%;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -28,35 +25,123 @@ h1, h2, h3, h4, h5{
 	margin: 0 auto;
 	padding: 5px 0;
 }
+
+/*header*/
+.header {
+	background-color: #53A630;
+	padding: 5px 0;
+}
+
+/* This is for logotype block */
+
+/* the code below for logo image  */
+#logo_img {
+	margin-left: 7.5%;
+	display: inline;
+	position: absolute;
+	
+}
+
+/* #logo_img img {
+	margin-top: 0px;
+} */
+
+.header__logo {
+	/* width:150px; */
+    margin-left: 0px;
+	/* text-align: center; */
+	display: inline-block;
+	
+}
+
+.header__logo a{
+	font-family: 'Oleo Script';
+	font-weight: 400;
+	font-size: 36px;
+	line-height: 80px;
+	color: #F2F2F2;
+	transition: all .3s;
+	/* testing code below  */
+	display: inline-block;
+
+}
+
+.header__logo a:hover{
+	color: #EDF246;
+	width:50px;
+}
+
+/* main container for menu  */
+#main_container {
+	height: 67px;
+}
+
+#main_container a{
+	/* height: 70px; */
+	/* background-color: blue; */
+}
+
+#main_container a img{
+	display: inline-block;
+	/* te */
+}
+
+/* for container of logo_img  */
+/* #link_logo {
+	display: inline;
+} */
+
 /*sidebar*/
-#menu{
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	justify-content: space-around;
+.main_menu{
+	display: inline-block;
+	/* justify-content: space-around; */
+	width: 90%;
+	/* margin: auto; */
+	/* text-align: center; */
 
-	margin-top: 20px;
-
+	/* margin-top: 20px; */
+	/* testing code below  */
+	padding: 15px 0px 0px 30%;
+	/* margin: auto; */
 }
-#menu li{
+
+/* testing code below  */
+/* .main_menu div {
+	display: inline-block;
+	text-align: center;
+} */
+
+.main_menu li {
 	list-style: none;
+	display: inline-block;
+	/* text-align: center; */
+	/* margin-left: 1%; */
+	
 }
-#menu li a{
+
+.main_menu li a {
 	font-weight: 400;
 	font-size: 18px;
 	color: #F2F2F2;
 	transition: all .3s;
+	/* testing code below  */
+	/* display: inline-block; */
+	/* text-align: center; */
+	/* overflow: auto; */
+	margin-left: 20px;
+	
+	
 }
-#menu li a:hover{
+
+.main_menu li a:hover {
 	color: #EDF246;
 }
 
 
-/* Burger menu */
 
-#burger-menu-button{
+
+/* Burger menu */
+#burger-menu-button {
 	display: none;
 	position: absolute;
 	right: 15px;
@@ -119,32 +204,7 @@ h1, h2, h3, h4, h5{
 	color: #F2F2F2;
 }
 
-/*header*/
-.header{
-	background-color: #53A630;
-	padding: 10px 0;
-}
-.header__logo{
-	/* width:50px; */
-	text-align: center;
-	
-}
-.header__logo a{
-	font-family: 'Oleo Script';
-	font-weight: 400;
-	font-size: 36px;
-	line-height: 80px;
-	color: #F2F2F2;
-	transition: all .3s;
-	
-	
-}
 
-.header__logo a:hover{
-	color: #EDF246;
-	width:50px;
-	
-}
 
 .header__basket-total{
 	text-align: right;
@@ -207,9 +267,6 @@ h1, h2, h3, h4, h5{
 	height: 40px;
 	
 }
-
-
-
 
 .sale::after {
     content: 'SALE!';
@@ -485,14 +542,6 @@ h1, h2, h3, h4, h5{
 }
 
 
-/* This is for logotype */
-#logo {
-	margin: 1px;
-	position: absolute;
-    left: -55%; /* Расстояние от правого края окна браузера */
-     top: -11%; /*Расстояние сверху */ 
-    
-  }
 
   /* Structure for page payment_and_delivery */
 #come_back {
