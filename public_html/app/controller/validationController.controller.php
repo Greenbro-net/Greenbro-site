@@ -11,7 +11,7 @@
 // 4.user_password;
 // 5.date_of_create;
 
-class ValidatorController extends Controller
+class ValidationController extends Controller
 {
     public $user_name;
     public $user_email;
@@ -87,9 +87,9 @@ class ValidatorController extends Controller
                if (!call_user_func_array([$this, $rule], [$field, $item['value'], $satisifer]))
                {
                    $this->errorHandler->addError(
-                       str_replace([':field', ':satisifer'], [$field, $satisifer],  $this->messages[$rule]),
+                       str_replace([':field', ':satisifer'], [$field, $satisifer],  $this->messages[$rule])
     
-                    );
+                   );
                }
            }
        }

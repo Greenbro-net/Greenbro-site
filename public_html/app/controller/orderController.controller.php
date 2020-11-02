@@ -1,6 +1,4 @@
 <?php
-
-declare(strict_types=1);
 // 1.united_order                                      gets it from SESSION
 // 2.order_date                                        this is OK(function)
 // 3.order_customer_id

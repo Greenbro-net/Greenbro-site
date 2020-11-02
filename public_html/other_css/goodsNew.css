@@ -76,46 +76,27 @@ h1, h2, h3, h4, h5{
 	height: 67px;
 }
 
-#main_container a{
+#main_container a {
 	/* height: 70px; */
 	/* background-color: blue; */
 }
 
-#main_container a img{
+#main_container a img {
 	display: inline-block;
-	/* te */
 }
 
-/* for container of logo_img  */
-/* #link_logo {
-	display: inline;
-} */
 
 /*sidebar*/
 .main_menu{
 	display: inline-block;
-	/* justify-content: space-around; */
 	width: 90%;
-	/* margin: auto; */
-	/* text-align: center; */
-
-	/* margin-top: 20px; */
-	/* testing code below  */
 	padding: 15px 0px 0px 30%;
-	/* margin: auto; */
+	
 }
-
-/* testing code below  */
-/* .main_menu div {
-	display: inline-block;
-	text-align: center;
-} */
 
 .main_menu li {
 	list-style: none;
 	display: inline-block;
-	/* text-align: center; */
-	/* margin-left: 1%; */
 	
 }
 
@@ -124,21 +105,12 @@ h1, h2, h3, h4, h5{
 	font-size: 18px;
 	color: #F2F2F2;
 	transition: all .3s;
-	/* testing code below  */
-	/* display: inline-block; */
-	/* text-align: center; */
-	/* overflow: auto; */
 	margin-left: 20px;
-	
-	
 }
 
 .main_menu li a:hover {
 	color: #EDF246;
 }
-
-
-
 
 /* Burger menu */
 #burger-menu-button {
@@ -179,15 +151,25 @@ h1, h2, h3, h4, h5{
 	transform: translate(0px, -12px) rotate(-45deg);
 }
 
-#burger-menu{
+.burger-menu{
 	background: #53A630;
-	width: 100%;
+	width: 250px;
 	padding: 30px 10px 10px 10px;
 	color: #fff;
 	font-size: 1.5rem;
 	display: none;
 	top: 8px;
 	border-radius: 5px;
+	/* testing code below  */
+	position: absolute;
+	margin-top: 80px;
+	margin-left: 10px;
+	z-index: 20;
+}
+
+/* the code below for covering menu  */
+#burger-menu li a:hover {
+	color: #EDF246;
 }
 
 #burger-menu ul{
@@ -421,9 +403,6 @@ h1, h2, h3, h4, h5{
 	.navigation {
 		display: none !important;
 	}
-	#burger-menu-button {
-		display: block;
-	}
 	.header__logo {
 		display: flex;
 		align-items: center;
@@ -434,7 +413,6 @@ h1, h2, h3, h4, h5{
 
 .checkout-item .product-name{
 	padding: 5px 10px;
-	/*width: 40px;*/
 }
 
 .checkout-item .product__img img{
@@ -537,11 +515,8 @@ h1, h2, h3, h4, h5{
 }
 #size {
 	min-height: 100vh;
-	/* height: 100%; */
 	width: 500px;
 }
-
-
 
   /* Structure for page payment_and_delivery */
 #come_back {
@@ -550,7 +525,6 @@ h1, h2, h3, h4, h5{
 	margin-left: 500px;
 	margin-top: 400px;
 	margin-block-end: 50px;
-	/* background-color:rebeccapurple; */
   }
 
 #title {
@@ -560,7 +534,6 @@ h1, h2, h3, h4, h5{
 #list_payment_delivery {
 	padding: 15px;
 }
-
 
 /*The element for right view of page*/
 #the_biggest_one
@@ -582,7 +555,6 @@ section.cases-links {
 	padding: 10px;
 	height: 650px;
 }
-
 
 .user_information {
 	padding: 15px;

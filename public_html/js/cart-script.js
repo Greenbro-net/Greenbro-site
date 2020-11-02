@@ -75,7 +75,7 @@
       }
    }
 
-
+// the code below for burger-menu 
    $("#burger-menu-button").click(function(){
       $(this).toggleClass("active");
       $("#line-1").toggleClass("active");
@@ -237,19 +237,5 @@
       }
    }
 
-   function updateDB() {
-      if(save.length !== 0) {
-         save.forEach(function (quantity, id) {
-            let maxQuantity = $(`[data-product-id=${id}]`).children(".product-menu").children(".how-many").children(".quantity-input").children(".quantity").attr("data-quantity");
-            let diff = maxQuantity - quantity;
-
-            $.ajax({
-               url: '../scripts/dbhandler.php',
-               type: 'POST',
-               dataType: 'json',
-               data: {id:id, quantity:diff}
-            });
-         });
-      }
-   }
+   
 }());

@@ -12,12 +12,13 @@
 	 <li><a href=\"//greenbro.$domain/book/show_books\">Література</a></li>
 	 <li><a href=\"//greenbro.$domain/home/allThings\">Все разом</a></li>
 	 <li><a href=\"//greenbro.$domain/home/paymentShipping\">Оплата і доставка</a></li>
+	 <li><a href=\"//greenbro.$domain/validation/display_validation_page\" id=\"text\">
+	  <img src=\"http://greenbro.com/images/image_for_validation/user_image_arrow.png\" id=\"test\" alt=\"Увійти в систему\">Привіт)Увійти
+	 </a></li>
 	 <li><a href=\"//greenbro.$domain/home/contactUs\">Контакти</a></li>	
 	 
 	 
-	<li><a href=\"//greenbro.$domain/validator/display_validation_page\" id=\"text\">
-	<img src=\"http://greenbro.com/images/image_for_validation/user_image_arrow.png\" id=\"test\" alt=\"Увійти в систему\">Привіт)Увійти
-	</a></li>
+	
 	 
     ";
 

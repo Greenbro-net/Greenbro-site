@@ -5,7 +5,6 @@
       // var domain = "net";
       // var https = "https";
 
-
     // TO DO change in localhost http to https 
 
 
@@ -19,11 +18,11 @@
 $(document).ready(function () {
 
 $('#basket_checkout_button, #shopping-cart-container').click(function(ee) {    // Added .box to the click-function
-
+       
   
     if ($(this).attr("class") == "box") { // check if the clicked element is .box(box what was opened does not closes after click on it)
       return false;                       // do nothing like return false
-    }
+    }   
 
    // the code below reload shopping-cart-container and displays correct info of item after updating 
    $("#display_reload_cart_item").load(https+"://greenbro."+domain+"/cart/show_cart_item/" + ' #cart_item_code', show_pager);
@@ -47,10 +46,6 @@ $('#basket_checkout_button, #shopping-cart-container').click(function(ee) {    /
     // checkoutButton.off().click(function(){});
   });
 });
-
-
-  
-
   
 // the function below for displays description of item 
 $(document).ready(function () {
@@ -109,7 +104,6 @@ $('body').click(function() {
   $(".product-item").removeClass('active');
 
   // delete all elements from some id 
-  // $("#images" + $id).empty();
     //  the code above older variant which has undefined error  with $id
      $(".slider_images").empty();
     });
@@ -146,8 +140,6 @@ $('body').click(function() {
 // the function below calls in product-list.content.php and remove item from order_items table
 function removeItem(product_id) {
   // code below grabs value from input element with correct id of item 
-    // var cart_id = document.getElementById(cart_id).value;
-    // the code below passes price from hidden field to item_cart_script
        
   $.ajax({                            
       type: "POST",
@@ -190,8 +182,6 @@ function empty_cart_item(united_order_items) {
 function show_pager() {
   $(".box").slideToggle();
 }
-
-
 
 
 
@@ -307,43 +297,48 @@ function show_pager() {
 
 
 // the function below display burger_menu in small scrin 
+$(document).ready(function () {
+  $("#burger-menu-button, #burger-menu").click(function (e) {
 
-// $(document).ready(function () {
-
-//   $('#burger-menu-button, #burger-menu').click(function(ee) {    // Added .box to the click-function
+      $('.burger-menu').show();
   
-//       if ($(this).attr("class") == "box") { // check if the clicked element is .box(box what was opened does not closes after click on it)
-//         return false;                       // do nothing like return false
-//       }
+   });
+});
+ 
+
+// the code below hides burger-menu block 
+$(document).ready(function () {
+  $('body').click(function(e) {
+
+    if ($(e.target).attr("class") == "burger-menu-button") {
+          return false;
+      }
+    if ($(e.target).hasClass('burger-menu-button') || $(e.target).hasClass('burger-menu')) {
+          return false;
+      } 
   
+       $(".burger-menu").hide();
   
-//       // stop spreading method below
-//       ee.stopPropagation();
-//       // Toggle between adding and removing the "some" class name for all "some" elements in this example for cart basket
-//       $(this).toggleClass('active');
-//       // $(".box").slideToggle();
-//     });
-//       // the code below hides cart item when clicked was outside of cart item block 
-//     $('body').click(function(ee) {
-//       if ($(ee.target).hasClass('box') || $(ee.target).hasClass("remove_button") || 
-//          $(ee.target).hasClass("btn-increment-decrement") || $(ee.target).hasClass("float-right"))
-//       {
-//         return false;
-//       }
-//       $(".box").hide();
-//       // hide active color for element(icon item cart)
-//       $("#basket_checkout_button").removeClass('active');
-//     });
-//   });
-  
+      });
+  });
 
 
 
 
+// for show and hide burger-menu depends on screen size 
+$(window).resize(function() {
 
+  if ($(this).width() < 750) {
 
+    $('.burger-menu-button').show();
+    // the code below hides main menu in small screen 
+    $('.main_menu').hide();
 
+  } else {
 
-
-
-
+    $('.burger-menu-button').hide();
+    // the code below hide burger-menu 
+    $('.burger-menu').hide();
+    $('.main_menu').show();
+         }
+  });

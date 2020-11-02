@@ -6,11 +6,14 @@ $action = $this->getAction();
 
 <!DOCTYPE html>
 <html lang="en">
+<link rel="manifest" href="https://greenbro<?php  echo ".$domain"; ?>/site.webmanifest">
+<!-- <link rel="manifest" href="manifest.webmanifest"> -->
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    
      <!-- from index.php older version -->
      <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/other_css/normalize.css" media="all">
@@ -36,7 +39,7 @@ $action = $this->getAction();
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
+    
     <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="apple-mobile-web-app-title" content="GreenBro">
     <meta name="application-name" content="GreenBro">
@@ -71,11 +74,23 @@ echo
                   
                    
                     
-                    <div id=\"burger-menu-button\">
+                    <div id=\"burger-menu-button\" class=\"burger-menu-button\">
                         <div id=\"line-1\"></div>
                         <div id=\"line-2\"></div>
                         <div id=\"line-3\"></div>
-                        
+                    </div>
+
+                    <div id=\"burger-menu\" class=\"burger-menu\">
+                       <ul>
+                          <li><a href=\"//greenbro.$domain/food/show_food\">Продукти</a></li>
+                          <li><a href=\"//greenbro.$domain/clothes/show_clothes\">Одяг</a></li>    
+                          <li><a href=\"//greenbro.$domain/goods/show_goods\">Речі</a></li>
+                          <li><a href=\"//greenbro.$domain/book/show_books\">Література</a></li>
+                          <li><a href=\"//greenbro.$domain/home/allThings\">Все разом</a></li>
+                          <li><a href=\"//greenbro.$domain/home/paymentShipping\">Оплата і доставка</a></li>
+                          <li><a href=\"//greenbro.$domain/validation/display_validation_page\">Привіт)Увійти</a></li>
+                          <li><a href=\"//greenbro.$domain/home/contactUs\">Контакти</a></li>	
+                       </ul>
                     </div>
                     
                 
@@ -92,17 +107,7 @@ echo
             
             </div>
             
-    <div id=\"burger-menu\">
-        <ul>
-        <li><a href=\"//greenbro.$domain/food/show_food\">Продукти</a></li>
-        <li><a href=\"//greenbro.$domain/clothes/show_clothes\">Одяг</a></li>    
-        <li><a href=\"//greenbro.$domain/goods/show_goods\">Речі</a></li>
-        <li><a href=\"//greenbro.$domain/book/show_books\">Література</a></li>
-        <li><a href=\"//greenbro.$domain/home/allThings\">Все разом</a></li>
-        <li><a href=\"//greenbro.$domain/home/paymentShipping\">Оплата і доставка</a></li>
-        <li><a href=\"//greenbro.$domain/home/contactUs\">Контакти</a></li>	
-        </ul>
-    </div>
+    
 
     
       </div>
