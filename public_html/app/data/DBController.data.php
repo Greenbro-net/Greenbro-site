@@ -188,7 +188,7 @@ public function getDBgetCartItembyProduct($query, $params)
         $result_insert_order = $sql_statement->execute();
         
         if (empty($result_insert_order)) {
-            throw new PDOException("Insert query to order table was not success!");
+            throw new PDOException("Insert query to order table was not successful!");
                                          } else {
                                             return $result_insert_order;
                                                 }

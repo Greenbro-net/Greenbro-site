@@ -79,6 +79,7 @@ class ItemController extends Controller
 
     }
 
+    // the method below gives access to ItemModel 
     private function get_item_model()
     {
         $this->model('ItemModel');

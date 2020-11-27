@@ -205,15 +205,21 @@ checkout_url();
 
 
 // we require php script below for escaping notice undefined index "action"
+// the code below require file for manages items by AJAX
 require_once "app/controller/itemController.controller.php";
+// the code below require file for manages user login and logout 
+require_once "app/controller/validationController.controller.php";
 
 // we fixed notice Undefined action with @
 
 
 
 
+// testing code below
 
-
+// $_SESSION['user_id'] = 5;
+// unset ($_SESSION['user_id']);
+var_dump($_SESSION['user_id']);
 
 
 

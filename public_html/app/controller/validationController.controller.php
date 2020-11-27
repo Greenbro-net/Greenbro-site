@@ -13,87 +13,231 @@
 
 class ValidationController extends Controller
 {
-    public $user_name;
-    public $user_email;
-    public $user_password;
+    public function __construct() {
+    //    $this->model('ValidationModel');
+    }
 
-    public $errorHandler;
+    public function register() {
+        // $data = [
+        //     'username' => '',
+        //     'email' => '',
+        //     'password' => '',
+        //     'confirmPassword' => '',
+        //     'usernameError' => '',
+        //     'emailError' => '',
+        //     'passwordError' => '',
+        //     'confirmPasswordError' => ''
+        // ];
 
-    protected $rules = ['required', 'minlength', 'maxlength', 'email'];
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // Santize post data
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-    public $messages = [
-        'required' => 'The :field field is required',
-        'minlength' => 'The :field field must be a minumum of :satisifer length',
-        'maxlength' => 'The :field field must be a maximum of :satisifer length',
-        'email'     => 'That is not valid email address'
-    ];
+            $data = [
+                'username' => trim($_POST['username']),
+                'email' => trim($_POST['email']),
+                'contact' => trim($_POST['contact']),
+                'password' => trim($_POST['password']),
+                'confirmPassword' => trim($_POST['confirmPassword']),
+                'usernameError' => '',
+                'emailError' => '',
+                'passwordError' => '',
+                'confirmPasswordError' => ''
+            ];
+            
+            $nameValidation = "/^[a-zA-Z0-9]*$/";
+            //Validation for password
+            $passwordValidation = "/^(.{0,7}|[^a-z]*|[^\d]*)$/i";
 
-    // testing code below
-    public $validation =  [
-        'username' => [
-            'check' => true,
-            'maxlength' => 20,
-            'minlength' => 3
-        ],
-        'email' => [
-            'required' => true,
-            'maxlength' => 255,
-            'email'     => true
-        ],
-        'password' => [
-            'required' => true,
-            'minlength' =>  6
-        ]
-     ];
+            //Validate username on letters/numbers
+            if (empty($_POST['username'])) {
+                $data['usernameError'] = 'Please enter username.';
+            } elseif (!preg_match($nameValidation, $_POST['username'])) {
+                $data['usernameError'] = 'Name can only contain letters 
+                     and numbers.';
+            } else {
+                //Check if username exists
+                
+                //create object model below
+                if ($this->get_object_validation_model()->findUserByUsername($data['username'])) {
+                    $data['usernameError'] = 'Username is already taken.';
+                } else {
+                    echo "We do not have that username";
+                }
+            }
+
+            //Validate email
+            if (empty($_POST['email'])) {
+                $data['emailError'] = 'Please enter email address.';
+            } elseif (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+                 $data['emailError'] = 'Please enter the correct format.';
+            } else {
+                //Check if email exists
+
+                // create object model below
+                if ($this->get_object_validation_model()->findUserByEmail($data['email'])) {
+                    $data['emailError'] = 'Email is already taken.';
+                    // testing code below
+                    var_dump($this->get_object_validation_model()->findUserByEmail($data['email']));
+                } else {
+                    echo "We do not have that email";
+                    // testing code below 
+                    var_dump($this->get_object_validation_model()->findUserByEmail($data['email']));
+                }
+            }
+                //Validate password on length and numeric values
+                if (empty($data['password'])) {
+                    $data['passwordError'] = 'Please enter password.';
+                } elseif (strlen($data['password'] < 6)) {
+                    $data['passwordError'] = 'Password must be at least 8 characters.';
+                } elseif (!preg_match($passwordValidation, $data['password'])) {
+                    $data['passwordError'] = 'Password must have at least one numeric value.';
+                }
+
+                //Validate confirm password
+                if (empty($data['confirmPassword'])) {
+                    $data['confirmPasswordError'] = 'Please enter password.';
+                } else {
+                    if ($data['password'] != $data['confirmPassword']) {
+                    $data['confirmPasswordError'] = 'Password do not match, please try again.';
+                    }
+                }
+
+                // Make sure that errors are empty
+                if (empty($data['usernameError']) && empty($data['emailError']) &&
+                    empty($data['passwordError']) && empty($data['confirmPasswordError'])) {
+
+                    //Hash password
+                    $data['password'] = password_hash($data['password'],
+                          PASSWORD_DEFAULT);
+
+                    $hashedPassword = password_hash($data['password'],
+                          PASSWORD_DEFAULT);
+                    
+                    //Register user from model function
+                    if ($this->get_object_validation_model()->addNewUser($data["username"], $data["email"], $data["password"])) {
+                        //Redirect to the login page
+                        header('Location: http://greenbro.com/validation/login');
+                    } else {
+                        die('Something went wrong.');
+                    }
+
+                }
+        }
+        // $this->view('validation' . DIRECTORY_SEPARATOR . $data);
+        echo "<hr>";
+        var_dump($data);
+    }
+
+
+    public function login() {
+        $data = [
+            'title' => 'Login page',
+            'username' => '',
+            'password' => '',
+            'usernameError' => '',
+            'passwordError' => ''
+        ];
+
+        //Check for post
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            //Sanitize post data
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            $data = [
+                'username' => trim($_POST['username']),
+                'password' => trim($_POST['password']),
+                'usernameError' => '',
+                'passwordError' => ''
+            ];
+
+            //Validate username
+            if (empty($data['username'])) {
+                 $data['usernameError'] = 'Please enter a username.';
+            }
+
+            //Validate password
+            if (empty($data['password'])) {
+                 $data['passwordError'] = 'Please enter a password.';
+            }
+            
+
+            //Check if all errors are empty
+            if (empty($data['usernameError']) && empty($data['passwordError'])) {
+                $loggedInUser = $this->get_object_validation_model()->loginUser($data['username'], $data['password']);
+                // var_dump($_POST['password']);
+                // var_dump($data['password']);
+                // var_dump($hashedPassword);
+                var_dump($loggedInUser);
+                if ($loggedInUser) {
+                    $this->createUserSession($loggedInUser);
+                } else {
+                    $data['passwordError'] = 'Password or username is incorrect. Please try again.';
+                }
+            } else {
+                $data = [
+                    'username' => '',
+                    'password' => '',
+                    'usernameError' => '',
+                    'passwordError' => ''
+                ];
+            }
+
+        }
+        
+    }
     
-    // testing code above
+    // the method below is public wrapper for private method unsetUserSession
+    public function logout() {
+       $this->unsetUserSession();
+    }
+
+    // the method below creates session 
+    private function createUserSession($loggedInUser) {
+        $_SESSION['user_id'] = $loggedInUser[0]['user_id'];
+        $_SESSION['username'] = $loggedInUser[0]['username'];
+        $_SESSION['email'] = $loggedInUser[0]['email'];
+    }
+    // the method below for logout, unset Session 
+    private function unsetUserSession() {
+        unset($_SESSION['user_id']);
+        unset($_SESSION['username']);
+        unset($_SESSION['email']);
+    }
+
+    // the function below for gets validation model 
+    private function get_object_validation_model()
+    {
+        $this->model('ValidationModel');
+        $object_validation_model = new ValidationModel();
+        return $object_validation_model;
+    }
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
    
-    public function __construct()
-    {
-        // $this->errorHandler = $errorHandler;  
-    }
 
-    public function check($items, $rules)
-    {
-        foreach($items as $item => $value)
-        {
-            if (in_array($item, array_keys($rules)))
-            {
-                $this->validate([
-                    'field' => $item,
-                    'value' => $value,
-                    'rules' => $rules[$item]
-                ]);
-            }
-        }
-
-        return $this;
-    }
-
-    public function fails()
-    {
-        return $this->errorHandler->hasErrors();
-    }
-
-    protected function validate($item)
-    {
-       $field = $item['field'];
-
-       foreach($item['rules'] as $rule => $satisifer)
-       {
-           if (in_array($rule, $this->rules))
-           {
-               if (!call_user_func_array([$this, $rule], [$field, $item['value'], $satisifer]))
-               {
-                   $this->errorHandler->addError(
-                       str_replace([':field', ':satisifer'], [$field, $satisifer],  $this->messages[$rule])
-    
-                   );
-               }
-           }
-       }
-    }
 
     protected function required($field, $value, $satisifer)
     {
@@ -132,17 +276,10 @@ class ValidationController extends Controller
 }
 
 
-// testing code below
-// die;
-// $errorHandler1 = new ErrorHandlerController;
-    
-// var_dump($errorHandler1);
-// die;
-    // $validator = new ValidatorController($errorHandler1);
 
-    // var_dump($validator->fails());
-// var_dump($validation->errors());
-// die;
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-      // the code below for developing procees 
+      // the code below for developing process 
       var domain = "com";
       var https = "http";
       // the code below for production
@@ -184,7 +184,6 @@ function show_pager() {
 }
 
 
-
 // function for add item to cart
     // cart_id it's id in table order_items
     function increment_quantity(cart_id, price) {
@@ -299,13 +298,9 @@ function show_pager() {
 // the function below display burger_menu in small scrin 
 $(document).ready(function () {
   $("#burger-menu-button, #burger-menu").click(function (e) {
-
       $('.burger-menu').show();
-  
    });
 });
- 
-
 // the code below hides burger-menu block 
 $(document).ready(function () {
   $('body').click(function(e) {
@@ -316,9 +311,7 @@ $(document).ready(function () {
     if ($(e.target).hasClass('burger-menu-button') || $(e.target).hasClass('burger-menu')) {
           return false;
       } 
-  
        $(".burger-menu").hide();
-  
       });
   });
 
@@ -329,13 +322,10 @@ $(document).ready(function () {
 $(window).resize(function() {
 
   if ($(this).width() < 750) {
-
     $('.burger-menu-button').show();
     // the code below hides main menu in small screen 
     $('.main_menu').hide();
-
   } else {
-
     $('.burger-menu-button').hide();
     // the code below hide burger-menu 
     $('.burger-menu').hide();

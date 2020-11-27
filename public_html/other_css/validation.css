@@ -1,23 +1,41 @@
-.text-danger {
+/* the code below for validation window  */
+.active {
+   display: inline-block;
+}
+
+.error {
     color: red;
-    
-    font-size: 20px;
-    
+  }
+  
+.container {
+    z-index: 6;
 }
 
-#validation_block {
-    width: 40%;
-    height: 30%;
-    background-color: burlywood;
+.validation_container {
+    display: none;
 }
 
-#button_submit {
-    color: green;
+/* first validation container  */
+#validation_container1 {
+    margin-left: 20px;
+}
+
+/* main title */
+#main_title {
     text-align: center;
-    /* left: 100px; */
-    margin-left: 100px;
-    /* position: absolute; */
+    min-width: 60vh;
+}
 
+/* the code below likes a wrapper  */
+.validation_empty_class {
+
+}
+
+#validation_button_submit {
+    text-align: center;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
 }
 
 #user_validation img {
@@ -29,12 +47,91 @@
 #test {
     width: 30px;
     height: 30px;
-    /* float: right; */
     border-radius: 50%;
     position: relative;
 }
 
-#text {
+#validation_button {
     text-align: center;
     position: relative;
+    cursor: pointer;
+}
+
+
+
+
+/* the codes below for log window  */
+#log_in_window {
+    background-color: whitesmoke;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    z-index: 5;
+    /* display: none; */
+    margin: 20px;
+    margin-left: 30%;
+    /* display: inline-block; */
+}
+
+
+/* forget_password  */
+#block_enter_forgot {
+    /* background-color: yellowgreen; */
+    /* width: 100vh; */
+    /* display: inline-block;
+    text-align: center; */
+    width: 100%;
+}
+
+
+
+
+/* the code below for registration vindow  */
+/* the codes below for log window  */
+#registration_window {
+    background-color: whitesmoke;
+    width: 500px;
+    height: 650px;
+    position: absolute;
+    z-index: 5;
+    display: none;
+    margin: 20px;
+    margin-left: 30%;
+    /* display: inline-block; */
+}
+
+/* the code below for registration question */
+#registration_question {
+    text-align: center;
+    /* width: 100%; */
+    /* display: inline-block; */
+    /* margin: 20px; */
+    /* background-color: wheat; */
+    /* height: 100%; */
+}
+
+/* the three block of code below for switch_to_registration */
+.switch_to_registration {
+    margin-top: 30px;
+    background-color: wheat;
+    height: 100%;
+    display: block;
+}
+#registration_question {
+    height: 50px;
+}
+#registration_from_login {
+    height: 50px;
+}
+/* the end of block of code for .switch_to_registration  */
+
+
+
+#div_registration_from_login {
+    
+}
+
+/* the code below for input fields  */
+.user_information {
+    width: 40%;
 }
