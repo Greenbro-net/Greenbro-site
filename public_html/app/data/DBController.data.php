@@ -240,5 +240,91 @@ public function getDBgetCartItembyProduct($query, $params)
                                           }
     }
 
+    // the method below grabs all data from response table like associative array 
+    protected function updateResponseTable($query, $params)
+    {
+        try {
+        $sql_statement = self::connect()->prepare($query);
+
+        // this block of code for updating quantity of paremeters which we should post in execute
+        $sql_statement->bindParam(1, $params[0]["param_value"], PDO::PARAM_INT);
+
+        if (!empty($params[1]["param_value"])) {
+            $sql_statement->bindParam(2, $params[1]["param_value"], PDO::PARAM_STR);
+        }
+        
+        if (!empty($params[2]["param_value"])) {
+            $sql_statement->bindParam(3, $params[2]["param_value"], PDO::PARAM_INT);
+        }
+
+        if (!empty($params[3]["param_value"])) {
+            $sql_statement->bindParam(4, $params[3]["param_value"], PDO::PARAM_STR);
+        }
+
+        if (!empty($params[4]["param_value"])) {
+            $sql_statement->bindParam(5, $params[4]["param_value"], PDO::PARAM_INT);
+        }
+
+        if (empty($query || $params)) {
+            throw new PDOException("Function updateResponseTable doesn't get query or params");
+                                      }
+        $result_ResponseTable = $sql_statement->execute();
+        
+        // the parameter in the end for return only associative array data 
+        $result_of_method = $sql_statement->fetchAll(PDO::FETCH_ASSOC);
+
+        if (empty($result_of_method)) {
+                       return false; 
+                        } else {
+                            return $result_of_method;
+                               }
+        } catch (PDOException $exception) {
+            file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+              'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+                                          }
+
+    } 
+
+    // the method below for interaction between model and table response_rating
+    protected function updateResponseRatingTable($query, $params) 
+    {
+        try {
+        $sql_statement = self::connect()->prepare($query);
+
+        // this block of code for updating quantity of parameters which we should post in execute
+        $sql_statement->bindParam(1, $params[0]["param_value"], PDO::PARAM_INT);
+        
+        if (!empty($params[1]["param_value"])) {
+            $sql_statement->bindParam(2, $params[1]["param_value"], PDO::PARAM_INT);
+        }
+
+        if (!empty($params[2]["param_value"])) {
+            $sql_statement->bindParam(3, $params[2]["param_value"], PDO::PARAM_INT);
+        }
+
+        if (empty($query || $params)) {
+            throw new PDOException("Function updateResponseRatingTable doesn't get query or params");
+                                      }
+        $result_ResponseRatingTable = $sql_statement->execute();
+
+        // the parameter in the end for return only associative array data
+        $result_of_method_ResponseRatingTable = $sql_statement->fetchAll(PDO::FETCH_ASSOC);
+        
+        if (!empty($result_of_method_ResponseRatingTable)) {
+            return $result_of_method_ResponseRatingTable;
+          }
+        if (empty($result_of_method_ResponseRatingTable) && empty($result_ResponseRatingTable)) {
+                            return false;   
+                                } else {
+                  return $result_ResponseRatingTable;
+                                       }
+        } catch (PDOException $exception) {
+            file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+              'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+                                          }
+    }
+
+
+    
 }
 ?> 

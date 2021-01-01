@@ -4,6 +4,25 @@
     </div>
 
 <?php
+// the below function returns correct word for quantity of responses
+ function choose_right_case($quantity_of_responses) 
+{
+    $last_digit = (substr($quantity_of_responses, -1));
+   // 21,31, 41
+   if ($last_digit == 1 ) {
+       return "відгук";
+   }
+   // 22, 23, 24, 32, 33, 34, 42, 43, 44,   
+   if ($last_digit == 2 || $last_digit == 3 || $last_digit == 4) {
+       return "відгуки";
+   }
+   // 25,26,27, 28, 29, 30, 45, 46, 47,
+   if ($last_digit >= 5 && $last_digit <=9 || $last_digit == 0) {
+       return "відгуків";
+   }
+
+}
+
 // function which shows messages about quantity of products
 function showmessage($products) 
 {    
@@ -17,9 +36,27 @@ function showmessage($products)
     return $message;
 }
 
+
+// the function below displays necessary message in comment block
+function showCommentMessage($quantity_of_responses)
+{
+    if ($quantity_of_responses >= 1) {
+    // there should be a function which displays us all comments for current id 
+    // the function below returns  correct word for quantity of responses
+    echo $quantity_of_responses . " " .choose_right_case($quantity_of_responses);
+      } 
+      // there are should be a function which posts a response to DB after onclick event
+      else {
+          echo "Залишити відгук";
+           }
+}
+
+
 foreach($products as $product)
 {
     ?>
+
+
 <!-- we post item code other php scripts  -->
 <!-- there are we chouse quantity of items in window and can add item
 using post method we send variable to php script -->
@@ -31,13 +68,17 @@ using post method we send variable to php script -->
            <img src="../images/item_images/<?php echo $product["id"]; ?>/0.jpg">   
     </div>
 
-    <div class="product-title">
+    <div id="product_title" class="product-title">
              <?php echo $product["name"]; ?>
            </div>
    
-    <!-- the code below for write a response -->
-    <div class="response_block">response</div>
-    <!-- the code above for write a response -->
+    <!-- the code below displays us quantity of comments in product list page -->
+      <div class="response_block"><a href=""><?php 
+         $quantity_of_responses = $product["response_count"];
+         showCommentMessage($quantity_of_responses); ?>
+        </a>
+      </div>
+    <!-- the code above displays us a quantity of responses -->
 
     <div class="product-footer">
     <!-- the button below adds item to DB table  -->
@@ -54,52 +95,85 @@ using post method we send variable to php script -->
     <?php echo $product["price"]; ?> <te id="banknote">₴</te></div>
                       <!-- hidden field for pass price to item_cart_script -->
                       <input id="price_<?php echo $product["id"]; ?>" type=hidden value="<?php echo $product["price"]; ?>">
-      </div>
-
+       </div>
     </div>
     <!-- the div above from product item container -->
 
 
-
-
     <!-- the code below for showing description -->
-    <div class="display_description" id="show_description_<?php echo $product['id']; ?>">Our description))))
-    <!-- the part of code below for image slider  -->
-    <center>
-       <!-- <div id="images"></div> -->
-        
-       <!-- we are there!!! -->
-        <div  class="slider" onclick="zoomIn('bigger')">
-            <div class="slider_images" id="images<?php echo $product["id"]; ?>"></div>
-            <img  id="img_description_<?php echo $product['id']; ?>" src="../images/item_images/<?php echo $product['id']; ?>/0.jpg">
-        
-        </div>
+    <div class="display_description" id="show_description_<?php echo $product['id']; ?>">
 
-        <br><br>
-        <input type="button" onclick="changeSlide('prev')" value="Previous">
-        <input type="button" onclick="changeSlide('next')" value="Next">
-        <!-- <input type="button" onclick="zoomIn('smaller')" value="Make image smaller"> -->
-    </center>
+         <!-- the code below displays description of item and comments  -->
+        <div class="tabs">
+            <ul class="tabs-list">   
+               <li id="tabs-list-li<?php echo $product['id']; ?>" ><a href="#item_tab1<?php echo $product['id']; ?>">Все про товар</a></li>
+               <li ><a href="#item_tab2<?php echo $product['id']; ?>"><?php showCommentMessage($quantity_of_responses); ?></a></li>
+            </ul>
+          
+            <div id="item_tab1<?php echo $product['id']; ?>" class="tab active"  data="<?php echo $product['id']; ?>">
+               <h3><?php echo $product["name"]; ?></h3>
+               <p>
+                 <!-- the code below displays product name -->
+            <div>
+    </div>
+                 <!--  code above displays item name -->
 
+                   <!-- the part of code below for image slider  -->
+                   <center>
+                   <div  class="slider" onclick="zoomIn('bigger')">
+                   <div class="slider_images" id="images<?php echo $product["id"]; ?>"></div>
+                   <img  id="img_description_<?php echo $product['id']; ?>" src="../images/item_images/<?php echo $product['id']; ?>/0.jpg">
+                   </div>
 
-
-    <!-- the code below for description  -->
-    <!-- <div class="hidden_class" id="hidden_description"> -->
-             <?php echo $product["mini_description"]; ?>
-             <?php echo "<br>"; ?>
-             <?php echo $product["description"]; ?>
-        <!-- </div> -->
+                       <br><br>
+                   <input type="button" onclick="changeSlide('prev')" value="Previous">
+                   <input type="button" onclick="changeSlide('next')" value="Next">
+                   <!-- <input type="button" onclick="zoomIn('smaller')" value="Make image smaller"> -->
+                   </center>
+                   
+                  <?php echo $product["mini_description"]; ?> 
+                  <?php echo "<br>"; ?> 
+                  <?php echo $product["description"]; ?>
+               </p>
+            </div>
+            <div id="item_tab2<?php echo $product['id']; ?>" data="<?php echo $product['id']; ?>" class="tab">
+              
+               <!-- response-list.content.php later after fix all trouble -->
+               <!-- the code below requires block for displaying comments  -->
+               <?php     require_once 'comment/response-list.content.php'; ?>
+              <!-- the code above displays us comments from DB -->
+            </div>
+                      
+          </div>
+    <!-- the div above menu-description-container  -->
+    
     </div>
     <!-- the code above for showing description -->
 
     <?php
     }
  ?>
- </div>
 
-
+  </div>
 
   <!-- the code below for shows all grabing blocks of code which has to be reload  -->
   <div id="display_reload_cart_item"></div>
 
  
+
+
+
+
+
+  <!-- testing code below displays comments block  -->
+  <div class="phppot-container">
+      <div class="container">
+          <h2>Start Rating Script in PHP</h2>
+          <div id="course_list">
+          
+          </div>
+      </div>
+  </div>
+
+
+  

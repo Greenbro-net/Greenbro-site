@@ -9,7 +9,7 @@
       <form id="form" class="registration_window" method="post" action="http://greenbro.com/validation/register">
         <div class="form-group">
           <label class="validation_empty_class" for="name">Ім'я</label>
-          <input type="text" class="form-control" name="username" id="name">
+          <input type="text" class="form-control" name="username" id="name" autocomplete="username">
         </div>
         <div class="form-group">
           <label class="validation_empty_class" for="email">Електронна адреса</label>
@@ -21,11 +21,11 @@
         </div>
         <div class="form-group">
           <label class="validation_empty_class" for="password">Пароль</label>
-          <input type="password" class="form-control" name="password" id="password">
+          <input type="password" class="form-control" name="password" id="password" autocomplete="new-password">
         </div>
         <div class="form-group">
           <label class="validation_empty_class" for="confirmPassword">Підтвердіть пароль</label>
-          <input type="password" class="form-control" name="confirmPassword" id="confirmPassword">
+          <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" autocomplete="new-password">
         </div>
         <!-- the code below for come back to log in window  -->
         <div class="form-group">
@@ -38,6 +38,8 @@
   </div>
 </div>
 
+
+<!-- the code below has to moved to js folder -->
 <script>
     $(document).ready(function () {
         $('#form').validate({

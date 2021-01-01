@@ -2,18 +2,47 @@
 
 /* the code below for showing description of item  */
 .display_description {
-    width: 40%;
-    height: auto;
+    width: 460px;
+    /* the code below for height sets minimum and maximum size for block  */
+    height: 100%;
+    min-height: 800px;
+    /* size of block description above */
     display: none;
     background: aliceblue;
-    padding: 30px;
+    padding: 20px;
     position: absolute;
     z-index: 1;
     text-align: center;
     /* the block of code below centers our item-cart */
     top: 15%;
     left: 30%;
+
 }
+
+/* for top menu in description of item  */
+.all_about_item {
+    text-align: center;
+    
+}
+#all_about_item {
+    margin-right: 15%;
+    display:inline-block;
+    vertical-align: middle;
+    line-height: normal;  
+}
+
+
+
+/* the code below for comment container block  */
+#comment_container {
+     background-color: chartreuse;
+     display: none;
+}
+.comment_container_class {
+    width: 90%;
+    height: 90%;
+}
+
 
 /* the code below for animation when we hover class product-item */
 .product-item:hover {
@@ -61,10 +90,12 @@
     left: 0;
   }
   
-  .active {
-    display: block;
+   .active {
+    /* the important parameter from products-item-tab code  */
+    display: block !important;
     background:  #53A630;
-  }
+
+  } 
 
 /* id for main shopping-cart-container below   */
 #shopping-cart-container {
@@ -154,16 +185,20 @@
     background: rgba(0, 0, 0, 0.3);
     padding: 5px 0px;
     color: #f1f1f1;
+    /* margin-bottom: 15px; */
 }   
+
+#product_title {
+    height: 15%;
+}
     
 /* the code below for write a response */
 .response_block {
+    display: block;
     width: 224px;
     height: 35px;
-    background-color: chartreuse;
-
-
-    /* testing code below  */
+    background-color: wheat;
+    font-size: 15px;
     text-align: center;
     padding: 5px;
 }
@@ -198,8 +233,9 @@
 }
 
 .product-footer {
-    padding: 25px 10px 1px;
-    overflow: auto;
+    padding: 15px 10px 1px;
+    /* overflow: auto; */
+    height: 50px;
 }
 .float-left {
 	float:left;
@@ -213,7 +249,6 @@
     margin: 0;
     vertical-align: top;
     border: #CCC 1px solid;
-    /* border-right: 0px; */
 }
 .cart-info {
 	text-align: right; 

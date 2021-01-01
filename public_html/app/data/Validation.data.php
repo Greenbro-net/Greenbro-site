@@ -22,7 +22,7 @@ class Validation extends DBController_bro
                 "param_value" => $password
             ));
 
-        // if function was executed successfully in returns 1
+        // if function was executed successfully it returns 1
         $result_addNewUser = $this->updateRegistration($query, $params);
         if (empty($result_addNewUser)) {
                             throw new Exception("Function addNewUser wasn't successfully");

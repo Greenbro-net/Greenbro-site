@@ -205,13 +205,29 @@ class ValidationController extends Controller
         unset($_SESSION['email']);
     }
 
-    // the function below for gets validation model 
+    // the method below for gets validation model 
     private function get_object_validation_model()
     {
         $this->model('ValidationModel');
         $object_validation_model = new ValidationModel();
         return $object_validation_model;
     }
+
+}
+    // the block of code below for ajax magages of validation 
+    $object_ValidationController = new ValidationController();
+
+    // the function below log out user 
+    // we use @ below for escape notice undefined index
+    if (@$_GET["action"] == "logout") {
+        $object_ValidationController->logout();
+    }
+
+    // the function below log in user 
+    if (@$_GET["action"] == "login") {
+        $object_ValidationController->login();
+    }
+
 
     
 
@@ -239,41 +255,41 @@ class ValidationController extends Controller
    
 
 
-    protected function required($field, $value, $satisifer)
-    {
-        return !empty(trim($value));
-    }
+//     protected function required($field, $value, $satisifer)
+//     {
+//         return !empty(trim($value));
+//     }
 
-    protected function minlength($field, $value, $satisifer)
-    {
-        return mb_strlen($value) >= $satisifer;
-    }
+//     protected function minlength($field, $value, $satisifer)
+//     {
+//         return mb_strlen($value) >= $satisifer;
+//     }
 
-    protected function maxlength($field, $value, $satisifer)
-    {
-        return mb_strlen($value) <= $satisifer;
-    }
+//     protected function maxlength($field, $value, $satisifer)
+//     {
+//         return mb_strlen($value) <= $satisifer;
+//     }
 
-    protected function email($field, $value, $satisifer)
-    { 
-        return filter_var($value, FILTER_VALIDATE_EMAIL);
-    }
+//     protected function email($field, $value, $satisifer)
+//     { 
+//         return filter_var($value, FILTER_VALIDATE_EMAIL);
+//     }
 
-    // the function below gets variables from validation form
-    public function get_validation_data()
-    {
-        var_dump($_POST['user_name'],$_POST['user_password'], $_POST['user_email']);
-        // $_SESSION['user'] = ;
-    }
+//     // the function below gets variables from validation form
+//     public function get_validation_data()
+//     {
+//         var_dump($_POST['user_name'],$_POST['user_password'], $_POST['user_email']);
+//         // $_SESSION['user'] = ;
+//     }
 
-    public function display_validation_page()
-    {
-        $this->view('validation' . DIRECTORY_SEPARATOR . 'validation_page');
-        // the code below is testing because it will be only small window
-        $this->view->page_title = 'Валідація';
-        $this->view->render();
-    }
-}
+//     public function display_validation_page()
+//     {
+//         $this->view('validation' . DIRECTORY_SEPARATOR . 'validation_page');
+//         // the code below is testing because it will be only small window
+//         $this->view->page_title = 'Валідація';
+//         $this->view->render();
+//     }
+// }
 
 
 

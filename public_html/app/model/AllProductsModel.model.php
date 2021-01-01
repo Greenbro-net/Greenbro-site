@@ -1,15 +1,22 @@
 <?php
 
-class AllProductsModel extends Database
+class AllProductsModel extends DBController
 {
-    public function getAllProducts()
+    private function getAllProducts()
     {
         try {
-        $sql = "SELECT * FROM products";
+
+            $sql = "SELECT P.*, COUNT(R.product_id) AS response_count
+            FROM `products` P
+            LEFT JOIN `response` R ON `R`.`product_id` = `P`.`id`
+            group by P.id"; 
+             
+                  
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute();
-    
-        $results_AllProducts = $stmt->fetchAll();
+        
+        // the parameter in the end for grabs only associative array data 
+        $results_AllProducts = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if (empty($results_AllProducts)) {
                     throw new Exception("Function getAllProducts wasn't successful");
                         } else {
@@ -23,7 +30,7 @@ class AllProductsModel extends Database
     }
 
     public function showAllProducts()
-    {
+    {   
         $products = $this->getAllProducts();
         include CONTENT . 'product-list.content.php';
     }

@@ -23,23 +23,36 @@ $action = $this->getAction();
     <link rel="stylesheet" type="text/css" href="/lib/simplebar.css" media="all">
     <!-- css for product-list.model.php  -->
     <link rel="stylesheet" type="text/css" href="/other_css/products-item.css" media="all">
+    <!-- css for product-item-tab in comment section  -->
+    <link rel="stylesheet" type="text/css" href="/other_css/products-item-tab.css" media="all">
+    <!-- css below for comments block  -->
+    <link rel="stylesheet" type="text/css" href="/other_css/comments-style.css" media="all">
+    <!-- css  below for rating of comments block  -->
+    <link rel="stylesheet" type="text/css" href="/other_css/star-rating-style.css" media="all">
+
      <!-- for validation form with AJAX -->
      <!-- <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script> -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-<!-- code for validation form with AJAX above -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <!-- code for validation form with AJAX above -->
+
+    <!-- code below for js comments section  -->
+    <script defer src="/js/rating-script.js"></script>
+    <script defer src="/js/comment-script.js"></script>
 
     <!-- css_for_contact.php -->
     <link rel="stylesheet" type="text/css" href="../other_css/contact_css.css">
     <!--js-script captcha by google for contact page-->
    <script src='https://www.google.com/recaptcha/api.js?hl=uk' async defer></script>
 
-   <!-- this part was in footer in older version  -->
+    <!-- this part was in footer in older version  -->
     <!-- <script defer src="/lib/jquery-3.3.1.js"></script> -->
     <script defer src="/js/item_cart_script.js"></script>
     <script defer src="/lib/simplebar.min.js"></script>
     <script defer src="/js/validation-script.js"></script>
+    <!-- the code below for ajax login and logout system  -->
+    <script defer src="/js/ajax-validation-script.js"></script>
     
 
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
@@ -123,6 +136,13 @@ echo "<div class=\"validation_window\">";
 require_once "validation/login.content.php";
 // the code below for registration window 
 require_once "validation/registration.content.php";
+// the code below for comments things
+//  it's like a view 
+// require_once "getRatingData.php"; 
+
+
+
+//  the div below closes div block  
 echo "</div>";
 
 

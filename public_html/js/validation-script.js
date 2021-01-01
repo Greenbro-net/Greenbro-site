@@ -1,6 +1,6 @@
 // the function below displays  window for log in
 $(document).ready(function () {
-    $("#validation_button, #log_in_window").click(function (re) {
+    $(".validation_button, #log_in_window").click(function (re) {
       if ($(re.target).hasClass('validation_window') || $(re.target).hasClass('row mt-3') || $(re.target).hasClass('col-md-6') ||
           $(re.target).hasClass('row mt-3')   || $(re.target).hasClass('mb-3') || $(re.target).hasClass('form-control') || $(re.target).hasClass('form-group') ||
           $(re.target).hasClass('field_title') || $(re.target).hasClass('user_information') || $(re.target).hasClass('validation_empty_class') || 
@@ -154,4 +154,7 @@ $(document).ready(function () {
           }
         });
       });
+
+
+      
 

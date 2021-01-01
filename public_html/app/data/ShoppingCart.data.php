@@ -8,7 +8,7 @@ class ShoppingCart extends DBController
     public function getMemberCartItem($united_order_items)
     {   
         try {
-        // * it is means select all rows from table 
+        // * it is meaning select all rows from table 
            // AS command is used to rename a column or table with an alias
    
            //    the code below gets from products some rows 

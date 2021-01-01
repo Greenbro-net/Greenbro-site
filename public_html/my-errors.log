@@ -1,5 +1,10 @@
-Message:Function loginUser doesn't get username of password parameter<br />File: /opt/lampp/htdocs/greenbro.net/public_html/app/model/ValidationModel.model.php<br />Line: 20<br />Trace: #0 /opt/lampp/htdocs/greenbro.net/public_html/app/controller/validationController.controller.php(174): ValidationModel->loginUser('Akella', '11111111')
-#1 /opt/lampp/htdocs/greenbro.net/public_html/app/core/Application.controller.php(17): ValidationController->login()
-#2 /opt/lampp/htdocs/greenbro.net/public_html/index.php(107): Application->__construct()
-#3 /opt/lampp/htdocs/greenbro.net/public_html/index.php(191): checkout_url()
-#4 {main}
+Message:SQLSTATE[HY000] [2006] MySQL server has gone away<br />File: /opt/lampp/htdocs/greenbro.net/public_html/app/data/Database.data.php<br />Line: 19<br />Trace: #0 /opt/lampp/htdocs/greenbro.net/public_html/app/data/Database.data.php(19): PDO->__construct('mysql:host=gree...', 'green64_one', '123456')
+#1 /opt/lampp/htdocs/greenbro.net/public_html/app/model/BookModel.model.php(16): Database::connect()
+#2 /opt/lampp/htdocs/greenbro.net/public_html/app/model/BookModel.model.php(34): BookModel->getBooks()
+#3 /opt/lampp/htdocs/greenbro.net/public_html/app/view/book/index.view.phtml(5): BookModel->showBooks()
+#4 /opt/lampp/htdocs/greenbro.net/public_html/app/core/View.controller.php(21): include('/opt/lampp/htdo...')
+#5 /opt/lampp/htdocs/greenbro.net/public_html/app/controller/bookController.controller.php(10): View->render()
+#6 /opt/lampp/htdocs/greenbro.net/public_html/app/core/Application.controller.php(17): BookController->show_books()
+#7 /opt/lampp/htdocs/greenbro.net/public_html/index.php(107): Application->__construct()
+#8 /opt/lampp/htdocs/greenbro.net/public_html/index.php(191): checkout_url()
+#9 {main}

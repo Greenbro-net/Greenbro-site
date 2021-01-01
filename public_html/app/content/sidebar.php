@@ -11,18 +11,25 @@
 
      <!-- TO DO create method when user log in system, button logout in sidebar unset session after onclick  -->
 	 <!-- code below for changing view for login and logout -->
+	 <div id="reload_main"></div>
+	 <div id="reload_window_1">
 	 <?php if (isset($_SESSION['user_id'])) : ?>
 	    <!-- <li id="validation_button" class="validation_button"><a class="validation_button">
 	      <img src="http://greenbro.<?php echo $domain; ?>/images/image_for_validation/user_image_arrow.png" id="test" alt="Увійти в систему">Привіт)Вийти
 	    </a></li> -->
-		<li><a href="//greenbro.<?php echo $domain; ?>/validation/logout">Logout</li>
+		<!-- the block below for empting item cart(delete all items in cart)  -->
+        <input onclick="logout_user()" id="validation_button" 
+        src="/images/images_for_cart/empty-cart.png"
+		alt="empty-cart" title="Вийти" type="image"
+        class="validation_button"/>
      <?php else : ?>
 	 <li id="validation_button" class="validation_button"><a class="validation_button">
 	  <img src="http://greenbro.<?php echo $domain; ?>/images/image_for_validation/user_image_arrow.png" id="test" alt="Увійти в систему">Привіт)Увійти
 	 </a></li>
 	 <?php endif; ?>
+	 </div>
 	 <!-- code below for changing view for login and logout -->
-
+     
 
 	 <li><a href="//greenbro.<?php echo $domain; ?>/home/contactUs">Контакти</a></li>	
 	

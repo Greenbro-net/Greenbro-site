@@ -1,15 +1,22 @@
 <?php
 
-class ClothesModel extends Database
+class ClothesModel extends DBController
 {
-    public function getClothes()
+    private function getClothes()
     {
         try {
-        $sql = "SELECT * FROM products  WHERE category_id = 'clothes'";
+        $sql = "SELECT P.*,  COUNT(R.product_id) as response_count 
+            FROM `products` P
+            LEFT JOIN `response` R ON `R`.`product_id` = `P`.`id`
+            WHERE category_id = 'clothes'
+            group by P.id";
+        
+        
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute();
-
-        $results_getClothes = $stmt->fetchAll();
+        
+          // the parameter in the end for grabs only associative array data
+        $results_getClothes = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if (empty($results_getClothes)) {
                 throw new Exception("Function getClothes wasn't successful");
                     } else {

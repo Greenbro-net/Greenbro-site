@@ -1,15 +1,22 @@
 <?php
 
-class BookModel extends Database
+class BookModel extends DBController
 {
-    public function getBooks()
+    private function getBooks()
     {
         try {
-        $sql = "SELECT * FROM products  WHERE category_id = 'books'";
+
+        $sql = "SELECT P.*,  COUNT(R.product_id) as response_count 
+            FROM `products` P
+            LEFT JOIN `response` R ON `R`.`product_id` = `P`.`id`
+            WHERE category_id = 'books'
+            group by P.id";
+        
+
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute();
 
-        $results_getBooks = $stmt->fetchAll();
+        $results_getBooks = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if (empty($results_getBooks)) {
                 throw new Exception("Function getBooks wasn't successful");
                      } else {
@@ -23,7 +30,7 @@ class BookModel extends Database
     }
 
     public function showBooks()
-    {
+    {   
         $products = $this->getBooks();
         include CONTENT . 'product-list.content.php';
     }

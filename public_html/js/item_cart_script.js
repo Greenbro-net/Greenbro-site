@@ -61,13 +61,25 @@ $(document).ready(function () {
       }
 
       e.stopPropagation();
-      alert($(this).attr("data"));
+      // the code below displays message after click on item 
+      // alert($(this).attr("data"));
       $id = $(this).attr("data");
       
-      // the method below shows  us station info block 
+      // the method below shows and hides us station info block 
       $("#show_description_" + $id).slideToggle();
       // the code below makes image visible when we open description block
       $('#img_description_' + $id).addClass('active');
+
+
+      // testing code tab-comment-block below 
+      $('#item_tab1' + $id).addClass('active');
+      $(".tab").hide();      
+      // the code below add active class to tab in item description 
+      $('#tabs-list-li' + $id).addClass('active');
+      
+
+
+
   
       // the ajax method below loads images with necessary folder 
       $.ajax({
@@ -108,6 +120,8 @@ $('body').click(function() {
      $(".slider_images").empty();
     });
 });
+ 
+
 
 
 
@@ -332,3 +346,49 @@ $(window).resize(function() {
     $('.main_menu').show();
          }
   });
+
+
+// the code below switchs between different tab in description section
+// copy paste version
+$(document).ready(function(){
+
+  $(".tabs-list li a").click(function(es){
+    // The event.preventDefault() method stops the default action of an element from happening.
+     es.preventDefault();
+  });
+
+  
+  $(".tabs-list li").click(function(){
+
+    // alert("Our id" +$id);
+
+     var tabid = $(this).find("a").attr("href");  
+    // alert("Our tabid" + tabid);
+
+    //  second part after comma for removing active class   ::.tabs div.tab
+     $(".tabs-list li,.tabs div.tab").removeClass("active");   // removing active class from tab
+
+     $(".tab").hide();   // hiding open tab
+     $(tabid).show();    // show tab
+    //  the code below for tab 
+     $(this).addClass("active"); //  adding active class to clicked tab
+
+  });
+
+});
+
+
+
+// delete in the future code below if it's not neccessary 
+// the code below displays comments for item 
+// $(document). ready(function () {
+//   $(".response_block_class, #comment_container"). click(function(comment) {
+//      if ($(comment.target).hasClass('comment_container_class')) {
+//        return false;
+//      }
+
+//      alert ("Function displays comment was run");
+//      $('.display_description').hide();
+//      $('.comment_container_class').toggle();
+//   });
+// });
