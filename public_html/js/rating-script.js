@@ -68,7 +68,7 @@ function mouseOutRating(response_id, rating, appearance) {
 
 
 
-
+  // variable response_id is empty
   // function for safe rating and add  class for star 
   function addClassStar(currentElement, response_id, rating, appearence) {
     var keep_rating = rating;
