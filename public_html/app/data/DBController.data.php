@@ -122,7 +122,7 @@ public function getDBgetCartItembyProduct($query, $params)
     { 
         try {
         // we separate connect() and prepare to get pdo object for method lastInsertId()
-        $pdo= self::connect();
+        $pdo = self::connect();
         $sql_statement = $pdo->prepare($query);
         // this block of code for updating quantity of paremeters which we should post in execute
         $sql_statement->bindParam(1, $params[0]["param_value"], PDO::PARAM_STR);
@@ -239,44 +239,90 @@ public function getDBgetCartItembyProduct($query, $params)
               'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
                                           }
     }
+    // the method below for select data from response table like associative array 
+    protected function receiveResponseTable($query,  $params) 
+    {
+        try {
+            $sql_statement = self::connect()->prepare($query);
+    
+            // this block of code for updating quantity of paremeters which we should post in execute
+                $sql_statement->bindParam(1, $params[0]["param_value"], PDO::PARAM_INT);
+    
+            if (!empty($params[1]["param_value"])) {
+                $sql_statement->bindParam(2, $params[1]["param_value"], PDO::PARAM_STR);
+            }    
+    
+            if (empty($query || $params)) {
+                throw new PDOException("Function receiveResponseTable doesn't get query or params");
+                                          }
+            $result_ResponseTable = $sql_statement->execute();
+            
+            // the parameter in the end for return only associative array data 
+            $result_of_method = $sql_statement->fetchAll(PDO::FETCH_ASSOC);
+    
+            if (empty($result_of_method)) {
+                           return false; 
+                            } else {
+                                return $result_of_method;
+                                   }
+            } catch (PDOException $exception) {
+                file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+                  'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+                                              }
+    
+    }
 
-    // the method below grabs all data from response table like associative array 
+    // the method below for insert data to response table 
     protected function updateResponseTable($query, $params)
     {
         try {
-        $sql_statement = self::connect()->prepare($query);
+        // we separate connect() and prepare to get pdo object for method lastInsertId()
+        $pdo = self::connect();
+        $sql_statement = $pdo->prepare($query);
 
         // this block of code for updating quantity of paremeters which we should post in execute
-        $sql_statement->bindParam(1, $params[0]["param_value"], PDO::PARAM_INT);
+            $sql_statement->bindParam(1, $params[0]["param_value"], PDO::PARAM_INT);
 
         if (!empty($params[1]["param_value"])) {
             $sql_statement->bindParam(2, $params[1]["param_value"], PDO::PARAM_STR);
         }
         
         if (!empty($params[2]["param_value"])) {
-            $sql_statement->bindParam(3, $params[2]["param_value"], PDO::PARAM_INT);
+            $sql_statement->bindParam(3, $params[2]["param_value"], PDO::PARAM_STR);
         }
 
         if (!empty($params[3]["param_value"])) {
-            $sql_statement->bindParam(4, $params[3]["param_value"], PDO::PARAM_STR);
+            $sql_statement->bindParam(4, $params[3]["param_value"], PDO::PARAM_INT);
         }
 
         if (!empty($params[4]["param_value"])) {
-            $sql_statement->bindParam(5, $params[4]["param_value"], PDO::PARAM_INT);
+            $sql_statement->bindParam(5, $params[4]["param_value"], PDO::PARAM_STR);
+        }
+
+        if (!empty($params[5]["param_value"])) {
+            $sql_statement->bindParam(6, $params[5]["param_value"], PDO::PARAM_STR);
         }
 
         if (empty($query || $params)) {
             throw new PDOException("Function updateResponseTable doesn't get query or params");
                                       }
-        $result_ResponseTable = $sql_statement->execute();
         
-        // the parameter in the end for return only associative array data 
-        $result_of_method = $sql_statement->fetchAll(PDO::FETCH_ASSOC);
-
-        if (empty($result_of_method)) {
+         $result_ResponseTable = $sql_statement->execute();
+        if (empty($result_ResponseTable)) {
+            throw new PDOException("Method updateResponseTable doesn't return result of execution");
+                                           }
+        
+         // the code below gets last_id from customers table after inserted new customer
+         $last_response_id = $pdo->lastInsertId();
+        
+        if (empty($last_response_id)) {
+            throw new PDOException("Last response id is empty");
+        }
+        
+        if (empty($result_ResponseTable)) {
                        return false; 
                         } else {
-                            return $result_of_method;
+                            return $last_response_id;
                                }
         } catch (PDOException $exception) {
             file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .

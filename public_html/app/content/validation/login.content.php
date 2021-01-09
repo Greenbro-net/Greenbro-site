@@ -31,7 +31,8 @@
         
         <div id="block_enter_forgot">
           <!-- testing form code below  -->
-          <input  type="button" name="submit" id="submit" class="btn btn-primary" value="Вхід"/>
+          <!-- test with inserted function below -->
+          <input  type="button" name="submit" onclick="log_in_user()" id="submit" class="btn btn-primary" value="Вхід"/>
           <span id="error_message" class="text-danger"></span>
           <span id="success_message" class="text-success"></span>
 
@@ -53,34 +54,3 @@
 </form>
 
 
-<!-- the code below has to moved to js folder -->
-<script>
-$(document).ready(function() {
-  $('#submit').click(function() {
-
-     var username = $('#name').val();
-     var password = $('#password').val();
-
-     if (username == '' || password == '')
-     {
-         $('#error_message').html("All Fields are required");
-     } else {
-         $('#error_message').html('');
-         $.ajax({
-             url:"http://greenbro.com/validation/login",
-             method:"POST",
-             data:{username:username, password:password},
-             success:function(data) {
-               $("form").trigger("reset");
-               $("#success_message").fadeIn().html(data);
-              
-              //  the code below doesn't work properly
-               setTimeout(function(){
-                 $('#success_message').fadeOut('slow');
-               }, 4000);
-             }
-         });
-     }
-  });
-});
-</script>

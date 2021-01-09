@@ -3,10 +3,20 @@
 class ResponseController extends Controller
 {
     public $user_id; 
-    public $response_id = 5;
-    public $rating = 3;
-    // the code below just for testing method 
-
+    public $user_name;
+    public $user_email_response;
+    public $product_id;
+    public $comment;
+    public $rating;
+    public $created_at;
+    // the method below filter input data
+    public function filter_data($data)
+    {
+        $data = trim($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+    
     // the function below displays view page 
     public function show_response()
     {
@@ -34,58 +44,127 @@ class ResponseController extends Controller
                 }
     }
     // the method below for jquery function which checking user_id 
-    public function isLoggedIn() {
-        if (!$this->checkUserid()) {
+    public function notLogIn() {
             $form_data['success'] = false;
             $form_data['posted'] = 'User did not log in';
             echo json_encode($form_data);
-        } else {
-            return true;
-               }
-        
     }
+    // the methods below gets current date 
+    protected function create_date_of_comment()
+    {  
+        date_default_timezone_set("Europe/Kiev");
+        return date("Y-m-d H:i:s"); 
+    }
+    protected function set_created_at()
+    {
+        $created_at = $this->created_at = $this->create_date_of_comment();
+    }
+    public function get_created_at()
+    {
+         $this->set_created_at();
+         return $this->created_at;
+    }
+    // the methods below get user name
+    protected function set_user_name()
+    {
+        $user_name = $this->user_name = $this->filter_data($_POST["user_name"]);
+    }
+    public function get_user_name()
+    {
+        $this->set_user_name();
+        return $this->user_name;
+    }
+    // the methods below get user email response 
+    protected function set_user_email_response()
+    {   
+        $user_email_response = $this->user_email_response = $this->filter_data($_POST["user_email_response"]);
+    }
+    public function get_user_email_response()
+    {
+        $this->set_user_email_response();
+        return $this->user_email_response;
+    }
+    // the methods below get actual product_id
+    protected function set_product_id()
+    {
+        $product_id = $this->product_id = $this->filter_data($_POST["product_id"]);  
+    }
+    public function get_product_id()
+    {
+        $this->set_product_id();
+        return $this->product_id;
+    }
+    //the methods  below get comment
+    protected function set_comment()
+    {
+        $comment = $this->comment = $this->filter_data($_POST["comment"]);
+    }
+    public function get_comment()
+    {
+        $this->set_comment();
+        return $this->comment;
+    }
+    // the methods below get actual rating
+    protected function set_rating()
+    {
+        $rating =  $this->rating = $this->filter_data($_POST["rating"]);        
+    }
+    public function get_rating()
+    {
+        $this->set_rating();
+        return $this->rating;
+    }
+    // the methods below get response id from response table
+    protected function set_response_id()
+    {
+
+    }
+
 
     // the code below has to be edit for our app
-    public function grab_from_db()
-    {
-        var_dump($this->get_object_response_model()->public_findItemResponse(97));
-    }
+    // public function grab_from_db()
+    // {
+    //     var_dump($this->get_object_response_model()->public_findItemResponse(97));
+    // }
 
-    // the method below setter for user_id 
+    // the methods below for user_id 
     private function set_user_id()
     {
-      $user_id = $this->user_id = $_SESSION["user_id"];
+      $user_id = $this->user_id = $this->filter_data($_SESSION["user_id"]);
     }
-
     public function get_user_id() 
     {
         $this->set_user_id();
         return $this->user_id;
     }
-    public function get_response_id()
-    {
-        return $this->response_id;
-    }
-    public function get_rating()
-    {
-        return $this->rating;
-    }
+
 
     // TO DO a method which checks if user has already left a comment
+    // the method below checks has user already added a comment for actual item
+    public function checkUserComment()
+    {
+
+    }
+    
 
     // the method below for adds new response rating in response_rating table 
     public function call_addNewComment()
     {
+
         // the code below will work if user doesn't log in 
-        if (!$this->isLoggedIn()) {
-            $form_data['success'] = false;
-            $form_data['posted'] = 'User did not log in';
-            echo json_encode($form_data);
+        if (!$this->checkUserid()) {
+            $this->notLogIn();
         }
         // firstly check if user log in or not 
          elseif ($this->checkUserid()) {
-            if (@$this->get_object_response_model()->addNewRating($this->get_user_id(), $this->get_response_id(), $this->get_rating())) {
-                //  the message below displays by AJax
+                // the code below adds new comment in table response
+            if ($last_response_id =  $this->get_object_response_model()->addNewComment($this->get_user_id(), $this->get_user_name(), 
+                $this->get_user_email_response(), $this->get_product_id(), $this->get_comment(), $this->get_created_at()))
+          
+            {   
+                // last_response_id receives from method above
+                $this->get_object_response_model()->addNewRating($this->get_user_id(), $last_response_id, $this->get_rating());
+                // the message below displays by AJax
                 // $back_message = "Коментар був успішно доданий";
                 // echo "Коментар був успішно доданий";
                 $form_data['success'] = true;
@@ -128,9 +207,6 @@ class ResponseController extends Controller
                 echo "You have added rating already.";
                }
     }
-
-
-
 
 
 

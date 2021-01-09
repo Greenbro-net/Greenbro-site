@@ -50,7 +50,10 @@ for ($count = 1; $count <= 5; $count ++) {
         <img src="../../../images/comment_image/loader.gif" class="loader-icon">
         <div class="response" id="response-<?php echo $row['id']; ?>"></div>
 
-        <div  class="message_place" id="message_place<?php echo $row['id']; ?>"></div>
+        <!-- <div  class="message_place" id="message_place<?php 
+        // echo $row['id']; 
+        ?>"></div> -->
+
         <!-- testing code above -->
     
     <p class="text-address">

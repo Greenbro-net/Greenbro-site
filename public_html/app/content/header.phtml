@@ -6,7 +6,8 @@ $action = $this->getAction();
 
 <!DOCTYPE html>
 <html lang="en">
-<link rel="manifest" href="https://greenbro<?php  echo ".$domain"; ?>/site.webmanifest">
+  <!-- the code for webmanifest has to be edit in production  -->
+<link rel="manifest" href="http://greenbro<?php  echo ".$domain"; ?>/site.webmanifest">
 <!-- <link rel="manifest" href="manifest.webmanifest"> -->
 <head>
     
@@ -66,16 +67,14 @@ $action = $this->getAction();
     <meta name="theme-color" content="#ffffff">
 
 
-
-    <title><?php echo (isset($this->page_title) ? $this->page_title : 'Welcome to my site');?></title>
+    <title><?php echo (isset($this->page_title) ? $this->page_title : 'Welcome:)');?></title>
 </head>
 <body>
 
 
 
 <!-- we add this empty tag only for footer function "up" -->
-<section id="catalog">
-</section>
+<section id="catalog"></section>
     
 </body>
 </html>
@@ -84,8 +83,7 @@ $action = $this->getAction();
       <div id="main_container">
             
                    <a id="link_logo" href="home/index">
-                   <img id="logo_img" src="https://greenbro.net/images/imgonline-com-ua-Crop-oeaYXY1h2v0.jpg" width="140px" alt="Logo_of_Greenbro">
-                   </a>
+                   <img id="logo_img" src="https://greenbro.net/images/imgonline-com-ua-Crop-oeaYXY1h2v0.jpg" width="140px" alt="Logo_of_Greenbro"></a>
                   
                     <div id="burger-menu-button" class="burger-menu-button">
                         <div id="line-1"></div>
@@ -101,27 +99,13 @@ $action = $this->getAction();
                           <li><a href="//greenbro.<?php echo $domain; ?>/book/show_books">Література</a></li>
                           <li><a href="//greenbro.<?php echo $domain; ?>/home/allThings">Все разом</a></li>
                           <li><a href="//greenbro.<?php echo $domain; ?>/home/paymentShipping">Оплата і доставка</a></li>
-                          
-                          <!-- code below for changing view for login and logout -->
-                        <?php if (isset($_SESSION['user_id'])) : ?>
-                          <li><a href="//greenbro.<?php echo $domain; ?>/validation/logout">Привіт)Вийти</a></li>
-                        <?php else : ?>
-                          <li><a href="//greenbro.<?php echo $domain; ?>/validation/logout">Привіт)Увійти</a></li>
-                        <?php endif; ?>
-                          <!-- the code above for changing view for login and logout -->
-
-                          
                           <li><a href="//greenbro.<?php echo $domain; ?>/home/contactUs">Контакти</a></li>	
                        </ul>
                     </div>
                     
-                
                 <div class="main_menu">
 <?php                 
 require_once "sidebar.php";
-// the require once below for validation window
-// require_once "validation/validation-form.content.php";
-
 
 
 
@@ -136,78 +120,10 @@ echo "<div class=\"validation_window\">";
 require_once "validation/login.content.php";
 // the code below for registration window 
 require_once "validation/registration.content.php";
-// the code below for comments things
-//  it's like a view 
-// require_once "getRatingData.php"; 
+
 
 
 
 //  the div below closes div block  
 echo "</div>";
 
-
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// testing code below
-// <?php 
-
-// echo
-// "<header class=\"header\" id=\"header\">
-//       <div id=\"main_container\">
-            
-//                    <a id=\"link_logo\" href=\"\home/index\">
-//                    <img id=\"logo_img\" src=\"https://greenbro.net/images/imgonline-com-ua-Crop-oeaYXY1h2v0.jpg\" width=\"140px\" alt=\"Logo_of_Greenbro\">
-//                    </a>
-                  
-                
-//                     <div id=\"burger-menu-button\" class=\"burger-menu-button\">
-//                         <div id=\"line-1\"></div>
-//                         <div id=\"line-2\"></div>
-//                         <div id=\"line-3\"></div>
-//                     </div>
-
-//                     <div id=\"burger-menu\" class=\"burger-menu\">
-//                        <ul>
-//                           <li><a href=\"//greenbro.$domain/food/show_food\">Продукти</a></li>
-//                           <li><a href=\"//greenbro.$domain/clothes/show_clothes\">Одяг</a></li>    
-//                           <li><a href=\"//greenbro.$domain/goods/show_goods\">Речі</a></li>
-//                           <li><a href=\"//greenbro.$domain/book/show_books\">Література</a></li>
-//                           <li><a href=\"//greenbro.$domain/home/allThings\">Все разом</a></li>
-//                           <li><a href=\"//greenbro.$domain/home/paymentShipping\">Оплата і доставка</a></li>
-                            
-//                           <li><a href=\"//greenbro.$domain/validation/display_validation_page\">Привіт)Увійти</a></li>
-
-//                           <li><a href=\"//greenbro.$domain/home/contactUs\">Контакти</a></li>	
-//                        </ul>
-//                     </div>
-                    
-                
-//                 <div class=\"main_menu\">";
-                    
-// require_once "sidebar.php";
-// // the require once below for validation window
-// // require_once "validation/validation-form.content.php";
-
-
-
-
-
-// // TO DO burger menu doesn't work 
-// echo "</div>
-//       </div>
-// </header> ";

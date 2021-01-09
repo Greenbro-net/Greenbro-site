@@ -1,6 +1,6 @@
 /* the code below for validation window  */
-.active {
-   display: inline-block;
+.active_validation {
+   display: block!important;
 }
 
 .error {
@@ -44,14 +44,21 @@
     float: right;
 }
 
-#test {
+#log_inout_img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     position: relative;
 }
+/* the code below for log_in button  */
+#log_in_button {
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
 
-#validation_button {
+/* the code below for log out button  */
+#log_out_button {
     text-align: center;
     position: relative;
     cursor: pointer;
@@ -134,4 +141,17 @@
 /* the code below for input fields  */
 .user_information {
     width: 40%;
+}
+
+/* the code below for reload window  */
+#reload_window_1 {
+    display: inline-block;
+    white-space: nowrap;
+    
+}
+/* the code below for reload window */
+.reload_container  {
+    /* display: inline-block; */
+    
+    
 }

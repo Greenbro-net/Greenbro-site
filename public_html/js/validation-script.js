@@ -1,24 +1,5 @@
-// the function below displays  window for log in
-$(document).ready(function () {
-    $(".validation_button, #log_in_window").click(function (re) {
-      if ($(re.target).hasClass('validation_window') || $(re.target).hasClass('row mt-3') || $(re.target).hasClass('col-md-6') ||
-          $(re.target).hasClass('row mt-3')   || $(re.target).hasClass('mb-3') || $(re.target).hasClass('form-control') || $(re.target).hasClass('form-group') ||
-          $(re.target).hasClass('field_title') || $(re.target).hasClass('user_information') || $(re.target).hasClass('validation_empty_class') || 
-          $(re.target).hasClass('switch_registration') ) { 
-        return false;
-    }
-        
-        $('.validation_window').toggle();
-        // $("#validation_container").addClass("active");
-        $("#log_in_window").addClass("active");
-        alert("You knocked button for log");
-        $('#registration_window').hide();
-     });
-  });
-    
 
-    
-  //   TO DO validation like if all fields have to be fill in right way 
+  // TO DO validation like if all fields have to be fill in right way 
   // the code below hides  validation window for log in   
   $(document).ready(function () { 
     $('body').click(function(we) {
@@ -31,11 +12,12 @@ $(document).ready(function () {
           $(we.target).hasClass('field_title') || $(we.target).hasClass('user_information') || $(we.target).hasClass('validation_empty_class') ) {
             return false;
         } 
-         $(".validation_window").hide();
-        // $("#validation_window").removeClass('active');
+        //  $(".validation_window").toggle();
+        $("#log_in_window").removeClass('active_validation');
         });
     });
   
+
     $(document).ready(function () {
         $('#form').validate({
           rules: {
@@ -66,7 +48,24 @@ $(document).ready(function () {
       });
 
 
-    
+    // the function below displays  window for log in
+    function show_log_in()  {
+      jQuery(document).ready(function(re) {
+      
+          if ($(re.target).hasClass('validation_window') || $(re.target).hasClass('row mt-3') || $(re.target).hasClass('col-md-6') ||
+              $(re.target).hasClass('row mt-3')   || $(re.target).hasClass('mb-3') || $(re.target).hasClass('form-control') || $(re.target).hasClass('form-group') ||
+              $(re.target).hasClass('field_title') || $(re.target).hasClass('user_information') || $(re.target).hasClass('validation_empty_class') || 
+              $(re.target).hasClass('switch_registration') ) { 
+            return false;
+                          }
+            $("#log_in_window").addClass("active_validation");
+            $('.validation_window').show(); 
+            // alert("You knocked button for log");
+            $('#registration_window').hide();
+      
+      });
+    }   
+
 
 
 
@@ -79,7 +78,7 @@ $(document).ready(function () {
       // the code below hide validation window 
       // $('.validation_container').hide();
       $('.registration_container').show();
-      $("#validation_window").addClass("active");
+      $("#validation_window").addClass("active_validation");
       alert("Your should see validation_window for registration");
       // the code below can delete class 
       $("#registration_window").removeClass("hide_things");
@@ -102,7 +101,7 @@ $(document).ready(function () {
             return false;
         } 
          $(".validation_window").hide();
-        // $("#validation_window").removeClass('active');
+        // $("#validation_window").removeClass('active_validation');
         });
     });
   

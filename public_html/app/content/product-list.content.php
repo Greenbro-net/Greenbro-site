@@ -162,18 +162,4 @@ using post method we send variable to php script -->
  
 
 
-
-
-
-  <!-- testing code below displays comments block  -->
-  <div class="phppot-container">
-      <div class="container">
-          <h2>Start Rating Script in PHP</h2>
-          <div id="course_list">
-          
-          </div>
-      </div>
-  </div>
-
-
   

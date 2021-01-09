@@ -45,7 +45,7 @@
                             require "stars-list.content.php"; 
                             ?>
                           <!-- the code below displays user comments  -->
-                          <p><?php echo $response["body"]; 
+                          <p><?php echo $response["comment"]; 
                                    var_dump($response);
                               ?></p>
                        </div> 

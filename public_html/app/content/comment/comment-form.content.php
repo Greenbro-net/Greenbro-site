@@ -4,7 +4,8 @@
     <!-- element below separate html elements -->
     <p class="separating_element"></p>
   <!-- <p>Написати відгук</p> -->
-    <form id="form-contact" class="styled" action="some/method" method="post">
+    <form id="form-contact" class="styled"  method="POST">
+    <!-- action="http://greenbro.com/response/call_addNewComment" -->
     <!-- testing close sign below -->
     <span id="close_sign">&#10005;</span>
        <fieldset>
@@ -26,7 +27,7 @@
     //  require_once "star-rating.content.php"; 
     // rating code below
     $rating = "0";
-    $row['id'] = $product["id"];;
+    $product['id'] = $product["id"];;
     $apperance = "star";
 
 //  hardcode above
@@ -40,7 +41,7 @@
     <?php
   
 for ($count = 1; $count <= 5; $count ++) {
-  $starRatingId = $row['id'] . '_' . $count;
+  $starRatingId = $product['id'] . '_' . $count;
   if ($count <= $rating) {
       ?>
 
@@ -53,9 +54,9 @@ for ($count = 1; $count <= 5; $count ++) {
       ?>
 <li value="<?php $count; ?>" id="<?php echo $starRatingId; ?>"
   class="star"
-  onclick="addClassStar(this,<?php echo $row['id']; ?>,<?php echo $count; ?>);"
-  onMouseOver="mouseOverRating(<?php echo $row['id']; ?>,<?php echo $count; ?>,'<?php echo $apperance; ?>');"
-  onMouseLeave="mouseOutRating(<?php echo $row['id']; ?>,<?php echo $rating; ?>,'<?php echo $apperance; ?>');"><img
+  onclick="addClassStar(this,<?php echo $product['id']; ?>,<?php echo $count; ?>);"
+  onMouseOver="mouseOverRating(<?php echo $product['id']; ?>,<?php echo $count; ?>,'<?php echo $apperance; ?>');"
+  onMouseLeave="mouseOutRating(<?php echo $product['id']; ?>,<?php echo $rating; ?>,'<?php echo $apperance; ?>');"><img
   src="../../../images/comment_image/<?php echo $apperance; ?>-open.png"></li>
 <?php
   }
@@ -64,12 +65,12 @@ for ($count = 1; $count <= 5; $count ++) {
 
         <!-- the class should put in image tag later  -->
         <img src="../../../images/comment_image/loader.gif" class="loader-icon">
-        <div class="response" id="response-<?php echo $row['id']; ?>"></div>
+        <div class="response" id="response-<?php echo $product['id']; ?>"></div>
 
     </div>
 </div>
 
-        <div  class="message_place" id="message_place<?php echo $row['id']; ?>"></div>
+        <div  class="message_place" id="message_place<?php echo $product['id']; ?>"></div>
         <!-- rating code above -->
     
 
@@ -81,7 +82,11 @@ for ($count = 1; $count <= 5; $count ++) {
                    <textarea id="input-message" class="text-area" name="message" cols="40" rows="8"></textarea>
                </li>
                <li class="button-row text-right">
-                   <input id="comment_btn_submit" class="btn-submit" type="submit" value="Надіслати" name="submit_comment" />
+                   <!-- <input id="comment_btn_submit" class="btn-submit" type="submit" value="Надіслати" name="submit_comment" /> -->
+                   <!-- testing code below  -->
+                   <!-- <div id="someHiddenDiv" style="display: none;">Working...</div> -->
+
+                   <button onclick="addComment(<?php echo $product['id'];?>)">Send</button>
                </li>
            </ol>
        </fieldset>

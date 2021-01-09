@@ -16,7 +16,7 @@ class ResponseModel extends DBController
                "param_value" => $product_id
            ));
 
-        $result_findItemResponse = $this->updateResponseTable($query, $params);
+        $result_findItemResponse = $this->receiveResponseTable($query, $params);
         
         if (empty($product_id)) {
             throw new Exception("Method findItemResponse doesn't get variable of product_id");
@@ -39,10 +39,10 @@ class ResponseModel extends DBController
     }
 
     // the method below adds new response in `response` table 
-    public function addNewResponse($user_id, $user_name, $product_id, $body, $created_at)
+    public function addNewComment($user_id, $user_name, $user_email_response, $product_id, $comment, $created_at)
     {
         try {
-            $query = "INSERT INTO `response`(`user_id`, `user_name`, `product_id`, `body`, `created_at`) VALUES(?, ?, ?, ?, ?)";
+            $query = "INSERT INTO `response`(`user_id`, `user_name`, `user_email_response`, `product_id`, `comment`, `created_at`) VALUES(?, ?, ?, ?, ?, ?)";
 
             $params = array(
                 array(
@@ -54,15 +54,19 @@ class ResponseModel extends DBController
                     "param_value" => $user_name
                 ),
                 array(
+                    "param_type" => "s",
+                    "param_value" => $user_email_response
+                ),
+                array(
                     "param_type" => "i",
                     "param_value" => $product_id
                 ),
                 array(
                     "param_type" => "s",
-                    "param_value" => $body
+                    "param_value" => $comment
                 ),
                 array(
-                    "param_type" => "i",
+                    "param_type" => "s",
                     "param_value" => $created_at
                 ));
 
@@ -115,6 +119,7 @@ class ResponseModel extends DBController
     }
 
     // the method below gets total rating from response_rating table 
+    // DELETE???
     public function getTotalRating($response_id) 
     {
        try {
@@ -149,3 +154,6 @@ class ResponseModel extends DBController
 $query = "SELECT response.*, response_rating.response_id, response_rating.rating 
           FROM response,response_rating WHERE response.response_id = response_rating.response_id 
           AND response.product_id = 106";
+
+// insert example in response table
+$query =  "INSERT INTO `response`(`response_id`, `user_id`, `user_name`, `user_email_response`, `product_id`, `comment`, `created_at`) VALUES (10, 339, 'Andrey', 'reeeee@ukr.net', 106, 'My comment', 2020)";
