@@ -1,3 +1,4 @@
 app_config.php
 link.php
-**/data/Database.data.php
+#data/Database.data.php
+DBinfo.data.php
