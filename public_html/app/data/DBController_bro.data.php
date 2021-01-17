@@ -9,7 +9,14 @@ class DBController_bro extends Database_bro {
         $sql_statement = self::connect()->prepare($query);
 
         // this block of code for updating quantity of paremeters which we should post in execute
-        $sql_statement->bindParam(1, $params[0]["param_value"], PDO::PARAM_STR);
+        // code below can interact with with both parameters as int and str
+        if (is_numeric($params[0]["param_value"])) {
+            // the code below create PDO PARAM for integer
+            $sql_statement->bindParam(1, $params[0]["param_value"], PDO::PARAM_INT);
+        } else {
+            $sql_statement->bindParam(1, $params[0]["param_value"], PDO::PARAM_STR);
+               }
+
 
         if (!empty($params[1]["param_value"])) {
             $sql_statement->bindParam(2, $params[1]["param_value"], PDO::PARAM_STR);
@@ -19,6 +26,10 @@ class DBController_bro extends Database_bro {
             throw new PDOException("Function selectRegistrationTable doesn't get query or params");
                                       }
         $result_selectUserEmail = $sql_statement->execute();
+
+        if (empty($result_selectUserEmail)) {
+            throw new PDOException("Function selectRegistrationTable doesn't return value  after execute");
+        }
         
         // the parameter in the end for return only associative array data 
         $result_UserEmail = $sql_statement->fetchAll(PDO::FETCH_ASSOC);
@@ -26,9 +37,9 @@ class DBController_bro extends Database_bro {
 
         if (empty($result_UserEmail)) {
                        return false;
-                                      } else {
-                                           return $result_UserEmail; 
-                                             }
+                            } else {
+                                return $result_UserEmail; 
+                                   }
         } catch (PDOException $exception) {
             file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
               'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());

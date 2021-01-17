@@ -1,5 +1,5 @@
 /* the main container for comment block  */
-#main_form_comment_container {
+.main_form_comment_container {
 display: none;
 
 }
@@ -92,7 +92,7 @@ background-color:  #53A630;
     color: red;
 }
 /* the code below for close sign  */
-#close_sign {
+.close_sign {
     position:absolute; top:92px; right:20px;
     cursor: pointer;
     /* float: ; */
@@ -101,7 +101,7 @@ background-color:  #53A630;
     font-size: 30px;
 }
 /* hover for close sign  */
-#close_sign:hover {
+.close_sign:hover {
     transition: transform .2s;
     background-color: rgba(216, 0, 11, 0.335);
     }
@@ -215,6 +215,6 @@ form input.btn-submit {
 #label_star {
     padding-right: 23px;
 }
-#stars_container {
+.stars_container {
     margin: 4px;
 }

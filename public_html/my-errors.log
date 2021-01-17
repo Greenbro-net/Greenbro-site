@@ -1,5 +1,5 @@
-Message:Method addNewResponse wasn't successfully<br />File: /opt/lampp/htdocs/greenbro.net/public_html/app/model/ResponseModel.model.php<br />Line: 76<br />Trace: #0 /opt/lampp/htdocs/greenbro.net/public_html/app/controller/responseController.controller.php(162): ResponseModel->addNewComment('339', '', '', '', '', '2021-01-07 20:2...')
-#1 /opt/lampp/htdocs/greenbro.net/public_html/app/core/Application.controller.php(17): ResponseController->call_addNewComment()
+Message:Method addNewRating wasn't successfully<br />File: /opt/lampp/htdocs/greenbro.net/public_html/app/model/ResponseModel.model.php<br />Line: 105<br />Trace: #0 /opt/lampp/htdocs/greenbro.net/public_html/app/controller/responseController.controller.php(169): ResponseModel->addNewRating('339', '200', '0')
+#1 /opt/lampp/htdocs/greenbro.net/public_html/app/core/Application.controller.php(17): ResponseController->run_add_new_comment()
 #2 /opt/lampp/htdocs/greenbro.net/public_html/index.php(107): Application->__construct()
 #3 /opt/lampp/htdocs/greenbro.net/public_html/index.php(191): checkout_url()
 #4 {main}

@@ -278,37 +278,6 @@ require_once "app/controller/validationController.controller.php";
 //       $page_404->page_404();
     
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
 ?>
 
 

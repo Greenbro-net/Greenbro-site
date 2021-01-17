@@ -13,10 +13,67 @@
 
 class ValidationController extends Controller
 {
-    public function __construct() {
-    //    $this->model('ValidationModel');
+    public $user_id;
+
+    // the method below filter input data 
+    public function filter_data($data)
+    {
+        $data = trim($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+    
+    // the method below checks is user log in or not
+    private function checkUserid()
+    {
+        if (empty($_SESSION['user_id'])) {
+            return false;
+        } else {
+            return true;
+               }
     }
 
+    // the method below for jquery return response by AJAX
+    protected function response_not_login() 
+    {
+        $form_data['success'] = false;
+        $form_data['posted'] = "User did not log in";
+        echo json_encode($form_data);
+    }   
+    // the method below for jquery return response by AJAX
+    protected function response_login()
+    {
+        $form_data['success'] = true;
+        $form_data['posted'] = "User was log in";
+        echo json_encode($form_data);
+    }
+
+    // the method below for ajax call from comment-script.js
+    public function check_log_in()
+    {
+        if (!$this->checkUserid()) {
+             return $this->response_not_login();
+            } else {
+             return $this->response_login();
+                   }
+    }
+
+
+    // the method below set user in
+    protected function set_user_id()
+    {   
+        if (!empty($_SESSION["user_id"])) {
+            $user_id = $this->user_id  = $this->filter_data($_SESSION["user_id"]);
+             }
+    }
+    // the method below get user_id
+    public function  get_user_id()
+    {
+        $this->set_user_id();
+        return $this->user_id;
+    }
+
+    
     public function register() {
         // $data = [
         //     'username' => '',
@@ -125,8 +182,8 @@ class ValidationController extends Controller
                 }
         }
         // $this->view('validation' . DIRECTORY_SEPARATOR . $data);
-        echo "<hr>";
-        var_dump($data);
+        // echo "<hr>";
+        // var_dump($data);
     }
 
 
@@ -168,7 +225,7 @@ class ValidationController extends Controller
                 // var_dump($_POST['password']);
                 // var_dump($data['password']);
                 // var_dump($hashedPassword);
-                var_dump($loggedInUser);
+                // var_dump($loggedInUser);
                 if ($loggedInUser) {
                     $this->createUserSession($loggedInUser);
                 } else {
@@ -211,6 +268,20 @@ class ValidationController extends Controller
         $this->model('ValidationModel');
         $object_validation_model = new ValidationModel();
         return $object_validation_model;
+    }
+
+    // the method below for gets user email
+    public function get_user_email()
+    {
+       if ($this->checkUserid()) {
+         // call method from model
+         if ($result = $this->get_object_validation_model()->findEmailByUserid($this->get_user_id())) {
+            $form_data['success'] = true;
+            $form_data['posted'] = $result[0]["email"];
+            echo json_encode($form_data);
+         }
+      
+       }
     }
 
 }

@@ -30,7 +30,6 @@ class ValidationModel extends Validation
              file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
                  'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
                                            }
-
     }
 
 
@@ -65,7 +64,8 @@ class ValidationModel extends Validation
     }
 
     //Find user by username. Username is passed in by the Controller.
-    public function findUserByUsername($username) {
+    public function findUserByUsername($username) 
+    {
         try {
           $query = "SELECT * FROM `registration` WHERE username = ?";
 
@@ -94,6 +94,56 @@ class ValidationModel extends Validation
     }
 
 
+    // The method below gets user email use for it user_id 
+    public function findEmailByUserid($user_id) 
+    {
+        try {
+         $query = "SELECT email FROM `registration` WHERE `user_id` = ?";
+
+         $params = array(
+             array(
+                 "param_type" => "i",
+                 "param_value"=> $user_id
+             ));
+
+          if (empty($user_id)) {
+              throw new Exception("Function findEmailByUserid doesn't get user_id parameter");
+                               }
+          $resultfindEmailByUserid = $this->selectRegistrationTable($query, $params);
+
+          if (empty($resultfindEmailByUserid)) {
+              throw new Exception("Function findEmailByUserid doesn't return result");
+                                               }
+    
+          if (empty($resultfindEmailByUserid)) {
+               return false;
+            } else { // return user email
+                return $resultfindEmailByUserid;
+                   }  
+
+        } catch (Exception $exception) {
+            file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+                'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+                                         }
+    }
+
+
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

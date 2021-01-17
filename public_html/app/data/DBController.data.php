@@ -247,9 +247,15 @@ public function getDBgetCartItembyProduct($query, $params)
     
             // this block of code for updating quantity of paremeters which we should post in execute
                 $sql_statement->bindParam(1, $params[0]["param_value"], PDO::PARAM_INT);
-    
+            
+            // code below can interact with with both parameters as int and str 
             if (!empty($params[1]["param_value"])) {
-                $sql_statement->bindParam(2, $params[1]["param_value"], PDO::PARAM_STR);
+                // the code below create PDO PARAM for integer 
+                if (is_numeric($params[1]["param_value"])) {
+                    $sql_statement->bindParam(2, $params[1]["param_value"], PDO::PARAM_INT);
+                } else {
+                    $sql_statement->bindParam(2, $params[1]["param_value"], PDO::PARAM_STR);
+                       }
             }    
     
             if (empty($query || $params)) {

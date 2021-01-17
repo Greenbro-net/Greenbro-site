@@ -37,18 +37,28 @@ class ResponseController extends Controller
     private function checkUserid()
     {
         if (empty($_SESSION['user_id'])) {
-            // testing code below for that method
             return false;
         } else {
             return true;
                 }
     }
-    // the method below for jquery function which checking user_id 
-    public function notLogIn() {
-            $form_data['success'] = false;
-            $form_data['posted'] = 'User did not log in';
+    
+    
+    // the method below grabs quantity of comment by actual user  
+    public function grab_quantity_comment()
+    {
+        // call method from model 
+       if ($this->get_object_response_model()->grabQuantityComment($this->get_user_id(), $this->get_product_id())) {
+        $form_data['success'] = false;
+        $form_data['posted'] = "User has already added a comment for the item";
+        echo json_encode($form_data);
+          } else {
+            $form_data['success'] = true;
+            $form_data['posted'] = "User hasn't added a comment for the item yet";
             echo json_encode($form_data);
+                 }
     }
+    
     // the methods below gets current date 
     protected function create_date_of_comment()
     {  
@@ -114,18 +124,6 @@ class ResponseController extends Controller
         $this->set_rating();
         return $this->rating;
     }
-    // the methods below get response id from response table
-    protected function set_response_id()
-    {
-
-    }
-
-
-    // the code below has to be edit for our app
-    // public function grab_from_db()
-    // {
-    //     var_dump($this->get_object_response_model()->public_findItemResponse(97));
-    // }
 
     // the methods below for user_id 
     private function set_user_id()
@@ -139,24 +137,17 @@ class ResponseController extends Controller
     }
 
 
-    // TO DO a method which checks if user has already left a comment
-    // the method below checks has user already added a comment for actual item
-    public function checkUserComment()
+    // the code below just a simple wrapper for private method findItemResponse
+    public function call_findItemResponse($product_id)
     {
-
+        return $this->get_object_response_model()->findItemResponse($product_id);
     }
-    
 
     // the method below for adds new response rating in response_rating table 
-    public function call_addNewComment()
+    public function run_add_new_comment()
     {
-
-        // the code below will work if user doesn't log in 
-        if (!$this->checkUserid()) {
-            $this->notLogIn();
-        }
         // firstly check if user log in or not 
-         elseif ($this->checkUserid()) {
+         if ($this->checkUserid()) {
                 // the code below adds new comment in table response
             if ($last_response_id =  $this->get_object_response_model()->addNewComment($this->get_user_id(), $this->get_user_name(), 
                 $this->get_user_email_response(), $this->get_product_id(), $this->get_comment(), $this->get_created_at()))
@@ -165,8 +156,6 @@ class ResponseController extends Controller
                 // last_response_id receives from method above
                 $this->get_object_response_model()->addNewRating($this->get_user_id(), $last_response_id, $this->get_rating());
                 // the message below displays by AJax
-                // $back_message = "Коментар був успішно доданий";
-                // echo "Коментар був успішно доданий";
                 $form_data['success'] = true;
                 $form_data['posted'] = 'Method addNewRating was executed successful';
                 echo json_encode($form_data);
@@ -184,52 +173,29 @@ class ResponseController extends Controller
 
 }
 
-    // Here the user id is hardcoded
-    // You can integrate your authentication code here to get the logged in user_id 
-
-    $user_id = 5;
-
-    if (isset($_POST["index"], $_POST["course_id"])) {
-
-        $courseId = $_POST["course_id"];
-        $ratingIndex = $_POST["index"];
-
-        $rowCount = $this->get_object_response_model()->isUserRatingExist($user_id, $courseId);
-
-        if ($rowCount == 0) {
-            $insertId = $this->get_object_response_model()->addNewRating($userId, $courseId, $ratingIndex);
-            if (empty($insertId)) {
-                echo "Problem in adding ratings.";
-            }
-        } else {
-                // the message displays when we have already had rating
-                // we should use this type of messages in our app 
-                echo "You have added rating already.";
-               }
-    }
 
 
 
 //     <!-- DATABASE
-// 1. See what tables and columns we need
-// 2. Add response DATABASE
+// +1. See what tables and columns we need
+// +2. Add response DATABASE
 // Database fields:
-// 1. id        INT
-// 2. user_id   INT
-// 3. product_id INT (for display response of some item)
-// 4. body_of_response TEXT
-// 5. created_at DATETIME
+// +1. id        INT
+// +2. user_id   INT
+// +3. product_id INT (for display response of some item)
+// +4. body_of_response TEXT
+// +5. created_at DATETIME
 
 // Create
-// 1. User has to be logged in
+// +1. User has to be logged in
 // 2. Check if data is text
-// 3. Check for empty fields
-// 4. If checks are met, do a request and create post
+// +3. Check for empty fields
+// +4. If checks are met, do a request and create post
 
 // Read
-// 1. Read data from the database
-// 2. Displays responses on the list of items 
-// 3. On list of items, user can click on response and opens all response for current item for reading
+// +1. Read data from the database
+// +2. Displays responses on the list of items 
+// +3. On list of items, user can click on response and opens all response for current item for reading
 
 // Update
 // 1. Create function for answer on user response 
@@ -238,29 +204,3 @@ class ResponseController extends Controller
 // 1. Delete button for admin if response is incorrect  -->
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

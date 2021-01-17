@@ -1,31 +1,22 @@
-<?php
-
-            //   edit the if else block later 
-              if (empty($_SESSION['user_id'])) {
-                 echo "You should log in for leave a comment";
-              } else {
-                // TO DO option here or delete it in the future 
-                //  echo "Залишити відгук";
-              }
-
-              ?>
               <!-- the code below displays us comments from DB -->
               <div id="main_comments_container">
               <?php
               // the code below for require_once a form of leaving a comment 
-                    require_once "comment-form.content.php";
+                    require "comment-form.content.php";
                 ?>
 
 
               <h3>Відгуки покупців</h3>
               <!-- the code below for button "create new comment" -->
-              <button id="leave_comment_button">Залишити відгук</button>
+              <!-- the button below opens window from comment-form.content.php   -->
+              <button id="leave_comment_button<?php echo $product['id']; ?>" onclick="display_comment_form(<?php echo $product['id']; ?>)" >Залишити відгук</button>
                      
             
                   <?php
                   if ($quantity_of_responses >= 1) {
-                      $resObj = $this->load_model('ResponseModel');
-                      $responses = $resObj->public_findItemResponse($product["id"]);
+                      // $resObj = $this->load_model('ResponseModel');
+                      $resObj = new ResponseController();
+                      $responses = $resObj->call_findItemResponse($product["id"]);
                       foreach ($responses as $response) {
                         ?> 
                        <div id="comment_container_1"> 
@@ -53,9 +44,6 @@
                       }
                     }
                                          ?>
-                     
-                     
-
+                  
               </div>
-
 

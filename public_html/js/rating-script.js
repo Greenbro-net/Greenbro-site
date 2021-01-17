@@ -70,10 +70,10 @@ function mouseOutRating(response_id, rating, appearance) {
 
   // variable response_id is empty
   // function for safe rating and add  class for star 
-  function addClassStar(currentElement, response_id, rating, appearence) {
+  function addClassStar(currentElement, product_id, rating, appearence) {
     var keep_rating = rating;
     var loaderIcon = $(currentElement).closest(".row-item");
-
+  //  alert(product_id);
     
     loaderIcon = $(currentElement).closest(".row-item");
     $(loaderIcon).find("#loader-icon").hide();
@@ -82,17 +82,17 @@ function mouseOutRating(response_id, rating, appearance) {
     $("#stars_input").val(keep_rating);
 
     if (appearence == 'star') {
-    $('#stars_container' +    ' li').each(
+    $('#stars_container' + product_id + ' li').each(
     function(index) {
     // the index method returns us index from Element, starts from 0
-    if (index == $('#stars_container' + ' li').index(
+    if (index == $('#stars_container' + product_id  + ' li').index(
     currentElement)) {
     return false;
                      }
         });
       } else {
     //the  loop below for delete classes 
-      $('#stars_container' + ' li').each(
+      $('#stars_container' + product_id + ' li').each(
         function() {
           $('li').removeClass('selected');
         });

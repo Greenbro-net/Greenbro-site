@@ -1,33 +1,34 @@
 <!-- form for leave a comment -->
+<!-- testing php code below -->
+<div id="main_form_comment_container<?php echo $product['id']; ?>" class="main_form_comment_container">
 
-<div id="main_form_comment_container">
+<!-- testing php code above -->
+
     <!-- element below separate html elements -->
     <p class="separating_element"></p>
   <!-- <p>Написати відгук</p> -->
-    <form id="form-contact" class="styled"  method="POST">
+  <!-- we delete id below because it was not unique id="form-contact" -->
+    <form  class="styled"  method="POST">
     <!-- action="http://greenbro.com/response/call_addNewComment" -->
     <!-- testing close sign below -->
-    <span id="close_sign">&#10005;</span>
+    <span id="close_sign<?php echo $product['id']; ?>" onclick="close_sign_form(<?php echo $product['id']; ?>)" class="close_sign">&#10005;</span>
        <fieldset>
            <legend>Написати відгук</legend>
            <ol>
                <li class="form-row">
                    <label>Електронна пошта:</label>
-                   <input id="input-email" type="text" class="text-input required email default" name="email" value="" title="Введіть свою електронну пошту" />
+                   <input id="input-email<?php echo $product['id']; ?>" type="text" class="text-input required email default" name="email" value="" title="Введіть свою електронну пошту" />
                </li>
                <li class="form-row">
                    <label>Ваше ім'я та прізвище:</label>
-                   <input id="input-name" type="text" class="text-input required default" name="name" value="" title="Введіть прізвище та ім'я" />
+                   <input id="input-name<?php echo $product['id']; ?>" type="text" class="text-input required default" name="name" value="" title="Введіть прізвище та ім'я" />
                    <!-- testing code below  -->
-                   <!-- <span class="error">Required field</span> -->
-                </li>  
+               </li>  
 
     <!-- there are we will make a rating for item -->
                <?php 
-    //  require_once "star-rating.content.php"; 
     // rating code below
     $rating = "0";
-    $product['id'] = $product["id"];;
     $apperance = "star";
 
 //  hardcode above
@@ -35,9 +36,9 @@
 <div class="form-row" id="rating-form-container">
     <label id="label_star">Ваша оцінка:</label>
     <!-- the element below for keeps  there a value  -->
-    <input id="stars_input" value="" style="display: none;" class="required" />
-
-    <div id="stars_container" >
+    <input id="stars_input<?php echo $product['id']; ?>" value="" style="display: none;" class="required_stars" />
+    
+    <div id="stars_container<?php echo $product['id']; ?>"  class="stars_container">
     <?php
   
 for ($count = 1; $count <= 5; $count ++) {
@@ -74,19 +75,16 @@ for ($count = 1; $count <= 5; $count ++) {
         <!-- rating code above -->
     
 
-
-
-
                <li class="form-row">
                    <label>Коментар:</label>
-                   <textarea id="input-message" class="text-area" name="message" cols="40" rows="8"></textarea>
+                   <textarea id="input-message<?php echo $product['id']; ?>" class="text-area required" name="message" cols="40" rows="8" ></textarea>
                </li>
                <li class="button-row text-right">
                    <!-- <input id="comment_btn_submit" class="btn-submit" type="submit" value="Надіслати" name="submit_comment" /> -->
                    <!-- testing code below  -->
                    <!-- <div id="someHiddenDiv" style="display: none;">Working...</div> -->
 
-                   <button onclick="addComment(<?php echo $product['id'];?>)">Send</button>
+                   <button id="submit_addComment<?php echo $product['id']; ?>" onclick="preparing_comment(<?php echo $product['id'];?>)">Відправити відгук</button>
                </li>
            </ol>
        </fieldset>

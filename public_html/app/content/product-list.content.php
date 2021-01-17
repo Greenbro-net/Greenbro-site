@@ -140,7 +140,7 @@ using post method we send variable to php script -->
               
                <!-- response-list.content.php later after fix all trouble -->
                <!-- the code below requires block for displaying comments  -->
-               <?php     require_once 'comment/response-list.content.php'; ?>
+               <?php     require 'comment/response-list.content.php'; ?>
               <!-- the code above displays us comments from DB -->
             </div>
                       

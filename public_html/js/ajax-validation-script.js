@@ -1,3 +1,5 @@
+// the code should be change in production version 
+
 // the function below logout user from system 
 function logout_user() {
     // the url below is right path for all pages
@@ -11,7 +13,6 @@ function logout_user() {
         alert("Function logout_user was executed");
      }
   });
-      
     // the code below reload validation button and displays correct info of item after updating
         $("#reload_window_1").load(current_url + "/" + " #reload_window_1");
 }

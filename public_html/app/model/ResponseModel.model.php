@@ -3,12 +3,12 @@
 class ResponseModel extends DBController 
 {
    //the method below grabs from `response` table 
-   private function findItemResponse($product_id)
+   public function findItemResponse($product_id)
    {
        try {
        $query = "SELECT response.*, response_rating.response_id, response_rating.rating 
        FROM response,response_rating WHERE response.response_id = response_rating.response_id AND response.user_id = response_rating.user_id
-       AND response.product_id = 106";
+       AND response.product_id = ?";
 
        $params = array(
            array(
@@ -32,11 +32,7 @@ class ResponseModel extends DBController
                                           }
     }
 
-    // the code below just a simple wrapper for private method findItemResponse
-    public function public_findItemResponse($product_id)
-    {
-        return $this->findItemResponse($product_id);
-    }
+
 
     // the method below adds new response in `response` table 
     public function addNewComment($user_id, $user_name, $user_email_response, $product_id, $comment, $created_at)
@@ -84,7 +80,7 @@ class ResponseModel extends DBController
     }
 
 
-    // the function below adds new rating to response_rating table 
+    // the method below adds new rating to response_rating table 
     public function addNewRating($user_id, $response_id, $rating)
     {
         try {
@@ -118,34 +114,68 @@ class ResponseModel extends DBController
         
     }
 
-    // the method below gets total rating from response_rating table 
-    // DELETE???
-    public function getTotalRating($response_id) 
+    // the method below checks quantity of comment for item by user from `response` table
+    public function grabQuantityComment($user_id, $product_id)
     {
-       try {
-         $query = "SELECT * FROM `response_table` WHERE response_id = ?";
+        try {
+            $query = "SELECT `response_id` FROM `response` WHERE `user_id` = ? AND `product_id` = ?";
+            
+            $params = array(
+                array(
+                    "param_type" => "i",
+                    "param_value" => $user_id
+                ),
+                array(
+                    "param_type" => "i",
+                    "param_value"  => $product_id
+                ));
+            $result_grabQuantityComment = $this->receiveResponseTable($query, $params);
 
-         $params = array(
-             array(
-                 "param_type" => "i",
-                 "param_value" => $response_id
-             ));
+            if (empty($user_id) || empty($product_id)) {
+                throw new  Exception("Method grabQuantityComment doesn't get variable user_id or product_id");
+            }
 
-        $result_getTotalRating = $this->updateResponseRatingTable($query, $params);
-
-        if (empty($response_id)) {
-            throw new Exception("Method getTotalRating doesn't get variable of response_id");
-                }
-        if (empty($result_getTotalRating)) {
+            if (empty($result_grabQuantityComment)) {
                 return false;
                 } else {
-                    return $result_getTotalRating;
+                    return true;
                        }
-       } catch (Exception $exception) {
-        file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
-            'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                      }
+
+            } catch (Exception $exception) {
+                file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+                    'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+                                           }
     }
+
+
+    // the method below gets total rating from response_rating table 
+    // DELETE???
+    // public function getTotalRating($response_id) 
+    // {
+    //    try {
+    //      $query = "SELECT * FROM `response_table` WHERE response_id = ?";
+
+    //      $params = array(
+    //          array(
+    //              "param_type" => "i",
+    //              "param_value" => $response_id
+    //          ));
+
+    //     $result_getTotalRating = $this->updateResponseRatingTable($query, $params);
+
+    //     if (empty($response_id)) {
+    //         throw new Exception("Method getTotalRating doesn't get variable of response_id");
+    //             }
+    //     if (empty($result_getTotalRating)) {
+    //             return false;
+    //             } else {
+    //                 return $result_getTotalRating;
+    //                    }
+    //    } catch (Exception $exception) {
+    //     file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+    //         'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+    //                                   }
+    // }
 
     
 }
