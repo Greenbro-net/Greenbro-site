@@ -224,16 +224,6 @@ require_once "app/controller/validationController.controller.php";
 // var_dump($_POST);
 
 
-// TO DO as in rozetka separate description of item in two part:
-// first for all description about item;
-// second part about responses of item
-
-
-
-// TO DO in description block 
-// when user was loged in he can write comment or he will see message "firstly you have to be log in"
-// when user was loged in and clicks on comment block he can write comment in new window which will send by AJAX
-
 
 
 

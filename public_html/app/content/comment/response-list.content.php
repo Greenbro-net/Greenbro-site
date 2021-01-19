@@ -37,7 +37,7 @@
                             ?>
                           <!-- the code below displays user comments  -->
                           <p><?php echo $response["comment"]; 
-                                   var_dump($response);
+                                
                               ?></p>
                        </div> 
                         <?php

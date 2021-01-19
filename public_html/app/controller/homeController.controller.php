@@ -44,5 +44,30 @@ class HomeController extends Controller
         $this->view->render();
     }
 
+    // the method below displays oferta of our site
+    public function showOferta()
+    {
+        $this->view('home/showOferta');
+        $this->view->page_title = 'Публічна оферта';
+        $this->view->render();
+    }
+
+    // the method below displays Privacy Policy
+    public function showPrivacyPolicy()
+    {
+        $this->view('home/showPrivacyPolicy');
+        $this->view->page_title = 'Privacy Policy';
+        $this->view->render();
+    }
+
+    // the method below displays Terms of Service
+    public function showTermsofService()
+    {
+        $this->view('home/showTermsofService');
+        $this->view->page_title = 'Terms of Service';
+        $this->view->render();
+    }
+
+
     
 }

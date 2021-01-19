@@ -64,7 +64,7 @@ $.ajax({
     },
     // the code below is testing for display error messages in user side 
     error: function(data) {
-      alert("Error in call_add_comment function");
+    //   alert("Error in call_add_comment function");
     }
   });
 }
@@ -247,7 +247,7 @@ function preparing_comment(product_id) {
     },
         // the code below for error case 
         error: function() {
-        alert("Error in preparing_comment function");
+        // alert("Error in preparing_comment function");
         }
     });
 }
@@ -270,7 +270,7 @@ function call_get_user_email(product_id) {
     },
     // the code below for error case 
     error: function() {
-      alert("Error in call_get_user_email");
+    //   alert("Error in call_get_user_email");
     }
     });
 }
