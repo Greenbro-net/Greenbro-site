@@ -1,165 +1,227 @@
 <?php
-// TO DO the pure page like greenbro.net has bags with jquery fix it
-
-// create method which will display description and item_cart in current place of screen 
 session_start();
 
-define('ROOT', dirname(__DIR__) . DIRECTORY_SEPARATOR);
-define('APP', ROOT . 'public_html/app' .  DIRECTORY_SEPARATOR);
-define('VIEW', ROOT . 'public_html/app' . DIRECTORY_SEPARATOR . 'view' . DIRECTORY_SEPARATOR);
-// for library folder
-define('LIBRARY', ROOT . 'public_html/app' . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR);
-// for content folder
-define('CONTENT', ROOT . 'public_html/app' . DIRECTORY_SEPARATOR . 'content' . DIRECTORY_SEPARATOR);
-define('MODEL', ROOT . 'public_html/app' . DIRECTORY_SEPARATOR . 'model' . DIRECTORY_SEPARATOR);
-define('DATA', ROOT . 'public_html/app' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR);
-define('CORE', ROOT . 'public_html/app' . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR);
-define('CONTROLLER', ROOT . 'public_html/app' . DIRECTORY_SEPARATOR . 'controller' . DIRECTORY_SEPARATOR);
-$modules = [ROOT,APP,CORE,CONTROLLER,DATA,CONTENT];
+
+// if (!isset($_SESSION['access_token'])) {
+//     header('Location  https://greenbro.net/facebook/login');
+//     exit(); 
+// }
+// create method which will display description and item_cart in current place of screen 
+
+echo "ID";
+echo $_SESSION['userData']['id'];
+echo "<hr>";
+
+echo "First Name";
+echo $_SESSION['userData']['first_name'];
+echo "<hr>";
+
+echo "Last Name";
+echo $_SESSION['userData']['last_name'];
+echo "<hr>";
+
+echo "Email";
+echo $_SESSION['userData']['email'];
+echo "<hr>";
+
+?>
+<img src="<?php echo $_SESSION['userData']['url']; ?>">
+
+<?php 
 
 
 
-// fucnction what is checkingout url 
-// now the function only checkouts methods and doesn't work with controller
- function checkout_url()
-{
-// the function below checkout does page exists or not 
-// if page does not exists you will be located in index.php
-$url = (explode( '/', $_SERVER['REQUEST_URI']));
+require_once "vendor/autoload.php";
+require_once "../config.php";
 
-// folder where we store our classes 
-$file_controller_names = array_slice(scandir('app/controller/'), 2);
 
-// var_dump($file_controller_names);
-// echo "<hr>";
+// $facebook_output = "";
 
-foreach($file_controller_names as $controller_key => $file_controller_name ) {
-    //  var_dump($file_controller_names);
+
+// testing code below for autoloading 
+$facebook = new \Facebook\Facebook([
+    'app_id' => '884265225709842',
+    'app_secret' => '88a78eda35cbb12323f383fdd7eac19e',
+    'default_graph_version' => 'v9.0'
+
+]);
+
+
+
+        $handler = $facebook->getRedirectLoginHelper();
+
+        $redirectTo = 'https://greenbro.net/facebook/login';
+        $data = ['email'];
+        $fullURL = $handler->getLoginUrl($redirectTo,  $data);
+
+
+
+?>
+
+<input type="button" onclick="window.location = '<?php echo $fullURL; ?>'" value="Login with Facebook">
+<?php
+
+
+// $data['email'] = "string";
+// echo $data['email'];
+
+
+
+
+// the code below from other lesson 
+// if (isset($_GET['code'])) 
+// {
+//     if (isset($_GET['access_token']))
+//     {
+//         $access_token = $_SESSION['access_token'];
+//     }
+//     else
+//     {
+//         $access_token = $facebook_helper->getAccessToken();
+
+//         $_SESSION['access_token'] = $access_token;
+
+//         $facebook->setDefaultAccessToken($_SESSION['access_token']);
+//     }
+
+//     $graph_response = $facebook->get("/me?fields=name, email", $access_token);
+
+//     // the code below grabs user data from facebook 
+//     $facebook_user_info = $graph_response->getGraphUser();
+
+//     // the block of code below sets session 
+//     if (!empty($facebook_user_info['id']))
+//     {
+//         $_SESSION['user_image'] = 'http://graph.facebook.com/'
+//         .$facebook_user_info['id'].'/picture';
+//     }
+
+//     if (!empty($facebook_user_info['name'])) 
+//     {
+//        $_SESSION['user_name'] = $facebook_user_info['name'];
+//     }
+
+//     if (!empty($facebook_user_info['email']))
+//     {
+//         $_SESSION['user_email_address'] = $facebook_user_info['email'];
+//     }
+//     // the block of code above sets session 
+// }
+//   else 
+//   {
+//       $facebook_permissions = ['email'];
+
+//       $facebook_login_url = $facebook_helper->getLoginUrl('https://greenbro.net/facebook/login',
+//               $facebook_permissions);
+      
+//       $facebook_login_url = '<div align="center"><a href="'.$facebook_login_url
+//       .'"><img src="php-login-with-facebook.gif" /></a></div>';
+//   }
+
+
+// //   other block for login with facebook 
+// if (isset($facebook_login_url))
+// {
+//     echo $facebook_login_url;
+// }
+// else
+// {
+//     echo '<div class="panel-heading">Welcome User</div><div class="
+//     panel-body">';
+//     echo '<img src="'.$_SESSION["user_image"].'" class="img-responsive
+//     img-circle img-thumbnail" />';
+//     echo '<h3><b>Name :</b> '.$_SESSION['user_name'].'</h3>';
+
+//     echo '<h3><b>Email :</b> '.$_SESSION['user_email_address'].'</h3>';
+
+//     echo '<h3><a href="logout.php">Logout</h3></div>';
+// }
+
+// testing code above for implementation of FB
+
+
+
+
+
+
+
+
+
+
+
+
+// the function below checkout does methods and controllers exist or not
+function checkout_url()
+{ 
+    $url = Application::clearupParameter();
+    // folder where we store our classes 
+    $file_controller_names = array_slice(scandir('app/controller/'), 2);
+
+    // the code below gets controller name and store it in array  
+    foreach($file_controller_names as $controller_key => $file_controller_name ) {
     // the code below deletes empty arrays from array 
-    // if (($file_controller_names == '.') || ($file_controller_names == '..')){
-    //     unset($file_controller_name[$controller_key]);
-    // } else {
+        
+        // the code below for gets name with Controller part 
         $file_controller_array = explode('.', $file_controller_name);
         // the arrays below have names of controllers  
         $controller_names[$controller_key] = $file_controller_array[0];
-    // }
-    // var_dump($controller_names);
-}
 
-// testing code for gets names on views in our app 
-$directory_view_names = scandir('app/view');
-foreach($directory_view_names as $view_key => $directory_view_name ) {
-
-    // var_dump($directory_view_name);
-    // the code below deletes empty arrays from array 
-    if (($directory_view_name == '.') || ($directory_view_name == '..')){
-        unset($directory_view_name);
-    } else {
-        // $file_view_names = explode('.', $directory_view_name);
-        // the arrays below have names of view folders 
-        $view_names[] = $directory_view_name;
+        // the code below for gets name without Controller part 
+        $file_controller_array = explode('Controller', $file_controller_name);
+        $short_controller_names[$controller_key] = $file_controller_array[0];
     }
-    // echo "<hr>";
-    // var_dump($view_names);
-}
 
-
-// the function below gets methods name and create array with class methods
-foreach($controller_names as $key => $controller_name) {
+    // the function below gets methods name and create array with class methods
+    foreach($controller_names as $controller_name) {
          
-        $multi_dimensional_array[] = get_class_methods($controller_name);
-}
-// echo "<pre>";
-// var_dump($multi_dimensional_array);
-// echo "</pre>";
-// the function below create makes one simple array and delete two methods 
-foreach($multi_dimensional_array as $arrays)
-        {
-        //   testing code 
-        //   echo "<pre>";
-        //   var_dump($arrays);
-        //   echo "</pre>";
-        //   testing code 
-            foreach($arrays as $key => $value)
-            {
-                if (($value == 'view') || ($value == 'model') || ($value == '__construct')) {
-                    unset($arrays[$key]);
+        $arrays_method_names[] = get_class_methods($controller_name);
+    }
+    // the function below create makes one simple array and delete three methods 
+    foreach($arrays_method_names as $method_names) {
+        
+            foreach($method_names as $key_method_name => $method_name) {
+                
+                if (($method_name == 'view') || ($method_name == 'model') || ($method_name == '__construct')) {
+                    unset($method_names[$key_method_name]);
                 } else {
-                    $controller_methods[] = $value; 
+                    $controller_methods[] = $method_name; 
                        }   
-            } 
-    
-        }
-        // echo "<pre>";
-        // var_dump($controller_methods);
-        // echo "</pre>";
-// testing foreach below
- if (empty($url[1]) || empty($url[2])) {
-    new Application();
-    return $variable = TRUE;
+                } 
+            }
 
-} 
-    foreach ($view_names as $view_name) {
-        if ($view_name == $url[1]) {
-            foreach ($controller_methods as $controller_method)
+    // the code below for case of pure domain name greenbro.net
+    if (empty($url[0]) && empty($url[1])) {
+    Application::call_by_url();
+     return $variable = TRUE;
+    }
+    // the code below for case only one of two url parameters
+    elseif(empty($url[0]) || empty($url[1])) {
+     $variable = FALSE;
+    }
+
+    elseif (!empty($url[0]) && !empty($url[1])) {
+      foreach ($short_controller_names as $controller_name_check) {
+        if ($controller_name_check == $url[0]) {
+            foreach ($controller_methods as $controller_method_check)
             {
-               if ($controller_method == $url[2]) {
-                  new Application();
-                //   echo "We have the same method";
-                  return $variable = TRUE;
+               if ($controller_method_check == $url[1]) {
+                //    the code below calls method of actual controller 
+                   Application::call_by_url();
+                   return $variable = TRUE;
                } 
             }
-        }  
-                       
-      // testing code below
-    //   echo"<pre>";
-    //   var_dump($_SERVER['REQUEST_URI']);
-    //   var_dump($url[1], $url[2]);
-    //     echo"</pre>";
-        
-  } 
-    // echo "The loop is ending";
-
+        }  else { // the else block escapes undefined variable notice beloц
+            $variable = FALSE;
+                }
+            } 
+        }
+    // if page does not exists you will be located in 404.php
     if ($variable !== TRUE) {
         $page_404 = new troubleController();
         $page_404->page_404();
     }
-//     else {
-//       $page_404 = new troubleController();
-//       $page_404->page_404();
-    
-// }
 
-
-// else {
-//     $page_404 = new troubleController();
-//     $page_404->page_404();
-//     die;
-
-// }
-// should organize it in good function, now it has some problems
-// create method which will check part of url if we have method in array it's OK else use header to 404.php PAGE
-// if (@in_array($url[2], $controller_methods) && !empty($url[1]))
-// {
-//     new Application();
-// } 
-// else if (empty($url[2]) || empty($url[1])) {
-//     new Application();
-//     } 
-
-// // the method below doesn't work properly
-// else {  //empty($url[1] is for avoiding redirect to 404 page
-//     $page_404 = new troubleController();
-//     $page_404->page_404();
-//           }
-
-        //   testing code below
-        // echo"<pre>";
-        // var_dump($view_names);
-        // var_dump($controller_methods);
-        // echo"</pre>";
-    }
-
+}
 
 
 
@@ -187,7 +249,6 @@ function autoload($className)
 spl_autoload_register('autoload', false);
 
 // Application is call in checkout_url function above
-// new Application();
 checkout_url();
 
 
@@ -222,52 +283,6 @@ require_once "app/controller/validationController.controller.php";
 // var_dump($_SESSION['user_id']);
 
 // var_dump($_POST);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// testing foreach below
-// if (empty($url[1]) || empty($url[2])) {
-//     new Application();
-
-// } elseif (!empty($url[1]) && !empty($url[2])) {
-//     foreach ($view_names as $view_name) {
-//         if ($view_name == $url[1]) {
-//             foreach ($controller_methods as $controller_method)
-//             {
-//                if ($controller_method == $url[2]) {
-//                   new Application();
-//                   echo "We have the same method";
-//                } 
-//             }
-//         } 
-//         echo"<pre>";
-                                        
-//       // testing code below
-//       var_dump($_SERVER['REQUEST_URI']);
-//       var_dump($url[1], $url[2]);
-//         echo"</pre>";
-        
-//   } 
-//     echo "The loop is ending";
-
-//    } else {
-//       $page_404 = new troubleController();
-//       $page_404->page_404();
-    
-// }
 ?>
 
 

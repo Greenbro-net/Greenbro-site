@@ -1,0 +1,12 @@
+{
+    "name": "greenbro/public_html",
+    "authors": [
+        {
+            "name": "Greenbro-net",
+            "email": "greenbro.net@gmail.com"
+        }
+    ],
+    "require": {
+        "facebook/graph-sdk": "^5.7"
+    }
+}

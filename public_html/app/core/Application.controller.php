@@ -2,33 +2,55 @@
 
 class Application
 {
-    protected $controller = 'homeController';
+    static protected $controller;
     //below it's like a method
-    protected $action = 'index';
-    protected $prams = [];
+    static protected $action;
+    static protected $prams = [];
 
-    public function __construct()
+
+    static public function call_by_url()
     {
-        $this->prepareURL();
-        if(file_exists(CONTROLLER. $this->controller . '.controller.php'))
+        self::prepareCALL();
+        if(file_exists(CONTROLLER. self::$controller . '.controller.php'))
         {
-            $this->controller = new $this->controller;
-            if(method_exists($this->controller, $this->action)) {
-                 call_user_func_array([$this->controller, $this->action], $this->prams);
+            self::$controller = new self::$controller;
+            if(method_exists(self::$controller, self::$action)) {
+                 call_user_func_array([self::$controller, self::$action], self::$prams);
             }
         }
     }
 
-    protected function prepareURL()
+    // the  method below  prepares url for call  
+    protected function prepareCALL()
+    {
+            $url = self::clearupParameter();
+            // the code below sets controller name for calling
+            self::$controller = isset($url[0]) ? $url[0].'Controller' : 'homeController';
+            // the code below sets method name for calling
+            self::$action = isset($url[1]) ? $url[1] : 'index';
+            unset($url[0], $url[1]);
+            self::$prams = !empty($url) ? array_values($url) : [];
+    }
+
+
+    // the method below allows adding parameter after controller/method
+    static public function clearupParameter()
     {
         $request = trim($_SERVER['REQUEST_URI'], '/');
-        if(!empty($request))
-        {
-            $url = explode('/', $request);
-            $this->controller = isset($url[0]) ? $url[0].'Controller' : 'homeController';
-            $this->action = isset($url[1]) ? $url[1] : 'index';
-            unset($url[0], $url[1]);
-            $this->prams = !empty($url) ? array_values($url) : [];
-        }
+        if(!empty($request)) {
+             $url = explode('/', $request);
+             // the code below checks are not empty values     
+            if (!empty($url[0]) && !empty($url[1])) {
+               if (strpos($url[1], '?')) {
+                $position = strpos($url[1], '?');
+                $url[1] = substr($url[1], 0, $position); 
+                    }
+                }    
+                
+              return $url;   
+            }
+           
     }
+
+
 }
