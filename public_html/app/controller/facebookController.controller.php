@@ -1,9 +1,21 @@
 <?php
-
+// session_start();
 
 class FacebookController extends Controller
 {
-    
+    // use  urlTrait;
+
+
+    public function grab_json()
+    {
+      var_dump($this->get_url());
+      var_dump($this->get_domen_part());
+    }
+
+
+    // testing code above for grabs url_settings.json 
+
+
     // the method below create object of facebook
     private function create_fb_object() 
     {
@@ -15,7 +27,7 @@ class FacebookController extends Controller
         ]);
     }
     // the method below prepares access token for facebook
-    private function prepare_token()
+    private function get_token()
     {
          return $this->create_handler()->getAccessToken();
     }
@@ -27,11 +39,11 @@ class FacebookController extends Controller
 
 
     // testing function below 
-    public function callback() 
+    public function fb_callback() 
     {
         try {
-            // $handler = $facebook->getRedirectLoginHelper();
-            $accessToken = $this->prepare_token();
+            // the code below oop version 
+            $accessToken = $this->get_token();
 
         } catch (\Facebook\Exceptions\FacebookResponseException $exception) {
             file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
@@ -46,9 +58,9 @@ class FacebookController extends Controller
                   header('Location: https://greenbro.net/facebook/login');
                   exit();
               }
-            // the code below means operation was successful
+            // the code below means operation was successful, grab all the data
               $oAuth2Client = $this->create_fb_object()->getOAuth2Client();
-              if (!$accessToken->isLongLived()) {
+              if ($accessToken->isLongLived()) {
                   $accessToken = $oAuth2Client->getLongLivedAccessToken($accessToken);
               
                   $response = $this->create_fb_object()->get("/me?fields=id, first_name, last_name, email, picture.type(large)", $accessToken);
@@ -67,13 +79,39 @@ class FacebookController extends Controller
     {    
         $handler = $this->create_handler();
 
-        $redirectTo = 'https://greenbro.net/facebook/callback';
+        $redirectTo = 'https://greenbro.net/facebook/fb_callback';
         $data = ['email'];
         $fullURL = $handler->getLoginUrl($redirectTo,  $data);
-        // header('Content-Type: $fullURL');
+
+        // testing code below 
+        $curl =  curl_init();
+        $url = $fullURL;
+
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+        // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+        curl_exec($curl);
+        
+        curl_close($curl);
+
         // echo $fullURL;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// the code below about data deletion 
+
 // die;
 // header('Content-Type: application/json');
 

@@ -1,4 +1,12 @@
-// the code should be change in production version 
+  // the code below gets right url setting for app 
+  jQuery(document).ready(function() {
+    var json = $.getJSON({'url': "/url_settings.json", 'async': false});
+    json = JSON.parse(json.responseText);
+    global.domen_part = json.domen_part;
+    global.url = json.url;
+    });
+
+    
 
 // the function below logout user from system 
 function logout_user() {
@@ -36,7 +44,7 @@ function log_in_user() {
                } else {
                    $('#error_message').html('');
                    $.ajax({
-                       url:"http://greenbro.com/validation/login",
+                       url: url+"://greenbro."+domen_part+"/validation/login",
                        method:"POST",
                        data:{username:username, password:password},
                        success:function(data) {

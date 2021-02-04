@@ -1,31 +1,27 @@
-      // the code below for developing process 
-      var domain = "com";
-      var https = "http";
-      // the code below for production
-      // var domain = "net";
-      // var https = "https";
-
-    // TO DO change in localhost http to https 
-
-
-
-      // the url below works fine 
+    // the code below gets right url setting for app  
+    jQuery(document).ready(function() {
+    var json = $.getJSON({'url': "/url_settings.json", 'async': false});
+    json = JSON.parse(json.responseText);
+    global.domen_part = json.domen_part;
+    global.url = json.url;
+    });
+    
       // the code below can reload a page 
       // $("#display_reload_cart_item").load("http://greenbro.com/food/show_food/" + ' #cart_item_code');        
+
 
 
 // the function below displays us cart item 
 $(document).ready(function () {
 
 $('#basket_checkout_button, #shopping-cart-container').click(function(ee) {    // Added .box to the click-function
-       
-  
+
     if ($(this).attr("class") == "box") { // check if the clicked element is .box(box what was opened does not closes after click on it)
       return false;                       // do nothing like return false
     }   
 
    // the code below reload shopping-cart-container and displays correct info of item after updating 
-   $("#display_reload_cart_item").load(https+"://greenbro."+domain+"/cart/show_cart_item/" + ' #cart_item_code', show_pager);
+   $("#display_reload_cart_item").load(url+"://greenbro."+domen_part+"/cart/show_cart_item/" + ' #cart_item_code', show_pager);
 
     // stop spreading method below
     ee.stopPropagation();
@@ -92,10 +88,7 @@ $(document).ready(function () {
             $.each(data, function(i, filename) {
               //append method insert content at the end of all <#images> elements:
               // thd code below adds img fields in #images
-                
                 $("#images"+ $id).append("<img  src='" + filename + "'>");
-                // alert(data);
-
             });
          }
       });
@@ -122,10 +115,6 @@ $('body').click(function() {
 });
  
 
-
-
-
-
 // the functions below calls in product-list.content.php and add items in order_items table
   // we throw item variable id to tb products_cart by the function onAdd
   function onAdd(id, price) {
@@ -141,14 +130,14 @@ $('body').click(function() {
         data: {id: id , quantity_of_item: quantity_of_item, price: price},
         success: function(data, textStatus, jqXHR) {
           // the code below displays messages with variables
-            alert(id);
-            alert(data);
-            alert(quantity_of_item);
+            // alert(id);
+            // alert(data);
+            // alert(quantity_of_item);
         }
     });
                       //  the code below has to be fixining in some way 
     // the code below reload shopping-cart-container and displays correct info of item after updating 
-    $("#display_reload_cart_item").load(https+"://greenbro."+domain+"/cart/show_cart_item/" + ' #cart_item_code');
+    $("#display_reload_cart_item").load(url+"://greenbro."+domen_part+"/cart/show_cart_item/" + ' #cart_item_code');
 }
 
 // the function below calls in product-list.content.php and remove item from order_items table
@@ -161,15 +150,15 @@ function removeItem(product_id) {
       data: {product_id: product_id},
       success: function(data, textStatus) {
         // the code below displays messages with variables
-          alert(product_id);
-          alert(data);
+          // alert(product_id);
+          // alert(data);
       }
   });
 
     // the code below reload shopping-cart-container and displays correct info of item after updating 
-    $("#display_reload_cart_item").load(https+"://greenbro."+domain+"/cart/show_cart_item/" + ' #cart_item_code', show_pager);
+    $("#display_reload_cart_item").load(url+"://greenbro."+domen_part+"/cart/show_cart_item/" + ' #cart_item_code', show_pager);
     // the code below reload page delivery_payment_type 
-    $("#cart_item_editor").load(https+"://greenbro."+domain+"/order/delivery_payment_type/" + ' #cart_item_editor', show_pager);
+    $("#cart_item_editor").load(url+"://greenbro."+domen_part+"/order/delivery_payment_type/" + ' #cart_item_editor', show_pager);
   }
 
 
@@ -183,12 +172,12 @@ function empty_cart_item(united_order_items) {
       data: {united_order_items: united_order_items},
       success: function(data, textStatus) {
         // the code below displays messages with variables
-          alert(united_order_items);
-          alert(data);
+          // alert(united_order_items);
+          // alert(data);
       }
   });
     // the code below reload shopping-cart-container and displays correct info of item after updating 
-    $("#display_reload_cart_item").load(https+"://greenbro."+domain+"/cart/show_cart_item/" + ' #cart_item_code', show_pager
+    $("#display_reload_cart_item").load(url+"://greenbro."+domen_part+"/cart/show_cart_item/" + ' #cart_item_code', show_pager
        );
     }
 
@@ -376,19 +365,3 @@ $(document).ready(function(){
   });
 
 });
-
-
-
-// delete in the future code below if it's not neccessary 
-// the code below displays comments for item 
-// $(document). ready(function () {
-//   $(".response_block_class, #comment_container"). click(function(comment) {
-//      if ($(comment.target).hasClass('comment_container_class')) {
-//        return false;
-//      }
-
-//      alert ("Function displays comment was run");
-//      $('.display_description').hide();
-//      $('.comment_container_class').toggle();
-//   });
-// });

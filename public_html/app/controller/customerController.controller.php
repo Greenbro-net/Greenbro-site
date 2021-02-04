@@ -7,6 +7,8 @@
 
 class CustomerController extends Controller
 {  
+    use urlTrait;
+
     protected $recipient_name;
     protected $recipient_last_name;
     protected $user_email;
@@ -32,8 +34,6 @@ class CustomerController extends Controller
                }
     }
     
-
-
 
     protected function get_recipient_name()
     {
@@ -66,9 +66,13 @@ class CustomerController extends Controller
     public function customer_route()
     {
         if (empty($_SESSION["last_customer_id"])) {
-            header('Location: http://greenbro.com/customer/get_customer_data');
+
+            header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/customer/get_customer_data");
+            exit();
+
         } else {
-            header('Location: http://greenbro.com/customer/delivery_payment_type');
+            header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/customer/delivery_payment_type");
+            exit();
                }
     }
     
@@ -83,7 +87,7 @@ class CustomerController extends Controller
 
        $this->get_object_customer_model()->adding_customer_info($this->get_recipient_name(), $this->get_recipient_last_name(), 
        $this->get_user_email(), $this->get_recipient_mobile_number());
-       header('Location: http://greenbro.com/customer/delivery_payment_type');
+       header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/customer/delivery_payment_type");
        exit;
         }
                     //there is #2 variant
@@ -94,7 +98,7 @@ class CustomerController extends Controller
         // the function below returns customer_id for customer that we have already had in table 
         $this->grab_last_customer_id();
 
-        header('Location: http://greenbro.com/customer/delivery_payment_type');
+        header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/customer/delivery_payment_type");
         exit;
           } 
                     //there is #3 variant

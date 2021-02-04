@@ -1,3 +1,11 @@
+// the code below gets right url setting for app 
+jQuery(document).ready(function() {
+    var json = $.getJSON({'url': "/url_settings.json", 'async': false});
+    json = JSON.parse(json.responseText);
+    global.domen_part = json.domen_part;
+    global.url = json.url;
+    });
+
 //  function  addComment(currentElement, response_id, rating, appearence)
 function  call_add_comment(product_id) {
     // check it in the future
@@ -16,7 +24,7 @@ function  call_add_comment(product_id) {
      
 $.ajax({
     type: "POST",
-    url : "http://greenbro.com/response/run_add_new_comment",
+    url : url+"://greenbro."+domen_part+"/response/run_add_new_comment",
     dataType: 'json',
     data : { product_id: product_id, rating: rating, user_name: user_name, user_email_response: user_email_response, comment: comment},
     
@@ -170,7 +178,7 @@ function close_sign_form(product_id) {
 function call_check_log_in(product_id) {
     $.ajax({
         type: "POST",
-        url: "http://greenbro.com/validation/check_log_in",
+        url: url+"://greenbro."+domen_part+"/validation/check_log_in",
         dataType: 'json',
         data: {},
         success: function(response) {   
@@ -201,7 +209,7 @@ function call_check_log_in(product_id) {
 function preparing_comment(product_id) {
     $.ajax({
         type: "POST",
-        url: "http://greenbro.com/validation/check_log_in",
+        url: url+"://greenbro."+domen_part+"/validation/check_log_in",
         dataType: "JSON",
         data:  {},
         success: function(response) {
@@ -215,7 +223,7 @@ function preparing_comment(product_id) {
             // the block of code above was put in ajax method
         $.ajax({
             type: "POST",
-            url: "http://greenbro.com/response/grab_quantity_comment",
+            url: url+"://greenbro."+domen_part+"/response/grab_quantity_comment",
             dataType: 'json',
             data: {product_id: product_id},
             success: function(response) {
@@ -256,7 +264,7 @@ function preparing_comment(product_id) {
 function call_get_user_email(product_id) {
     $.ajax({
     type: "POST",
-    url: "http://greenbro.com/validation/get_user_email",
+    url: url+"://greenbro."+domen_part+"/validation/get_user_email",
     dataType: 'JSON',
     data: {},
     success: function(response) {

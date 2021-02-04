@@ -3,3 +3,4 @@ link.php
 #data/Database.data.php
 DBinfo.data.php
 config.php
+url_settings.json

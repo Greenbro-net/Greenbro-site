@@ -14,6 +14,8 @@ $_POST["payment_status"] = "FALSE";
 
 class OrderController extends Controller
 {  
+    use urlTrait;
+    
     protected $united_order;
     protected $order_date;
     protected $order_customer_id;
@@ -97,7 +99,7 @@ class OrderController extends Controller
     // the function below gathers all order data then checks it and after "final submiting" add data in orders table
     public function gather_order_data()
     {
-        try {
+        try {    //header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/customer/get_customer_data");
               
               if (isset($_SESSION["united_order_items"])  && !empty($this->get_order_date()) && !empty($this->get_order_customer_id()) && isset($_POST["payment_status"]) &&
                  !empty($this->get_total_price()) && isset($_POST["payment_type"]) && isset($_POST["delivery_type"]) && isset($_POST["delivery_address"]))
@@ -105,12 +107,12 @@ class OrderController extends Controller
                     $result_adding_order = $this->adding_order_info();
 
                     if (empty($result_adding_order)) {
-                        header('Location: http://greenbro.com/finalorder/display_unsuccessful_message');
+                        header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/finalorder/display_unsuccessful_message");
                         exit;
                                       } else {
                                          // this redirect should go to the successful page 
                                          // after displays successful message for customer we unset successful $_SESSION["united_order_items"] and ($_SESSION["last_customer_id"])
-                                         header('Location: http://greenbro.com/finalorder/display_successful_message');
+                                         header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/finalorder/display_successful_message");
                                          exit;
                                              }
                         

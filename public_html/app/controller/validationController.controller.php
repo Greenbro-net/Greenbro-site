@@ -13,6 +13,8 @@
 
 class ValidationController extends Controller
 {
+    use urlTrait;
+
     public $user_id;
 
     // the method below filter input data 
@@ -174,7 +176,7 @@ class ValidationController extends Controller
                     //Register user from model function
                     if ($this->get_object_validation_model()->addNewUser($data["username"], $data["email"], $data["password"])) {
                         //Redirect to the login page
-                        header('Location: http://greenbro.com/validation/login');
+                        header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/validation/login");
                     } else {
                         die('Something went wrong.');
                     }

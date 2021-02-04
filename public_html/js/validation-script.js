@@ -1,5 +1,6 @@
 
   // TO DO validation like if all fields have to be fill in right way 
+  
   // the code below hides  validation window for log in   
   $(document).ready(function () { 
     $('body').click(function(we) {
