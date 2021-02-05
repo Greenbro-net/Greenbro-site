@@ -1,4 +1,8 @@
 <?php
+// the code below gets actual environment(url, domen_part)
+$wrapper_obj = new WrapperController();
+$domen_part = $wrapper_obj->get_domen_part(); 
+$url = $wrapper_obj->get_url();
 
 $shoppingCart = new ShoppingCart();
 
