@@ -1,6 +1,6 @@
-
+                                                 
 <!-- this url addres below is correct -->
-<form id="make_order " name="make_order" action="http://greenbro.com/customer/choses_next_step" method="POST"
+<form id="make_order " name="make_order" action="<?php echo $url; ?>://greenbro<?php echo ".$domen_part"; ?>/customer/choses_next_step" method="POST"
                      enctype="multipart/form-data">
 <!-- making_order -->
 <div id="user_ordering_form">

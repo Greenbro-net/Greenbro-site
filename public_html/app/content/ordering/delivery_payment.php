@@ -1,8 +1,8 @@
 <!-- this url addres below is correct -->
-<form id= "make_order " name="make_order" action="http://greenbro.com/order/gather_order_data" method="POST"
+<form id= "make_order " name="make_order" action="<?php echo $url; ?>://greenbro<?php echo ".$domen_part"; ?>/order/gather_order_data" method="POST"
                      enctype="multipart/form-data">
-<!-- making_order -->
-<div id="user_ordering_form">
+<!-- making_order --> 
+<div id="user_ordering_form"> 
 
 <h4>3. Доставка</h4>
 <!-- Method of delivery  -->
@@ -27,6 +27,7 @@
  </div>
  </form>
 
+ 
 
 
 

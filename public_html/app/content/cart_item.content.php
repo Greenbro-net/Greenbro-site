@@ -103,9 +103,9 @@ if (is_array($cartItem) || is_object($cartItem)){
   }
      ?>
    </div>
-
+                                                          
            <!-- the block of code below for continuing make order  -->
-           <form id="to_order" name="add_items_in_cart" action="http://greenbro.com/customer/customer_route" method="POST"
+           <form id="to_order" name="add_items_in_cart" action="<?php echo $url; ?>://greenbro<?php echo ".$domen_part"; ?>/customer/customer_route" method="POST"
                      enctype="multipart/form-data">
            <button id="button_to_order" type="submit">Оформлення замовлення
            </button>

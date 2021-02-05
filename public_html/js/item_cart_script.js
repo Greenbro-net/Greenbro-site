@@ -1,10 +1,9 @@
     // the code below gets right url setting for app  
-    jQuery(document).ready(function() {
     var json = $.getJSON({'url': "/url_settings.json", 'async': false});
     json = JSON.parse(json.responseText);
-    global.domen_part = json.domen_part;
-    global.url = json.url;
-    });
+    domen_part = json.domen_part;
+    url = json.url;
+    
     
       // the code below can reload a page 
       // $("#display_reload_cart_item").load("http://greenbro.com/food/show_food/" + ' #cart_item_code');        
@@ -123,7 +122,7 @@ $('body').click(function() {
       var quantity_of_item = document.getElementById(id).value;
       // the code below passes price from hidden field to item_cart_script
       var price = $('#price_' + id).val();
-         
+    
     $.ajax({                            
         type: "POST",
         url: 'index.php?action=add',

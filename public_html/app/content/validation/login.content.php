@@ -25,8 +25,8 @@
              </span>
              <!-- the code above for displays error message  -->
         </div>
-
-      <h5 class="mb-3"><a href="http://greenbro.com/facebook/callback" target="_blank">Увійти через Facebook</a></h5>
+                         
+      <h5 class="mb-3"><a href="<?php echo $url; ?>://greenbro<?php echo ".$domen_part"; ?>/facebook/callback" target="_blank">Увійти через Facebook</a></h5>
 
 
       <h5 class="mb-3"><a href="https://www.cluemediator.com" target="_blank">Увійти через Google</a></h5>
@@ -55,5 +55,7 @@
 
 </div>
 </form>
+
+
 
 

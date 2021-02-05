@@ -1,12 +1,10 @@
 
-
-
 <!-- the container for registration -->
 <div class="registration_container"  id="registration_window">
   <div  class="row mt-3">
     <div class="col-md-6" id="validation_container1">
         <h4 class="mb-3" id="main_title" >Реєстрація</h4>
-      <form id="form" class="registration_window" method="post" action="http://greenbro.com/validation/register">
+      <form id="form" class="registration_window" method="post" action="<?php echo $url; ?>://greenbro<?php echo ".$domen_part"; ?>/validation/register">
         <div class="form-group">
           <label class="validation_empty_class" for="name">Ім'я</label>
           <input type="text" class="form-control" name="username" id="name" autocomplete="username">

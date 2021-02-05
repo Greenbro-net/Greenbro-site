@@ -1,10 +1,10 @@
 // the code below gets right url setting for app 
-jQuery(document).ready(function() {
+
     var json = $.getJSON({'url': "/url_settings.json", 'async': false});
     json = JSON.parse(json.responseText);
-    global.domen_part = json.domen_part;
-    global.url = json.url;
-    });
+    domen_part = json.domen_part;
+    url = json.url;
+
 
 //  function  addComment(currentElement, response_id, rating, appearence)
 function  call_add_comment(product_id) {
