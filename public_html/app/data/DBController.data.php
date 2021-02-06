@@ -379,4 +379,4 @@ public function getDBgetCartItembyProduct($query, $params)
 
     
 }
-?> 
+

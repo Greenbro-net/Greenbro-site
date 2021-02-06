@@ -4,7 +4,6 @@
 // create system for validation data which we will get from user 
 // if we have the same data(last name, mobile number, email) in DB we don't create new insert to DB
 // if it's new user we will insert new data to table customers
-
 class CustomerController extends Controller
 {  
     use urlTrait;
@@ -132,7 +131,9 @@ class CustomerController extends Controller
         $this->model('CustomerModel');
         $object_customer_model = new CustomerModel();
         return $object_customer_model;
-    }
+    } 
+
+    
     
 }       
 

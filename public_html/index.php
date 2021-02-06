@@ -1,59 +1,14 @@
 <?php
 session_start();
-
-
 // if (!isset($_SESSION['access_token'])) {
 //     header('Location  https://greenbro.net/facebook/login');
 //     exit(); 
 // }
 // create method which will display description and item_cart in current place of screen 
 
-
- 
-
-
-
 require_once "vendor/autoload.php";
 require_once "../config.php";
-
-
-// $facebook_output = "";
-
-
-// testing code below for autoloading 
-$facebook = new \Facebook\Facebook([
-    'app_id' => '884265225709842',
-    'app_secret' => '88a78eda35cbb12323f383fdd7eac19e',
-    'default_graph_version' => 'v9.0'
-
-]);
-
-
-
-        $handler = $facebook->getRedirectLoginHelper();
-
-        $redirectTo = 'https://greenbro.net/facebook/callback';
-        $data = ['email'];
-        $fullURL = $handler->getLoginUrl($redirectTo,  $data);
-
-
-
-?>
-
-<input type="button" onclick="window.location = '<?php echo $fullURL; ?>'" value="Login with Facebook">
-<?php
-
-
-// testing code above for implementation of FB
-
-
-
-
-
-
-
-
-
+ 
 
 
 

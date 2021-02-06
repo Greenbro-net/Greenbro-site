@@ -1,7 +1,4 @@
-<!-- the code below allows us change .com(for developer) or .net(for production) -->
-
 <!-- the code below can pass variable in href -->
-	 
 	 <li><a href="//greenbro.<?php echo $domen_part; ?>/food/show_food">Продукти</a></li>
 	 <li><a href="//greenbro.<?php echo $domen_part; ?>/clothes/show_clothes">Одяг</a></li>    
 	 <li><a href="//greenbro.<?php echo $domen_part; ?>/goods/show_goods">Речі</a></li>

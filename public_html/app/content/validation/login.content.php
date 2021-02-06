@@ -26,8 +26,43 @@
              <!-- the code above for displays error message  -->
         </div>
                          
-      <h5 class="mb-3"><a href="<?php echo $url; ?>://greenbro<?php echo ".$domen_part"; ?>/facebook/callback" target="_blank">Увійти через Facebook</a></h5>
+     <!-- testing code below  -->
+<?php
+    
 
+
+
+
+// testing code below for autoloading 
+$facebook = new \Facebook\Facebook([
+    'app_id' => '884265225709842',
+    'app_secret' => '88a78eda35cbb12323f383fdd7eac19e',
+    'default_graph_version' => 'v9.0'
+]);
+
+ 
+
+        $handler = $facebook->getRedirectLoginHelper();
+
+        $redirectTo = 'https://greenbro.net/facebook/fb_callback';
+        $data = ['email'];
+        $fullURL = $handler->getLoginUrl($redirectTo,  $data);
+
+
+
+?>
+<!-- <input type="button" onclick="window.location = '<?php echo $fullURL; ?>'" value="Login with Facebook"> -->
+
+  <!-- testing code above for implementation of FB -->
+
+
+
+      <h5 class="mb-3"><a href="<?php echo $url; ?>://greenbro<?php echo ".$domen_part"; ?>/facebook/login" target="_blank">Увійти через Facebook</a></h5>
+
+
+
+
+      <!-- testing code above -->
 
       <h5 class="mb-3"><a href="https://www.cluemediator.com" target="_blank">Увійти через Google</a></h5>
       

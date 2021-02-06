@@ -3,16 +3,13 @@
 
 class FacebookController extends Controller
 {
-    // use  urlTrait;
 
 
     public function grab_json()
     {
-      var_dump($this->get_url());
-      var_dump($this->get_domen_part());
+      // var_dump($this->get_url());
+      // var_dump($this->get_domen_part());
     }
-
-
     // testing code above for grabs url_settings.json 
 
 
@@ -54,13 +51,15 @@ class FacebookController extends Controller
                                        }
 
             // the code below means operation wasn't successful
-              if ($accessToken) {
+              if (!$accessToken) {
+                   
                   header('Location: https://greenbro.net/facebook/login');
                   exit();
               }
             // the code below means operation was successful, grab all the data
               $oAuth2Client = $this->create_fb_object()->getOAuth2Client();
-              if ($accessToken->isLongLived()) {
+              if (!$accessToken->isLongLived()) {
+                  
                   $accessToken = $oAuth2Client->getLongLivedAccessToken($accessToken);
               
                   $response = $this->create_fb_object()->get("/me?fields=id, first_name, last_name, email, picture.type(large)", $accessToken);

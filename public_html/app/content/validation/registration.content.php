@@ -1,4 +1,3 @@
-
 <!-- the container for registration -->
 <div class="registration_container"  id="registration_window">
   <div  class="row mt-3">
@@ -87,7 +86,6 @@
           }
         });
       });
-
     
     </script>
   
