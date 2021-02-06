@@ -1,5 +1,4 @@
 <?php
-// session_start();
 
 class FacebookController extends Controller
 {
@@ -7,8 +6,6 @@ class FacebookController extends Controller
 
     public function grab_json()
     {
-      // var_dump($this->get_url());
-      // var_dump($this->get_domen_part());
     }
     // testing code above for grabs url_settings.json 
 
@@ -52,13 +49,12 @@ class FacebookController extends Controller
 
             // the code below means operation wasn't successful
               if (!$accessToken) {
-                   
                   header('Location: https://greenbro.net/facebook/login');
                   exit();
               }
             // the code below means operation was successful, grab all the data
               $oAuth2Client = $this->create_fb_object()->getOAuth2Client();
-              if (!$accessToken->isLongLived()) {
+              if ($accessToken->isLongLived()) {
                   
                   $accessToken = $oAuth2Client->getLongLivedAccessToken($accessToken);
               
@@ -67,26 +63,22 @@ class FacebookController extends Controller
 
                   $_SESSION['userData'] = $userData;
                   $_SESSION['access_token']  =  (string) $accessToken;
-                //   after success will redirect to main page 
+                  //   after success will redirect to main page 
                   header('Location: https://greenbro.net');
                   exit();
                 }
 
     }
-
+    // the method below call to FB API
     public function login()
     {    
-  
             $handler = $this->create_fb_object()->getRedirectLoginHelper();
-    
             $redirectTo = 'https://greenbro.net/facebook/fb_callback';
             $data = ['email'];
             $fullURL = $handler->getLoginUrl($redirectTo,  $data);
 
-      
             header("Location: $fullURL");
-            exit();
-          
+            exit();  
     }
 
 }

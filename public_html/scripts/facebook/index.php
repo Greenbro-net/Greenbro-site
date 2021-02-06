@@ -24,5 +24,9 @@ echo "Email";
 echo $_SESSION['userData']['email'];
 echo "<hr>";
 
+// the code below for displays user picture 
 ?>
+<img src=<?php echo $_SESSION['userData']['picture']; ?> />
+
+
 
