@@ -76,26 +76,19 @@ class FacebookController extends Controller
 
     public function login()
     {    
-        $handler = $this->create_handler();
+  
+            $handler = $this->create_fb_object()->getRedirectLoginHelper();
+    
+            $redirectTo = 'https://greenbro.net/facebook/fb_callback';
+            $data = ['email'];
+            $fullURL = $handler->getLoginUrl($redirectTo,  $data);
 
-        $redirectTo = 'https://greenbro.net/facebook/fb_callback';
-        $data = ['email'];
-        $fullURL = $handler->getLoginUrl($redirectTo,  $data);
-
-        // testing code below 
-        $curl =  curl_init();
-        $url = $fullURL;
-
-        curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-        // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
-        curl_exec($curl);
-        
-        curl_close($curl);
-
-        // echo $fullURL;
+      
+            header("Location: $fullURL");
+            exit();
+          
     }
+
 }
 
 

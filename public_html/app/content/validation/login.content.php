@@ -34,19 +34,7 @@
 
 
 // testing code below for autoloading 
-$facebook = new \Facebook\Facebook([
-    'app_id' => '884265225709842',
-    'app_secret' => '88a78eda35cbb12323f383fdd7eac19e',
-    'default_graph_version' => 'v9.0'
-]);
 
- 
-
-        $handler = $facebook->getRedirectLoginHelper();
-
-        $redirectTo = 'https://greenbro.net/facebook/fb_callback';
-        $data = ['email'];
-        $fullURL = $handler->getLoginUrl($redirectTo,  $data);
 
 
 
