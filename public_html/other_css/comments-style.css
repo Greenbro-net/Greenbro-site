@@ -1,9 +1,6 @@
-
-
 /* the main container for comment block  */
 .main_form_comment_container {
 display: none;
-
 }
 .separating_element {
     background-color: aliceblue;
@@ -17,7 +14,6 @@ display: none;
 /* the code below for container which contains comment */
 #comment_container_1 {
     border-style: solid;
-    /* padding-top: 13px; */
     margin-top: 10px;
 }
 /* the block with author name  */
@@ -47,7 +43,6 @@ float: right;
     /* border-color: brown;
     border-radius: 1px; */
     border-bottom:2px solid blue;
-    /* text-align: right; */
 }
 
 /* the code below for button leave a comment */

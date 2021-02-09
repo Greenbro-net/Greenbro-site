@@ -249,19 +249,34 @@ class ValidationController extends Controller
     // the method below is public wrapper for private method unsetUserSession
     public function logout() {
        $this->unsetUserSession();
+       $this->unsetFbUserSession();
     }
 
     // the method below creates session 
-    private function createUserSession($loggedInUser) {
+    private function createUserSession($loggedInUser) 
+    {
         $_SESSION['user_id'] = $loggedInUser[0]['user_id'];
         $_SESSION['username'] = $loggedInUser[0]['username'];
         $_SESSION['email'] = $loggedInUser[0]['email'];
     }
-    // the method below for logout, unset Session 
-    private function unsetUserSession() {
+
+    // TO DO expand this method for unseting session from FB API
+    // the method below for logout casual user, unset Session 
+    private function unsetUserSession() 
+    {
         unset($_SESSION['user_id']);
         unset($_SESSION['username']);
         unset($_SESSION['email']);
+    }
+
+    // the method below for logout user from FB, unset Session 
+    private function unsetFbUserSession()
+    {
+        unset($_SESSION['userData']['id']);
+        unset($_SESSION['userData']['first_name']);
+        unset($_SESSION['userData']['last_name']);
+        unset($_SESSION['userData']['email']);
+        unset($_SESSION['userData']['picture']['url']);
     }
 
     // the method below for gets validation model 

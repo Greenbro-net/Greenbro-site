@@ -26,11 +26,6 @@
     min-width: 60vh;
 }
 
-/* the code below likes a wrapper  */
-.validation_empty_class {
-
-}
-
 #validation_button_submit {
     text-align: center;
     cursor: pointer;
@@ -50,12 +45,20 @@
     border-radius: 50%;
     position: relative;
 }
-/* the code below for log_in button  */
-#log_in_button {
+
+/* the code below display user name and image(FB)  */
+.user_info_block {
     text-align: center;
     position: relative;
     cursor: pointer;
 }
+/* the code below for block if user hasn't loged in yet*/
+.login_user_block {
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
 
 /* the code below for log out button  */
 #log_out_button {
@@ -64,9 +67,6 @@
     cursor: pointer;
 }
 
-
-
-
 /* the codes below for log window  */
 #log_in_window {
     background-color: whitesmoke;
@@ -74,7 +74,6 @@
     height: 500px;
     position: absolute;
     z-index: 5;
-    /* display: none; */
     margin: 20px;
     margin-left: 30%;
     /* display: inline-block; */
@@ -83,15 +82,8 @@
 
 /* forget_password  */
 #block_enter_forgot {
-    /* background-color: yellowgreen; */
-    /* width: 100vh; */
-    /* display: inline-block;
-    text-align: center; */
     width: 100%;
 }
-
-
-
 
 /* the code below for registration vindow  */
 /* the codes below for log window  */
@@ -104,17 +96,11 @@
     display: none;
     margin: 20px;
     margin-left: 30%;
-    /* display: inline-block; */
 }
 
 /* the code below for registration question */
 #registration_question {
     text-align: center;
-    /* width: 100%; */
-    /* display: inline-block; */
-    /* margin: 20px; */
-    /* background-color: wheat; */
-    /* height: 100%; */
 }
 
 /* the three block of code below for switch_to_registration */
@@ -152,6 +138,41 @@
 /* the code below for reload window */
 .reload_container  {
     /* display: inline-block; */
-    
+}
+
+/* the code below for fb user image */
+#facebook_user_image {
+    border-radius: 50%;
+    width: 40px;
+}
+
+/* the code below for user logged in menu  */
+#user_loggedin_menu {
+    display: none;
+    width: 250px;
+    height: 150px;
+    position: absolute;
+    /* the code below position on the page  */
+    top: 80px;
+    background-color: whitesmoke;
+    z-index: 1;
+}
+/* hover for list li in menu */
+#user_loggedin_menu li:hover {
+    transition: transform .2s;
+    background-color:  #53A630;
+}
+/* the code below for list li in menu  */
+#user_loggedin_menu li {
+    display: block;
+    padding: 10px;
+    cursor: pointer;
     
 }
+/* the code below for exit button */
+.user_loggedin_menu li:first-child {
+    margin-top: 20px;
+    /* background-color: blue; */
+
+}
+

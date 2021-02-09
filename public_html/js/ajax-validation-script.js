@@ -10,6 +10,7 @@
 
 // the function below logout user from system 
 function logout_user() {
+     jQuery(document).ready(function() {
     // the url below is right path for all pages
     var current_url = window.location.href;
  $.ajax({
@@ -23,7 +24,8 @@ function logout_user() {
   });
     // the code below reload validation button and displays correct info of item after updating
         $("#reload_window_1").load(current_url + "/" + " #reload_window_1");
-}
+      });
+  };
 
 
 //function below for log in user
@@ -50,7 +52,8 @@ function log_in_user() {
                        success:function(data) {
                          $("form").trigger("reset");
                          $("#success_message").fadeIn().html(data);
-                        
+              // dublicate the reload block for better execution 
+              $("#reload_window_1").load(current_url + "/" + " #reload_window_1");
                         
                         //  the code below doesn't work properly
                          setTimeout(function(){
@@ -63,6 +66,7 @@ function log_in_user() {
               $("#reload_window_1").load(current_url + "/" + " #reload_window_1");
             
             });
+            
           };
     
  

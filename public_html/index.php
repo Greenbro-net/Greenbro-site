@@ -6,6 +6,8 @@ session_start();
 // }
 // create method which will display description and item_cart in current place of screen 
 
+// var_dump($_SESSION);
+
 require_once "vendor/autoload.php";
 require_once "../config.php";
  

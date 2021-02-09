@@ -67,20 +67,43 @@
       });
     }   
 
+    // TO DO Deletion in the future 
+    // the code below displays menu for user, who was loged in  
+    // $(document).ready(function() {
+    //   $(".user_info_block").click(function() {
+    //    alert("Show function is working");
+    //   $("#user_loggedin_menu").show();
+    //   });
+    // });
 
+    // the code below hides menu for user
+    $(document).ready(function() {
+      $("body").click(function(we) {
+        // the code below prevents of hiding menu after click
+        if ($(we.target).attr("class") == "user_info_block" || $(we.target).attr("class") == "user_loggedin_menu_li") {
+          return false;
+      }
+      $("#user_loggedin_menu").hide();
+      });
+    });
 
+    // the function below displays menu for user, who logged in (testing)
+    function display_menu() {
+      jQuery(document).ready(function(to) {
+        $("#user_loggedin_menu").show();
+      });
+    }
 
 
       
-    // the code below window for registration
+
     // the function below displays  window for registration 
-    $(document).ready(function (log) {
+    $(document).ready(function () {
       $("#switch_to_registration_id, #validation_window").click(function () {
       // the code below hide validation window 
-      // $('.validation_container').hide();
       $('.registration_container').show();
       $("#validation_window").addClass("active_validation");
-      alert("Your should see validation_window for registration");
+      alert("You should see validation_window for registration");
       // the code below can delete class 
       $("#registration_window").removeClass("hide_things");
          });

@@ -10,16 +10,34 @@
 	 
 	 <!-- code below for changing view for login and logout -->
 	 <div id="reload_window_1" class="reload_container">
-	 <?php if (isset($_SESSION['user_id'])) : ?>
-	    <li  class="validation_button"><a class="validation_button" onclick="logout_user()" id="log_out_button">
-	      <img src="<?php echo $url; ?>://greenbro.<?php echo $domen_part; ?>/images/image_for_validation/user_image_arrow.png" id="log_inout_img" alt="Вийти з системи">Вийти:)
-	    </a></li>
+
+
+    <!-- testing code below -->
+	<?php 
+		$view_val_obj  = new ViewValidationController();
+		$view_val_obj->call_manager();
+
+	?>
+	 <!-- function for log  out below -->
+	 <!-- onclick="logout_user()" id="log_out_button" --> 
+	 
+	 <!-- the sign below for log out -->
+	 
+	 <!-- the code below menu for user who was logged in  -->
+	 <div class="user_loggedin_menu" id="user_loggedin_menu">
+	   <li class="user_loggedin_menu_li" onclick="logout_user()">Вийти:)</li>
+	   <li class="user_loggedin_menu_li" >Допомога</li>
+	   <li class="user_loggedin_menu_li" >Видалити дані з сайту</li>
+	 </div>
+	 
+	 
+			<!-- the code below displays casual image and name of user   -->
+	<!-- <li  class="validation_button"><a class="validation_button" onclick="logout_user()" id="log_out_button">
+	<img src="<?php echo $url; ?>://greenbro.<?php echo $domen_part; ?>/images/image_for_validation/user_image_arrow.png" id="log_inout_img" alt="Вийти з системи">Вийти:)
+	</a></li> -->
 		
-     <?php else : ?>
-	 <li  class="validation_button"><a class="validation_button" onclick="show_log_in()" id="log_in_button">
-	  <img src="<?php echo $url; ?>://greenbro.<?php echo $domen_part; ?>/images/image_for_validation/user_image_arrow.png" id="log_inout_img" alt="Увійти в систему">Привіт)Увійти
-	 </a></li>
-	 <?php endif; ?>
+    
+
 	 </div>
 	 <!-- code above for changing view for login and logout -->
      
