@@ -312,9 +312,10 @@ class ValidationController extends Controller
     {
        if ($this->checkUserid()) {
         // call method from model
-         if ($result = $this->get_object_validation_model()->findEmailByUserid($this->get_user_id())) {
-               // call to autocomplete method
-               $this->fill_in_email();
+         if ($result = $this->get_object_validation_model()->findEmailByUserid($this->get_user_id())) {         
+               $form_data['success'] = true;
+               $form_data['posted'] = $result[0]["email"];
+               echo json_encode($form_data);
            }
         }
         // the code below grabs email from FB 
