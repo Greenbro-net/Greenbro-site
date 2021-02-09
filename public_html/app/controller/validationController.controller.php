@@ -65,7 +65,7 @@ class ValidationController extends Controller
     // the method below for ajax call from comment-script.js
     public function check_log_in()
     {
-        if (!$this->checkUserid()) {
+        if (!$this->checkUserid() || !$this->checkFbUserid()) {
              return $this->response_not_login();
             } else {
              return $this->response_login();
