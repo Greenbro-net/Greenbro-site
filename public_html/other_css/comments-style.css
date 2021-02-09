@@ -18,6 +18,7 @@ display: none;
 }
 /* the block with author name  */
 #author {
+width: 280px;
 text-align: left;
 /* color: brown; */
 font-size: 16px;
@@ -26,13 +27,13 @@ font-style: oblique;
 padding: 5px;
 display: inline-block;
 
-margin-right: 15%;
+padding-right: 15%;
 }
 /* the block below with date of comment */
 #date {
 font-size: 12px;
 padding: 5px;
-margin-left: 15%;
+margin-left: 10%;
 float: right;
 }
 

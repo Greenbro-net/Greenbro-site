@@ -1,4 +1,6 @@
 <?php
+// require below gets FB object
+require_once '../config.php';
 
 class FacebookController extends Controller
 {
@@ -14,11 +16,7 @@ class FacebookController extends Controller
     private function create_fb_object() 
     {
         // the array below for Facebook app 
-        return $facebook = new \Facebook\Facebook([
-        'app_id' => '884265225709842',
-        'app_secret' => '88a78eda35cbb12323f383fdd7eac19e',
-        'default_graph_version' => 'v9.0'
-        ]);
+        return $facebook;
     }
     // the method below prepares access token for facebook
     private function get_token()
