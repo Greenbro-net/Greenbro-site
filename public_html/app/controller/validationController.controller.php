@@ -34,6 +34,18 @@ class ValidationController extends Controller
             return true;
                }
     }
+    // the method below checks is user log in by FB
+    private function checkFbUserid()
+    {
+        if (empty($_SESSION['userData']['id'])) {
+            return false;
+        } else {
+            return true;
+               }
+    }
+
+
+
 
     // the method below for jquery return response by AJAX
     protected function response_not_login() 
@@ -256,7 +268,8 @@ class ValidationController extends Controller
     private function createUserSession($loggedInUser) 
     {
         $_SESSION['user_id'] = $loggedInUser[0]['user_id'];
-        $_SESSION['username'] = $loggedInUser[0]['username'];
+        // change key to user_name for using both cases casual and FB 
+        $_SESSION['user_name'] = $loggedInUser[0]['username'];
         $_SESSION['email'] = $loggedInUser[0]['email'];
     }
 
@@ -265,7 +278,7 @@ class ValidationController extends Controller
     private function unsetUserSession() 
     {
         unset($_SESSION['user_id']);
-        unset($_SESSION['username']);
+        unset($_SESSION['user_name']);
         unset($_SESSION['email']);
     }
 
@@ -286,23 +299,38 @@ class ValidationController extends Controller
         $object_validation_model = new ValidationModel();
         return $object_validation_model;
     }
+    // the method below fills in email field
+    protected function fill_in_email()
+    {
+        $form_data['success'] = true;
+        $form_data['posted'] = $result[0]["email"];
+        echo json_encode($form_data);
+    }
 
-    // the method below for gets user email
+    // the method below for gets user email for autocomplete
     public function get_user_email()
     {
        if ($this->checkUserid()) {
-         // call method from model
+        // call method from model
          if ($result = $this->get_object_validation_model()->findEmailByUserid($this->get_user_id())) {
-            $form_data['success'] = true;
-            $form_data['posted'] = $result[0]["email"];
-            echo json_encode($form_data);
-         }
-      
-       }
+               // call to autocomplete method
+               $this->fill_in_email();
+           }
+        }
+        // the code below grabs email from FB 
+        elseif($this->checkFbUserid()) {
+            if (!empty($_SESSION['userData']['email'])) {
+                 $form_data['success'] = true;
+                 $form_data['posted'] = $_SESSION['userData']['email'];
+                 echo json_encode($form_data);
+            }
+        }
     }
 
+
+
 }
-    // the block of code below for ajax magages of validation 
+    // the block of code below for ajax manages of validation 
     $object_ValidationController = new ValidationController();
 
     // the function below log out user 

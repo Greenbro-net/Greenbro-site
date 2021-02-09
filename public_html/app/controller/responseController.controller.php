@@ -9,6 +9,7 @@ class ResponseController extends Controller
     public $comment;
     public $rating;
     public $created_at;
+
     // the method below filter input data
     public function filter_data($data)
     {
@@ -25,6 +26,22 @@ class ResponseController extends Controller
        $this->view->page_title = 'Відгуки';
        $this->view->render();
     }
+
+    // the method below displays success message
+    protected function display_success_message()
+    {
+        $form_data['success'] = true;
+        $form_data['posted'] = 'Method addNewRating was executed successful';
+        echo json_encode($form_data);
+    }
+    // the method below displays unsucces message
+    protected function display_unsuccess_message()
+    {
+        $form_data['success'] = false;
+        $form_data['posted'] = 'Error is';
+        echo json_encode($form_data);
+    }
+    
     // the method below for gets response model 
     private function get_object_response_model()
     {
@@ -33,7 +50,7 @@ class ResponseController extends Controller
         return $object_response_model;
     }
 
-    // the method below for checks is user log in or not 
+    // the method below checks is user log in by casual system
     private function checkUserid()
     {
         if (empty($_SESSION['user_id'])) {
@@ -41,6 +58,16 @@ class ResponseController extends Controller
         } else {
             return true;
                 }
+    }
+
+    // the method below checks is user log in by FB
+    private function checkFbUserid()
+    {
+        if (empty($_SESSION['userData']['id'])) {
+            return false;
+        } else {
+            return true;
+               }
     }
     
     
@@ -74,6 +101,7 @@ class ResponseController extends Controller
          $this->set_created_at();
          return $this->created_at;
     }
+
     // the methods below get user name
     protected function set_user_name()
     {
@@ -146,8 +174,8 @@ class ResponseController extends Controller
     // the method below for adds new response rating in response_rating table 
     public function run_add_new_comment()
     {
-        // firstly check if user log in or not 
-         if ($this->checkUserid()) {
+        // firstly check throw what system user was logged in casual or FB
+         if ($this->checkUserid() || $this->checkFbUserid()) {
                 // the code below adds new comment in table response
             if ($last_response_id =  $this->get_object_response_model()->addNewComment($this->get_user_id(), $this->get_user_name(), 
                 $this->get_user_email_response(), $this->get_product_id(), $this->get_comment(), $this->get_created_at()))
@@ -156,14 +184,10 @@ class ResponseController extends Controller
                 // last_response_id receives from method above
                 $this->get_object_response_model()->addNewRating($this->get_user_id(), $last_response_id, $this->get_rating());
                 // the message below displays by AJax
-                $form_data['success'] = true;
-                $form_data['posted'] = 'Method addNewRating was executed successful';
-                echo json_encode($form_data);
+                $this->display_success_message();
             } // the code below will work if comment won't add to table
              else {
-                $form_data['success'] = false;
-                $form_data['posted'] = 'Error is';
-                echo json_encode($form_data);
+                 $this->display_unsuccess_message();
              }  
          } 
           
@@ -175,32 +199,3 @@ class ResponseController extends Controller
 
 
 
-
-//     <!-- DATABASE
-// +1. See what tables and columns we need
-// +2. Add response DATABASE
-// Database fields:
-// +1. id        INT
-// +2. user_id   INT
-// +3. product_id INT (for display response of some item)
-// +4. body_of_response TEXT
-// +5. created_at DATETIME
-
-// Create
-// +1. User has to be logged in
-// 2. Check if data is text
-// +3. Check for empty fields
-// +4. If checks are met, do a request and create post
-
-// Read
-// +1. Read data from the database
-// +2. Displays responses on the list of items 
-// +3. On list of items, user can click on response and opens all response for current item for reading
-
-// Update
-// 1. Create function for answer on user response 
-
-// Delete 
-// 1. Delete button for admin if response is incorrect  -->
-
-?>
