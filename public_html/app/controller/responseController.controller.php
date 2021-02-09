@@ -153,15 +153,39 @@ class ResponseController extends Controller
         return $this->rating;
     }
 
-    // the methods below for user_id 
+    // the methods below setter for user_id 
     private function set_user_id()
     {
       $user_id = $this->user_id = $this->filter_data($_SESSION["user_id"]);
     }
-    public function get_user_id() 
+    // the methods below setter for FB user_id 
+    private function set_user_id_fb()
     {
+      $user_id = $this->user_id = $this->filter_data($_SESSION['userData']['id']);
+    }
+
+    // public function get_user_id() 
+    // {   //set user id from casual case
+    //     $this->set_user_id();
+    //     return $this->user_id;
+
+    //     // set user id from FB case 
+
+    // }
+
+    public function get_user_id() 
+    {   //set user id from casual case
         $this->set_user_id();
-        return $this->user_id;
+        if ($this->user_id) {
+           return $this->user_id;
+        } else {
+            $this->set_user_id_fb();
+            return $this->user_id;
+        }
+        
+
+        // set user id from FB case 
+
     }
 
 
