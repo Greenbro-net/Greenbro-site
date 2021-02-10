@@ -19,8 +19,11 @@ function logout_user() {
      data: {},
      success: function(data) {
         //  the code below displays messages
-        alert("Function logout_user was executed");
+        // alert("Function logout_user was executed");
+        // dublicate the reload block for better execution
+        $("#reload_window_1").load(current_url + "/" + " #reload_window_1");
      }
+     
   });
     // the code below reload validation button and displays correct info of item after updating
         $("#reload_window_1").load(current_url + "/" + " #reload_window_1");
