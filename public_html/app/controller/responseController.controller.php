@@ -164,14 +164,7 @@ class ResponseController extends Controller
       $user_id = $this->user_id = $this->filter_data($_SESSION['userData']['id']);
     }
 
-    // public function get_user_id() 
-    // {   //set user id from casual case
-    //     $this->set_user_id();
-    //     return $this->user_id;
 
-    //     // set user id from FB case 
-
-    // }
 
     public function get_user_id() 
     {   //set user id from casual case

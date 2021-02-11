@@ -1,21 +1,32 @@
 <?php
-// require below gets FB object
-require_once '../config.php';
 
 class FacebookController extends Controller
 {
 
 
     public function grab_json()
-    {
+    {  
+        //  var_dump(require_once '../config.php');
+        //  require_once '../config1.php';
+        // $facebook  = new  \Facebook\Facebook($array);
+        var_dump($this->get_object_fb_model()->grab_fb_object());
     }
     // testing code above for grabs url_settings.json 
 
+
+    // the method below gets  FB model
+    private function get_object_fb_model()
+    {
+        $this->model('FbModel');
+        $object_fb_model = new FbModel();
+        return $object_fb_model;
+    }
 
     // the method below create object of facebook
     private function create_fb_object() 
     {
         // the array below for Facebook app 
+         $facebook = $this->get_object_fb_model()->grab_fb_object();
         return $facebook;
     }
     // the method below prepares access token for facebook

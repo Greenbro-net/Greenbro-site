@@ -1,4 +1,4 @@
-Message:SQLSTATE[HY000] [1045] Access denied for user 'green64_one'@'37.73.13.158' (using password: YES)<br />File: /opt/lampp/htdocs/greenbro.net/public_html/app/data/Database.data.php<br />Line: 13<br />Trace: #0 /opt/lampp/htdocs/greenbro.net/public_html/app/data/Database.data.php(13): PDO->__construct('mysql:host=gree...', 'green64_one', '123456')
+Message:SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Name or service not known<br />File: /opt/lampp/htdocs/greenbro.net/public_html/app/data/Database.data.php<br />Line: 13<br />Trace: #0 /opt/lampp/htdocs/greenbro.net/public_html/app/data/Database.data.php(13): PDO->__construct('mysql:host=gree...', 'green64_one', '123456')
 #1 /opt/lampp/htdocs/greenbro.net/public_html/app/model/AllProductsModel.model.php(15): Database::connect()
 #2 /opt/lampp/htdocs/greenbro.net/public_html/app/model/AllProductsModel.model.php(34): AllProductsModel->getAllProducts()
 #3 /opt/lampp/htdocs/greenbro.net/public_html/app/view/home/index.view.phtml(5): AllProductsModel->showAllProducts()
