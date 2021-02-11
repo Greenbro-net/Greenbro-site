@@ -5,6 +5,6 @@ DBinfo.data.php
 config.php
 url_settings.json
 my-errors.log
-fb_config.php
 error_log
+facebookController.controller.php
 
