@@ -7,4 +7,5 @@ url_settings.json
 my-errors.log
 error_log
 facebookController.controller.php
+fbdatadeletionController.controller.php
 

@@ -148,42 +148,17 @@ class ResponseModel extends DBController
     }
 
 
-    // the method below gets total rating from response_rating table 
-    // DELETE???
-    // public function getTotalRating($response_id) 
-    // {
-    //    try {
-    //      $query = "SELECT * FROM `response_table` WHERE response_id = ?";
+    // the method below deletes user response by of user id
+    public function deleteResponseByUserid()
+    {
 
-    //      $params = array(
-    //          array(
-    //              "param_type" => "i",
-    //              "param_value" => $response_id
-    //          ));
+    }
 
-    //     $result_getTotalRating = $this->updateResponseRatingTable($query, $params);
-
-    //     if (empty($response_id)) {
-    //         throw new Exception("Method getTotalRating doesn't get variable of response_id");
-    //             }
-    //     if (empty($result_getTotalRating)) {
-    //             return false;
-    //             } else {
-    //                 return $result_getTotalRating;
-    //                    }
-    //    } catch (Exception $exception) {
-    //     file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
-    //         'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-    //                                   }
-    // }
-
+    // the method below deletes user response rating by of user id
+    public function deleteResponseRatingByUserid()
+    {
+        
+    }
     
 }
 
-// query which can grab data from two tables response and response_rating
-$query = "SELECT response.*, response_rating.response_id, response_rating.rating 
-          FROM response,response_rating WHERE response.response_id = response_rating.response_id 
-          AND response.product_id = 106";
-
-// insert example in response table
-$query =  "INSERT INTO `response`(`response_id`, `user_id`, `user_name`, `user_email_response`, `product_id`, `comment`, `created_at`) VALUES (10, 339, 'Andrey', 'reeeee@ukr.net', 106, 'My comment', 2020)";

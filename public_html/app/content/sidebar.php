@@ -7,6 +7,9 @@
 	 <li><a href="//greenbro.<?php echo $domen_part; ?>/home/paymentShipping">Оплата і доставка</a></li>
 	 <li><a href="//greenbro.<?php echo $domen_part; ?>/home/contactUs">Контакти</a></li>
 
+      
+	 <!-- code below is anchor for pop up messages -->
+          <div id="login_message_place" class="validation_message_place" ></div>
 	 
 	 <!-- code below for changing view for login and logout -->
 	 <div id="reload_window_1" class="reload_container">

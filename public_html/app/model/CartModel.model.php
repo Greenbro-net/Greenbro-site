@@ -1,6 +1,6 @@
 <?php
 
-class Cart 
+class CartModel
 {
     public function ShowCartItem()
     {

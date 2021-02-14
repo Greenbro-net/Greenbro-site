@@ -9,21 +9,13 @@
         <h4 class="mb-3" id="main_title" >Вхід в особистий кабінет</h4>
         <div class="form-group">
           <label class="validation_empty_class" for="name">Ім'я або email</label>
-          <input type="text" class="form-control" name="username" id="name" placeholder="Username *" autocomplete="username">
-             <!-- the code below for displays error message  -->
-             <span class="invalidFeedback">
-               <!-- <?php echo $data['usernameError']; ?> -->
-             </span>
-             <!-- the code above for displays error message  -->
+          <input type="text" class="form-control" name="username" id="login_name" placeholder="Username *" autocomplete="username">
+             
         </div>
         <div class="form-group">
           <label class="validation_empty_class" for="password">Пароль</label>
-          <input type="password" class="form-control" name="password" id="password" placeholder="Password *" autocomplete="new-password">
-             <!-- the code below for displays error message  -->
-             <span class="invalidFeedback">
-               <!-- <?php echo $data['usernameError']; ?> -->
-             </span>
-             <!-- the code above for displays error message  -->
+          <input type="password" class="form-control" name="password" id="login_password" placeholder="Password *" autocomplete="new-password">
+        
         </div>
                          
 
@@ -38,20 +30,19 @@
         <div id="block_enter_forgot">
           <!-- testing form code below  -->
           <!-- test with inserted function below -->
-          <input  type="button" name="submit" onclick="log_in_user()" id="submit" class="btn btn-primary" value="Вхід"/>
-          <span id="error_message" class="text-danger"></span>
-          <span id="success_message" class="text-success"></span>
+          <input  type="button" name="submit" onclick="log_in_user()" id="login_button" class="btn btn-primary" value="Вхід"/>
+          
 
           <!-- <input class="btn btn-primary" type="submit" id="validation_button_submit" class="btn btn-primary" value="Вхід"/> -->
           <a href="" class="block_enter_forgot" type="submit" id="validation_forget_password" class="btn btn-primary" value="Забули пароль?">Забули пароль?</a>      
         </div>
 
-        <!-- testing code  -->
+        <!-- block of code below for registration in login window  -->
         <div class="switch_to_registration" id="switch_to_registration_id">
                 <div class="switch_registration" id="registration_question">Ще не зареєструвалися?</div>
-                 <div class="switch_registration" id="div_registration_from_login">Зареєструватися</div>
+                 <div class="switch_registration" id="registration_from_login">Зареєструватися</div>
         </div>
-        <!-- testing code  -->
+        
     </div>
   
   </div>

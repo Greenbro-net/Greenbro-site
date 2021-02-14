@@ -1,16 +1,4 @@
 <?php
-//$_SESSION['user_id'] = 5; //unset($_SESSION['user_id']);
-
-// $_SESSION['userData']['id'] = 4; unset($_SESSION['userData']['id']);
-
-
-// $_SESSION['user_name']  = "Alexander";
-// $_SESSION['userData']['first_name'] = "Alexander";
-
-
-// $_SESSION['userData']['picture']['url'] = "https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=444339880038623&height=50&width=50&ext=1615243680&hash=AeS30LYuU6tt9WL9gWY";
-
-// testing code above
 
 class ViewValidationController extends Controller
 {

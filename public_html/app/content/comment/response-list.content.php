@@ -28,7 +28,6 @@
                         </div>
                            <!-- the code below displays stars rating of item  -->
                            <!-- there are a problem -->
-                           <!-- TO DO put our stars-list in foreach loop and create form for adding comment  -->
 
 
                             <?php 

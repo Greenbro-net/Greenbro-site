@@ -44,7 +44,20 @@ class ValidationController extends Controller
                }
     }
 
-
+    // the method below displays success message
+    protected function response_success_message()
+    {
+        $form_data['success'] = true;
+        $form_data['posted'] = 'Validation was successful';
+        echo json_encode($form_data);
+    }
+    // the method below displays success message
+    protected function response_unsuccess_message()
+    {
+        $form_data['success'] = false;
+        $form_data['posted'] = 'Error is there';
+        echo json_encode($form_data);
+    }
 
 
     // the method below for jquery return response by AJAX
@@ -65,10 +78,10 @@ class ValidationController extends Controller
     // the method below for ajax call from comment-script.js
     public function check_log_in()
     {
-        if (!$this->checkUserid() || !$this->checkFbUserid()) {
-             return $this->response_not_login();
+        if ($this->checkUserid() || $this->checkFbUserid()) {
+             return $this->response_login();            
             } else {
-             return $this->response_login();
+                return $this->response_not_login();
                    }
     }
 
@@ -89,19 +102,9 @@ class ValidationController extends Controller
 
     
     public function register() {
-        // $data = [
-        //     'username' => '',
-        //     'email' => '',
-        //     'password' => '',
-        //     'confirmPassword' => '',
-        //     'usernameError' => '',
-        //     'emailError' => '',
-        //     'passwordError' => '',
-        //     'confirmPasswordError' => ''
-        // ];
-
+        
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            // Santize post data
+            // Sanitize post data
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             $data = [
@@ -122,82 +125,70 @@ class ValidationController extends Controller
 
             //Validate username on letters/numbers
             if (empty($_POST['username'])) {
-                $data['usernameError'] = 'Please enter username.';
+                $data['usernameError'] = 'Введіть ім\'я користувача';
             } elseif (!preg_match($nameValidation, $_POST['username'])) {
-                $data['usernameError'] = 'Name can only contain letters 
-                     and numbers.';
-            } else {
-                //Check if username exists
-                
-                //create object model below
-                if ($this->get_object_validation_model()->findUserByUsername($data['username'])) {
-                    $data['usernameError'] = 'Username is already taken.';
-                } else {
-                    echo "We do not have that username";
-                }
+                $data['usernameError'] = 'Ім\'я може складатися тільки з літер та цифр';
+            // the code below checks table for the same username
+            } elseif ($this->get_object_validation_model()->findUserByUsername($data['username'])) {
+                $data['usernameError'] = 'Це ім\'я вже використовується, спробуйте інше';
             }
-
+                
             //Validate email
             if (empty($_POST['email'])) {
-                $data['emailError'] = 'Please enter email address.';
+                $data['emailError'] = 'Введіть електронну адресу';
             } elseif (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-                 $data['emailError'] = 'Please enter the correct format.';
-            } else {
-                //Check if email exists
+                 $data['emailError'] = 'Введена вами електронна адреса не є коректною';
+                 //Check if email has already taken or not
+            } elseif(($this->get_object_validation_model()->findUserByEmail($data['email']))) {
+                 $data['emailError'] = 'Введена електронна адреса вже використовується, спробуйте іншу';
+            }
 
-                // create object model below
-                if ($this->get_object_validation_model()->findUserByEmail($data['email'])) {
-                    $data['emailError'] = 'Email is already taken.';
-                    // testing code below
-                    var_dump($this->get_object_validation_model()->findUserByEmail($data['email']));
-                } else {
-                    echo "We do not have that email";
-                    // testing code below 
-                    var_dump($this->get_object_validation_model()->findUserByEmail($data['email']));
+            //Validate password on length and numeric values
+            if (empty($data['password'])) {
+                $data['passwordError'] = 'Введіть пароль';
+            } elseif (strlen($data['password'] < 8 )) {
+                $data['passwordError'] = 'Пароль має містити не менше 8 символів';
+            } elseif (!preg_match($passwordValidation, $data['password'])) {
+                $data['passwordError'] = 'Пароль має містити одну цифру';
+            }
+
+            //Validate confirm password
+            if (empty($data['confirmPassword'])) {
+                $data['confirmPasswordError'] = 'Введіть пароль в поле для підтвердження паролю';
+            } else {
+                if ($data['password'] != $data['confirmPassword']) {
+                $data['confirmPasswordError'] = 'Паролі не співпадають, спробуйте знову';
                 }
             }
-                //Validate password on length and numeric values
-                if (empty($data['password'])) {
-                    $data['passwordError'] = 'Please enter password.';
-                } elseif (strlen($data['password'] < 6)) {
-                    $data['passwordError'] = 'Password must be at least 8 characters.';
-                } elseif (!preg_match($passwordValidation, $data['password'])) {
-                    $data['passwordError'] = 'Password must have at least one numeric value.';
-                }
 
-                //Validate confirm password
-                if (empty($data['confirmPassword'])) {
-                    $data['confirmPasswordError'] = 'Please enter password.';
-                } else {
-                    if ($data['password'] != $data['confirmPassword']) {
-                    $data['confirmPasswordError'] = 'Password do not match, please try again.';
-                    }
-                }
+            // Make sure that errors are empty
+            if (empty($data['usernameError']) && empty($data['emailError']) &&
+                empty($data['passwordError']) && empty($data['confirmPasswordError'])) {
 
-                // Make sure that errors are empty
-                if (empty($data['usernameError']) && empty($data['emailError']) &&
-                    empty($data['passwordError']) && empty($data['confirmPasswordError'])) {
+                //Hash password
+                $data['password'] = password_hash($data['password'],
+                      PASSWORD_DEFAULT);
+                // $hashedPassword = password_hash($data['password'],
+                //       PASSWORD_DEFAULT);
+                
+                // the code below adds new user to tb registration
+                if ($this->get_object_validation_model()->addNewUser($data["username"], $data["email"], $data["password"])) {
+                    // after successful registration sets session for user  
+                    $loggedInUser = $this->get_object_validation_model()->loginUser($data['username'], $data['password']);
+                     if ($loggedInUser) {
+                      $this->createUserSession($loggedInUser);
 
-                    //Hash password
-                    $data['password'] = password_hash($data['password'],
-                          PASSWORD_DEFAULT);
-
-                    $hashedPassword = password_hash($data['password'],
-                          PASSWORD_DEFAULT);
-                    
-                    //Register user from model function
-                    if ($this->get_object_validation_model()->addNewUser($data["username"], $data["email"], $data["password"])) {
-                        //Redirect to the login page
-                        header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/validation/login");
-                    } else {
-                        die('Something went wrong.');
-                    }
-
-                }
+                      //Redirect to the main page
+                      // display message by json 
+                       header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part());
+                          } 
+                  } 
+            // the code below displays message with error for user in unsuccess case
+            } else {
+                //return error by json
+                $this->response_unsuccess_message();
+                   }
         }
-        // $this->view('validation' . DIRECTORY_SEPARATOR . $data);
-        // echo "<hr>";
-        // var_dump($data);
     }
 
 
@@ -242,7 +233,11 @@ class ValidationController extends Controller
                 // var_dump($loggedInUser);
                 if ($loggedInUser) {
                     $this->createUserSession($loggedInUser);
-                } else {
+                    // the code below returns success message
+                    $this->response_login();
+                 
+                } else { //  block below if mistake was happened in code
+                    $this->response_not_login();
                     $data['passwordError'] = 'Password or username is incorrect. Please try again.';
                 }
             } else {
