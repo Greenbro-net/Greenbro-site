@@ -46,6 +46,8 @@ function registration_user() {
     var phone_number = $('#contact').val();
     var password = $('#password').val();
     var confirm_password = $('#confirmPassword').val();
+    // the url below is right path for all pages
+    var current_url = window.location.href;
     // the code below remove error-class from DOM
     $(".error").remove();
 
@@ -78,22 +80,49 @@ function registration_user() {
     return  false;
     }
 
-    alert("Function registration_user");
+
     // the code below call controller method by of ajax
     $.ajax({
         url: url+"://greenbro."+domen_part+"/validation/register",
         method:"POST",
-        data:{username:username, email:email, phone_number:contact,
-              password:password, confirm_password:confirmPassword},
+        dataType: 'json',
+        data:{username:username, email:email, phone_number:phone_number,
+              password:password, confirm_password:confirm_password},
         success:function(response) {
-            alert("Success  in function"  + response);
+            if (response != "") {
+               if (response.success == true) {
+                // alert("Success in function"  + response.success + response.posted);
+                // the code below displays and hides message 
+                $("#registration_message_place").fadeIn().addClass("success").addClass("validation_display_messages").text(response.posted);
+                $("#registration_message_place").fadeOut(4000);
+                // dublicate the reload block for better execution 
+                $("#reload_window_1").load(current_url + "/" + " #reload_window_1");
+                // the code below hides registration window
+                $('.registration_container').fadeOut(2000);
+                $("#validation_window").removeClass("active_validation");
+                return false;
+               // the code below displays with error class(red)
+               } else if (response.success == false){
+                $("#registration_message_place").fadeIn().addClass("unsuccess").addClass("validation_display_messages").text(response.posted);
+                $("#registration_message_place").fadeOut(4000);
+                return false;
+               }
+            }
+            
         },
         error: function(response) {
-            alert("Error in funciton" + response);
+            // alert("Error in funciton" + response.success + response.posted);
+            $("#registration_message_place").fadeIn().addClass("unsuccess").addClass("validation_display_messages").text("Сталася помилка, ви не увійшли в систему");
+            $("#registration_message_place").fadeOut(4000);
+            return false;
         }
-
+        
     });
-
+        // the code below remove class from message place
+        $("#registration_message_place").removeClass("unsuccess");
+        // dublicate the reload block for better execution 
+        $("#reload_window_1").load(current_url + "/" + " #reload_window_1");
+                  
     });
 
 

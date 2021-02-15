@@ -114,11 +114,32 @@
     margin: 20px;
     margin-left: 30%;
 }
-/* the code below for pop up messages  */
-.validation_message_place {
+/* the code below for pop up messages for registration message  */
+.registration_message_place {
     background-color: wheat;
     /* position of text in block  */
     text-align: center;
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 2%;
+    padding: 10px;
+    width: 330px;
+    height: 130px;
+    font-size: 18px;
+    font-style: italic;
+    display: none;
+    border: solid;
+    z-index: 6;
+    /* the code below for displaying message text inside message box   */
+    white-space: normal;
+
+}
+/* the code below for pop up messages for login message  */
+.login_message_place {
+    background-color: wheat;
+    /* position of text in block  */
+    text-align: center;
+    /* maybe delete absolute position in the future  */
     position: absolute;
     margin-left: 10%;
     margin-top: 2%;
@@ -129,7 +150,13 @@
     font-style: italic;
     display: none;
     border: solid;
-    z-index: 1;
+    z-index: 6;
+    /* the code below for displaying message text inside message box   */
+    white-space: normal;
+}
+/* the code below for displays messages */
+.validation_display_messages {
+    display: block;
 }
 
 /* main container registration from login  */

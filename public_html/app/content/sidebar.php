@@ -9,7 +9,8 @@
 
       
 	 <!-- code below is anchor for pop up messages -->
-          <div id="login_message_place" class="validation_message_place" ></div>
+		  <div class="login_message_place" id="login_message_place"></div>
+		  <div class="registration_message_place" id="registration_message_place"></div>
 	 
 	 <!-- code below for changing view for login and logout -->
 	 <div id="reload_window_1" class="reload_container">

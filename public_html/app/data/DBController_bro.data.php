@@ -51,14 +51,21 @@ class DBController_bro extends Database_bro {
     {
         try {
         $pdo = self::connect();
+        if (empty($pdo)) {
+            throw new PDOException("PDO object is empty in updateRegistration");
+        }
         $sql_statement = $pdo->prepare($query);
+        if (empty($sql_statement)) {
+            throw new PDOException("SQL statement is empty in updateRegistration");
+        }
+
         // this block of code for updating quantity of paremeters which we should post in execute
            $sql_statement->bindParam(1, $params[0]["param_value"], PDO::PARAM_STR);
         if (!empty($params[1]["param_value"])) {
             $sql_statement->bindParam(2, $params[1]["param_value"], PDO::PARAM_STR);
                                                }
         if (!empty($params[2]["param_value"])) {
-            $sql_statement->bindParam(3, $params[2]["param_value"], PDO::PARAM_STR);
+                $sql_statement->bindParam(3, $params[2]["param_value"], PDO::PARAM_STR);
                                                }
         if (!empty($params[3]["param_value"])) {
             $sql_statement->bindParam(4, $params[3]["param_value"], PDO::PARAM_STR);

@@ -2,7 +2,7 @@
 
 class ValidationModel extends Validation
 {   
-
+   
     // the method below check was user login or not
     public function loginUser($username, $password) 
     {

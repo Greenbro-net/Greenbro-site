@@ -3,10 +3,10 @@
 class Validation extends DBController_bro
 {
     // the function below adds user data in 'registration' table 
-    public function addNewUser($username, $email, $password) 
+    public function addNewUser($username, $email, $phone_number, $password) 
     {
         try {
-        $query = "INSERT INTO `registration`(`username`, `email`, `password`) VALUES(?, ?, ?)";
+        $query = "INSERT INTO `registration`(`username`, `email`, `phone_number`, `password`) VALUES(?, ?, ?, ?)";
 
         $params = array(
             array(
@@ -19,9 +19,17 @@ class Validation extends DBController_bro
             ),
             array(
                 "param_type" => "s",
+                "param_value" => $phone_number
+            ),
+            array(
+                "param_type" => "s",
                 "param_value" => $password
             ));
 
+        // the code below checks not empty parameters
+        if (empty($username) || empty($email) || empty($phone_number) || empty($password)) {
+            throw new Exception("Empty parameter in addNewUser method");
+        }
         // if function was executed successfully it returns 1
         $result_addNewUser = $this->updateRegistration($query, $params);
         if (empty($result_addNewUser)) {

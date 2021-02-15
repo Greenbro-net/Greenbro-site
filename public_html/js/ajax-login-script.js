@@ -61,7 +61,8 @@ function log_in_user() {
               if (response !=  "") {
                 if ((response.posted == "User was log in") && (response.success == true)) {
                   // alert("Hello" + response.posted + response.success);
-                  $("#login_message_place").fadeIn().addClass("success").addClass("display_messages").text("Ви успішно увійшли в систему");
+                  // the code below displays and hides message 
+                  $("#login_message_place").fadeIn().addClass("success").addClass("validation_display_messages").text("Ви успішно увійшли в систему");
                   $("#login_message_place").fadeOut(4000);
                   // dublicate the reload block for better execution 
                   $("#reload_window_1").load(current_url + "/" + " #reload_window_1");
@@ -71,7 +72,8 @@ function log_in_user() {
                       }
                   //block of code below displays message if happened mistake in login method
                 else if ((response.posted == "User did not log in") && (response.success == false)) {
-                  $("#login_message_place").fadeIn().addClass("unsuccess").addClass("display_messages").text("Ви не увійшли в систему");
+                  // the code below displays and hides message 
+                  $("#login_message_place").fadeIn().addClass("unsuccess").addClass("validation_display_messages").text("Ви не увійшли в систему");
                   $("#login_message_place").fadeOut(4000);
                   return false;
                       }
@@ -79,7 +81,7 @@ function log_in_user() {
                             
               },
               error:function(response) {
-                $("#login_message_place").fadeIn().addClass("unsuccess").addClass("display_messages").text("Ви не увійшли в систему");
+                $("#login_message_place").fadeIn().addClass("unsuccess").addClass("validation_display_messages").text("Ви не увійшли в систему");
                 $("#login_message_place").fadeOut(4000);
                  return false;
               }

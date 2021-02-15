@@ -233,7 +233,7 @@ function preparing_comment(product_id) {
                     // the code below display message 
                     $("#message_place" + product_id).fadeIn().addClass("unsuccess").addClass("display_messages").text("Ви можете залишити один коментар для кожного товару");
                     $("#message_place" + product_id).fadeOut(4000);
-                        return false;
+                    return false;
                     }
              else if (response.posted == "User hasn't added a comment for the item yet") {
                     // the code below allows user leave a comment  
