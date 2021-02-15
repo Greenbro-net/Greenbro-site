@@ -341,19 +341,22 @@ class ValidationController extends Controller
 
 
 }
+
+
+    // TO DO !!! delete in the future 
     // the block of code below for ajax manages of validation 
     $object_ValidationController = new ValidationController();
 
     // the code below log out user 
     // we use @ below for escape notice undefined index
-    if (@$_GET["action"] == "logout") {
-        $object_ValidationController->logout();
-    }
+    // if (@$_GET["action"] == "logout") {
+    //     $object_ValidationController->logout();
+    // }
 
-    // the code below log in user 
-    if (@$_GET["action"] == "login") {
-        $object_ValidationController->login();
-    }
+    // // the code below log in user 
+    // if (@$_GET["action"] == "login") {
+    //     $object_ValidationController->login();
+    // }
 
     // the code below register user
     // if (@$_GET["action"] == "register") {

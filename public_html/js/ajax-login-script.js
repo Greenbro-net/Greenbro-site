@@ -14,7 +14,7 @@ function logout_user() {
     var current_url = window.location.href;
  $.ajax({
      type: "POST",
-     url: 'index.php?action=logout',
+     url: url+"://greenbro."+domen_part+"/validation/logout",
      data: {},
      success: function(data) {
         //  the code below displays messages
