@@ -20,17 +20,16 @@
 	<?php 
 		$view_val_obj  = new ViewValidationController();
 		$view_val_obj->call_manager();
-
 	?>
 	 
 	 <!-- the code below menu for user who was logged in  -->
-	   <div class="user_loggedin_menu" id="user_loggedin_menu">
+	 <div class="user_loggedin_menu" id="user_loggedin_menu">
 	    <li class="user_loggedin_menu_li" onclick="logout_user()">Вийти:)</li>
 	    <li class="user_loggedin_menu_li" >Допомога</li>
-	    <li class="user_loggedin_menu_li" >Видалити дані з сайту</li>
-	   </div>
-
+	    <li class="user_erase_button_li" onclick="delete_user_data()">Видалити дані з сайту</li>
 	 </div>
+
+	</div>
 	 <!-- code above for changing view for login and logout -->
      
 

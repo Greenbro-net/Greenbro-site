@@ -221,7 +221,7 @@
     z-index: 1;
 }
 /* hover for list li in menu */
-#user_loggedin_menu li:hover {
+.user_loggedin_menu_li:hover {
     transition: transform .2s;
     background-color:  #53A630;
 }
@@ -232,10 +232,14 @@
     cursor: pointer;
     
 }
+/* the code below for deletionn button */
+.user_erase_button_li:hover {
+    transition: transform .2s;
+    background-color:  red;
+
+}
 /* the code below for exit button */
 .user_loggedin_menu li:first-child {
     margin-top: 20px;
-    /* background-color: blue; */
-
 }
 

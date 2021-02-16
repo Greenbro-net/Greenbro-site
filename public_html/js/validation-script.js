@@ -43,7 +43,8 @@
     $(document).ready(function() {
       $("body").click(function(we) {
         // the code below prevents of hiding menu after click
-        if ($(we.target).attr("class") == "user_info_block" || $(we.target).attr("class") == "user_loggedin_menu_li") {
+        if ($(we.target).attr("class") == "user_info_block" || $(we.target).attr("class") == "user_loggedin_menu_li"
+            || $(we.target).attr("class") == "user_erase_button_li") {
           return false;
       }
       $("#user_loggedin_menu").hide();
