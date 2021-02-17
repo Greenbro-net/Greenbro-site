@@ -20,5 +20,12 @@ trait sessionTrait
         unset($_SESSION['userData']['picture']['url']);
     }
 
-    
+    // the method below creates session for casual login
+    private function createUserSession($loggedInUser) 
+    {
+        $_SESSION['user_id'] = $loggedInUser[0]['user_id'];
+        // change key to user_name for using both cases casual and FB 
+        $_SESSION['user_name'] = $loggedInUser[0]['username'];
+        $_SESSION['email'] = $loggedInUser[0]['email'];
+    }
 }

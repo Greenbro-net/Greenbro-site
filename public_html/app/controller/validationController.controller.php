@@ -9,6 +9,7 @@ class ValidationController extends Controller
     use urlTrait;
     use sessionTrait;
     use modelTrait;
+    use cryptographerTrait;
 
 
     public $user_id;
@@ -37,6 +38,16 @@ class ValidationController extends Controller
             return false;
         } else {
             return true;
+               }
+    }
+
+    // the code below returns user_id 
+    public static function display_user_data()
+    {
+        if (!empty($_SESSION['user_id'])) {
+            return self::hashed($_SESSION['user_id']);
+        } else {
+            return self::hashed($_SESSION['userData']['id']);
                }
     }
 
@@ -244,7 +255,6 @@ class ValidationController extends Controller
         if (empty($data['username'])) {
                 $data['usernameError'] = 'Please enter a username.';
         }
-
         //Validate password
         if (empty($data['password'])) {
                 $data['passwordError'] = 'Please enter a password.';
@@ -272,18 +282,7 @@ class ValidationController extends Controller
                 'passwordError' => ''
             ];
         }
-    } 
-    }
-    
-
-
-    // the method below creates session 
-    private function createUserSession($loggedInUser) 
-    {
-        $_SESSION['user_id'] = $loggedInUser[0]['user_id'];
-        // change key to user_name for using both cases casual and FB 
-        $_SESSION['user_name'] = $loggedInUser[0]['username'];
-        $_SESSION['email'] = $loggedInUser[0]['email'];
+      } 
     }
 
 

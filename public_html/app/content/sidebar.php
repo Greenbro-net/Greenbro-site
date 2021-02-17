@@ -26,7 +26,7 @@
 	 <div class="user_loggedin_menu" id="user_loggedin_menu">
 	    <li class="user_loggedin_menu_li" onclick="logout_user()">Вийти:)</li>
 	    <li class="user_loggedin_menu_li" >Допомога</li>
-	    <li class="user_erase_button_li" onclick="delete_user_data()">Видалити дані з сайту</li>
+	    <li class="user_erase_button_li" onclick="delete_user_data(<?php echo validationController::display_user_data(); ?>)">Видалити дані з сайту</li>
 	 </div>
 
 	</div>
