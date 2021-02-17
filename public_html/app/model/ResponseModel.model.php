@@ -149,15 +149,59 @@ class ResponseModel extends DBController
 
 
     // the method below deletes user response by of user id
-    public function deleteResponseByUserid()
+    public function deleteResponseByUserid($user_id)
     {
+        try {
+            $query = "DELETE FROM `response` WHERE `user_id` = ?";
 
+            $params = array(
+                array(
+                    "param_type"  => "i",
+                    "param_value" => $user_id
+                ));
+          $result_deleteResponseByUserid = $this->deleteFromResponseTable($query, $params);
+          if (empty($user_id)) {
+              throw new Exception("Method deleteResponseByUserid doesn't get argument of user_id");
+            }
+          if (empty($result_deleteResponseByUserid)) {
+              throw  new Exception("Method deleteResponseByUserid wasn't executed successful");
+          } else {
+              return $result_deleteResponseByUserid;
+                 }
+          
+          } catch (Exception $exception) {
+              file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+                  'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+                                         }
+  
     }
 
     // the method below deletes user response rating by of user id
-    public function deleteResponseRatingByUserid()
+    public function deleteResponseRatingByUserid($user_id)
     {
-        
+        try {
+              $query = "DELETE FROM `response_rating` WHERE `user_id` = ?";
+
+              $params = array(
+                  array(
+                      "param_type"  => "i",
+                      "param_value" => $user_id
+                  ));
+            $result_deleteResponseRatingByUserid = $this->updateResponseRatingTable($query, $params);
+            if (empty($user_id)) {
+                throw new Exception("Method deleteResponseRatingByUserid doesn't get argument of user_id");
+              }
+            if (empty($result_deleteResponseRatingByUserid)) {
+                throw  new Exception("Method deleteResponseRatingByUserid wasn't executed successful");
+            } else {
+                return $result_deleteResponseRatingByUserid;
+                   }
+            
+            } catch (Exception $exception) {
+                file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+                    'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+                                           }
+    
     }
     
 }

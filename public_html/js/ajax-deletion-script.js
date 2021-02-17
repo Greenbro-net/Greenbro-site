@@ -4,6 +4,10 @@ json = JSON.parse(json.responseText);
 domen_part = json.domen_part;
 url = json.url;
 
+
+
+
+// TO DO throw argument to delete_user_data function by POST from hidden field makes it from session user_id to alphanumeric 
 // the function below starts deletion user data by of user_id
 function delete_user_data() {
     jQuery(document).ready(function() {

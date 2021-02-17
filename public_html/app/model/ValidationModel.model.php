@@ -91,7 +91,7 @@ class ValidationModel extends Validation
             } catch (Exception $exception) {
                 file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
                     'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                             }
+                                           }
     }
 
 
@@ -140,10 +140,10 @@ class ValidationModel extends Validation
                       "param_type" => "i",
                       "param_value" => $user_id
                   ));
-              $result_deleteUserDataByUserid = $this->electRegistrationTable($query, $params);
+              $result_deleteUserDataByUserid = $this->updateRegistration($query, $params);
 
               if (empty($user_id)) {
-                  throw new Exception("Method deleteUserDataByUserid doesn't get variable of user_id");
+                  throw new Exception("Method deleteUserDataByUserid doesn't get argument of user_id");
                 }
               if (empty($result_deleteUserDataByUserid)) {
                   throw new Exception("Method deleteUserDataByUserid wasn't executed successful");

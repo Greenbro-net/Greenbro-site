@@ -2,6 +2,10 @@
 
 class eraseuserdataController extends Controller
 {
+    use sessionTrait;
+
+    use modelTrait;
+
     private $user_id;
 
     private $user_id_session;
@@ -43,27 +47,34 @@ class eraseuserdataController extends Controller
             return false;
                }
     }
-    // the method below for gets response model
-    private function get_object_response_model()
-    {
-        $this->model('ResponseModel');
-        $object_response_model = new ResponseModel();
-        return $object_response_model;
-    }
-    // the method below for gets validation model
-    private function get_object_validation_model()
-    {
-        $this->model('ValidationModel');
-        $object_validation_model = new ValidationModel();
-        return $object_validation_model;
-    }
+    
 
 
 
     // the method below starts deletion user data
     public function erase_data()
     {   
+        $user_id = $this->get_user_id_session();
+        $this->get_object_response_model()->deleteResponseRatingByUserid($user_id);
+        $this->get_object_response_model()->deleteResponseByUserid($user_id);
+        
+        // the code belew deletes user data from registration table
+        $this->get_object_validation_model()->deleteUserDataByUserid($user_id);
+
+         $this->unsetUserSession();
+         $this->unsetFbUserSession();
         // if all deletion operation were success return message with success
+        return "Hello There";
 
     }
+
+    // the method below for displaying user status of his deletion with alphanumeric cod
+    public function deletion_status($code)
+    {
+
+    }
+
+
+
+
 }

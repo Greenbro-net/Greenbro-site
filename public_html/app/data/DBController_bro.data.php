@@ -22,7 +22,7 @@ class DBController_bro extends Database_bro {
             $sql_statement->bindParam(2, $params[1]["param_value"], PDO::PARAM_STR);
         }
         
-        if (empty($query || $params)) {
+        if (empty($query) || empty($params)) {
             throw new PDOException("Function selectRegistrationTable doesn't get query or params");
                                       }
         $result_selectUserEmail = $sql_statement->execute();
@@ -59,8 +59,14 @@ class DBController_bro extends Database_bro {
             throw new PDOException("SQL statement is empty in updateRegistration");
         }
 
+           
+        // the code below checks param and set STR or INT
+        if (is_numeric($params[0]["param_value"])) {
+            $sql_statement->bindParam(1, $params[0]["param_value"], PDO::PARAM_INT);
+        } else {
+            $sql_statement->bindParam(1, $params[0]["param_value"], PDO::PARAM_STR);
+               }
         // this block of code for updating quantity of paremeters which we should post in execute
-           $sql_statement->bindParam(1, $params[0]["param_value"], PDO::PARAM_STR);
         if (!empty($params[1]["param_value"])) {
             $sql_statement->bindParam(2, $params[1]["param_value"], PDO::PARAM_STR);
                                                }

@@ -337,6 +337,38 @@ public function getDBgetCartItembyProduct($query, $params)
 
     } 
 
+    // the method below for deletion data from response table 
+    protected function deleteFromResponseTable($query, $params)
+    {
+        try {      
+        $sql_statement = self::connect()->prepare($query);
+
+        // this block of code for updating quantity of paremeters which we should post in execute
+            $sql_statement->bindParam(1, $params[0]["param_value"], PDO::PARAM_INT);
+
+        if (!empty($params[1]["param_value"])) {
+            $sql_statement->bindParam(2, $params[1]["param_value"], PDO::PARAM_STR);
+        }
+         
+        if (empty($query) || empty($params)) {
+            throw new PDOException("Function deleteFromResponseTable doesn't get argument");
+        }
+         $result_deleteFromResponseTable = $sql_statement->execute();
+        if (empty($result_deleteFromResponseTable)) {
+            throw new PDOException("Method deleteFromResponseTable doesn't return result of execution");
+            } else {
+                return $result_deleteFromResponseTable;
+                   }
+        
+        
+        } catch (PDOException $exception) {
+            file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+              'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+                                          }
+
+    } 
+
+
     // the method below for interaction between model and table response_rating
     protected function updateResponseRatingTable($query, $params) 
     {

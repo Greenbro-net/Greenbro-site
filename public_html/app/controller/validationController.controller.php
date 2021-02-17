@@ -1,12 +1,15 @@
 <?php
 // TO DO create two form one for registration and another for sing in to system
 // create option which will allow display user nickname after sing in
-// create function for sing out(which unsets user SESSION) 
+ 
 
 
 class ValidationController extends Controller
 {
     use urlTrait;
+    use sessionTrait;
+    use modelTrait;
+
 
     public $user_id;
 
@@ -218,7 +221,7 @@ class ValidationController extends Controller
     
 
     
-    // the method below is public wrapper for private method unsetUserSession
+    // the method below is public wrapper for protected method unsetUserSession
     public function logout() {
        $this->unsetUserSession();
        $this->unsetFbUserSession();
@@ -283,32 +286,7 @@ class ValidationController extends Controller
         $_SESSION['email'] = $loggedInUser[0]['email'];
     }
 
-    // TO DO expand this method for unseting session from FB API
-    // the method below for logout casual user, unset Session 
-    private function unsetUserSession() 
-    {
-        unset($_SESSION['user_id']);
-        unset($_SESSION['user_name']);
-        unset($_SESSION['email']);
-    }
 
-    // the method below for logout user from FB, unset Session 
-    private function unsetFbUserSession()
-    {
-        unset($_SESSION['userData']['id']);
-        unset($_SESSION['userData']['first_name']);
-        unset($_SESSION['userData']['last_name']);
-        unset($_SESSION['userData']['email']);
-        unset($_SESSION['userData']['picture']['url']);
-    }
-
-    // the method below for gets validation model 
-    private function get_object_validation_model()
-    {
-        $this->model('ValidationModel');
-        $object_validation_model = new ValidationModel();
-        return $object_validation_model;
-    }
     // the method below fills in email field
     protected function fill_in_email()
     {
@@ -343,35 +321,7 @@ class ValidationController extends Controller
 }
 
 
-    // TO DO !!! delete in the future 
-    // the block of code below for ajax manages of validation 
-    $object_ValidationController = new ValidationController();
-
-    // the code below log out user 
-    // we use @ below for escape notice undefined index
-    // if (@$_GET["action"] == "logout") {
-    //     $object_ValidationController->logout();
-    // }
-
-    // // the code below log in user 
-    // if (@$_GET["action"] == "login") {
-    //     $object_ValidationController->login();
-    // }
-
-    // the code below register user
-    // if (@$_GET["action"] == "register") {
-    //     $object_ValidationController->register();
-    // }
     
-
-
-
-
-
-
-
-
-
 
 
 
