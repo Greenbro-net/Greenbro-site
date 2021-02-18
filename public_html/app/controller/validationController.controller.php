@@ -1,6 +1,6 @@
 <?php
 // TO DO create two form one for registration and another for sing in to system
-// create option which will allow display user nickname after sing in
+
  
 
 
@@ -10,7 +10,7 @@ class ValidationController extends Controller
     use sessionTrait;
     use modelTrait;
     use cryptographerTrait;
-
+    use jsonreplyTrait;
 
     public $user_id;
 
@@ -41,7 +41,7 @@ class ValidationController extends Controller
                }
     }
 
-    // the code below returns user_id 
+    // the code below returns hashed user_id for ajax function 
     public static function display_user_data()
     {
         if (!empty($_SESSION['user_id'])) {
@@ -51,36 +51,7 @@ class ValidationController extends Controller
                }
     }
 
-    // the method below displays success message
-    protected function registration_success_message()
-    {
-        $form_data['success'] = true;
-        $form_data['posted'] = 'Реєстрація пройшла успішно';
-        echo json_encode($form_data);
-    }
-    // the method below displays success message
-    protected function registration_unsuccess_message()
-    {
-        $form_data['success'] = false;
-        $form_data['posted'] = 'Ви не зареєструвалися';
-        echo json_encode($form_data);
-    }
-
-
-    // the method below for jquery return response by AJAX
-    protected function response_not_login() 
-    {
-        $form_data['success'] = false;
-        $form_data['posted'] = "User did not log in";
-        echo json_encode($form_data);
-    }   
-    // the method below for jquery return response by AJAX
-    protected function response_login()
-    {
-        $form_data['success'] = true;
-        $form_data['posted'] = "User was log in";
-        echo json_encode($form_data);
-    }
+    
 
     // the method below for ajax call from comment-script.js
     public function check_log_in()

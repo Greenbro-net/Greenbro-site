@@ -1,0 +1,52 @@
+/* the code below for deletion settings  */
+/* the code below for pop up messages for deletion user data  */
+.deletion_message_place {
+    background-color: wheat;
+    /* position of text in block  */
+    text-align: center;
+    /* maybe delete absolute position in the future  */
+    position: absolute;
+    margin-left: 10%;
+    margin-top: 2%;
+    padding: 10px;
+    width: 330px;
+    height: 130px;
+    font-size: 18px;
+    font-style: italic;
+    display: none;
+    border: solid;
+    z-index: 6;
+    /* the code below for displaying message text inside message box   */
+    white-space: normal;
+}
+/* the code below for displays messages */
+.deletion_display_messages {
+    display: block;
+}
+/* the code below for deletionn button */
+.user_erase_button_li:hover {
+    transition: transform .2s;
+    background-color:  red;
+
+}
+
+/* the code below for pop up messages for   */
+.deletion_window_message {
+    background-color: wheat;
+    /* position of text in block  */
+    text-align: center;
+    /* maybe delete absolute position in the future  */
+    position: absolute;
+    margin-left: 10%;
+    margin-top: 2%;
+    padding: 10px;
+    width: 530px;
+    height: 250px;
+    font-size: 18px;
+    font-style: italic;
+    display: none;
+    border: solid;
+    z-index: 6;
+    /* the code below for displaying message text inside message box   */
+    white-space: normal;
+}

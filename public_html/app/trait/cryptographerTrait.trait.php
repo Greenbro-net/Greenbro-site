@@ -7,4 +7,9 @@ trait cryptographerTrait
     {
         return  base_convert($integer, 10,36);
     }
+    //the method below inverse hashes user_id into numeric string
+    private static function inverse_hashed($integer) 
+    {
+        return  base_convert($integer, 36, 10);
+    }
 }
