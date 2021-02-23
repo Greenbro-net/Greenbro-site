@@ -1,11 +1,14 @@
 <?php
 trait jsonreplyTrait
 {
+
     // the method below displays success message for eraseuserdataController
-    protected function deletion_success_message()
+    protected function deletion_success_message($url)
     {
         $form_data['success'] = true;
         $form_data['posted'] = 'Дані успішно видалені';
+        // the code below throw back url to ajax-deletion
+        $form_data['url'] = $url;
         echo json_encode($form_data);
     }
 

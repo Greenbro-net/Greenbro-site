@@ -12,4 +12,16 @@ trait cryptographerTrait
     {
         return  base_convert($integer, 36, 10);
     }
+
+    // the code below returns hashed user_id for ajax function 
+    public static function display_user_data()
+    {
+        if (!empty($_SESSION['user_id'])) {
+            return self::hashed($_SESSION['user_id']);
+        } else {
+          if (!empty($_SESSION['userData']['id'])) {
+            return self::hashed($_SESSION['userData']['id']);
+            }
+        }
+    }
 }

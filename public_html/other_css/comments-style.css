@@ -90,9 +90,6 @@ background-color:  #53A630;
 .close_sign {
     position:absolute; top:92px; right:20px;
     cursor: pointer;
-    /* float: ; */
-    /* width: 40px; */
-    /* margin-top: -15px; */
     font-size: 30px;
 }
 /* hover for close sign  */

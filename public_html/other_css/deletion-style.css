@@ -50,3 +50,24 @@
     /* the code below for displaying message text inside message box   */
     white-space: normal;
 }
+
+/* the code below for close sign  */
+.close_deletion_window_sign {
+    position:absolute; top:-10px; right:6px;
+    cursor: pointer;
+    font-size: 30px;
+
+}
+/* hover for close sign  */
+.close_deletion_window_sign:hover {
+    transition: transform .2s;
+    /* transform: scale(1, 1); */
+    background-color: rgba(216, 0, 11, 0.335);
+    }
+/* the code below for deletion status page */
+#display_deletion_status
+{   
+    /* set size for displaying full page */
+    height: 84vh; 
+    font-size: 30px;
+}

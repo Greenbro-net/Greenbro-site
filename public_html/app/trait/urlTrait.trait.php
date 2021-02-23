@@ -1,4 +1,5 @@
 <?php
+
 trait urlTrait 
 {
     protected $domen_part;

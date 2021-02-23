@@ -6,11 +6,44 @@ class eraseuserdataController extends Controller
     use modelTrait;
     use jsonreplyTrait;
     use cryptographerTrait;
+    use urlTrait;
 
     private $user_code;
-    // private $user_id;
+    
     private $user_id_session;
 
+    // the method below displays url 
+    protected static function display_url()
+    {
+        $object = new  eraseuserdataController();
+        return $object->get_url();
+    }
+    // the method below displays domen part
+    protected static function display_domen_part()
+    {
+        $object = new  eraseuserdataController();
+        return $object->get_domen_part();
+    }
+
+    // the method below prepares url for redirection
+    public static function preparing_checking_deletion_url()
+    {
+        $string = '//greenbro.' . self::display_domen_part() .
+        '/eraseuserdata/deletion_status_page?code=' . self::display_user_data();
+        return $string;
+    }
+    
+    // the method below sets code for deletion status method
+    // private function set_code()
+    // {
+    //     $code = $this->code = trim($_GET['code']);
+    // }
+    // // the method below gets code
+    // private function get_code()
+    // {
+    //     $this->set_code();
+    //     return $this->code;
+    // }
 
     // the method below sets user_id
     private function set_user_code()
@@ -24,22 +57,7 @@ class eraseuserdataController extends Controller
         return $this->user_code;
     }
 
-    // the method below sets user_id from $_SESSION
-    private function set_user_id_session()
-    {
-        if (!empty($_SESSION["user_id"])) {
-            $user_id_session = $this->user_id_session = trim($_SESSION["user_id"]);
-        } 
-        else if (!empty($_SESSION['userData']['id'])) {
-            $user_id_session = $this->user_id_session = trim($_SESSION['userData']['id']);
-        }
-    }
-    // the method below gets user_id from $_SESSION
-    private function get_user_id_session()
-    {
-        $this->set_user_id_session();
-        return $this->user_id_session;
-    }
+    
     // the method below for security, checks $user_id equal to actual user session
     private function control_hash_code($user_code)
     {
@@ -64,11 +82,15 @@ class eraseuserdataController extends Controller
                   // the block of code below deletes data from response tables
                   $this->delete_data_response_rating() &&
                   $this->delete_data_response()) {
-                // the block of code below executed in success case
+                  // the block of code below executed in success case
+
+                  // the code below prepares checking deletion url
+                  // if all deletion operation were success return message with success and correct url
+                  $this->deletion_success_message(self::preparing_checking_deletion_url());
+
                   $this->unsetUserSession();
                   $this->unsetFbUserSession();
-                  // if all deletion operation were success return message with success
-                  $this->deletion_success_message();
+
                    } else { // the code here for unsuccess execution of method
                   $this->deletion_unsuccess_message();
                           }
@@ -126,13 +148,16 @@ class eraseuserdataController extends Controller
     }
 
     
-    // the method below for displaying user status of his deletion with alphanumeric cod
-    public function deletion_status($code)
-    {
-
+    // the method below for displaying page with user status of his deletion with alphanumeric cod
+    public function deletion_status_page()
+    {    
+        $this->model('DeletionModel');
+        $this->view('deletion' . DIRECTORY_SEPARATOR . 'index');
+        $this->view->page_title = 'Статус видалення';
+        $this->view->render();     
     }
 
-
+    
 
 
 }

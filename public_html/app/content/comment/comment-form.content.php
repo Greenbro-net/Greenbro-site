@@ -10,7 +10,7 @@
   <!-- we delete id below because it was not unique id="form-contact" -->
     <form  class="styled"  method="POST">
     <!-- action="http://greenbro.com/response/call_addNewComment" -->
-    <!-- testing close sign below -->
+    
     <span id="close_sign<?php echo $product['id']; ?>" onclick="close_sign_form(<?php echo $product['id']; ?>)" class="close_sign">&#10005;</span>
        <fieldset>
            <legend>Написати відгук</legend>

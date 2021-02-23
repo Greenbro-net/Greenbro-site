@@ -28,7 +28,7 @@
 	    <li class="user_loggedin_menu_li" onclick="logout_user()">Вийти:)</li>
 		<li class="user_loggedin_menu_li" >Допомога</li>
 		<!-- the block of code -->
-		<input type="hidden" value="<?php  echo validationController::display_user_data(); ?>"  id="deletion_button">
+		<input type="hidden" value="<?php  echo ValidationController::display_user_data(); ?>"  id="deletion_button">
           
 		
 	    <li class="user_erase_button_li" onclick="delete_user_data()">Видалити дані з сайту</li>
@@ -37,12 +37,19 @@
 	</div>
 	 <!-- code above for changing view for login and logout -->
      
-
-	 	
 	
-	
-	<!-- testing code below  -->
+	<!-- block of code below for checking deletion status -->                                                                                  
 	<div id="deletion_window_message_id" class="deletion_window_message">
-    <a href="https://www.w3schools.com/">Visit W3Schools.com!</a>
-    <p><?php  echo validationController::display_user_data(); ?></p>
-    </div>
+	<!-- the code below closes deletion window -->
+	<span id="close_deletion_window_sign" onclick="close_deletion_window()" class="close_deletion_window_sign">&#10005;</span>
+	<a id="check_in_deletion_url" href="" >Переглянути статус видалення</a>
+	</div>
+	
+
+
+
+
+
+
+
+
