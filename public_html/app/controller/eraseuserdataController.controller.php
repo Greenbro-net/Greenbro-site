@@ -66,7 +66,7 @@ class eraseuserdataController extends Controller
              }
              if ($this->delete_data_response_rating($fb_user_id) &&
                  $this->delete_data_response($fb_user_id)) {
-                    $this->unsetUserSession();
+                    
                     $this->unsetFbUserSession();
                  } else {
                     throw new Exception("erase_fb_data wasn't execution successful");
@@ -174,7 +174,6 @@ class eraseuserdataController extends Controller
         $this->view->render();     
     }
 
-    
 
 
 }
