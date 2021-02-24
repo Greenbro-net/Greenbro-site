@@ -33,17 +33,6 @@ class eraseuserdataController extends Controller
         return $string;
     }
     
-    // the method below sets code for deletion status method
-    // private function set_code()
-    // {
-    //     $code = $this->code = trim($_GET['code']);
-    // }
-    // // the method below gets code
-    // private function get_code()
-    // {
-    //     $this->set_code();
-    //     return $this->code;
-    // }
 
     // the method below sets user_id
     private function set_user_code()
@@ -69,11 +58,14 @@ class eraseuserdataController extends Controller
     }
     
     // the method below organises deletion FB user data 
-    public function erase_fb_data()
+    public function erase_fb_data($fb_user_id)
     {
         try {
-             if ($this->delete_data_response_rating() &&
-                 $this->delete_data_response()) {
+             if (empty($fb_user_id)) {
+                 throw new Exception("Empty parameter to erase_fb_data method");
+             }
+             if ($this->delete_data_response_rating($fb_user_id) &&
+                 $this->delete_data_response($fb_user_id)) {
                     $this->unsetUserSession();
                     $this->unsetFbUserSession();
                  } else {
@@ -85,6 +77,8 @@ class eraseuserdataController extends Controller
                                            } 
     }
 
+
+    
     // the method below organises deletion user data
     public function erase_data()
     {   
@@ -92,10 +86,10 @@ class eraseuserdataController extends Controller
             // the block below controlling input data
             if ($this->control_hash_code($this->get_user_code())) {
                    // the code belew deletes user data from registration table
-               if ($this->delete_data_registration() && 
+               if ($this->delete_data_registration($this->get_user_id_session()) && 
                   // the block of code below deletes data from response tables
-                  $this->delete_data_response_rating() &&
-                  $this->delete_data_response()) {
+                  $this->delete_data_response_rating($this->get_user_id_session()) &&
+                  $this->delete_data_response($this->get_user_id_session())) {
                   // the block of code below executed in success case
 
                   // the code below prepares checking deletion url
@@ -116,10 +110,13 @@ class eraseuserdataController extends Controller
                                        } 
     }
     // the method below deletes user data from registration table
-    private function delete_data_registration()
+    private function delete_data_registration($user_session_id)
     {
         try {
-            if (empty($this->get_object_validation_model()->deleteUserDataByUserid($this->get_user_id_session()))) {
+            if (empty($user_session_id)) {
+                throw new Exception("Empty parameter for delete_data_registration");
+            }
+            if (empty($this->get_object_validation_model()->deleteUserDataByUserid($user_session_id))) {
                 $this->deletion_unsuccess_message();
                 throw new Exception("delete_data_registration wasn't execution successful");
             } else { // return true in success case of method
@@ -131,10 +128,13 @@ class eraseuserdataController extends Controller
                                        }
     }
     // the method below deletes user data from response_rating table
-    private function delete_data_response_rating()
+    private function delete_data_response_rating($user_session_id)
     {
         try {
-            if (empty($this->get_object_response_model()->deleteResponseRatingByUserid($this->get_user_id_session()))) {
+            if (empty($user_session_id)) {
+                throw new Exception("Empty parameter for delete_data_response_rating");
+            }
+            if (empty($this->get_object_response_model()->deleteResponseRatingByUserid($user_session_id))) {
                 $this->deletion_unsuccess_message();
                 throw new Exception("delete_data_response_rating method wasn't execution successful");
             } else { // return true in success case of method
@@ -146,10 +146,13 @@ class eraseuserdataController extends Controller
                                        }
     }
     // the method below deletes user data from response table
-    private function delete_data_response()
+    private function delete_data_response($user_session_id)
     {
         try {
-            if (empty($this->get_object_response_model()->deleteResponseByUserid($this->get_user_id_session()))) {
+            if (empty($user_session_id)) {
+                throw new Exception("Empty parameter for delete_data_response");
+            }
+            if (empty($this->get_object_response_model()->deleteResponseByUserid($user_session_id))) {
                 $this->deletion_unsuccess_message();
                 throw new Exception("delete_data_response method wasn't execution successful");
             } else { // return true in success case of method
