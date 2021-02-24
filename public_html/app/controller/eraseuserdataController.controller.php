@@ -68,8 +68,22 @@ class eraseuserdataController extends Controller
                }
     }
     
-
-
+    // the method below organises deletion FB user data 
+    public function erase_fb_data()
+    {
+        try {
+             if ($this->delete_data_response_rating() &&
+                 $this->delete_data_response()) {
+                    $this->unsetUserSession();
+                    $this->unsetFbUserSession();
+                 } else {
+                    throw new Exception("erase_fb_data wasn't execution successful");
+                        }
+            } catch (Exception $exception) {
+            file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+                'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+                                           } 
+    }
 
     // the method below organises deletion user data
     public function erase_data()
