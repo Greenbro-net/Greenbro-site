@@ -3,9 +3,10 @@ link.php
 #data/Database.data.php
 DBinfo.data.php
 config.php
-url_settings.json
+config_settings.json
 my-errors.log
 error_log
 facebookController.controller.php
 fbdatadeletionController.controller.php
+# PHPMailerModel.model.php
 

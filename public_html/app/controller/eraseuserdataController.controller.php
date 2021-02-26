@@ -6,7 +6,7 @@ class eraseuserdataController extends Controller
     use modelTrait;
     use jsonreplyTrait;
     use cryptographerTrait;
-    use urlTrait;
+    use ConfigSettingsTrait;
 
     private $user_code;
     

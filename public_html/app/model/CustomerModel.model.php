@@ -49,7 +49,7 @@ class CustomerModel extends Customer
     
         //    checking incoming data below
         if (empty($recipient_name || $recipient_last_name)) {
-        throw new Exception("Incoming data in checking_customer_name is empty");
+        throw new Exception("Parameter for method in checking_customer_name is empty");
     }
        $recipient_names = $this->get_customer_name();
        
@@ -111,7 +111,6 @@ class CustomerModel extends Customer
             isset($_POST["user_email"]) &&  isset($_POST["recipient_mobile_number"])) {
     
                 
-
                 if ($result_of_function = $this->addNewCustomer($recipient_name, $recipient_last_name, $user_email,$recipient_mobile_number))
                     {  
                         echo "Customer was added successfully";

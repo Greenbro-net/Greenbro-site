@@ -1,16 +1,15 @@
 <?php
 
-trait urlTrait 
+trait ConfigSettingsTrait 
 {
+    use controllerTrait;
+    use modelTrait;
+
     protected $domen_part;
     protected $url;
+    protected $email_password;
     
-    private function get_setting()
-    {
-        parent::model('UrlModel');
-        $url_model = new  UrlModel;
-        return $object = $url_model->get_json();
-    }
+    
     
     // the method below gets url from object
     public function get_url()
@@ -22,6 +21,11 @@ trait urlTrait
     public function get_domen_part()
     {
        return (string)$this->get_setting()->domen_part;
+    }
+    // the method below gets email password from object
+    public function get_email_password()
+    {
+        return (string)$this->get_setting_without_parent()->email_password;
     }
 
 }

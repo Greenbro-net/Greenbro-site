@@ -1,6 +1,6 @@
 // the code below gets right url setting for app 
 
-    var json = $.getJSON({'url': "/url_settings.json", 'async': false});
+    var json = $.getJSON({'url': "/config_settings.json", 'async': false});
     json = JSON.parse(json.responseText);
     domen_part = json.domen_part;
     url = json.url;

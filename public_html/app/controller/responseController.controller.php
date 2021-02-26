@@ -2,6 +2,8 @@
 
 class ResponseController extends Controller
 {
+    use modelTrait;
+    
     public $user_id; 
     public $user_name;
     public $user_email_response;
@@ -40,14 +42,6 @@ class ResponseController extends Controller
         $form_data['success'] = false;
         $form_data['posted'] = 'Error is';
         echo json_encode($form_data);
-    }
-    
-    // the method below for gets response model 
-    private function get_object_response_model()
-    {
-        $this->model('ResponseModel');
-        $object_response_model = new ResponseModel();
-        return $object_response_model;
     }
 
     // the method below checks is user log in by casual system

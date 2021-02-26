@@ -2,7 +2,7 @@
 
 class ValidationController extends Controller
 {
-    use urlTrait;
+    use ConfigSettingsTrait;
     use sessionTrait;
     use modelTrait;
     use cryptographerTrait;

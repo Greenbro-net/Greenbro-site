@@ -5,8 +5,9 @@ if(empty($_POST["quantity_of_item"])) {
 }
 
 class ItemController extends Controller
-
 {  
+    use modelTrait;
+
     public $united_order_items;
     public $product_id;
     public $item_id;
@@ -59,12 +60,8 @@ class ItemController extends Controller
     protected function set_united_order_items()
     {   
         try {
-        $this->model('SessionModel');
-        $session_model = new SessionModel(); 
-        if (empty($session_model)) {
-            throw new Exception("Object of sessionController wasn't created successfully");
-                                 }
-        $result_set_united_order = $session_model->get_united_order_items();
+        
+        $result_set_united_order = $this->get_object_session_model()->get_united_order_items();
         
         if (empty($result_set_united_order)) {
                             throw new Exception("Function set_united_order_items wasn't successful");
@@ -79,13 +76,7 @@ class ItemController extends Controller
 
     }
 
-    // the method below gives access to ItemModel 
-    private function get_item_model()
-    {
-        $this->model('ItemModel');
-        $item_model = new ItemModel();
-        return $item_model;
-    }
+    
     // the function below add item to cart
     public function add_item_to_cart()
     {

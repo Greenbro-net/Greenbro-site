@@ -44,4 +44,18 @@ trait sessionTrait
         $this->set_user_id_session();
         return $this->user_id_session;
     }
+    
+    
+    // the function below unset $_SESSION
+    public function unset_order_session()
+    {
+        unset($_SESSION["last_customer_id"]);
+        unset ($_SESSION["united_order_items"]);
+    }
+    // the method below unsets last_customer_id
+    private function unset_last_customer_id()
+    {
+        unset($_SESSION["last_customer_id"]);
+    }
+
 }

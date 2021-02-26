@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '47b57dd3905df3f038e058b809ef6907ca3d4931',
+    'reference' => '0eceefea4844bf3ac513aaaaa4a080c1ae07e2d6',
     'name' => 'greenbro/public_html',
   ),
   'versions' => 
@@ -27,7 +27,16 @@
       'aliases' => 
       array (
       ),
-      'reference' => '47b57dd3905df3f038e058b809ef6907ca3d4931',
+      'reference' => '0eceefea4844bf3ac513aaaaa4a080c1ae07e2d6',
+    ),
+    'phpmailer/phpmailer' => 
+    array (
+      'pretty_version' => 'v6.3.0',
+      'version' => '6.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4a08cf4cdd2c38d12ee2b9fa69e5d235f37a6dcb',
     ),
   ),
 );

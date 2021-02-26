@@ -14,7 +14,8 @@ $_POST["payment_status"] = "FALSE";
 
 class OrderController extends Controller
 {  
-    use urlTrait;
+    use ConfigSettingsTrait;
+    use modelTrait;
     
     protected $united_order;
     protected $order_date;
@@ -112,7 +113,7 @@ class OrderController extends Controller
                                       } else {
                                          // this redirect should go to the successful page 
                                          // after displays successful message for customer we unset successful $_SESSION["united_order_items"] and ($_SESSION["last_customer_id"])
-                                         header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/finalorder/display_successful_message");
+                                         header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/finalorder/display_successful_message?order=" . $this->get_united_order());
                                          exit;
                                              }
                         
@@ -154,25 +155,6 @@ class OrderController extends Controller
                                            }
     }
 
-    public function get_object_order_model()
-    {
-       $this->model('OrderModel');
-       $object_order_model = new OrderModel();
-       return $object_order_model;
-    }
-
-    public function get_object_session_model()
-    {
-       $this->model('SessionModel');
-       $object_session_model = new SessionModel();
-       return $object_session_model;
-    }
     
-    public function get_object_mailer_model()
-    {
-        $this->model('PHPMailerModel');
-        $object_mailer_model = new PHPMailerModel();
-        return $object_mailer_model;
-    }
 
 }

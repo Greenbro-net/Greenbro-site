@@ -35,8 +35,6 @@ class FoodModel extends DBController
    { 
         $products = $this->getFood();
         include CONTENT . 'product-list.content.php';
-        // the code below loads other model 
-        // $resObj = $this->load_model('ResponseModel');
     }  
 
 }

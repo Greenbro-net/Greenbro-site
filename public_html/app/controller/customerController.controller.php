@@ -6,7 +6,9 @@
 // if it's new user we will insert new data to table customers
 class CustomerController extends Controller
 {  
-    use urlTrait;
+    use ConfigSettingsTrait;
+    use modelTrait;
+    use sessionTrait;
 
     protected $recipient_name;
     protected $recipient_last_name;
@@ -56,9 +58,7 @@ class CustomerController extends Controller
     
     protected function set_united_order_items()
     {
-        $this->model('SessionModel');
-        $session_model = new SessionModel();
-        return  $session_model->get_united_order_items();  
+        return  $this->get_object_session_model()->get_united_order_items();  
     }
 
     // the function below makes routing for customer 
@@ -118,20 +118,17 @@ class CustomerController extends Controller
 
     // this function below in Controller is for  URL name for gets delivery information
     public function delivery_payment_type()
-    {
+    {   
+        // $this->unset_order_session();
+        // testing code above
+
         $this->model('OrderModel');
         $this->view('order' . DIRECTORY_SEPARATOR . 'delivery_payment');
         $this->view->page_title = 'Доставка та оплата';
         $this->view->render();
     }
 
-    // the function below returns CustomerModel for calling methods
-    public function get_object_customer_model()
-    {
-        $this->model('CustomerModel');
-        $object_customer_model = new CustomerModel();
-        return $object_customer_model;
-    } 
+     
 
     
     
