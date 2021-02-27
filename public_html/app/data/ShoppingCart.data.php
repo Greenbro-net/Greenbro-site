@@ -126,7 +126,7 @@ class ShoppingCart extends DBController
         $result_updateCartQuantity = $this->updateDB($query, $params);
         
         if (empty($result_updateCartQuantity)) {
-               throw new Exception("Function updateCartQuantity wasn't successful");
+               throw new Exception("Method updateCartQuantity wasn't successful");
                   }
             } catch (Exception $exception) {
                 file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
@@ -135,21 +135,28 @@ class ShoppingCart extends DBController
     }
 
     // the function below for deleting item from cart in title block  
-    public function deleteCartItem($product_id)
+    public function deleteCartItem($product_id, $united_order_items)
     { 
         try {
-        $query = "DELETE FROM  order_items WHERE product_id =?";
+         if ((empty($product_id)) || (empty($united_order_items))) {
+            throw new Exception("Method deleteCartItem doesn't get parameter");
+          }
+        $query = "DELETE FROM  order_items WHERE product_id = ? AND united_order_items = ?";
 
         $params = array(
             array(
                 "param_type" => "i",
                 "param_value" => $product_id
+            ),
+            array(
+                "param_type" => "i",
+                "param_value" => $united_order_items
             ));
 
         $resultdeleteCartItem = $this->updateDB($query, $params);
         
         if (empty($resultdeleteCartItem)) {
-            throw new Exception("Function deleteCartItem wasn't successful");
+            throw new Exception("Method deleteCartItem wasn't successful");
                                           }
             } catch (Exception $exception)   {
                 file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .

@@ -87,7 +87,7 @@ class ItemController extends Controller
     // the function below delete item from cart
     public function delete_item_from_cart()
     {
-        $this->get_item_model()->deleteCartItem($this->get_product_id());
+        $this->get_item_model()->deleteCartItem($this->get_product_id(), $this->get_united_order_items());
     }
     // the function below delete all item from cart
     public function delete_all_items()
