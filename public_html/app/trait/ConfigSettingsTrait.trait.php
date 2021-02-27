@@ -2,9 +2,6 @@
 
 trait ConfigSettingsTrait 
 {
-    use controllerTrait {
-        controllerTrait::load_model as load_model_config;
-    }
 
     protected $domen_part;
     protected $url;
@@ -42,6 +39,16 @@ trait ConfigSettingsTrait
         $this->load_model_config('ConfigSettingsModel');
         $url_model = new  ConfigSettingsModel;
         return $object = $url_model->get_json();
+    }
+    // the method below can't be move to modelTrait it causes error
+    private function load_model_config($modelName, $data=[])
+    {
+        if(file_exists(MODEL . $modelName . '.model.php'))
+        {
+            // there are we were changed require to require_once for escaping Error from model which load a few times
+            require_once MODEL . $modelName . '.model.php';
+            $this->trait_model = new $modelName;
+        }
     }
 
 }

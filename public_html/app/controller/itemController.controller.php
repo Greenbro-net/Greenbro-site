@@ -7,6 +7,7 @@ if(empty($_POST["quantity_of_item"])) {
 class ItemController extends Controller
 {  
     use modelTrait;
+    use FilterDataTrait;
 
     public $united_order_items;
     public $product_id;
@@ -19,10 +20,10 @@ class ItemController extends Controller
     {
        $this->united_order_items = (int)$this->set_united_order_items();
        //we use @ for escape notice in our pages 
-       @$this->item_id = (int)$_POST["id"];
-       @$this->product_id = (int)$_POST["product_id"];
-       @$this->quantity_of_item = (int)$_POST["quantity_of_item"];
-       @$this->price = (int)$_POST["price"];
+       @$this->item_id = (int)$this->filter_data($_POST["id"]);
+       @$this->product_id = (int)$this->filter_data($_POST["product_id"]);
+       @$this->quantity_of_item = (int)$this->filter_data($_POST["quantity_of_item"]);
+       @$this->price = (int)$this->filter_data($_POST["price"]);
        @$this->item_price = $this->count_item_price($price, $quantity_of_item);
 
     }

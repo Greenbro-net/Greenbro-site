@@ -16,7 +16,8 @@ class OrderController extends Controller
 {  
     use ConfigSettingsTrait;
     use modelTrait;
-    
+    use FilterDataTrait;
+
     protected $united_order;
     protected $order_date;
     protected $order_customer_id;
@@ -30,16 +31,16 @@ class OrderController extends Controller
     {
        $this->united_order = (int)$this->call_set_united_order_items();
        $this->order_date = (string)$this->get_date();
-       @$this->order_customer_id = (int)trim($_SESSION["last_customer_id"]);
-       $this->payment_status = (string)trim($_POST["payment_status"]);
+       @$this->order_customer_id = (int)$this->filter_data($_SESSION["last_customer_id"]);
+       $this->payment_status = (string)$this->filter_data($_POST["payment_status"]);
        $this->total_price = (int)$this->set_total_price();
-       @$this->payment_type = (string)trim($_POST["payment_type"]);
-       @$this->delivery_type = (string)trim($_POST["delivery_type"]);
-       @$this->delivery_address = (string)trim($_POST["delivery_address"]); 
+       @$this->payment_type = (string)$this->filter_data($_POST["payment_type"]);
+       @$this->delivery_type = (string)$this->filter_data($_POST["delivery_type"]);
+       @$this->delivery_address = (string)$this->filter_data($_POST["delivery_address"]); 
     }
 
     
-
+    
     // the function below return united order from session model 
     public function call_set_united_order_items()
     {

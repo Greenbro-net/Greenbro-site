@@ -1,7 +1,5 @@
 <?php
 
-    // TO DO 
-    // create a link which can help our customer if he has some troubles with ordering
 class FinalOrderController extends Controller
 {
     use sessionTrait;
@@ -29,8 +27,5 @@ class FinalOrderController extends Controller
         return $_SESSION["united_order_items"];
     }
 
-    
-
-    
-    
+       
 }

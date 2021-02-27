@@ -7,16 +7,10 @@ class ValidationController extends Controller
     use modelTrait;
     use cryptographerTrait;
     use jsonreplyTrait;
+    use FilterDataTrait;
 
     public $user_id;
     
-    // the method below filter input data 
-    public function filter_data($data)
-    {
-        $data = trim($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
     
     // the method below checks is user log in or not
     private function checkUserid()
@@ -68,11 +62,11 @@ class ValidationController extends Controller
          // Sanitize post data
          $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
         return $data = [
-            'username' => trim($_POST['username']),
-            'email' => trim($_POST['email']),
-            'phone_number' => trim($_POST['phone_number']),
-            'password' => trim($_POST['password']),
-            'confirmPassword' => trim($_POST['confirm_password']),
+            'username' => $this->filter_data($_POST['username']),
+            'email' => $this->filter_data($_POST['email']),
+            'phone_number' => $this->filter_data($_POST['phone_number']),
+            'password' => $this->filter_data($_POST['password']),
+            'confirmPassword' => $this->filter_data($_POST['confirm_password']),
             'usernameError' => '',
             'emailError' => '',
             'phone_numberError' => '',
@@ -231,8 +225,8 @@ class ValidationController extends Controller
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
         $data = [
-            'username' => trim($_POST['username']),
-            'password' => trim($_POST['password']),
+            'username' => $this->filter_data($_POST['username']),
+            'password' => $this->filter_data($_POST['password']),
             'usernameError' => '',
             'passwordError' => ''
         ];

@@ -40,7 +40,7 @@ class PHPMailerModel
         
         
         if(!$mail->send()) {
-          echo 'Email error: ' . $mail->ErrorInfo;
+         
           throw new Exception("Function sent_letter wasn't successful" . $mail->ErrorInfo);
                            } else {
                               echo 'Email has been sent.';

@@ -46,7 +46,6 @@ class CustomerModel extends Customer
     public function  checking_customer_name($recipient_name, $recipient_last_name)
     {   // the function below return all customers which we have in table customers 
         try {
-    
         //    checking incoming data below
         if (empty($recipient_name || $recipient_last_name)) {
         throw new Exception("Parameter for method in checking_customer_name is empty");
@@ -103,24 +102,20 @@ class CustomerModel extends Customer
                                        }
     }  
     
-    public function adding_customer_info($recipient_name, $recipient_last_name, $user_email,$recipient_mobile_number)
+    public function adding_customer_info($customer_info)
     {      
         try {                       
-        if (isset($_POST["recipient_name"]) && isset($_POST["recipient_last_name"]) && 
-            isset($_POST["user_email"]) &&  isset($_POST["recipient_mobile_number"])) {
     
-                
-                if ($result_of_function = $this->addNewCustomer($recipient_name, $recipient_last_name, $user_email,$recipient_mobile_number))
+                if ($result_of_function = $this->addNewCustomer($customer_info->recipient_name, $customer_info->recipient_last_name, 
+                                                                $customer_info->user_email, $customer_info->recipient_mobile_number))
                     {  
-                
                         // $result_of_function returns last_customer_id
                         $_SESSION["last_customer_id"] = $result_of_function;
                     }  else {
-                                // the exception will execute if above if isn't 1
-                                throw new Exception("Function adding_customer_info doesn't have all parameters");
+                        // the exception will execute if above if isn't 1
+                        throw new Exception("Function adding_customer_info doesn't have all parameters");
                             }
-
-            }  
+ 
         } catch (Exception $exception) {
             file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
               'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
@@ -165,7 +160,7 @@ class CustomerModel extends Customer
                                throw new Exception("Function get_last_id wasn't successful");
                                                            } else {
                                                                 return $result_get_customer_id[0]["customer_id"];
-                                                              }
+                                                                  }
                 }    catch (Exception $exception) {
                  file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
                    'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());

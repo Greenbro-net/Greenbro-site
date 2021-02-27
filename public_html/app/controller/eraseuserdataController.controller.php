@@ -7,6 +7,7 @@ class eraseuserdataController extends Controller
     use jsonreplyTrait;
     use cryptographerTrait;
     use ConfigSettingsTrait;
+    use FilterDataTrait;
 
     private $user_code;
     
@@ -37,7 +38,7 @@ class eraseuserdataController extends Controller
     // the method below sets user_id
     private function set_user_code()
     {
-       $user_code = $this->user_code = trim($_POST['user_code']);
+       $user_code = $this->user_code = $this->filter_data($_POST['user_code']);
     }
     // the method below gets user_id
     private function get_user_code()

@@ -3,6 +3,7 @@
 class ResponseController extends Controller
 {
     use modelTrait;
+    use FilterDataTrait;
     
     public $user_id; 
     public $user_name;
@@ -12,13 +13,7 @@ class ResponseController extends Controller
     public $rating;
     public $created_at;
 
-    // the method below filter input data
-    public function filter_data($data)
-    {
-        $data = trim($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
+    
     
     // the function below displays view page 
     public function show_response()
@@ -169,9 +164,6 @@ class ResponseController extends Controller
             $this->set_user_id_fb();
             return $this->user_id;
         }
-        
-
-        // set user id from FB case 
 
     }
 
