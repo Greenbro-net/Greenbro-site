@@ -50,23 +50,23 @@ class CustomerModel extends Customer
         //    checking incoming data below
         if (empty($recipient_name || $recipient_last_name)) {
         throw new Exception("Parameter for method in checking_customer_name is empty");
-    }
+        }
+
        $recipient_names = $this->get_customer_name();
        
        if (empty($recipient_names)) {
            throw new Exception("Result of get_customer_name is empty");
                                    }
        // the code below for checking do we have the same recipient_name and recipient_last_name in DB
-       foreach ($recipient_names as $one_recipient_name)
-        {
+       foreach ($recipient_names as $one_recipient_name) {
           if ( $recipient_name == $one_recipient_name["recipient_name"] && $recipient_last_name == $one_recipient_name["recipient_last_name"])
             { 
-              echo "We have the same recipient name and last_name, thats why we shouldn't create new row"; 
-              // below  we should display message that our customer enter his data before 
-              // we redirect our customer to delivery_payment_type for continuing his order
-                    return true;
-            }
-        } return false;
+              //return true if we have the same user data
+              return true;
+            } else { //return false if we don't have the same user data
+              return false;
+                   }
+        }
             } catch (Exception $exception) {
                 file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
                   'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
@@ -79,7 +79,7 @@ class CustomerModel extends Customer
         try {
         //    checking incoming data below
         if (empty($user_email || $recipient_mobile_number)) {
-            throw new Exception("Incoming data in checking_customer_data is empty");
+            throw new Exception("Method checking_customer_data doesn't get all parameter");
         }
         $recipients_data = $this->get_customer_data();
         
@@ -91,13 +91,12 @@ class CustomerModel extends Customer
         foreach ($recipients_data as $recipient_data) 
          {
              if ($user_email == $recipient_data["user_email"] && $recipient_mobile_number == $recipient_data["recipient_mobile_number"])
-             {     
-                    echo "We have the same user_email and recipient_mobile_number from USER!!!";
-                    // if there is the same name customer data we will display message for customer and create new row in table
-                    // we should ask our customer that "Would he like to make order with the same email and phone number but on the other person"
-                    return true;
-             } 
-         } return false;
+             {  //return true if we have the same user data 
+                return true;
+             } else { //return false if we don't have the same user data
+                return false;
+             }
+         } 
         } catch (Exception $exception) {
             file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
               'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
@@ -113,12 +112,12 @@ class CustomerModel extends Customer
                 
                 if ($result_of_function = $this->addNewCustomer($recipient_name, $recipient_last_name, $user_email,$recipient_mobile_number))
                     {  
-                        echo "Customer was added successfully";
+                
                         // $result_of_function returns last_customer_id
                         $_SESSION["last_customer_id"] = $result_of_function;
                     }  else {
                                 // the exception will execute if above if isn't 1
-                                throw new Exception("Function wasn't executed succesfully");
+                                throw new Exception("Function adding_customer_info doesn't have all parameters");
                             }
 
             }  

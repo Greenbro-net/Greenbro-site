@@ -15,7 +15,10 @@ class FinalOrderController extends Controller
         $this->view->render();
     }
     public function display_unsuccessful_message()
-    {
+    {   
+        // the method below unset session before redirection
+        $this->unset_order_session();
+
         $this->view('final_order' . DIRECTORY_SEPARATOR . 'unsuccessful_order');
         $this->view->page_title = 'Замовлення не було сформовано успішно';
         $this->view->render();

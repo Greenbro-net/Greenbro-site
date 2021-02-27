@@ -2,8 +2,9 @@
 
 trait ConfigSettingsTrait 
 {
-    use controllerTrait;
-    use modelTrait;
+    use controllerTrait {
+        controllerTrait::load_model as load_model_config;
+    }
 
     protected $domen_part;
     protected $url;
@@ -26,6 +27,21 @@ trait ConfigSettingsTrait
     public function get_email_password()
     {
         return (string)$this->get_setting_without_parent()->email_password;
+    }
+
+    // the method below can't be move to modelTrait it causes error
+    private function get_setting()
+    {
+        parent::model('ConfigSettingsModel');
+        $url_model = new  ConfigSettingsModel;
+        return $object = $url_model->get_json();
+    }
+    // the method below can't be move to modelTrait it causes error
+    private function get_setting_without_parent()
+    {
+        $this->load_model_config('ConfigSettingsModel');
+        $url_model = new  ConfigSettingsModel;
+        return $object = $url_model->get_json();
     }
 
 }

@@ -21,7 +21,7 @@ class Application
     }
 
     // the  method below  prepares url for call  
-    protected function prepareCALL()
+    static protected function prepareCALL()
     {
             $url = self::clearupParameter();
             // the code below sets controller name for calling
