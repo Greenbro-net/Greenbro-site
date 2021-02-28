@@ -1,9 +1,6 @@
 <?php
-// TO DO the code below should be refactoring
 
 // create system for validation data which we will get from user 
-// if we have the same data(last name, mobile number, email) in DB we don't create new insert to DB
-// if it's new user we will insert new data to table customers
 class CustomerController extends Controller
 {  
     use ConfigSettingsTrait;
@@ -27,13 +24,23 @@ class CustomerController extends Controller
 
     // the method below checking does $_SESSION["last_customer_id"] have value if not grab it from CustomerModel
     public function grab_last_customer_id()
-    {
-        if (empty($_SESSION["last_customer_id"])) {
-            return $_SESSION["last_customer_id"] = $this->get_object_customer_model()->get_customer_id($this->get_recipient_name(),$this->get_recipient_last_name(), 
-                   $this->get_user_email(), $this->get_recipient_mobile_number());
-        } else {
-            return $_SESSION["last_customer_id"];
-               }
+    {   
+      try {
+            if (empty($_SESSION["last_customer_id"])) {
+                 $result = $this->get_object_customer_model()->get_customer_id($this->get_recipient_name(),$this->get_recipient_last_name(), 
+                       $this->get_user_email(), $this->get_recipient_mobile_number());
+                 if (empty($result)) {
+                     throw new Exception("Method get_customer_id return empty result");
+                    }
+                       return $_SESSION["last_customer_id"] = $result;
+            } else {
+                return $_SESSION["last_customer_id"];
+                   }
+          } catch (Exception $exception) {
+            file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+              'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+                                         }
+        
     }
 
     // the method below checks data from from not empty
@@ -86,7 +93,6 @@ class CustomerController extends Controller
         if (empty($_SESSION["last_customer_id"])) {
             header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/customer/get_customer_data");
             exit();
-
         } else {
             header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/customer/delivery_payment_type");
             exit();
@@ -110,26 +116,22 @@ class CustomerController extends Controller
             //there is #1 variant 
             // we do not have that user before, new one
             if ((!$this->repeated_customer_data()) && (!$this->repeated_customer_name())) {
-           
-            // the code below adds user data to DB and do next step
-           $this->get_object_customer_model()->adding_customer_info($customer_info = new customerController());
-           header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/customer/delivery_payment_type");
-           exit;
+              // the code below adds user data to DB and do next step
+              $this->get_object_customer_model()->adding_customer_info($customer_info = new customerController());
+              header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/customer/delivery_payment_type");
+              exit;
             }
                     //there is #2 variant
         // there we should take customer_id if the information of customer is the same 
         elseif (($this->repeated_customer_data()) && ($this->repeated_customer_name())) { 
-
             // the function below returns customer_id for customer that we have already had in table 
             $this->grab_last_customer_id();
             header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/customer/delivery_payment_type");
             exit;
-          } 
+            } 
 
         }
     }
-
-    
 
     // this functions below in Controller makes URL name for calling page
     public function get_customer_data()
@@ -139,7 +141,6 @@ class CustomerController extends Controller
         $this->view->page_title = 'Оформлення замовлення';
         $this->view->render();
     }
-
     // this function below in Controller is for  URL name for gets delivery information
     public function delivery_payment_type()
     {   
@@ -149,10 +150,7 @@ class CustomerController extends Controller
         $this->view->render();
     }
 
-     
 
-    
-    
 }       
 
 

@@ -12,9 +12,8 @@ class PHPMailerModel
 // testing function below for sending email letter after successful customer order 
    public function sent_letter($united_order)
    {    
-       
-        $mail = new PHPMailer(true);
      try {
+        $mail = new PHPMailer(true);
        
         // Server settings
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;
@@ -50,6 +49,7 @@ class PHPMailerModel
             file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
               'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString()   . $mail->ErrorInfo);
                                          }
+            
     }
 
 }

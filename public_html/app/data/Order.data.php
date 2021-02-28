@@ -4,8 +4,7 @@
 class Order extends DBController
 {
    // the function below adds new order in `orders` table
-   public function addNewOrder($united_order, $order_date, $order_customer_id, $payment_status, $total_price,
-                               $payment_type, $delivery_type, $delivery_address)
+   public function addNewOrder($ordering_object)
    {    
        try {
         //    we should insert only values for "foreingh keys" which we have in parent tables 
@@ -14,35 +13,35 @@ class Order extends DBController
     $params = array(
         array(
             "param_type" => "i",
-            "param_value" => $united_order
+            "param_value" => $ordering_object->united_order
         ),
         array(
             "param_type" => "s",
-            "param_value" => $order_date
+            "param_value" => $ordering_object->order_date
         ),
         array(
             "param_type" => "i",
-            "param_value" => $order_customer_id
+            "param_value" => $ordering_object->order_customer_id
         ),
         array(
             "param_type" => "s",
-            "param_value" => $payment_status
+            "param_value" => $ordering_object->payment_status
         ),
         array(
             "param_type" => "i",
-            "param_value" => $total_price
+            "param_value" => $ordering_object->total_price
         ),
         array(
             "param_type" => "s",
-            "param_value" => $payment_type
+            "param_value" => $ordering_object->payment_type
         ),
         array(
             "param_type" => "s",
-            "param_value" => $delivery_type
+            "param_value" => $ordering_object->delivery_type
         ),
         array(
             "param_type" => "s",
-            "param_value" => $delivery_address
+            "param_value" => $ordering_object->delivery_address
         ));
 
         // if function was executed successfully it returns 1

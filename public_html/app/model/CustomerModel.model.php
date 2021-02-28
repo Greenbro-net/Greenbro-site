@@ -58,14 +58,13 @@ class CustomerModel extends Customer
                                    }
        // the code below for checking do we have the same recipient_name and recipient_last_name in DB
        foreach ($recipient_names as $one_recipient_name) {
-          if ( $recipient_name == $one_recipient_name["recipient_name"] && $recipient_last_name == $one_recipient_name["recipient_last_name"])
+          if ($recipient_name == $one_recipient_name["recipient_name"] && $recipient_last_name == $one_recipient_name["recipient_last_name"])
             { 
               //return true if we have the same user data
               return true;
-            } else { //return false if we don't have the same user data
-              return false;
-                   }
-        }
+            } 
+        } //return false if we don't have the same user data
+          return false;
             } catch (Exception $exception) {
                 file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
                   'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
@@ -87,18 +86,16 @@ class CustomerModel extends Customer
                                     }
 
         // the code below for checking do we have the same user_email and recipient_mobile_number in DB
-        foreach ($recipients_data as $recipient_data) 
-         {
+        foreach ($recipients_data as $recipient_data) {
              if ($user_email == $recipient_data["user_email"] && $recipient_mobile_number == $recipient_data["recipient_mobile_number"])
              {  //return true if we have the same user data 
                 return true;
-             } else { //return false if we don't have the same user data
-                return false;
              }
-         } 
-        } catch (Exception $exception) {
-            file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
-              'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+        } //return false if we don't have the same user data
+          return false;
+            } catch (Exception $exception) {
+              file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+                'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
                                        }
     }  
     

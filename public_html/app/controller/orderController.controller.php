@@ -1,13 +1,4 @@
 <?php
-// 1.united_order                                      gets it from SESSION
-// 2.order_date                                        this is OK(function)
-// 3.order_customer_id
-// payment status will change to "OK" after fondy returns that customer pays 
-// 4.payment_status                                   this will change after successfully payment
-// 5.total_price                                      this we should get from order_items table by model
-// 6.payment_type      $_POST["payment_type"];        this we should get just by POST method
-// 7.delivery_type     $_POST["delivery_type"];       this we should get just by POST method
-// 8.delivery_address  $_POST["delivery_address"];    this we should get just by POST method
        
 // $order_customer_id the last id from table customers  // this we should get after added new customer to table customers
 $_POST["payment_status"] = "FALSE";
@@ -18,14 +9,14 @@ class OrderController extends Controller
     use modelTrait;
     use FilterDataTrait;
 
-    protected $united_order;
-    protected $order_date;
-    protected $order_customer_id;
-    protected $payment_status;
-    protected $total_price;
-    protected $payment_type;
-    protected $delivery_type;
-    protected $delivery_address;
+    public $united_order;
+    public $order_date;
+    public $order_customer_id;
+    public $payment_status;
+    public $total_price;
+    public $payment_type;
+    public $delivery_type;
+    public $delivery_address;
     
     public function __construct()
     {
@@ -40,7 +31,6 @@ class OrderController extends Controller
     }
 
     
-    
     // the function below return united order from session model 
     public function call_set_united_order_items()
     {
@@ -49,79 +39,84 @@ class OrderController extends Controller
      // the function below gets total_price for our customer order 
      public function set_total_price()
      {   
-         return $this->get_object_order_model()->gather_total_price($this->get_united_order()); //47320200927
+         return $this->get_object_order_model()->gather_total_price($this->get_united_order());
      }
-     public function get_total_price()
+     protected function get_total_price()
      {
          return $this->total_price;
      }
  
      // the functions below return properties for our addNewOrder function 
-     public function get_united_order()
+     protected function get_united_order()
       {
           return $this->united_order;
       }
     // the function below returns correct date 
-    public function get_date()
+    protected function get_date()
     {  
       date_default_timezone_set("Europe/Kiev");
       return date("Y-m-d H:i:s"); 
     }
 
-    public function get_order_date()
+    protected function get_order_date()
      {
          return $this->order_date;
      }  
-    public function get_order_customer_id()
+    protected function get_order_customer_id()
      {
          return $this->order_customer_id;
      }
-    public function get_payment_status()
+    protected function get_payment_status()
      {
          return $this->payment_status;
      }
    
-    public function get_payment_type()
+    protected function get_payment_type()
      {
          return $this->payment_type;
      }   
-    public function get_delivery_type()
+    protected function get_delivery_type()
      {
          return $this->delivery_type;
      }
-    public function get_delivery_address()
-     {
+    protected function get_delivery_address()
+    {
          return $this->delivery_address;
-     }
+    }
+    // the method below checks input parameter aren't empty
+    protected function check_not_empty_data()
+    {   
+        try {
+             if (isset($_SESSION["united_order_items"])  && !empty($this->get_order_date()) && !empty($this->get_order_customer_id()) && isset($_POST["payment_status"]) &&
+                 !empty($this->get_total_price()) && isset($_POST["payment_type"]) && isset($_POST["delivery_type"]) && isset($_POST["delivery_address"])) {
+                        return true;
+                 } else {
+                     throw new Exception("Method check_not_empty_data found empty data");
+                        }
+            } catch (Exception $exception) {
+                file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+                'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+                                           }
+    }
 
-    // this functions below in Controller makes URL name for calling page
-    // the function below displays successful message about order and the method should call to funciton which sends email to greenbro.net@gmail.com
 
-
-    // the function below gathers all order data then checks it and after "final submiting" add data in orders table
+    // the method below displays successful message about order and the method should call to funciton which sends email to greenbro.net@gmail.com
+    // the method below gathers all order data then checks it and after "final submiting" add data in orders table
     public function gather_order_data()
     {
-        try {    //header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/customer/get_customer_data");
-              
-              if (isset($_SESSION["united_order_items"])  && !empty($this->get_order_date()) && !empty($this->get_order_customer_id()) && isset($_POST["payment_status"]) &&
-                 !empty($this->get_total_price()) && isset($_POST["payment_type"]) && isset($_POST["delivery_type"]) && isset($_POST["delivery_address"]))
-                {
-                    $result_adding_order = $this->adding_order_info();
+        try {  
+              if ($this->check_not_empty_data()) {
 
-                    if (empty($result_adding_order)) {
+                    if (empty($this->adding_order_info())) {
                         header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/finalorder/display_unsuccessful_message");
                         exit;
-                                      } else {
-                                         // this redirect should go to the successful page 
-                                         // after displays successful message for customer we unset successful $_SESSION["united_order_items"] and ($_SESSION["last_customer_id"])
-                                         header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/finalorder/display_successful_message?order=" . $this->get_united_order());
-                                         exit;
-                                             }
-                        
-                    // TO DO the code above doesn't work properly it should be rafactoring  as soon as possible
+                        } else { // this redirect go to the successful page 
+                            header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/finalorder/display_successful_message?order=" . $this->get_united_order());
+                            exit;
+                               }
 
                 } else {
-                    throw new Exception("Function gather_order_data wasn't executed successfully");
+                    throw new Exception("Method gather_order_data wasn't executed successfully");
                        }    
 
             } catch (Exception $exception) {
@@ -130,25 +125,22 @@ class OrderController extends Controller
                                            }
     }
 
-    // the function below for adds in orders table new data 
+    // the method below for adds in orders table new data 
     // there are we should create a checking function which control that we can only have one order with united_order_items
     public function adding_order_info()
     {
-        try {          
-                    if ($this->get_united_order() && $this->get_order_date() && $this->get_order_customer_id() && $this->get_payment_status() &&
-                        $this->get_total_price() && $this->get_payment_type() && $this->get_delivery_type() && $this->get_delivery_address()) 
-                        {  
-                            $result_adding_order_info =  $this->get_object_order_model()->addNewOrder($this->get_united_order(), $this->get_order_date(), $this->get_order_customer_id(), $this->get_payment_status(),
-                            $this->get_total_price(), $this->get_payment_type(), $this->get_delivery_type(), $this->get_delivery_address());
-                            
-                            // the method below sents letter after successful order to greenbro.net@gmail.com email 
-                            $this->get_object_mailer_model()->sent_letter($this->get_united_order());
-                            return $result_adding_order_info;
-                            
-                        } else {
-                                // the exception will execute if above if isn't 1
-                                throw new Exception("Function adding_order_info wasn't executed succesfully");
-                               }
+        try {             
+            $result_adding_order_info = $this->get_object_order_model()->addNewOrder($ordering_object = new orderController());
+            
+            // the method below sents letter after successful order to greenbro.net@gmail.com email 
+            $this->get_object_mailer_model()->sent_letter($this->get_united_order());
+            
+              if (empty($result_adding_order_info)){
+                // the exception will execute if above if isn't 1
+                throw new Exception("Method adding_order_info wasn't executed succesfully");
+                 } else {
+                    return $result_adding_order_info;
+                        }
                 
             } catch (Exception $exception) {
             file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
@@ -156,6 +148,5 @@ class OrderController extends Controller
                                            }
     }
 
-    
 
 }
