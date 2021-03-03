@@ -15,7 +15,8 @@ class PHPMailerModel
      try {
         $mail = new PHPMailer(true);
         // Server settings
-        $mail->SMTPDebug = 1;
+      //   the option below allows us set debug information
+        $mail->SMTPDebug = 0;
         $mail->IsSMTP();
         $mail->Host = $this->get_email_host();
         $mail->SMTPAuth = true;
@@ -41,7 +42,7 @@ class PHPMailerModel
          
           throw new Exception("Function sent_letter wasn't successful" . $mail->ErrorInfo);
                            } else {
-                              echo 'Email has been sent.';
+                              // echo 'Email has been sent.';
                                   } 
     
          }  catch (Exception $exception) {
