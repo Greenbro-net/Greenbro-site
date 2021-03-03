@@ -84,7 +84,7 @@ if(empty($_SESSION['contact']))
 <!-- End of checkout popup -->
 
 <?php
-require_once "header.php";
+// require_once "header.php";
 ?>
 
 <div id="list_payment_delivery">

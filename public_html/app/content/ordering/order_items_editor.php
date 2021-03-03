@@ -5,8 +5,12 @@ $shoppingCart = new ShoppingCart();
 $united_order_items = $_SESSION["united_order_items"]; //you can integerate your authentication module here to get logged in member
 ?>
 
+ <!-- the code below for shows all grabing blocks of code which has to be reload  -->
+ <div id="display_reload_cart_item_editor"></div>
+ <!-- testing code above  -->
+
 <!-- the code below are title of delivery_payment_type page  -->
-<div id="user_ordering_form">
+<div id="user_editor_form">
 <h3>Оформлення замовлення </h3>
 <br>
 <h4>2. Деталі замовлення </h4>
@@ -94,7 +98,7 @@ if (is_array($cartItem) || is_object($cartItem)){
              <div class="cart-info action-editor">
               <div id="<?php echo $item['id']; ?>"
                  
-                 class="btnRemoveAction"><img class="remove_button" onclick="removeItem(<?php echo $item['id']; ?>)"
+                 class="btnRemoveAction"><img class="remove_button" onclick="removeItemEditor(<?php echo $item['id']; ?>)"
                  src="/images/images_for_cart/icon-delete.png" alt="icon-delete"
                  title="Видалити позицію" /></div>
              </div>

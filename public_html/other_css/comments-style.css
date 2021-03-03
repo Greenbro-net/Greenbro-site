@@ -9,7 +9,15 @@ display: none;
 
 }
 
-
+/* the code below for comment container block  */
+#comment_container {
+    background-color: chartreuse;
+    display: none;
+}
+.comment_container_class {
+   width: 90%;
+   height: 90%;
+}
 
 /* the code below for container which contains comment */
 #comment_container_1 {

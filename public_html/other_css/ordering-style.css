@@ -1,0 +1,213 @@
+/* the code below for successful page */
+#successful_order {
+    /* the height below can fill in all page  like height: 100% */
+    height: 79vh;
+    font-family: 'Roboto', sans-serif;
+    padding: 15px;
+    text-align: center;
+    font-size: 20px; 
+}
+
+/* the code below for unsuccessful page */
+#unsuccessful_order {
+    /* the height below can fill in all page  like height: 100% */
+    height: 79vh;
+    font-family: 'Roboto', sans-serif;
+    padding: 15px;
+    text-align: center;
+    font-size: 20px; 
+}
+
+
+/* the code below for file order_items_editor.php */
+/* hover for cart item increment decrement  */
+.btn-increment-decrement-editor:hover {
+    transition: transform .2s; /* Animation */
+    transform: scale(1.1);
+    background-color:  #53A630;
+}
+
+  /* box class equals content */
+  .box-editor {
+    background: #8bffae1c;
+    padding: 30px;
+    top: 40px;
+    left: 0;
+  }
+
+/* the code below for removes one item from item_cart */
+.remove_button-editor {
+    cursor: pointer;
+}
+
+#shopping-cart-editor .txt-heading {
+	border-top: #607d8b 2px solid;
+    background: #ffffff;
+    border-bottom: #607d8b 2px solid;
+}
+
+#shopping-cart-editor .txt-heading .txt-heading-label-editor{
+    margin-top:5px;
+}
+
+/* main element which contain other elements  */
+.cart-item-container-editor {
+   height: 100%;
+   width: 100%;
+   display: table;
+   padding: 10px 10px;
+   border-bottom: #e2e2e2 1px solid;
+}
+
+/* the code below for column item total price in the top  */
+.cart-total-price-editor {
+    text-align: center;
+	width:10%;
+    display: inline-block;
+    margin-left: 1%;
+}
+/* the code below displays us item total price */
+.cart-info-total-price-editor {
+    text-align: center;
+    width: 10%;
+    height: 20%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* the code below for column item price in the top  */
+.cart-price-editor {
+    text-align: left;
+	width:10%;
+    display: inline-block;
+    margin-left: 8%;
+}
+/* the code below displays us item  price */
+.cart-info-price-editor {
+    text-align: center;
+    width: 8%;
+    height: 20%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* the code below for column name quantity of items in the top  */
+.cart-info-editor {
+    margin-left: 10%;
+	text-align: right; 
+	display:inline-block;
+	width:17%;
+}
+/* the code below shows us quantity of items and allows to change quantity of items  */
+#cart-info-quantity-editor {
+    width: 6%;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* the code below for column item name in the top  */
+.cart-title-editor {
+    text-align: right; 
+	display:inline-block;
+    width:13%;
+    margin-right: 19%;
+}
+/* the code below displays item name  */
+.cart-info.title-editor {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 12%;
+}
+
+/* the code below displays image in order_items_editor.php */
+#items-editor-image {
+    width: 90px;
+    height: 70px;
+    margin-left: 35%;
+}
+
+/* the code below it's a wrapper for item image */
+#block-editor-image {
+    display: table-cell;
+    vertical-align: middle;
+    width: 20%;
+    
+}
+/* the code below for delete icon  */
+.cart-info.action-editor {
+	width: 5%;
+    vertical-align: middle;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* the code below for displays total price and total quantity  */
+.cart-status-editor {
+    height: 20%;
+    float: right;
+    font-size: 1.3em;
+    padding: 0px 10px;
+} 
+.txt-heading-editor {
+	margin: 20px 0px;
+	text-align: left;
+    overflow: auto;
+}
+
+.cart-item-container.header {
+	background: #CCC;
+    border-bottom: #b9b8b8 1px solid;
+}
+
+.btn-increment-decrement-editor {
+    display: inline-block;
+    padding: 5px 0px;
+    background: #e2e2e2;
+    width: 30px;
+    text-align: center;
+    cursor:pointer;
+}
+
+
+/* the code below for make_order_form */
+/* the code below for URL http://greenbro.com/order/delivery_payment_type */
+#delivery_address {
+    width: 30%;
+}
+/* the code below for user_editor_form */
+#user_editor_form 
+{
+    padding: 30px;
+}
+/* the code below for user_ordering.php in content/ordering */
+#user_ordering_form {
+    padding: 30px;
+    height: 87vh;
+}
+#user_ordering_submit {
+    cursor: pointer;
+    margin: 80px 450px;
+}
+/* hover for submit button in user_ordering */
+#user_ordering_submit:hover {
+    transition: transform .2s; /* Animation */
+    transform: scale(1.0);
+    background-color:  #53A630;
+}
+
+#button_to_order {
+    background-color: honeydew;
+    text-align: center;
+    margin-top: 5px;
+    width: 100%;
+    height: 35px;
+    cursor: pointer;
+}
+
+/* hover button_to_order  */
+#button_to_order:hover {
+    transition: transform .2s; /* Animation */
+    background-color:  #53A630;
+}

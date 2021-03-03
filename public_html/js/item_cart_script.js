@@ -139,26 +139,43 @@ $('body').click(function() {
     $("#display_reload_cart_item").load(url+"://greenbro."+domen_part+"/cart/show_cart_item/" + ' #cart_item_code');
 }
 
-// the function below calls in product-list.content.php and remove item from order_items table
+
+
+  // the function below calls in product-list.content.php and remove item from order_items table
 function removeItem(product_id) {
   // code below grabs value from input element with correct id of item 
-       
   $.ajax({                            
       type: "POST",
       url: 'index.php?action=remove',
       data: {product_id: product_id},
       success: function(data, textStatus) {
-        // the code below displays messages with variables
-          // alert(product_id);
-          // alert(data);
+          // the code below reload shopping-cart-container and displays correct info of item after updating, before ordering
+          $("#display_reload_cart_item").load(url+"://greenbro."+domen_part+"/cart/show_cart_item/" + ' #cart_item_code', show_pager);
+      },
+      error: function(data) {
+        // alert("Error in removeItem function");
       }
   });
+   
+}
 
-    // the code below reload shopping-cart-container and displays correct info of item after updating 
-    $("#display_reload_cart_item").load(url+"://greenbro."+domen_part+"/cart/show_cart_item/" + ' #cart_item_code', show_pager);
-    // the code below reload page delivery_payment_type 
-    $("#cart_item_editor").load(url+"://greenbro."+domen_part+"/order/delivery_payment_type/" + ' #cart_item_editor', show_pager);
-  }
+// the function below calls in product-list.content.php and remove item from order_items table
+function removeItemEditor(product_id) {
+    // code below reloads part of page and displays actual data     
+    $.ajax({                            
+        type: "POST",
+        url: 'index.php?action=remove',
+        data: {product_id: product_id},
+        success: function(data, textStatus) {
+            // the code below executes in success case 
+            $("#cart_item_editor").load(url+"://greenbro."+domen_part+"/customer/delivery_payment_type/" + ' #cart_item_editor');
+        },
+        error: function(data) {
+          // alert("Error in removeItemEditor function");
+        }
+    });
+    
+}
 
 
 // the function below  delete all items from cart
@@ -176,10 +193,11 @@ function empty_cart_item(united_order_items) {
       }
   });
     // the code below reload shopping-cart-container and displays correct info of item after updating 
-    $("#display_reload_cart_item").load(url+"://greenbro."+domen_part+"/cart/show_cart_item/" + ' #cart_item_code', show_pager
-       );
+    $("#display_reload_cart_item").load(url+"://greenbro."+domen_part+"/cart/show_cart_item/" + ' #cart_item_code', show_pager);
     }
 
+
+// DELETE IN the future????????
 // this function below helps us avoid problems with asynchronous we put it as a  callback 
 function show_pager() {
   $(".box").slideToggle();
