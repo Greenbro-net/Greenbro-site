@@ -21,11 +21,11 @@ class CustomerModel extends Customer
                                            }
     }
 
-    // the function below grabs customer name and last_name from customer table 
+    // the method below grabs customer name and last_name from customer table 
     public  function get_customer_name()
     {
         try {
-    $sql = "SELECT   `recipient_name`, `recipient_last_name` FROM customers";
+    $sql = "SELECT  `recipient_name`, `recipient_last_name` FROM customers";
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute();
 
@@ -42,7 +42,7 @@ class CustomerModel extends Customer
 
 
 
-    // the function below for checking customer name before insert it to table `customers`
+    // the method below for checking customer name before insert it to table `customers`
     public function  checking_customer_name($recipient_name, $recipient_last_name)
     {   // the function below return all customers which we have in table customers 
         try {

@@ -34,7 +34,6 @@ class ValidationModel extends Validation
     }
 
 
-    //TO DO create method below
     //Find user by email. Email is passed in by the Controller.
     public function findUserByEmail($email) {
       try {
@@ -95,7 +94,7 @@ class ValidationModel extends Validation
     }
 
 
-    // The method below gets user email use for it user_id 
+    // The method below gets user email uses for it user_id 
     public function findEmailByUserid($user_id) 
     {
         try {
@@ -120,6 +119,39 @@ class ValidationModel extends Validation
                return false;
             } else { // return user email
                 return $resultfindEmailByUserid;
+                   }  
+
+        } catch (Exception $exception) {
+            file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+                'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+                                         }
+    }
+
+    // The method below gets user phone number uses for it user_id 
+    public function findPhoneNumberByUserid($user_id) 
+    {
+        try {
+         $query = "SELECT phone_number FROM `registration` WHERE `user_id` = ?";
+
+         $params = array(
+             array(
+                 "param_type" => "i",
+                 "param_value"=> $user_id
+             ));
+
+          if (empty($user_id)) {
+              throw new Exception("Function findPhoneNumberByUserid doesn't get user_id parameter");
+                               }
+          $resultfindPhoneNumberByUserid = $this->selectRegistrationTable($query, $params);
+
+          if (empty($resultfindPhoneNumberByUserid)) {
+              throw new Exception("Function findPhoneNumberByUserid doesn't return result");
+                                               }
+    
+          if (empty($resultfindPhoneNumberByUserid)) {
+               return false;
+            } else { // return user phone number
+                return $resultfindPhoneNumberByUserid;
                    }  
 
         } catch (Exception $exception) {

@@ -7,6 +7,8 @@ class CustomerController extends Controller
     use modelTrait;
     use sessionTrait;
     use FilterDataTrait;
+    use jsonreplyTrait;
+    use ValidationTrait;
 
     public $recipient_name;
     public $recipient_last_name;
@@ -118,20 +120,26 @@ class CustomerController extends Controller
             if ((!$this->repeated_customer_data()) && (!$this->repeated_customer_name())) {
               // the code below adds user data to DB and do next step
               $this->get_object_customer_model()->adding_customer_info($customer_info = new customerController());
-              header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/customer/delivery_payment_type");
-              exit;
+              $this->delivery_payment_type();
             }
-                    //there is #2 variant
-        // there we should take customer_id if the information of customer is the same 
-        elseif (($this->repeated_customer_data()) && ($this->repeated_customer_name())) { 
-            // the function below returns customer_id for customer that we have already had in table 
+            //there is #2 variant
+            elseif ((!$this->repeated_customer_data()) || (!$this->repeated_customer_name())) {
+              // the code below adds user data to DB and do next step
+              $this->get_object_customer_model()->adding_customer_info($customer_info = new customerController());
+              $this->delivery_payment_type();
+            }
+            // there is #3 variant
+            // there we should take customer_id if the information of customer is the same 
+             else { 
+            // the function below returns customer_id for customer that we have already had in table       
             $this->grab_last_customer_id();
-            header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/customer/delivery_payment_type");
-            exit;
+            $this->delivery_payment_type();
             } 
 
         }
     }
+    
+
 
     // this functions below in Controller makes URL name for calling page
     public function get_customer_data()
@@ -150,6 +158,36 @@ class CustomerController extends Controller
         $this->view->render();
     }
 
+
+    // the method below does autocompliting for logged in user, such us email and phone number
+    public function fill_in_customer_data()
+    {
+        try {
+              if ($this->checkUserid()) {
+                  // the block of code below grabs user email
+                  $result_user_email = $this->get_object_validation_model()->findEmailByUserid($this->get_user_id());         
+                  // the block of code below grabs user phone number
+                  $result_user_phone_number = $this->get_object_validation_model()->findPhoneNumberByUserid($this->get_user_id());
+                  
+                  if (empty($result_user_phone_number)) {
+                      throw new Exception("Parameter result_user_phone_number in fill_in_customer_data is empty");
+                    }
+                  if (empty($result_user_email)) {
+                    throw new Exception("Parameter result_user_email in fill_in_customer_data is empty");
+                    }
+                  $this->display_casual_user_data($result_user_email, $result_user_phone_number);
+              }
+              // the code below grabs email from FB
+              elseif($this->checkFbUserid()) {
+                    //  $this->createUserSession();
+                     $this->display_fb_user_email();
+              }
+
+            } catch (Exception $exception) {
+                file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+                  'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+                                           }
+    }
 
 }       
 

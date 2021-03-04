@@ -8,29 +8,11 @@ class ValidationController extends Controller
     use cryptographerTrait;
     use jsonreplyTrait;
     use FilterDataTrait;
+    use ValidationTrait;
 
     public $user_id;
     
     
-    // the method below checks is user log in or not
-    private function checkUserid()
-    {
-        if (empty($_SESSION['user_id'])) {
-            return false;
-        } else {
-            return true;
-               }
-    }
-    // the method below checks is user log in by FB
-    private function checkFbUserid()
-    {
-        if (empty($_SESSION['userData']['id'])) {
-            return false;
-        } else {
-            return true;
-               }
-    }
-
     // the method below for ajax call from comment-script.js
     public function check_log_in()
     {
@@ -42,26 +24,12 @@ class ValidationController extends Controller
     }
 
 
-    // the method below set user in
-    protected function set_user_id()
-    {   
-        if (!empty($_SESSION["user_id"])) {
-            $user_id = $this->user_id  = $this->filter_data($_SESSION["user_id"]);
-             }
-    }
-    // the method below get user_id
-    public function  get_user_id()
-    {
-        $this->set_user_id();
-        return $this->user_id;
-    }
-    
     // the method below keeps values of an array
     protected function data_array_keeper()
     {
          // Sanitize post data
          $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-        return $data = [
+         return $data = [
             'username' => $this->filter_data($_POST['username']),
             'email' => $this->filter_data($_POST['email']),
             'phone_number' => $this->filter_data($_POST['phone_number']),
@@ -266,13 +234,15 @@ class ValidationController extends Controller
     }
 
 
+    // DELETE method below ??
     // the method below fills in email field
-    protected function fill_in_email()
-    {
-        $form_data['success'] = true;
-        $form_data['posted'] = $result[0]["email"];
-        echo json_encode($form_data);
-    }
+    // protected function fill_in_email()
+    // {
+    //     $form_data['success'] = true;
+    //     $form_data['posted'] = $result[0]["email"];
+    //     echo json_encode($form_data);
+    // }
+
 
     // the method below for gets user email for autocomplete
     public function get_user_email()
@@ -280,17 +250,13 @@ class ValidationController extends Controller
        if ($this->checkUserid()) {
         // call method from model
          if ($result = $this->get_object_validation_model()->findEmailByUserid($this->get_user_id())) {         
-               $form_data['success'] = true;
-               $form_data['posted'] = $result[0]["email"];
-               echo json_encode($form_data);
+              $this->display_casual_user_email($result);
            }
         }
         // the code below grabs email from FB 
         elseif($this->checkFbUserid()) {
             if (!empty($_SESSION['userData']['email'])) {
-                 $form_data['success'] = true;
-                 $form_data['posted'] = $_SESSION['userData']['email'];
-                 echo json_encode($form_data);
+               $this->display_fb_user_email();    
             }
         }
     }

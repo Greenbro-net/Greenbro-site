@@ -58,4 +58,23 @@ trait sessionTrait
         unset($_SESSION["last_customer_id"]);
     }
 
+    // the method below checks is casual user log in or not 
+    private function checkUserid()
+    {
+        if (empty($_SESSION['user_id'])) {
+            return false;
+        } else {
+            return true;
+               }
+    }
+    // the method below checks is user log in by FB
+    private function checkFbUserid()
+    {
+        if (empty($_SESSION['userData']['id'])) {
+            return false;
+        } else {
+            return true;
+               }
+    }
+
 }

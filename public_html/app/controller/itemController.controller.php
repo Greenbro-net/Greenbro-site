@@ -102,6 +102,8 @@ class ItemController extends Controller
 
 }
 
+
+// TO DO we can rebuild the code below without creating object just call methods from AJAX 
 $object_ItemController = new ItemController();
 
 // the function below adds item in table order_items 

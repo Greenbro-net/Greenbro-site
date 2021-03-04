@@ -87,11 +87,11 @@ class OrderController extends Controller
     protected function check_not_empty_data()
     {   
         try {
-             if (isset($_SESSION["united_order_items"])  && !empty($this->get_order_date()) && !empty($this->get_order_customer_id()) && isset($_POST["payment_status"]) &&
-                 !empty($this->get_total_price()) && isset($_POST["payment_type"]) && isset($_POST["delivery_type"]) && isset($_POST["delivery_address"])) {
-                        return true;
+             if (empty($_SESSION["united_order_items"])  || empty($this->get_order_date()) || empty($this->get_order_customer_id()) || empty($_POST["payment_status"]) ||
+                 empty($this->get_total_price()) || empty($_POST["payment_type"]) || empty($_POST["delivery_type"]) || empty($_POST["delivery_address"])) {
+                    throw new Exception("Method check_not_empty_data found empty data");
                  } else {
-                     throw new Exception("Method check_not_empty_data found empty data");
+                    return true;
                         }
             } catch (Exception $exception) {
                 file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .

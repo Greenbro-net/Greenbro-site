@@ -4,6 +4,7 @@ class ResponseController extends Controller
 {
     use modelTrait;
     use FilterDataTrait;
+    use jsonreplyTrait;
     
     public $user_id; 
     public $user_name;
@@ -22,21 +23,6 @@ class ResponseController extends Controller
        $this->view('response' . DIRECTORY_SEPARATOR . 'index');
        $this->view->page_title = 'Відгуки';
        $this->view->render();
-    }
-
-    // the method below displays success message
-    protected function display_success_message()
-    {
-        $form_data['success'] = true;
-        $form_data['posted'] = 'Method addNewRating was executed successful';
-        echo json_encode($form_data);
-    }
-    // the method below displays unsucces message
-    protected function display_unsuccess_message()
-    {
-        $form_data['success'] = false;
-        $form_data['posted'] = 'Error is';
-        echo json_encode($form_data);
     }
 
     // the method below checks is user log in by casual system
@@ -65,13 +51,9 @@ class ResponseController extends Controller
     {
         // call method from model 
        if ($this->get_object_response_model()->grabQuantityComment($this->get_user_id(), $this->get_product_id())) {
-        $form_data['success'] = false;
-        $form_data['posted'] = "User has already added a comment for the item";
-        echo json_encode($form_data);
+             $this->display_response_quantity_unsuccess_message();
           } else {
-            $form_data['success'] = true;
-            $form_data['posted'] = "User hasn't added a comment for the item yet";
-            echo json_encode($form_data);
+             $this->display_response_quantity_success_message();
                  }
     }
     
@@ -153,8 +135,6 @@ class ResponseController extends Controller
       $user_id = $this->user_id = $this->filter_data($_SESSION['userData']['id']);
     }
 
-
-
     public function get_user_id() 
     {   //set user id from casual case
         $this->set_user_id();
@@ -166,7 +146,6 @@ class ResponseController extends Controller
         }
 
     }
-
 
     // the code below just a simple wrapper for private method findItemResponse
     public function call_findItemResponse($product_id)
@@ -187,10 +166,10 @@ class ResponseController extends Controller
                 // last_response_id receives from method above
                 $this->get_object_response_model()->addNewRating($this->get_user_id(), $last_response_id, $this->get_rating());
                 // the message below displays by AJax
-                $this->display_success_message();
+                $this->display_response_success_message();
             } // the code below will work if comment won't add to table
              else {
-                 $this->display_unsuccess_message();
+                 $this->display_response_unsuccess_message();
              }  
          } 
           
