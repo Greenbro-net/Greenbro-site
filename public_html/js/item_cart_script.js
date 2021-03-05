@@ -18,7 +18,6 @@ $('#basket_checkout_button, #shopping-cart-container').click(function(ee) {    /
     if ($(this).attr("class") == "box") { // check if the clicked element is .box(box what was opened does not closes after click on it)
       return false;                       // do nothing like return false
     }   
-
    // the code below reload shopping-cart-container and displays correct info of item after updating 
    $("#display_reload_cart_item").load(url+"://greenbro."+domen_part+"/cart/show_cart_item/" + ' #cart_item_code', show_pager);
 
@@ -117,7 +116,6 @@ $('body').click(function() {
 // the functions below calls in product-list.content.php and add items in order_items table
   // we throw item variable id to tb products_cart by the function onAdd
   function onAdd(id, price) {
-    // the method below working well
     // code below grabs value from input element with correct id of item 
       var quantity_of_item = document.getElementById(id).value;
       // the code below passes price from hidden field to item_cart_script
@@ -125,18 +123,17 @@ $('body').click(function() {
     
     $.ajax({                            
         type: "POST",
-        url: 'index.php?action=add',
+        url: url+"://greenbro."+domen_part+"/item/add_item_to_cart",
         data: {id: id , quantity_of_item: quantity_of_item, price: price},
         success: function(data, textStatus, jqXHR) {
-          // the code below displays messages with variables
+          // the code below reload shopping-cart-container and displays correct info of item after updating 
+          $("#display_reload_cart_item").load(url+"://greenbro."+domen_part+"/cart/show_cart_item/" + ' #cart_item_code');
             // alert(id);
             // alert(data);
             // alert(quantity_of_item);
         }
     });
-                      //  the code below has to be fixining in some way 
-    // the code below reload shopping-cart-container and displays correct info of item after updating 
-    $("#display_reload_cart_item").load(url+"://greenbro."+domen_part+"/cart/show_cart_item/" + ' #cart_item_code');
+    
 }
 
 
@@ -146,7 +143,7 @@ function removeItem(product_id) {
   // code below grabs value from input element with correct id of item 
   $.ajax({                            
       type: "POST",
-      url: 'index.php?action=remove',
+      url: url+"://greenbro."+domen_part+"/item/delete_item_from_cart",
       data: {product_id: product_id},
       success: function(data, textStatus) {
           // the code below reload shopping-cart-container and displays correct info of item after updating, before ordering
@@ -164,7 +161,7 @@ function removeItemEditor(product_id) {
     // code below reloads part of page and displays actual data     
     $.ajax({                            
         type: "POST",
-        url: 'index.php?action=remove',
+        url: url+"://greenbro."+domen_part+"/item/delete_item_from_cart",
         data: {product_id: product_id},
         success: function(data, textStatus) {
             // the code below executes in success case 
@@ -184,17 +181,16 @@ function empty_cart_item(united_order_items) {
     // the code below passes price from hidden field to item_cart_script
   $.ajax({                            
       type: "POST",
-      url: 'index.php?action=empty',
+      url: url+"://greenbro."+domen_part+"/item/delete_all_items",
       data: {united_order_items: united_order_items},
       success: function(data, textStatus) {
-        // the code below displays messages with variables
+        // the code below reload shopping-cart-container and displays correct info of item after updating 
+        $("#display_reload_cart_item").load(url+"://greenbro."+domen_part+"/cart/show_cart_item/" + ' #cart_item_code', show_pager);
           // alert(united_order_items);
           // alert(data);
       }
   });
-    // the code below reload shopping-cart-container and displays correct info of item after updating 
-    $("#display_reload_cart_item").load(url+"://greenbro."+domen_part+"/cart/show_cart_item/" + ' #cart_item_code', show_pager);
-    }
+}
 
 
 // DELETE IN the future????????
@@ -233,9 +229,9 @@ function show_pager() {
           // the variable below shows actual price sum of item 
           var priceElement = $("#cart-price-"+cart_id);
           $.ajax({
-              url : "index.php?action=update_quantity",
+              url: url+"://greenbro."+domen_part+"/item/update_item_quantity",
               data : "product_id="+cart_id+"&quantity_of_item="+new_quantity,
-              type : 'post',
+              type : 'POST',
               success : function(response) {
                   // the val() method returns or sets the attribute of the selected elements(for form elements)
                   $(inputQuantityElement).val(new_quantity);
@@ -357,7 +353,6 @@ $(window).resize(function() {
 // the code below switchs between different tab in description section
 // copy paste version
 $(document).ready(function(){
-
   $(".tabs-list li a").click(function(es){
     // The event.preventDefault() method stops the default action of an element from happening.
      es.preventDefault();

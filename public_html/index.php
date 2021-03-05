@@ -119,10 +119,7 @@ checkout_url();
 
 
 
-// testing code 
-// var_dump($_POST['user_name'],$_POST['user_password'], $_POST['user_email'], $_POST['validation_submit'] );
-// var_dump($_POST);
-// @var_dump($_SESSION["last_customer_id"]);
+
 
 
 // the code below show number of customer order 
@@ -132,7 +129,7 @@ checkout_url();
 
 // we require php script below for escaping notice undefined index "action"
 // the code below require file for manages items by AJAX
-require_once "app/controller/itemController.controller.php";
+// require_once "app/controller/itemController.controller.php";
 
 // the code below require file for manages user login and logout 
 // require_once "app/controller/validationController.controller.php";

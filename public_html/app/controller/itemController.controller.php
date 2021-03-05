@@ -102,29 +102,3 @@ class ItemController extends Controller
 
 }
 
-
-// TO DO we can rebuild the code below without creating object just call methods from AJAX 
-$object_ItemController = new ItemController();
-
-// the function below adds item in table order_items 
-// we use @ below for escape notice undefined index 
-if (@$_GET["action"] == "add") {
-    $object_ItemController->add_item_to_cart();
-}
-
-// the code below removes item from item_cart
-// we use @ below for escape notice undefined index 
-@$product_id = $_POST["product_id"]; 
-if (@$_GET["action"] == "remove") {
-     $object_ItemController->delete_item_from_cart();
-}
-
-// the code below empties all items from cart 
-if (@$_GET["action"] == "empty") {
-     $object_ItemController->delete_all_items();
-   }
-
-// the code below for updating items quantity in cart 
-if (@$_GET["action"] == "update_quantity") {
-     $object_ItemController->update_item_quantity();
-   }
