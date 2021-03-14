@@ -79,7 +79,7 @@ public function getDBgetCartItembyProduct($query, $params)
 
 
 
-    // the function below update items in cart 
+    // the method below update items in cart 
     public function updateDB($query, $params)
     { 
         try {
@@ -387,7 +387,7 @@ public function getDBgetCartItembyProduct($query, $params)
         }
 
         if (empty($query || $params)) {
-            throw new PDOException("Function updateResponseRatingTable doesn't get query or params");
+            throw new PDOException("Method updateResponseRatingTable doesn't get query or params");
                                       }
         $result_ResponseRatingTable = $sql_statement->execute();
 

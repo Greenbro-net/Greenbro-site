@@ -1,12 +1,12 @@
 <?php
-require_once('../database_connection/link.php');
+// require_once('../database_connection/link.php');
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ru">
-<head>
+<head> -->
     <!-- <meta charset="utf-8"> -->
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+    <!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
     <title>Greenbro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -27,10 +27,10 @@ require_once('../database_connection/link.php');
     <meta name="theme-color" content="#ffffff">
 </head>
 
-<body>
+<body> -->
 
 <!-- Checkout popup window -->
-<div id="checkoutPopup" class="popup">
+<!-- <div id="checkoutPopup" class="popup">
     <div class="container popup-content" data-simplebar>
         <div class="row">
             <div class="col-lg-12">
@@ -50,11 +50,11 @@ require_once('../database_connection/link.php');
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- End of checkout popup -->
 
 <!-- Description popup window -->
-<div id="descriptionPopup" class="popup">
+<!-- <div id="descriptionPopup" class="popup">
     <div class="container popup-content" data-simplebar>
         <div class="row">
             <div class="col-lg-12 ">
@@ -75,13 +75,13 @@ require_once('../database_connection/link.php');
         </div>
     </div>
 </div>
-<!-- End of checkout popup -->
+ End of checkout popup -->
 
 
 
 
 <?php
-require_once "header.php";
+// require_once "header.php";
 ?>
 <div id="list_payment_delivery">
 <!-- Way of payment -->
@@ -112,13 +112,13 @@ require_once "header.php";
       <br>
      
 <?php
-require_once "footer.php";
+// require_once "footer.php";
 ?>
 
 
-<script defer src="../lib/jquery-3.3.1.js"></script>
+<!-- <script defer src="../lib/jquery-3.3.1.js"></script>
 <script defer src="../js/cart-script.js"></script>
 <script defer src="../lib/simplebar.min.js"></script>
 
 </body>
-</html>
+</html> -->

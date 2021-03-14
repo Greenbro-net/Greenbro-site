@@ -1,4 +1,4 @@
-<footer class="footer" id="footer">
+<!-- <footer class="footer" id="footer">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 footer__link">
@@ -15,4 +15,4 @@
             </div>
         </div>
     </div>
-</footer>
+</footer> -->

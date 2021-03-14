@@ -1,0 +1,49 @@
+<?php include CONTENT . 'header.phtml'; ?>
+
+
+<?php 
+# password:123456admin
+
+// unset($_SESSION['one']);
+// var_dump($_SESSION['one']);
+      if(!isset($_SESSION['one'])) {
+        //   die;
+        echo "You don't log in yet";
+      } 
+?>
+
+     <title>Admin_of_Greenbro</title>
+ <form action="<?php echo $url; ?>://greenbro<?php echo ".$domen_part"; ?>/admin/call_organise_manager_validation_data" 
+    id="admin_point_access_form" name="feedback" method="POST" enctype="multipart/form-data">
+       <!-- This code add captcha to this file -->
+       <div class="admin_point_access_page_block">
+            <span  for="number">Enter numbers from picture</span>
+            <input id="number" type="text" name="admin_captcha_numbers" class="picinput" pattern="[0-9]{4}"  placeholder="Enter four digits" required><span></span>
+            <img src="<?php echo $url; ?>://greenbro<?php echo ".$domen_part"; ?>/captcha/captcha.php" />
+        </div>
+        
+       <div class="admin_point_access_page_block">   
+            <span for="name">Admin_name</span>
+            <input id="city" type="text" name="manager_name" class="menu" pattern="[a-zA-Z0-9]{5,20}" placeholder="Name" required><span></span><br>
+       </div>
+
+       <div class="admin_point_access_page_block">
+            <span for="password">Password</span>
+            <input id="password"  type="password"  name="manager_password" class="menu" pattern="[a-zA-Z0-9]{6,20}" required placeholder="Enter password"><span></span><br>
+       </div>
+
+       <input id="admin_submit_button" type="submit" value="Enter" /> 
+
+ </form>
+
+
+   <div id="back_home_admin_button">
+          <a href="<?php echo $url; ?>://greenbro<?php echo ".$domen_part"; ?>">back home</a>
+   </div>          
+
+
+<!-- the element below makes our page to right side  -->
+<div id="size_of_page"></div>
+
+
+<?php include CONTENT . 'footer.phtml'; ?>

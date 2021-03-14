@@ -233,17 +233,6 @@ class ValidationController extends Controller
       } 
     }
 
-
-    // DELETE method below ??
-    // the method below fills in email field
-    // protected function fill_in_email()
-    // {
-    //     $form_data['success'] = true;
-    //     $form_data['posted'] = $result[0]["email"];
-    //     echo json_encode($form_data);
-    // }
-
-
     // the method below for gets user email for autocomplete
     public function get_user_email()
     {
@@ -269,17 +258,5 @@ class ValidationController extends Controller
     
 
 
-
-
-
-
-
-
-
-
-
-
-
-   
 
 

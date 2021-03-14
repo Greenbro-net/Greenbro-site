@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="utf-8">
@@ -22,9 +22,9 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
-<body>
+<body> -->
 <!-- Checkout popup window -->
-<div id="checkoutPopup" class="popup">
+<!-- <div id="checkoutPopup" class="popup">
     <div class="container popup-content" data-simplebar>
         <div class="row">
             <div class="col-lg-12">
@@ -44,11 +44,11 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- End of checkout popup -->
 
 <!-- Description popup window -->
-<div id="descriptionPopup" class="popup">
+<!-- <div id="descriptionPopup" class="popup">
     <div class="container popup-content" data-simplebar>
         <div class="row">
             <div class="col-lg-12 ">
@@ -65,11 +65,11 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- End of checkout popup -->
 
 <?php
-require_once "header.php";
+// require_once "header.php";
 ?>
 <form id= "make_order " name="make_order" action="order_controller.php " method="POST"
                      enctype="multipart/form-data">
@@ -127,13 +127,13 @@ require_once "header.php";
 
 
 <?php
-require_once "footer.php";
+// require_once "footer.php";
 ?>
 
 
-<script defer src="../lib/jquery-3.3.1.js"></script>
+<!-- <script defer src="../lib/jquery-3.3.1.js"></script>
 <script defer src="../js/cart-script.js"></script>
 <script defer src="../lib/simplebar.min.js"></script>
 
 </body>
-</html>
+</html> -->

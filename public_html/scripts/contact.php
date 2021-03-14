@@ -1,17 +1,17 @@
 <?php
-session_start();
+// session_start();
 
-if(empty($_SESSION['contact']))
-{   
-    $_SESSION['contact'] = 1;
-}
+// if(empty($_SESSION['contact']))
+// {   
+//     $_SESSION['contact'] = 1;
+// }
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <!-- <meta charset="utf-8"> -->
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+     <meta charset="utf-8"> -->
+    <!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
     <title>Greenbro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -19,9 +19,9 @@ if(empty($_SESSION['contact']))
     <link rel="stylesheet" type="text/css" href="../other_css/normalize.css">
     <link rel="stylesheet" type="text/css" href="../other_css/bootstrap-grid.min.css">
     <link rel="stylesheet" type="text/css" href="../other_css/goodsNew.css">
-    <link rel="stylesheet" type="text/css" href="../lib/simplebar.css">
+    <link rel="stylesheet" type="text/css" href="../lib/simplebar.css"> -->
     <!-- css_for_contact.php -->
-    <link rel="stylesheet" type="text/css" href="../other_css/contact_css.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../other_css/contact_css.css">
 
     <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
@@ -31,16 +31,16 @@ if(empty($_SESSION['contact']))
     <meta name="apple-mobile-web-app-title" content="GreenBro">
     <meta name="application-name" content="GreenBro">
     <meta name="msapplication-TileColor" content="#ffc40d">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#ffffff"> -->
     
     <!--js-script captcha by google-->
-   <script src='https://www.google.com/recaptcha/api.js?hl=uk' async defer'></script>
+   <!-- <script src='https://www.google.com/recaptcha/api.js?hl=uk' async defer'></script>
 </head>
 
-<body>
+<body>  -->
 
 <!-- Checkout popup window -->
-<div id="checkoutPopup" class="popup">
+<!-- <div id="checkoutPopup" class="popup">
     <div class="container popup-content" data-simplebar>
         <div class="row">
             <div class="col-lg-12">
@@ -60,7 +60,7 @@ if(empty($_SESSION['contact']))
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- End of checkout popup -->
 
 <!-- Description popup window -->

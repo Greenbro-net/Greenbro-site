@@ -6,7 +6,7 @@ class CustomerModel extends Customer
     { 
         try {
     // will check does we have the same customer data(last name, mobile number, email) in customers table
-    $sql = "SELECT   `user_email`, `recipient_mobile_number` FROM customers";
+    $sql = "SELECT  `user_email`, `recipient_mobile_number` FROM customers";
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute();
 

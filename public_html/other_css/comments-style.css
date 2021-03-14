@@ -47,10 +47,6 @@ float: right;
 
 /* the code below for block author and date of comment  */
 .author_date_block {
-    /* padding: 10px; */
-    /* background-color: blueviolet; */
-    /* border-color: brown;
-    border-radius: 1px; */
     border-bottom:2px solid blue;
 }
 
@@ -187,9 +183,6 @@ form input.btn-submit {
 /* CSS Validation  */
 .styled span.error {
     font-size: 11px;
-    /* position: absolute; */
-    /* top: 0;
-    right: 0; */
     display: block;
     padding: 2px;
     width: 100%;

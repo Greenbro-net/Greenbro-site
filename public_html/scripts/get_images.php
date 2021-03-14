@@ -1,5 +1,5 @@
 <?php
-
+// This file is invoked by the AJAX, displays images for slider   
 $id = $_POST['$id'];
 $filenameArray = [];
 
@@ -24,4 +24,3 @@ $handle = opendir(dirname(realpath(__FILE__))."/../images/item_images/$id/");
 
 echo json_encode($filenameArray);
 
-?>

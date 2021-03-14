@@ -1,12 +1,9 @@
 <?php
 session_start();
 
-
 require_once "vendor/autoload.php";
 require_once "../config.php";
  
-
-
 
 // the function below checkout does methods and controllers exist or not
 function checkout_url()
@@ -117,28 +114,13 @@ spl_autoload_register('autoload', false);
 checkout_url();
 
 
-
-
-
-
-
-// the code below show number of customer order 
-// @var_dump($_SESSION["united_order_items"]);
-// testing code 
-
-
-// we require php script below for escaping notice undefined index "action"
-// the code below require file for manages items by AJAX
-// require_once "app/controller/itemController.controller.php";
-
-// the code below require file for manages user login and logout 
-// require_once "app/controller/validationController.controller.php";
-
 // we fixed notice Undefined action with @
 
+// testing code below 
+// var_dump($_SESSION['access_manager']);
 
-
-
+// var_dump($_SESSION['randomnr2']);
+// var_dump(md5($_POST['admin_captcha_numbers']));
 ?>
 
 

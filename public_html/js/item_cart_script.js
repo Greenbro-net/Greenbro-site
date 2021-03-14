@@ -72,9 +72,6 @@ $(document).ready(function () {
       $('#tabs-list-li' + $id).addClass('active');
       
 
-
-
-  
       // the ajax method below loads images with necessary folder 
       $.ajax({
         type: "POST",
@@ -272,6 +269,7 @@ function show_pager() {
 
 //  variable direction equals next or prev 
  function changeSlide(direction) {
+  //  alert("changSlide function");
  //   create variable which has acces to  element with .active 
  // A $ sign to define/access jQuery
    var currentImg = $('.active');

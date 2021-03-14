@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="utf-8">
@@ -20,7 +20,7 @@
     <meta name="application-name" content="GreenBro">
     <meta name="msapplication-TileColor" content="#ffc40d">
     <meta name="theme-color" content="#ffffff">
-</head>
+</head> -->
 
 <body>
 <!-- Checkout popup window -->
@@ -69,9 +69,9 @@
 <!-- End of checkout popup -->
 
 <?php
-require_once "header.php";
+// require_once "header.php";
 ?>
-<div id ="oferta">
+<!-- <div id ="oferta">
 <h3>Публічна оферта</h3>
 <h5>ДОГОВІР ПУБЛІЧНОЇ ОФЕРТИ</h5>
 
@@ -286,16 +286,16 @@ require_once "header.php";
           
 
 
-<div id="size"></div>
+<div id="size"></div> -->
 
 <?php
-require_once "footer.php";
+// require_once "footer.php";
 ?>
 
-
+<!-- 
 <script defer src="../lib/jquery-3.3.1.js"></script>
 <script defer src="../js/cart-script.js"></script>
 <script defer src="../lib/simplebar.min.js"></script>
 
 </body>
-</html>
+</html> -->

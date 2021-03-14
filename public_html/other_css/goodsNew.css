@@ -500,10 +500,6 @@ h1, h2, h3, h4, h5{
 .descr_price p{
 	font-weight: 700;
 }
-#size {
-	min-height: 100vh;
-	width: 500px;
-}
 
   /* Structure for page payment_and_delivery */
 #come_back {

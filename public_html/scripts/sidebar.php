@@ -1,4 +1,4 @@
-	<ul id="menu">
+	<!-- <ul id="menu">
 	    <li><a href="//greenbro.net/scripts/foods.php">Продукти</a></li>
 	    <li><a href="//greenbro.net/scripts/clothes.php">Одяг</a></li>    
 	    <li><a href="//greenbro.net/scripts/goods.php">Речі</a></li>
@@ -8,5 +8,5 @@
 	    <li><a href="//greenbro.net/scripts/contact.php">Контакти</a></li>
 	    
 	</ul>
-	
+	 -->
 	

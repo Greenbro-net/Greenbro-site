@@ -1,0 +1,82 @@
+#size_of_page {
+	min-height: 55vh;
+	width: 500px;
+}
+#add_new_manager_size_of_page {
+    min-height: 20vh;
+}
+
+#admin_point_access_form {
+    display: block;
+}
+
+#admin_point_access_form span {
+    margin: 20px;
+}
+
+#admin_point_access_form input {
+    margin: 20px;
+}
+
+#admin_point_access_form.admin_point_access_page_block {
+    display: inline-block;
+}
+
+#admin_submit_button {
+    width: 75px;
+    height: 35px;
+    margin-top: 25px;
+    
+}
+/* hover for submit button */
+#admin_submit_button:hover {
+    transition: transform .2s;
+    background-color:  #53A630;
+}
+/* the code beow for back home admin button */
+#back_home_admin_button {
+    margin-left: 220px;
+    font-size: 25px;
+}
+
+
+/* the code below for registration  */
+#add_manager_button_submit {
+    text-align: center;
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+  }
+  
+  /* the code below for registration vindow  */
+  #add_manager_window {
+    background-color: whitesmoke;
+    width: 500px;
+    min-height: 690px;
+    /* position: absolute;
+    z-index: 5; */
+    display: none;
+    margin: 20px;
+    margin-left: 10%;
+  }
+  /* the code below for submit add manager button */
+  .button_add_manager {
+      background-color: #007bff;
+      border-color: #007bff;
+  }
+  /* the code below for submit button add manager */
+  .button_add_manager:hover {
+    transition: transform .2s;
+    background-color:  #53A630;
+}
+
+/* the code beow for button displaying add_new_manager  */
+#button_add_new_manager:hover {
+    transition: transform .2s;
+    background-color:  #53A630;
+}
+#button_add_new_manager {
+    margin: 15px;
+    background-color:  aliceblue;
+    border-color: #007bff;
+}

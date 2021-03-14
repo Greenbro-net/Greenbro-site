@@ -33,19 +33,7 @@ if($name===$comments['0']['name']  && password_verify($password, $comments['0'][
 
 
 
-// This code for adding new users:
-// $sth = $pdo->prepare('INSERT INTO `admin` VALUES (null, :name,  :password, null)');
-
-// $data = [
-//     'name' => $name,
-//     'password' => password_hash($password, PASSWORD_BCRYPT)
-// ];
-
-//          //todo save to db
-//         $sth->execute($data);
-//         $id = $pdo->lastInsertId();   
 
 
 
-?>
 

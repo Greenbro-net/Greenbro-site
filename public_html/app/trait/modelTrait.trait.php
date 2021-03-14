@@ -54,6 +54,20 @@ trait modelTrait
         $item_model = new ItemModel();
         return $item_model;
     }
+    // the method below returns AdminModel for calling methods
+    private function get_admin_model()
+    {
+        $this->load_model('AdminModel');
+        $admin_model = new AdminModel();
+        return $admin_model;
+    }
+    // the method below returns AddItemModel for calling methods
+    private function get_add_item_model()
+    {
+        $this->load_model('AddItemModel');
+        $add_item_model = new AddItemModel();
+        return $add_item_model;
+    }
     
     
 }
