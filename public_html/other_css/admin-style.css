@@ -80,3 +80,24 @@
     background-color:  aliceblue;
     border-color: #007bff;
 }
+
+/* the code below for app_managing_page */
+#add_item_description {
+    width: 400px;
+    height: 300px;
+}
+#mini_description {
+    width: 400px;
+    height: 40px;
+}
+#brand_name {
+    width: 400px;
+    height: 40px;
+}
+#products_name {
+    width: 400px;
+    height: 40px;
+}
+#output {
+    width: 400px;
+}
