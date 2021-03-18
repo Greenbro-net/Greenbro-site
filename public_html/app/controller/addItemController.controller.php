@@ -45,13 +45,7 @@ class addItemController extends Controller
     public function call_add_new_product()
     {    
         try { 
-            // echo "<pre>";
-            // var_dump($_POST);
-            // echo "<hr>";
-            // var_dump($_FILES);
-            // echo "</pre>";
             $this->get_add_item_model()->organize_image_download();
-            // testing code above 
             
             if ($this->object_has_properties($add_item_obj = new addItemController())) {
                 $result = $this->get_add_item_model()->add_new_product($add_item_obj);
@@ -69,10 +63,6 @@ class addItemController extends Controller
         
     }
     
-    
-    
-    
-
 }
 
 

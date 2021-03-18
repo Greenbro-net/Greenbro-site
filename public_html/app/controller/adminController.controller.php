@@ -5,8 +5,7 @@ class adminController extends Controller
     use ConfigSettingsTrait;
     use modelTrait;
     use FilterDataTrait;
-    // use sessionTrait;
-    // use ValidationTrait;
+    
 
     public $admin_captcha_numbers;
     public $manager_name;

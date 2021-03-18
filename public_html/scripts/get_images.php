@@ -1,4 +1,5 @@
 <?php
+// The code below has to be reedit to MVC pattern and will call throw url(by controller)
 // This file is invoked by the AJAX, displays images for slider   
 $id = $_POST['$id'];
 $filenameArray = [];
@@ -19,7 +20,7 @@ $handle = opendir(dirname(realpath(__FILE__))."/../images/item_images/$id/");
 
    }
 
-//    the function below deletes the same values with array 
+// the function below deletes the same values with array 
    array_unique($filenameArray);   
 
 echo json_encode($filenameArray);
