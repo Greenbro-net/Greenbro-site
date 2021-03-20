@@ -20,7 +20,7 @@ $handle = opendir(dirname(realpath(__FILE__))."/../images/item_images/$id/");
 
    }
 
-// the function below deletes the same values with array 
+   // the function below deletes the same values with array 
    array_unique($filenameArray);   
 
 echo json_encode($filenameArray);

@@ -72,7 +72,7 @@ $(document).ready(function () {
       $('#tabs-list-li' + $id).addClass('active');
       
 
-      // the ajax method below loads images with necessary folder 
+      // the ajax method below loads images with necessary folder for slider
       $.ajax({
         type: "POST",
         url: "../scripts/get_images.php",

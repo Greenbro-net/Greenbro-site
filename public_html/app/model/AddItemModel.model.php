@@ -1,5 +1,14 @@
 <?php
 
+echo "<pre>";
+var_dump($_FILES["fileMulti"]);
+echo "</pre>";
+
+echo "<pre>";
+var_dump($_FILES['main_image']);
+echo "</pre>";
+
+
 class AddItemModel extends ItemData
 {
     
@@ -117,22 +126,25 @@ class AddItemModel extends ItemData
                         }
 
               } 
-              return  $result_create_image_array;
+            //   return  $result_create_image_array;
             } catch (Exception $exception) {
                 file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
-                'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+                'Line: ' . $exception-> getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
                                            }
         
     }
     // the method below checks images for right data type
     protected function is_file_image($key)
     {
+
         try {
-            $check = getimagesize($_FILES["fileMulti"]["tmp_name"][$key]);
+            $result_is_file_image = getimagesize($_FILES["fileMulti"]["tmp_name"][$key]);
             
-            if($check == false) {
+            if($result_is_file_image == false) {
                 throw new Exception("Method is_file_image have found file which is not image");
-                } 
+                } else {
+                    return $result_is_file_image;
+                       }
             } catch (Exception $exception) {
                 file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
                 'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
@@ -156,7 +168,7 @@ class AddItemModel extends ItemData
     {
         try {
             
-            if ($_FILES["fileMulti"]["size"][$key] > 500000) {
+            if ($_FILES["fileMulti"]["size"][$key] > 10000000) {
                 throw new Exception("Method check_file_size have found image to large");
                 } 
             } catch (Exception $exception) {
@@ -169,8 +181,7 @@ class AddItemModel extends ItemData
     {
         try {
             
-            if ($imageFileType != "jpg" && $imageFileType != "png" &&
-                $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+            if ($imageFileType != "jpg" && $imageFileType != "jpeg") {
                 throw new Exception("Method check_file_type have found image type not allow");
                 } 
             } catch (Exception $exception) {
@@ -184,12 +195,53 @@ class AddItemModel extends ItemData
         try {
             if(!move_uploaded_file($_FILES["fileMulti"]["tmp_name"][$key], $path)) {
                 throw new Exception("Method move_upload_image has an error");
-            }
+                }
             } catch (Exception $exception) {
                 file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
                 'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
                                            } 
     }
+
+    // the method below saves jpg image 
+    protected function save_jpeg_image($key, $path)
+    {
+        try {
+                $source_properties = $this->is_file_image($key);
+                // create a new image from file or URL
+                $image_resource_id = imagecreatefromjpeg($_FILES["fileMulti"]["tmp_name"][$key]);  
+                $target_layer = $this->resize_image($image_resource_id,$source_properties[0],$source_properties[1]);
+                // exception will throw in unsuccessful case of function execution 
+                if (!imagejpeg($target_layer, $path)) {
+                    throw new Exception("Function imagejpeg wasn't successful in save_jpeg_image method");
+                       }
+            }  catch (Exception $exception) {
+                file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+                'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+                                            }
+    }
+    // the method below changes size of image
+    protected function resize_image($image_resource_id, $width, $height) 
+    {
+        try {
+              if (empty($image_resource_id) || empty($height) || empty($width)) {
+                   throw new Exception("Method resize_image doesn't get parameter");
+                  }
+                $target_width = $width * 0.1; // makes image smaller in 10 times
+                $target_height = $height * 0.1; // makes image smaller in 10 times
+                $target_layer=imagecreatetruecolor($target_width,$target_height);
+                imagecopyresampled($target_layer,$image_resource_id,0,0,0,0,$target_width,$target_height, $width,$height);
+                return $target_layer; 
+
+              if (empty($target_layer)) {
+                  throw new Exception("Method resize_image doesn't return result");
+                  }
+            } catch (Exception $exception) {
+                file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+                'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+                                           }
+    }
+
+
     // the method below creates image storage
     protected function create_image_storage($dir_name)
     {
@@ -234,18 +286,21 @@ class AddItemModel extends ItemData
             // functions below were divided because of Only variables should be passed by reference
             $tmp = explode(".", $_FILES["fileMulti"]["name"][$key]);
             // end function get let element of array 
-            // $ext = end($tmp);b
+        
             $ext = "jpg";
             $name = $key. '.' . $ext;
             $path = "images/item_images/$dir_name/" . $name;
             
-            // the method below uploads files
-            $this->move_upload_image($key, $path);
+            // code below resize and save smaller image in folder 
+            $this->save_jpeg_image($key, $path);
+            
         }
       
     }
 
+    
 
+        
 
 }
 
