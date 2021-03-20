@@ -57,33 +57,34 @@ $(document).ready(function () {
       e.stopPropagation();
       // the code below displays message after click on item 
       // alert($(this).attr("data"));
-      $id = $(this).attr("data");
+      id = $(this).attr("data");
+
       
       // the method below shows and hides us station info block 
-      $("#show_description_" + $id).slideToggle();
+      $("#show_description_" + id).slideToggle();
       // the code below makes image visible when we open description block
-      $('#img_description_' + $id).addClass('active');
+      $('#img_description_' + id).addClass('active');
 
 
       // testing code tab-comment-block below 
-      $('#item_tab1' + $id).addClass('active');
+      $('#item_tab1' + id).addClass('active');
       $(".tab").hide();      
       // the code below add active class to tab in item description 
-      $('#tabs-list-li' + $id).addClass('active');
+      $('#tabs-list-li' + id).addClass('active');
       
 
       // the ajax method below loads images with necessary folder for slider
       $.ajax({
         type: "POST",
-        url: "../scripts/get_images.php",
-        data: {$id: $id},
+        url: url+"://greenbro."+domen_part+"/slider/get_slider_images",
+        data: {id: id},
         dataType: "json",
         success: function(data) {
           // The each() method specifies a function to run for each matched element.
             $.each(data, function(i, filename) {
               //append method insert content at the end of all <#images> elements:
               // thd code below adds img fields in #images
-                $("#images"+ $id).append("<img  src='" + filename + "'>");
+                $("#images"+ id).append("<img  src='" + filename + "'>");
             });
          }
       });

@@ -27,14 +27,14 @@ function changeSlide(direction) {
         }
      else
 //the action below makes first img element equal 'active' class 
-        $('#images' + $id).children().first().addClass('active');
+        $('#images' + id).children().first().addClass('active');
     } else {
 
         if(previousImg.length) {
         previousImg.addClass('active');
     }
      else
-       $('#images' + $id).children().last().addClass('active');
+       $('#images' + id).children().last().addClass('active');
     }
     currentImg.removeClass('active');
 }

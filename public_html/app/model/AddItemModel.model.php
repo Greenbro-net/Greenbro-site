@@ -1,14 +1,5 @@
 <?php
 
-echo "<pre>";
-var_dump($_FILES["fileMulti"]);
-echo "</pre>";
-
-echo "<pre>";
-var_dump($_FILES['main_image']);
-echo "</pre>";
-
-
 class AddItemModel extends ItemData
 {
     

@@ -68,6 +68,13 @@ trait modelTrait
         $add_item_model = new AddItemModel();
         return $add_item_model;
     }
+    // the method below returns SliderModel for calling methods
+    private function get_slider_model()
+    {
+        $this->load_model('SliderModel');
+        $slider_model = new SliderModel();
+        return $slider_model;
+    }
     
     
 }
