@@ -35,8 +35,23 @@ class addItemController extends Controller
        $this->visible = !empty($_POST['visible']) ? $this->filter_data($_POST['visible']) : false;
 
     }
+    
+    // the method below displays successful page
+    public function display_successful_page()
+    {
+        $this->view('add_item' . DIRECTORY_SEPARATOR . 'successful_adding');
+        $this->view->page_title = 'Товар був доданий успішно';
+        $this->view->render();
+    }
+    // the method below displays unsuccessful page
+    public function display_unsuccessful_page()
+    {
+        $this->view('add_item' . DIRECTORY_SEPARATOR . 'unsuccessful_adding');
+        $this->view->page_title = 'Товар не був доданий, виникла помилка';
+        $this->view->render();
+    }
 
-    // the function below returns correct date 
+    // the method below returns correct date 
     protected function get_date()
     {  
       date_default_timezone_set("Europe/Kiev");
@@ -49,9 +64,15 @@ class addItemController extends Controller
             
             if ($this->object_has_properties($add_item_obj = new addItemController())) {
                 $result = $this->get_add_item_model()->add_new_product($add_item_obj);
-                // var_dump($result);
+                
+                header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/addItem/display_successful_page");
+                exit;
+
             } else {
                 throw new Exception("Method object_has_properties found empty property in object");
+                   
+                header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/addItem/display_unsuccessful_page");
+                exit;
                    }
     
            

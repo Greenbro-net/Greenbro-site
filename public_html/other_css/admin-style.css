@@ -2,6 +2,9 @@
 	min-height: 55vh;
 	width: 500px;
 }
+#size_of_page_adding {
+	min-height: 75vh;
+}
 #add_new_manager_size_of_page {
     min-height: 20vh;
 }

@@ -154,7 +154,8 @@
 	margin-bottom: 30px;
     text-align: center;
     padding-bottom: 20px;
-    height: 100%;
+    /* the code below sets minimum size of page  */
+    min-height: 78vh;
 }
 
     /* the code below for item label  */
