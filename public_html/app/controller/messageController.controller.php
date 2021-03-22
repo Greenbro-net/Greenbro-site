@@ -24,7 +24,7 @@ class messageController extends Controller
     {
         if ($quantity_of_responses >= 1) { 
             // the function below returns  correct word for quantity of responses
-            echo $quantity_of_responses . " " . self::get_message_model()::choose_right_case($quantity_of_responses);
+            echo $quantity_of_responses . " " . self::get_message_model()->choose_right_case($quantity_of_responses);
         } else {
             echo "Залишити відгук";
                }
@@ -33,7 +33,7 @@ class messageController extends Controller
     // the method below for calling displayCommentSentence
     public static function calldisplayCommentSentence($quantity_of_responses, $product_id)
     {
-        self::get_message_model()::displayCommentSentence($quantity_of_responses, $product_id);
+        self::get_message_model()->displayCommentSentence($quantity_of_responses, $product_id);
     }
     
 }
