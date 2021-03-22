@@ -4,53 +4,6 @@
     </div>
 
 <?php
-// the below function returns correct word for quantity of responses
- function choose_right_case($quantity_of_responses) 
-{
-    $last_digit = (substr($quantity_of_responses, -1));
-   // 21,31, 41
-   if ($last_digit == 1 ) {
-       return "відгук";
-   }
-   // 22, 23, 24, 32, 33, 34, 42, 43, 44,   
-   if ($last_digit == 2 || $last_digit == 3 || $last_digit == 4) {
-       return "відгуки";
-   }
-   // 25,26,27, 28, 29, 30, 45, 46, 47,
-   if ($last_digit >= 5 && $last_digit <=9 || $last_digit == 0) {
-       return "відгуків";
-   }
-
-}
-
-// function which shows messages about quantity of products
-function showmessage($products) 
-{    
-    $message = "Є в наявності";
-    if($products["quantity"] < 6) {
-        $message = "Товар закінчується";
-    } 
-    if ($products["quantity"] == 0) {
-        $message = "Товар закінчився";
-    }
-    return $message;
-}
-
-
-// the function below displays necessary message in comment block
-function showCommentMessage($quantity_of_responses)
-{
-    if ($quantity_of_responses >= 1) {
-    // there should be a function which displays us all comments for current id 
-    // the function below returns  correct word for quantity of responses
-    echo $quantity_of_responses . " " .choose_right_case($quantity_of_responses);
-      } 
-      // there are should be a function which posts a response to DB after onclick event
-      else {
-          echo "Залишити відгук";
-           }
-}
-
 
 foreach($products as $product)
 {
@@ -73,10 +26,13 @@ using post method we send variable to php script -->
            </div>
    
     <!-- the code below displays us quantity of comments in product list page -->
-      <div class="response_block"><a href=""><?php 
-         $quantity_of_responses = $product["response_count"];
-         showCommentMessage($quantity_of_responses); ?>
-        </a>
+      <div class="response_block">
+        
+      <?php  
+       $quantity_of_responses = $product["response_count"];
+       messageController::calldisplayCommentSentence($quantity_of_responses, $product['id']);
+      ?>
+            
       </div>
     <!-- the code above displays us a quantity of responses -->
 
@@ -107,7 +63,7 @@ using post method we send variable to php script -->
         <div class="tabs">
             <ul class="tabs-list">   
                <li id="tabs-list-li<?php echo $product['id']; ?>" ><a href="#item_tab1<?php echo $product['id']; ?>">Все про товар</a></li>
-               <li ><a href="#item_tab2<?php echo $product['id']; ?>"><?php showCommentMessage($quantity_of_responses); ?></a></li>
+               <li ><a href="#item_tab2<?php echo $product['id']; ?>"><?php messageController::showCommentMessage($quantity_of_responses); ?></a></li>
             </ul>
           
             <div id="item_tab1<?php echo $product['id']; ?>" class="tab active"  data="<?php echo $product['id']; ?>">

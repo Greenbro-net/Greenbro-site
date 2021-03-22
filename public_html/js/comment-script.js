@@ -293,3 +293,13 @@ function default_text_remove() {
         }
     });
 }
+
+
+// function displays comment block 
+function display_response_tab(product_id) {
+    jQuery(document).ready(function() {
+        //  alert(product_id);
+         $("#item_tab1"+product_id).removeClass("active");
+         $("#item_tab2"+product_id).show();
+    });  
+}

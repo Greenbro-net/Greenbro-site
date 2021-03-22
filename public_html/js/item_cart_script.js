@@ -299,7 +299,6 @@ $(window).resize(function() {
 
 
 // the code below switchs between different tab in description section
-// copy paste version
 $(document).ready(function(){
   $(".tabs-list li a").click(function(es){
     // The event.preventDefault() method stops the default action of an element from happening.
@@ -321,6 +320,7 @@ $(document).ready(function(){
     //  the code below for tab 
      $(this).addClass("active"); //  adding active class to clicked tab
 
-  });
+    });
 
 });
+

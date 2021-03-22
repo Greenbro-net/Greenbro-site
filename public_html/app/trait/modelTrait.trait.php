@@ -75,6 +75,13 @@ trait modelTrait
         $slider_model = new SliderModel();
         return $slider_model;
     }
+    // the method below returns MessageModel for calling methods, static case
+    private static function get_message_model()
+    {
+        self::static_load_model('MessageModel');
+        $message_model = new MessageModel();
+        return $message_model;
+    }
     
     
 }

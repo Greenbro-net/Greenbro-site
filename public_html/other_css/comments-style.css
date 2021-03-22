@@ -211,3 +211,9 @@ form input.btn-submit {
 .stars_container {
     margin: 4px;
 }
+
+/* the code below for element in MessageModel */
+#item_comment_block {
+    color: #007bff;
+    background-color: transparent;
+}
