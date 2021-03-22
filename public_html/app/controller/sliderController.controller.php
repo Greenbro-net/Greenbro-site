@@ -8,6 +8,8 @@ class sliderController extends Controller
     
     protected $folder_id;
 
+    
+
     protected function set_folder_id()
     {
         $folder_id = $this->folder_id = $this->filter_data($_POST['id']);
