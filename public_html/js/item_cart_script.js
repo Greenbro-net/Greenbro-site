@@ -86,7 +86,8 @@ $(document).ready(function () {
       // $('#images' + id).children().first().addClass('active_slider');
       // previous variant $('#img_description_' + id).addClass('active_slider');
 
-  
+      $(document).ready(function () {
+         
       // code tab-comment-block below 
       $('#item_tab1' + id).addClass('active');
       $(".tab").hide();      
@@ -95,6 +96,8 @@ $(document).ready(function () {
       // the code below removes class from second li element "comment section" 
       $('#tabs-list-li' + id).next().removeClass('active');
       
+      });
+
    });
 });
  
