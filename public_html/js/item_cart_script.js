@@ -60,9 +60,6 @@ $(document).ready(function () {
       id = $(this).attr("data");
 
       
-      // the method below shows and hides us station info block 
-      $("#show_description_" + id).slideToggle();
-      // the code below makes image visible when we open description block
       
       // the ajax method below loads images with necessary folder for slider
       $.ajax({
@@ -88,19 +85,20 @@ $(document).ready(function () {
 
 
 
-
           $(".tab").hide();      
+          // code tab-comment-block below 
+          $('#item_tab1' + id).addClass('active');
           // the code below add active class to tab in item description 
           $('#tabs-list-li' + id).addClass('active');
           // the code below removes class from second li element "comment section" 
           $('#tabs-list-li' + id).next().removeClass('active');
 
-      // the code below displays part of page after document ready and 0.5 sec
+      // the code below displays part of page after document ready and 0.1 sec
       $(document).ready(function () {
          setTimeout(function() {
-          // code tab-comment-block below 
-          $('#item_tab1' + id).addClass('active');
-          }, 500);
+          // the method below shows and hides us station info block 
+          $("#show_description_" + id).slideToggle();
+          }, 100);
       });
 
    });
