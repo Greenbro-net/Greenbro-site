@@ -1,6 +1,6 @@
 <div id="product-grid">
-   <div class="txt-heading">
-     <div class="txt-heading-label">Товари</div>
+    <div class="txt-heading">
+        <div class="txt-heading-label">Товари</div>
     </div>
 
 <?php
@@ -9,21 +9,19 @@ foreach($products as $product)
 {
     ?>
 
-
-<!-- we post item code other php scripts  -->
 <!-- there are we chouse quantity of items in window and can add item
 using post method we send variable to php script -->
     <div class="product-item" id="item_label<?php echo $product['id']; ?>" data="<?php echo $product['id']; ?>">
     <!-- the code below posts that we did adding action and code of item  -->
     
-    <div class="product-image">
-           <!-- the code below show us item picture  -->
-           <img src="../images/item_images/<?php echo $product["id"]; ?>/0.jpg">   
-    </div>
+        <div class="product-image">
+            <!-- the code below show us item picture  -->
+            <img src="../images/item_images/<?php echo $product["id"]; ?>/0.jpg">   
+        </div>
 
-    <div id="product_title" class="product-title">
-             <?php echo $product["name"]; ?>
-           </div>
+        <div id="product_title" class="product-title">
+                <?php echo $product["name"]; ?>
+        </div>
    
     <!-- the code below displays us quantity of comments in product list page -->
       <div class="response_block">
@@ -46,9 +44,10 @@ using post method we send variable to php script -->
             src="../images/images_for_cart/add-to-cart.png" class="btnAddAction" title="Додати товар у кошик"/>
         </div>
 
-    <div class="product-price float-left" id="product-price-
-    <?php echo $product["name"]; ?>">
-    <?php echo $product["price"]; ?> <te id="banknote">₴</te></div>
+        <div class="product-price float-left" id="product-price-
+            <?php echo $product["name"]; ?>">
+            <?php echo $product["price"]; ?> <te id="banknote">₴</te>
+        </div>
                       <!-- hidden field for pass price to item_cart_script -->
                       <input id="price_<?php echo $product["id"]; ?>" type=hidden value="<?php echo $product["price"]; ?>">
        </div>
@@ -70,18 +69,22 @@ using post method we send variable to php script -->
                <h3><?php echo $product["name"]; ?></h3>
                <p>
                  <!-- the code below displays product name -->
-            <div>
-    </div>
+        
                  <!--  code above displays item name -->
 
                    <!-- the part of code below for image slider  -->
                    <center>
                    <div  class="slider" onclick="zoomIn('bigger')">
-                   <div class="slider_images" id="images<?php echo $product["id"]; ?>"></div>
-                   <img  id="img_description_<?php echo $product['id']; ?>" src="../images/item_images/<?php echo $product['id']; ?>/0.jpg">
+                      <div class="slider_images" id="images<?php echo $product["id"]; ?>"></div>
+                      <img  id="img_description_<?php echo $product['id']; ?>" src="../images/item_images/<?php echo $product['id']; ?>/0.jpg">
                    </div>
 
                        <br><br>
+
+                       <!-- testing code below  -->
+                        <!-- <input type="button" onclick="changeSrc()" value="ChangeSrc"> -->
+                       <!-- testing code above -->
+
                    <input type="button" onclick="changeSlide('prev')" value="Previous">
                    <input type="button" onclick="changeSlide('next')" value="Next">
                    <!-- <input type="button" onclick="zoomIn('smaller')" value="Make image smaller"> -->
@@ -92,15 +95,15 @@ using post method we send variable to php script -->
                   <?php echo $product["description"]; ?>
                </p>
             </div>
-            <div id="item_tab2<?php echo $product['id']; ?>" data="<?php echo $product['id']; ?>" class="tab">
+              <div id="item_tab2<?php echo $product['id']; ?>" data="<?php echo $product['id']; ?>" class="tab">
               
                <!-- response-list.content.php later after fix all trouble -->
                <!-- the code below requires block for displaying comments  -->
                <?php     require 'comment/response-list.content.php'; ?>
-              <!-- the code above displays us comments from DB -->
-            </div>
+               <!-- the code above displays us comments from DB -->
+              </div>
                       
-          </div>
+        </div>
     <!-- the div above menu-description-container  -->
     
     </div>

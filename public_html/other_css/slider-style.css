@@ -1,0 +1,24 @@
+/* the part of code below for image slider  */
+.slider {
+    width: 50%;
+}
+.slider img {
+    display: none;
+}
+.slider img.active {
+    display: block;
+    border: 2px solid white;
+    width: 40vh;
+    height: 50vh;
+}
+.slider img.bigger {
+    width: 50vh;
+    height: 63vh;
+}
+
+.active_slider {
+    /* the important parameter from products-item-tab code  */
+    display: block !important;
+    background:  #53A630;
+
+  } 

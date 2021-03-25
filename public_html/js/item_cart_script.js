@@ -63,16 +63,7 @@ $(document).ready(function () {
       // the method below shows and hides us station info block 
       $("#show_description_" + id).slideToggle();
       // the code below makes image visible when we open description block
-      $('#img_description_' + id).addClass('active');
-
-
-      // testing code tab-comment-block below 
-      $('#item_tab1' + id).addClass('active');
-      $(".tab").hide();      
-      // the code below add active class to tab in item description 
-      $('#tabs-list-li' + id).addClass('active');
       
-
       // the ajax method below loads images with necessary folder for slider
       $.ajax({
         type: "POST",
@@ -84,10 +75,26 @@ $(document).ready(function () {
             $.each(data, function(i, filename) {
               //append method insert content at the end of all <#images> elements:
               // thd code below adds img fields in #images
-                $("#images"+ id).append("<img  src='" + filename + "'>");
+                $("#images"+ id).append("<img src='" + filename + "'>");
+
+                // the code below adds activ_slider for first img element
+                $('#images' + id).children().first().addClass('active_slider');
             });
          }
-      });
+      });    
+
+      // $('#images' + id).children().first().addClass('active_slider');
+      // previous variant $('#img_description_' + id).addClass('active_slider');
+
+  
+      // code tab-comment-block below 
+      $('#item_tab1' + id).addClass('active');
+      $(".tab").hide();      
+      // the code below add active class to tab in item description 
+      $('#tabs-list-li' + id).addClass('active');
+      // the code below removes class from second li element "comment section" 
+      $('#tabs-list-li' + id).next().removeClass('active');
+      
    });
 });
  
