@@ -86,16 +86,21 @@ $(document).ready(function () {
       // $('#images' + id).children().first().addClass('active_slider');
       // previous variant $('#img_description_' + id).addClass('active_slider');
 
+
+
+
+          $(".tab").hide();      
+          // the code below add active class to tab in item description 
+          $('#tabs-list-li' + id).addClass('active');
+          // the code below removes class from second li element "comment section" 
+          $('#tabs-list-li' + id).next().removeClass('active');
+
+      // the code below displays part of page after document ready and 0.5 sec
       $(document).ready(function () {
-         
-      // code tab-comment-block below 
-      $('#item_tab1' + id).addClass('active');
-      $(".tab").hide();      
-      // the code below add active class to tab in item description 
-      $('#tabs-list-li' + id).addClass('active');
-      // the code below removes class from second li element "comment section" 
-      $('#tabs-list-li' + id).next().removeClass('active');
-      
+         setTimeout(function() {
+          // code tab-comment-block below 
+          $('#item_tab1' + id).addClass('active');
+          }, 500);
       });
 
    });
