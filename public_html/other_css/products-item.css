@@ -3,7 +3,6 @@
 /* the code below for showing description of item  */
 .display_description {
     /* the code below set right height size by of inside content  */
-    /* height: max-content; */
     width: 1000px;
     min-height: 780px;
     /* size of block description above */

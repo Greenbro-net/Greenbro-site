@@ -81,10 +81,9 @@ for ($count = 1; $count <= 5; $count ++) {
                </li>
                <li class="button-row text-right">
                    <!-- <input id="comment_btn_submit" class="btn-submit" type="submit" value="Надіслати" name="submit_comment" /> -->
-                   <!-- testing code below  -->
-                   <!-- <div id="someHiddenDiv" style="display: none;">Working...</div> -->
+                   
 
-                   <button id="submit_addComment<?php echo $product['id']; ?>" onclick="preparing_comment(<?php echo $product['id'];?>)">Відправити відгук</button>
+                   <button id="submit_addComment<?php echo $product['id']; ?>" class="submit_comment_button" onclick="preparing_comment(<?php echo $product['id'];?>)">Відправити відгук</button>
                </li>
            </ol>
        </fieldset>

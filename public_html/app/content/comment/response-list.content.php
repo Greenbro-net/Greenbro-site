@@ -27,7 +27,6 @@
                           <p id="date"><?php echo date('d:m:Y', strtotime($response["created_at"])); ?>
                         </div>
                            <!-- the code below displays stars rating of item  -->
-                           <!-- there are a problem -->
 
 
                             <?php 

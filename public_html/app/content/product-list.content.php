@@ -81,9 +81,6 @@ using post method we send variable to php script -->
 
                        <br><br>
 
-                       <!-- testing code below  -->
-                        <!-- <input type="button" onclick="changeSrc()" value="ChangeSrc"> -->
-                       <!-- testing code above -->
 
                    <input type="button" onclick="changeSlide('prev')" value="Previous">
                    <input type="button" onclick="changeSlide('next')" value="Next">
@@ -97,7 +94,7 @@ using post method we send variable to php script -->
             </div>
               <div id="item_tab2<?php echo $product['id']; ?>" data="<?php echo $product['id']; ?>" class="tab">
               
-               <!-- response-list.content.php later after fix all trouble -->
+              
                <!-- the code below requires block for displaying comments  -->
                <?php     require 'comment/response-list.content.php'; ?>
                <!-- the code above displays us comments from DB -->
