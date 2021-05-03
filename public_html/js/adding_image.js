@@ -27,12 +27,5 @@ function delete_element() {
         var lastNode = someId.lastChild;
         lastNode.parentNode.removeChild(lastNode);
     }
-    
-      
-    // lastNode.parentNode.removeChild(lastNode);
-    
-    
-
-    // document.body.removeChild(element);
 
 }
