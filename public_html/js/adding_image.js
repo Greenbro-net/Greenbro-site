@@ -17,11 +17,6 @@ function delete_element() {
     // gets last child node from some element 
     
 
-    
-    // while(lastNode && lastNode.nodeType!=1) {
-    //     //перейти к предыдущему узлу
-    //     lastNode.parentNode.removeChild(lastNode);
-    //   }
 
     for (let i = 0; i < 2; i++) {
         var lastNode = someId.lastChild;
