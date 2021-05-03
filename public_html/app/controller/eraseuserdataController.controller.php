@@ -79,7 +79,7 @@ class eraseuserdataController extends Controller
     }
 
 
-    
+    // https://greenbro.net/eraseuserdata/erase_data url for user deletion data process
     // the method below organises deletion user data
     public function erase_data()
     {   
