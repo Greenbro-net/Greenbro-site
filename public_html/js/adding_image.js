@@ -15,7 +15,9 @@ function delete_element() {
     var someId = document.getElementById('block-a');
 
     // gets last child node from some element 
-    
+    //new comment
+
+
 
 
     for (let i = 0; i < 2; i++) {
