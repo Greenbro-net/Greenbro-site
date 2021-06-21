@@ -127,6 +127,7 @@ $('body').click(function() {
 // the functions below calls in product-list.content.php and add items in order_items table
   // we throw item variable id to tb products_cart by the function onAdd
   function onAdd(id, price) {
+    // alert("Heloo");
     // code below grabs value from input element with correct id of item 
       var quantity_of_item = document.getElementById(id).value;
       // the code below passes price from hidden field to item_cart_script
@@ -142,6 +143,10 @@ $('body').click(function() {
             // alert(id);
             // alert(data);
             // alert(quantity_of_item);
+            // alert(price);
+        },
+        error: function(data) {
+          alert("Error in onAdd funciton");
         }
     });
     

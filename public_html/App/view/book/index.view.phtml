@@ -1,0 +1,9 @@
+<?php include CONTENT . 'header.phtml'; ?>
+
+<?php
+$booksObj = new App\Model\BookModel();
+$booksObj->showBooks();
+?>
+
+
+<?php include CONTENT . 'footer.phtml'; ?>

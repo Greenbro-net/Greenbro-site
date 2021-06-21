@@ -9,5 +9,8 @@
     "require": {
         "facebook/graph-sdk": "^5.7",
         "phpmailer/phpmailer": "^6.3"
-    }
+    },
+     "autoload": {
+         "classmap": ["App/Core", "App/Controller", "App/Trait", "App/Model", "App/Data"]
+     }
 }
