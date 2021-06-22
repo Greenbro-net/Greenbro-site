@@ -10,7 +10,6 @@ class AddItemController extends Controller
 {
 
     use \App\Trait\ConfigSettingsTrait;
-    use \App\Trait\ModelTrait;
     use \App\Trait\FilterDataTrait;
     use \App\Trait\EmptyObjectCheckingTrait;
     
@@ -66,10 +65,10 @@ class AddItemController extends Controller
     public function call_add_new_product()
     {    
         try { 
-            $this->get_add_item_model()->organize_image_download();
+            $this->load_model_obj('ItemMode')->organize_image_download();
             
             if ($this->object_has_properties($add_item_obj = new AddItemController())) {
-                $result = $this->get_add_item_model()->add_new_product($add_item_obj);
+                $result = $this->load_model_obj('AddItemModel')->add_new_product($add_item_obj);
                 
                 header("Location:" . $this->get_url() . "://greenbro." . $this->get_domen_part() . "/addItem/display_successful_page");
                 exit;

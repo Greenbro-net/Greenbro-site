@@ -55,28 +55,10 @@ trait ConfigSettingsTrait
     private function get_setting_without_parent()
     {
         // $this->load_model_config('ConfigSettingsModel');
-        $url_model = $this->load_model_by_trait('ConfigSettingsModel');
-        // $url_model = new  \App\Model\ConfigSettingsModel;
+        $url_model = $this->load_model_object('ConfigSettingsModel');
+        
         return $object = $url_model->get_json();
     }
     
-    // the method below can't be move to modelTrait it causes error
-    private function load_model_config($modelName, $data=[])
-    {
-        try {
-            if(class_exists("\\App\Model\\" . $modelName)) {
-            $modelName = "\\App\Model\\" . $modelName;
-
-            $this->trait_model = new $modelName;
-            } else {
-                throw new Exception("Method load_model_config hasn't found actual model class");
-                   }
-
-            } catch (Exception $exception) {
-                file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
-                  'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                           }
-        
-    }
 
 }

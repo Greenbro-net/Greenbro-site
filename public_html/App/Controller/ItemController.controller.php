@@ -11,12 +11,9 @@ if(empty($_POST["quantity_of_item"])) {
 
 class ItemController extends Controller
 {  
-    use \App\Trait\ModelTrait;
     use \App\Trait\FilterDataTrait;
 
-    
 
-    
     public $united_order_items;
     public $product_id;
     public $item_id;
@@ -26,6 +23,8 @@ class ItemController extends Controller
 
     public function __construct()
     {
+       // TO DO   create $true ? true : false; block 
+
        $this->united_order_items = (int)$this->set_united_order_items();
        //we use @ for escape notice in our pages 
        @$this->item_id = (int)$this->filter_data($_POST["id"]);

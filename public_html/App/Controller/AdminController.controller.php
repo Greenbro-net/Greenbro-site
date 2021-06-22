@@ -10,7 +10,6 @@ use Exception;
 class AdminController extends Controller
 {
     use \App\Trait\ConfigSettingsTrait;
-    use \App\Trait\ModelTrait;
     use \App\Trait\FilterDataTrait;
 
     public $admin_captcha_numbers;
@@ -80,7 +79,7 @@ class AdminController extends Controller
     // the method below calls to unset_access_session
     public function call_unset_access_session()
     {
-        $this->get_admin_model()->unset_access_session();
+        $this->load_model_obj('AdminModel')->unset_access_session();
         $this->access_admin_routing();
     }
 
@@ -89,7 +88,7 @@ class AdminController extends Controller
     {             
         try {
             if ($this->checking_not_empty_data()) {
-                $this->get_admin_model()->organise_manager_validation_data($admin_object = new AdminController);
+                $this->load_model_obj('AdminModel')->organise_manager_validation_data($admin_object = new AdminController);
                 $this->access_control_manager();
                 $this->access_admin_routing();
             } else {
@@ -110,7 +109,7 @@ class AdminController extends Controller
     public function call_add_new_manager()
     {
         if ($this->equal_password()) {
-            $this->get_admin_model()->add_new_manager($admin_object = new AdminController);
+            $this->load_model_obj('AdminModel')->add_new_manager($admin_object = new AdminController);
         }
     }
 }

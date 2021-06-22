@@ -9,7 +9,6 @@ use Exception;
 class CustomerController extends Controller
 {  
     use \App\Trait\ConfigSettingsTrait;
-    use \App\Trait\ModelTrait;
     use \App\Trait\SessionTrait;
     use \App\Trait\FilterDataTrait;
     use \App\Trait\JsonReplyTrait;
@@ -25,6 +24,7 @@ class CustomerController extends Controller
 
     public function __construct()
     {  
+    // TO DO use ? true : false block instead of @ 
        @$this->recipient_name = (string)$this->filter_data($_POST["recipient_name"]);
        @$this->recipient_last_name = (string)$this->filter_data($_POST["recipient_last_name"]);
        @$this->user_email = (string)$this->filter_data($_POST["user_email"]);
