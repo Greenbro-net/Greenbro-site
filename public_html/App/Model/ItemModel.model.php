@@ -14,14 +14,10 @@ class ItemModel extends ShoppingCartData
       try {
 
         if ( !empty($product_id) && !empty($quantity_of_item) && !empty($item_price) && !empty($united_order_items)) {
-
-          // die;
           
             // the code below checks, have we  already had item in table order_items
             $cartResult = $this->getCartItemByProduct($product_id, $united_order_items);
 
-            
-    
             if ( !empty($cartResult)) {
               
                 // Update cart item quantity in database
