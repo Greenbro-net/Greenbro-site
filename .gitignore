@@ -8,5 +8,6 @@ my-errors.log
 error_log
 facebookController.controller.php
 fbdatadeletionController.controller.php
+CoreData.data.php
 # PHPMailerModel.model.php
 
