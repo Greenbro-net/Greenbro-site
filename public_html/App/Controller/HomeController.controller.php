@@ -40,14 +40,6 @@ class HomeController extends Controller
         $this->view->render();
     }
 
-    // the function below for pages what do not exist
-    // public function unknownPage()
-    // {
-    //     $this->view('home/404');
-    //     $this->view->page_title = '404';
-    //     $this->view->render();
-    // }
-
     // the method below displays oferta of our site
     public function showOferta()
     {

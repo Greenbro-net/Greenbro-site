@@ -32,17 +32,6 @@ class DatabaseData {
         }
     }
 
-
-    // TO DO Move it to interface or somewhere else !!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
-
-    // the method bellow allows load model in other model and create object of the model class 
-    protected function load_model($loadModelName, $data=[])
-    {
-         if (file_exists(MODEL . $loadModelName . '.model.php')) {
-              require_once MODEL . $loadModelName . '.model.php';
-              return $this->model = new $loadModelName;
-          }
-    }
     
 }
 

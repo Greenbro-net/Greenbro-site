@@ -9,5 +9,6 @@ error_log
 facebookController.controller.php
 fbdatadeletionController.controller.php
 fb_config.php
+CoreData.data.php
 # PHPMailerModel.model.php
 

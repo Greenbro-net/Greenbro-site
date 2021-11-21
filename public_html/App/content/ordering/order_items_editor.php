@@ -1,6 +1,6 @@
 
 <?php
-// $shoppingCart = new App\Data\ShoppingCartData();
+
    $cart_controller_obj = new App\Controller\CartController;
 
 $united_order_items = $_SESSION["united_order_items"]; //you can integerate your authentication module here to get logged in member

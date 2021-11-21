@@ -8,8 +8,7 @@ use Exception;
 class Application
 {
     static protected $controller;
-    //below it's like a method
-    static protected $action;
+    static protected $action; // a method name
     static protected $prams = [];
 
 
@@ -17,7 +16,7 @@ class Application
     {
         try {
                 self::prepareCALL();
-                if(class_exists("\\App\Controller\\" .self::$controller) ) {
+                if(class_exists("\\App\Controller\\" . self::$controller) ) {
                     self::$controller = "\\App\Controller\\" . self::$controller;
 
                     self::$controller = new self::$controller;
@@ -61,17 +60,11 @@ class Application
                 $url[1] = substr($url[1], 0, $position); 
                     }
                 }    
-               
-                //create method for state below 
-            //    $url = array(ucfirst($url[0]), $url[1]);
-            //    var_dump($url);
 
               return $url;   
             }
            
     }
-
-    // the method below to upper first letter
 
 
 }

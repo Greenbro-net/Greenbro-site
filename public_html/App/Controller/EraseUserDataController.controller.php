@@ -8,7 +8,6 @@ use Exception;
 class EraseUserDataController extends Controller
 {
     use \App\Trait\SessionTrait;
-    use \App\Trait\ModelTrait;
     use \App\Trait\JsonReplyTrait;
     use \App\Trait\CryptoGrapherTrait;
     use \App\Trait\ConfigSettingsTrait;
@@ -117,6 +116,7 @@ class EraseUserDataController extends Controller
                 'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
                                        } 
     }
+
     // the method below deletes user data from registration table
     private function delete_data_registration($user_session_id)
     {
@@ -124,7 +124,7 @@ class EraseUserDataController extends Controller
             if (empty($user_session_id)) {
                 throw new Exception("Empty parameter for delete_data_registration");
             }
-            if (empty($this->get_object_validation_model()->deleteUserDataByUserid($user_session_id))) {
+            if (empty($this->load_model_obj('ValidationModel')->deleteUserDataByUserid($user_session_id))) {
                 $this->deletion_unsuccess_message();
                 throw new Exception("delete_data_registration wasn't execution successful");
             } else { // return true in success case of method
@@ -135,6 +135,7 @@ class EraseUserDataController extends Controller
                 'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
                                        }
     }
+
     // the method below deletes user data from response_rating table
     private function delete_data_response_rating($user_session_id)
     {
@@ -142,7 +143,7 @@ class EraseUserDataController extends Controller
             if (empty($user_session_id)) {
                 throw new Exception("Empty parameter for delete_data_response_rating");
             }
-            if (empty($this->get_object_response_model()->deleteResponseRatingByUserid($user_session_id))) {
+            if (empty($this->load_model_obj('ResponseModel')->deleteResponseRatingByUserid($user_session_id))) {
                 $this->deletion_unsuccess_message();
                 throw new Exception("delete_data_response_rating method wasn't execution successful");
             } else { // return true in success case of method
@@ -153,6 +154,7 @@ class EraseUserDataController extends Controller
                 'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
                                        }
     }
+
     // the method below deletes user data from response table
     private function delete_data_response($user_session_id)
     {
@@ -160,7 +162,7 @@ class EraseUserDataController extends Controller
             if (empty($user_session_id)) {
                 throw new Exception("Empty parameter for delete_data_response");
             }
-            if (empty($this->get_object_response_model()->deleteResponseByUserid($user_session_id))) {
+            if (empty($this->load_model_obj('ResponseModel')->deleteResponseByUserid($user_session_id))) {
                 $this->deletion_unsuccess_message();
                 throw new Exception("delete_data_response method wasn't execution successful");
             } else { // return true in success case of method

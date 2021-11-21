@@ -11,7 +11,6 @@ $_POST["payment_status"] = "FALSE";
 class OrderController extends Controller
 {  
     use \App\Trait\ConfigSettingsTrait;
-    // use \App\Trait\ModelTrait;
     use \App\Trait\FilterDataTrait;
 
     public $united_order;
@@ -25,6 +24,7 @@ class OrderController extends Controller
     
     public function __construct()
     {
+        // TO DO use ? : false bloack instead @ 
        $this->united_order = (int)$this->call_set_united_order_items();
        $this->order_date = (string)$this->get_date();
        @$this->order_customer_id = (int)$this->filter_data($_SESSION["last_customer_id"]);

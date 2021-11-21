@@ -10,7 +10,6 @@ class ValidationController extends Controller
 {
     use \App\Trait\ConfigSettingsTrait;
     use \App\Trait\SessionTrait;
-    use \App\Trait\ModelTrait;
     use \App\Trait\CryptoGrapherTrait;
     use \App\Trait\JsonReplyTrait;
     use \App\Trait\FilterDataTrait;
@@ -60,7 +59,7 @@ class ValidationController extends Controller
         } elseif (!preg_match($nameValidation, $data['username'])) {
              $data['usernameError'] = 'Ім\'я може складатися тільки з літер та цифр';
         // the code below checks table for the same username
-        } elseif ($this->get_object_validation_model()->findUserByUsername($data['username'])) {
+        } elseif ($this->load_model_obj('ValidationModel')->findUserByUsername($data['username'])) {
              $data['usernameError'] = 'Це ім\'я вже використовується, спробуйте інше';
         }
         return $data;
@@ -75,7 +74,7 @@ class ValidationController extends Controller
         } elseif (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
             $data['emailError'] = 'Введена вами електронна адреса не є коректною';
             //Check if email has already taken or not
-        } elseif(($this->get_object_validation_model()->findUserByEmail($data['email']))) {
+        } elseif(($this->load_model_obj('ValidationModel')->findUserByEmail($data['email']))) {
             $data['emailError'] = 'Введена електронна адреса вже використовується, спробуйте іншу';
         }
         return $data;
@@ -137,9 +136,9 @@ class ValidationController extends Controller
                     PASSWORD_DEFAULT);
 
         // the code below adds new user to tb registration
-        if ($this->get_object_validation_model()->addNewUser($data["username"], $data["email"], $data["phone_number"], $hashedPassword)) {
+        if ($this->load_model_obj('ValidationModel')->addNewUser($data["username"], $data["email"], $data["phone_number"], $hashedPassword)) {
             // after successful registration sets session for user  
-            $loggedInUser = $this->get_object_validation_model()->loginUser($data['username'], $data['password']);
+            $loggedInUser = $this->load_model_obj('ValidationModel')->loginUser($data['username'], $data['password']);
                 
             if ($loggedInUser) {
                 $this->createUserSession($loggedInUser);
@@ -216,7 +215,7 @@ class ValidationController extends Controller
         
         //Check if all errors are empty
         if (empty($data['usernameError']) && empty($data['passwordError'])) {
-            $loggedInUser = $this->get_object_validation_model()->loginUser($data['username'], $data['password']);
+            $loggedInUser = $this->load_model_obj('ValidationModel')->loginUser($data['username'], $data['password']);
             
             if ($loggedInUser) {
                 $this->createUserSession($loggedInUser);
@@ -244,7 +243,7 @@ class ValidationController extends Controller
     {
        if ($this->checkUserid()) {
         // call method from model
-         if ($result = $this->get_object_validation_model()->findEmailByUserid($this->get_user_id())) {         
+         if ($result = $this->load_model_obj('ValidationModel')->findEmailByUserid($this->get_user_id())) {         
               $this->display_casual_user_email($result);
            }
         }
