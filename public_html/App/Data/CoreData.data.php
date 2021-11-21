@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Data;
-
+// the passwords below have to be changed
 define("DATABASE_HOST1", "hosting26.ukrnames.com");
 define("DATABASE_HOST", "greenbro.net");
 define("DATABASE_USERNAME", "green64_one");
