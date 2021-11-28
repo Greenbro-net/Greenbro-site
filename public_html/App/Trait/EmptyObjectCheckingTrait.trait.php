@@ -46,9 +46,6 @@ trait EmptyObjectCheckingTrait
                 'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
                                            }
     }  
-
-
-
 }
 
 

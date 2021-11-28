@@ -9,7 +9,8 @@ class  FbDataDeletionController extends Controller
 {
     use \App\Trait\CryptoGrapherTrait;
 
-    public function deletion() {
+    public function deletion() 
+    {
         // there are we call method from eraseuserdata Contrl 
     
         parse_signed_request($_REQUEST['signed_request']);
@@ -39,7 +40,8 @@ if (!empty($_POST['signed_request'])) {
 
 
 
-function parse_signed_request($signed_request) {
+function parse_signed_request($signed_request) 
+{
     // list - Assign variables as if they were an array
     list($encoded_sig, $payload) = explode('.', $signed_request, 2);
 

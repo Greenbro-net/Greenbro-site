@@ -65,7 +65,6 @@ trait ControllerTrait
                                            }
     }
 
-
     public static function static_load_model_object($modelName, $data=[])
     {
         try {

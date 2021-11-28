@@ -13,10 +13,7 @@ class EraseUserDataController extends Controller
     use \App\Trait\ConfigSettingsTrait;
     use \App\Trait\FilterDataTrait;
 
-    
-
-    private $user_code;
-    
+    private $user_code; 
     private $user_id_session;
 
     // the method below displays url 

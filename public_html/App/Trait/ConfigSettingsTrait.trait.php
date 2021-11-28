@@ -15,8 +15,6 @@ trait ConfigSettingsTrait
     protected $email_host;
     protected $email_user_name;
     
-    
-    
     // the method below gets url from object
     public function get_url()
     {

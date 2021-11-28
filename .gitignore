@@ -6,7 +6,7 @@ config.php
 config_settings.json
 my-errors.log
 error_log
-facebookController.controller.php
+# facebookController.controller.php
 fbdatadeletionController.controller.php
 fb_config.php
 CoreData.data.php

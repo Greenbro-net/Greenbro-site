@@ -14,8 +14,6 @@ class CustomerController extends Controller
     use \App\Trait\JsonReplyTrait;
     use \App\Trait\ValidationTrait;
 
-    
-
     public $recipient_name;
     public $recipient_last_name;
     public $user_email;

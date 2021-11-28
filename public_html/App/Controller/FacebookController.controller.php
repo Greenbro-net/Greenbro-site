@@ -3,17 +3,15 @@
 namespace App\Controller;
 
 use App\Core\Controller;
-//object of FB we can create only in one file, that why this controller is in gitignore
+
 class FacebookController extends Controller
 {
+    use \App\Trait\FacebookTrait;
+
     // the method below create object of facebook
-    private function create_fb_object() 
+    private function grab_fb_object() 
     {
-       return $facebook = new \Facebook\Facebook([
-               'app_id' => '884265225709842',
-               'app_secret' => 'f86ca7c41c8856599712ebca3b7c2baf',
-               'default_graph_version' => 'v9.0'
-            ]);
+       return self::create_fb_object();
     }
     // the method below prepares access token for facebook
     private function get_token()
@@ -23,7 +21,7 @@ class FacebookController extends Controller
     // the method below prepares handler
     private function create_handler()
     {
-        return $this->create_fb_object()->getRedirectLoginHelper();
+        return $this->grab_fb_object()->getRedirectLoginHelper();
     }
 
     // the method below calls to FB API
@@ -47,12 +45,12 @@ class FacebookController extends Controller
                   exit();
               }
             // the code below means operation was successful, grab all the data
-              $oAuth2Client = $this->create_fb_object()->getOAuth2Client();
+              $oAuth2Client = $this->grab_fb_object()->getOAuth2Client();
               if ($accessToken->isLongLived()) {
                   
                   $accessToken = $oAuth2Client->getLongLivedAccessToken($accessToken);
               
-                  $response = $this->create_fb_object()->get("/me?fields=id, first_name, last_name, email, picture.type(large)", $accessToken);
+                  $response = $this->grab_fb_object()->get("/me?fields=id, first_name, last_name, email, picture.type(large)", $accessToken);
                   $userData = $response->getGraphNode()->asArray();
 
                   $_SESSION['userData'] = $userData;
@@ -66,7 +64,7 @@ class FacebookController extends Controller
     // the method below call to FB API
     public function login()
     {    
-            $handler = $this->create_fb_object()->getRedirectLoginHelper();
+            $handler = $this->grab_fb_object()->getRedirectLoginHelper();
             $redirectTo = 'https://greenbro.net/facebook/fb_callback';
             $data = ['email'];
             $fullURL = $handler->getLoginUrl($redirectTo,  $data);
