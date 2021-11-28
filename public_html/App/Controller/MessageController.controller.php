@@ -6,7 +6,7 @@ use App\Core\Controller;
 
 class MessageController extends Controller
 {
-    use \App\Trait\ControllerTrait;
+    use \App\Traits\ControllerTrait;
     
     // the method below  which shows messages about quantity of products
     // method below hasn't used yet  

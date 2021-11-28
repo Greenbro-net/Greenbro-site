@@ -8,12 +8,12 @@ use Exception;
 
 class ValidationController extends Controller
 {
-    use \App\Trait\ConfigSettingsTrait;
-    use \App\Trait\SessionTrait;
-    use \App\Trait\CryptoGrapherTrait;
-    use \App\Trait\JsonReplyTrait;
-    use \App\Trait\FilterDataTrait;
-    use \App\Trait\ValidationTrait;
+    use \App\Traits\ConfigSettingsTrait;
+    use \App\Traits\SessionTrait;
+    use \App\Traits\CryptoGrapherTrait;
+    use \App\Traits\JsonReplyTrait;
+    use \App\Traits\FilterDataTrait;
+    use \App\Traits\ValidationTrait;
 
     public $user_id;
     

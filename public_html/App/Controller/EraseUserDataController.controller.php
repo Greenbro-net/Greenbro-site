@@ -7,11 +7,11 @@ use Exception;
 
 class EraseUserDataController extends Controller
 {
-    use \App\Trait\SessionTrait;
-    use \App\Trait\JsonReplyTrait;
-    use \App\Trait\CryptoGrapherTrait;
-    use \App\Trait\ConfigSettingsTrait;
-    use \App\Trait\FilterDataTrait;
+    use \App\Traits\SessionTrait;
+    use \App\Traits\JsonReplyTrait;
+    use \App\Traits\CryptoGrapherTrait;
+    use \App\Traits\ConfigSettingsTrait;
+    use \App\Traits\FilterDataTrait;
 
     private $user_code; 
     private $user_id_session;

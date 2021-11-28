@@ -9,8 +9,8 @@ use Exception;
 
 class AdminController extends Controller
 {
-    use \App\Trait\ConfigSettingsTrait;
-    use \App\Trait\FilterDataTrait;
+    use \App\Traits\ConfigSettingsTrait;
+    use \App\Traits\FilterDataTrait;
 
     public $admin_captcha_numbers;
     public $manager_name;

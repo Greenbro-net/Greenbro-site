@@ -10,8 +10,8 @@ $_POST["payment_status"] = "FALSE";
 
 class OrderController extends Controller
 {  
-    use \App\Trait\ConfigSettingsTrait;
-    use \App\Trait\FilterDataTrait;
+    use \App\Traits\ConfigSettingsTrait;
+    use \App\Traits\FilterDataTrait;
 
     public $united_order;
     public $order_date;

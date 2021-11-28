@@ -6,7 +6,7 @@ use App\Core\Controller;
 
 class FinalOrderController extends Controller
 {
-    use \App\Trait\SessionTrait;
+    use \App\Traits\SessionTrait;
 
     public function display_successful_message()
     {   // the method below unset session before redirection

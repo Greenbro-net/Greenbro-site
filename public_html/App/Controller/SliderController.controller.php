@@ -7,8 +7,8 @@ use App\Core\Controller;
 
 class SliderController extends Controller
 {   
-    use \App\Trait\ConfigSettingsTrait;
-    use \App\Trait\FilterDataTrait;
+    use \App\Traits\ConfigSettingsTrait;
+    use \App\Traits\FilterDataTrait;
 
     protected $folder_id;
 

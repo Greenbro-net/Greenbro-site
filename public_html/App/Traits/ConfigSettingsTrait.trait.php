@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Trait;
+namespace App\Traits;
 
 use Exception;
 
 trait ConfigSettingsTrait 
 {
 
-    use \App\Trait\ControllerTrait;
+    use \App\Traits\ControllerTrait;
 
     protected $domen_part;
     protected $url;

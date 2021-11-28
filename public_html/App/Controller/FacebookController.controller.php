@@ -6,7 +6,7 @@ use App\Core\Controller;
 
 class FacebookController extends Controller
 {
-    use \App\Trait\FacebookTrait;
+    use \App\Traits\FacebookTrait;
 
     // the method below create object of facebook
     private function grab_fb_object() 

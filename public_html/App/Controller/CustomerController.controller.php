@@ -8,11 +8,11 @@ use Exception;
 // create system for validation data which we will get from user 
 class CustomerController extends Controller
 {  
-    use \App\Trait\ConfigSettingsTrait;
-    use \App\Trait\SessionTrait;
-    use \App\Trait\FilterDataTrait;
-    use \App\Trait\JsonReplyTrait;
-    use \App\Trait\ValidationTrait;
+    use \App\Traits\ConfigSettingsTrait;
+    use \App\Traits\SessionTrait;
+    use \App\Traits\FilterDataTrait;
+    use \App\Traits\JsonReplyTrait;
+    use \App\Traits\ValidationTrait;
 
     public $recipient_name;
     public $recipient_last_name;

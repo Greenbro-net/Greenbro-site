@@ -7,8 +7,8 @@ use App\Core\Controller;
 
 class ResponseController extends Controller
 {
-    use \App\Trait\FilterDataTrait;
-    use \App\Trait\JsonReplyTrait;
+    use \App\Traits\FilterDataTrait;
+    use \App\Traits\JsonReplyTrait;
     
     public $user_id; 
     public $user_name;

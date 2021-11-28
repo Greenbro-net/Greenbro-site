@@ -11,7 +11,7 @@ if(empty($_POST["quantity_of_item"])) {
 
 class ItemController extends Controller
 {  
-    use \App\Trait\FilterDataTrait;
+    use \App\Traits\FilterDataTrait;
 
 
     public $united_order_items;

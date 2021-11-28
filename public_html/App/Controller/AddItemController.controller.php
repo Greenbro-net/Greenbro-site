@@ -9,9 +9,9 @@ use Exception;
 class AddItemController extends Controller
 {
 
-    use \App\Trait\ConfigSettingsTrait;
-    use \App\Trait\FilterDataTrait;
-    use \App\Trait\EmptyObjectCheckingTrait;
+    use \App\Traits\ConfigSettingsTrait;
+    use \App\Traits\FilterDataTrait;
+    use \App\Traits\EmptyObjectCheckingTrait;
     
     public $products_name;
     public $brand_name;

@@ -7,7 +7,7 @@ use App\Controller\EraseUserDataController;
 
 class  FbDataDeletionController extends Controller
 {
-    use \App\Trait\CryptoGrapherTrait;
+    use \App\Traits\CryptoGrapherTrait;
 
     public function deletion() 
     {

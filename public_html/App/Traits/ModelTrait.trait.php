@@ -1,6 +1,6 @@
 <?php
 // TO DO delete it in future 
-namespace App\Trait;
+namespace App\Traits;
 
 trait ModelTrait 
 {
