@@ -23,11 +23,10 @@ class SliderModel
                     array_push($filenameArray, "/images/item_images/$folder_id/$file");
                 }
             }
-
             // the function below deletes the same values with array 
             array_unique($filenameArray);   
-
             echo json_encode($filenameArray);
+            
            } catch (Exception $exception) {
                file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
                'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());

@@ -3,7 +3,6 @@
 namespace App\Data;
 
 use DBControllerBroData;
-
 use Exception;
 
 class ValidationData extends DBControllerBroData
@@ -45,10 +44,10 @@ class ValidationData extends DBControllerBroData
                                           return $result_addNewUser;
                                               }
 
-        } catch (Exception $exception) {
-            file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+            } catch (Exception $exception) {
+                file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
                 'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                         }
+                                           }
 
     }
     

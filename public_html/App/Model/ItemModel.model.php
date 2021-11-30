@@ -3,7 +3,6 @@
 namespace App\Model;
 
 use App\Data\ShoppingCartData;
-
 use Exception;
 
 class ItemModel extends ShoppingCartData

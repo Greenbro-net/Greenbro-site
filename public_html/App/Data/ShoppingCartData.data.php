@@ -2,7 +2,6 @@
 
 namespace App\Data;
 
-
 use App\Data\DBControllerData;
 
 use Exception;
@@ -10,6 +9,7 @@ use Exception;
 
 class ShoppingCartData extends DBControllerData
 {
+    // Delete the code below if we don't need it 
     // $united_order_items is on the DB table 'order_items'
     // the result of function will displays in our Shopping Cart section
     // public function getMemberCartItem($united_order_items)

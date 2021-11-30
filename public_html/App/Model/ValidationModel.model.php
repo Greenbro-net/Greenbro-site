@@ -3,9 +3,7 @@
 namespace App\Model;
 
 use App\Data\ValidationData;
-
 use Exception;
-
 
 class ValidationModel extends ValidationData
 {   
@@ -37,9 +35,8 @@ class ValidationModel extends ValidationData
             }  catch (Exception $exception) {
              file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
                  'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                           }
+                                            }
     }
-
 
     //Find user by email. Email is passed in by the Controller.
     public function findUserByEmail($email) {
@@ -99,7 +96,6 @@ class ValidationModel extends ValidationData
                     'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
                                            }
     }
-
 
     // The method below gets user email uses for it user_id 
     public function findEmailByUserid($user_id) 
@@ -167,7 +163,6 @@ class ValidationModel extends ValidationData
                                          }
     }
 
-
     // the method below deletes user data from registration by of user_id
     public function deleteUserDataByUserid($user_id)
     {
@@ -192,8 +187,7 @@ class ValidationModel extends ValidationData
              } catch (Exception $exception) {
                 file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
                     'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                           }
-        
+                                           }  
     }
 
 }

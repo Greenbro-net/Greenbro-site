@@ -42,7 +42,7 @@ class FoodModel extends DBControllerData
    { 
         $products = $this->getFood();
         include CONTENT . 'product-list.content.php';
-    }  
+   }  
 
 }
 ?>

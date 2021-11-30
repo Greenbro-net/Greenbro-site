@@ -6,7 +6,7 @@ use Facebook\Facebook;
 
 trait FacebookTrait
 {
-    public static function create_fb_object(): Facebook
+    public static function create_fb_object()
     {
         return $facebook = new \Facebook\Facebook([
             'app_id' => APP_ID,

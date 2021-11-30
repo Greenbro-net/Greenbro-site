@@ -27,7 +27,7 @@ class Controller
                                            }
     }
 
-    public function model( string $modelName, $data=[])
+    public function model($modelName, $data=[])
     {
         try {
             if(class_exists("\\App\Model\\" . $modelName))
@@ -47,7 +47,7 @@ class Controller
     }
 
 
-    public function load_model_obj(string $modelName, $data=[])
+    public function load_model_obj($modelName, $data=[])
     {
         try {
             if (class_exists("\\App\Model\\" . $modelName)) {

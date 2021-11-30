@@ -8,6 +8,7 @@ use App\Controller\TroubleController;
 
 require_once "vendor/autoload.php";
 require_once "../config.php";
+require_once "../fb_config.php";
 
 
 // the function below checkout does methods and controllers exist or not
@@ -91,24 +92,8 @@ function checkout_url()
 
 }
 
-
-
-
-
 // Application is call in checkout_url function above
 checkout_url();
-
-
-// we fixed notice Undefined action with @
-
-// testing code below 
-
-// $app = new Application();
-// $page_404 = new troubleController();
-//         $page_404->page_404();
-// var_dump($_SESSION['access_manager']);
-// var_dump($_SERVER['REQUEST_URI']);
-
 
 ?>
 
