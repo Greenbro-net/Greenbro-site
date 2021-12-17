@@ -91,7 +91,7 @@ class CustomerController extends Controller
     
     protected function set_united_order_items()
     {
-        return  $this->load_model_obj('SessionModel')->get_united_order_items();  
+        return  $this->load_model_obj('SessionModel')->grab_united_order_items();  
     }
 
     // the function below makes routing for customer 

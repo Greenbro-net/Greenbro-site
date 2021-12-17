@@ -1,53 +1,54 @@
 <?php
 
+
 namespace App\Data;
 
-use DatabaseBroData;
 
+use App\Data\DatabaseBroData;
 use PDO;
 use PDOException;
 
+
 class DBControllerBroData extends DatabaseBroData 
 {
-
     // the method below gets customer_id from the same customer name from customers table 
     protected function selectRegistrationTable($query, $params)
     { 
         try {
-        $sql_statement = self::connect()->prepare($query);
+            $sql_statement = self::connect()->prepare($query);
 
-        // this block of code for updating quantity of paremeters which we should post in execute
-        // code below can interact with with both parameters as int and str
-        if (is_numeric($params[0]["param_value"])) {
-            // the code below create PDO PARAM for integer
-            $sql_statement->bindParam(1, $params[0]["param_value"], PDO::PARAM_INT);
-        } else {
-            $sql_statement->bindParam(1, $params[0]["param_value"], PDO::PARAM_STR);
-               }
+            // this block of code for updating quantity of paremeters which we should post in execute
+            // code below can interact with with both parameters as int and str
+            if (is_numeric($params[0]["param_value"])) {
+                // the code below create PDO PARAM for integer
+                $sql_statement->bindParam(1, $params[0]["param_value"], PDO::PARAM_INT);
+            } else {
+                $sql_statement->bindParam(1, $params[0]["param_value"], PDO::PARAM_STR);
+                }
 
 
-        if (!empty($params[1]["param_value"])) {
-            $sql_statement->bindParam(2, $params[1]["param_value"], PDO::PARAM_STR);
-        }
+            if (!empty($params[1]["param_value"])) {
+                $sql_statement->bindParam(2, $params[1]["param_value"], PDO::PARAM_STR);
+            }
+            
+            if (empty($query) || empty($params)) {
+                throw new PDOException("Function selectRegistrationTable doesn't get query or params");
+                                        }
+            $result_selectUserEmail = $sql_statement->execute();
+
+            if (empty($result_selectUserEmail)) {
+                throw new PDOException("Function selectRegistrationTable doesn't return value  after execute");
+            }
+            
+            // the parameter in the end for return only associative array data 
+            $result_UserEmail = $sql_statement->fetchAll(PDO::FETCH_ASSOC);
         
-        if (empty($query) || empty($params)) {
-            throw new PDOException("Function selectRegistrationTable doesn't get query or params");
-                                      }
-        $result_selectUserEmail = $sql_statement->execute();
 
-        if (empty($result_selectUserEmail)) {
-            throw new PDOException("Function selectRegistrationTable doesn't return value  after execute");
-        }
-        
-        // the parameter in the end for return only associative array data 
-        $result_UserEmail = $sql_statement->fetchAll(PDO::FETCH_ASSOC);
-    
-
-        if (empty($result_UserEmail)) {
-                       return false;
-                            } else {
-                                return $result_UserEmail; 
-                                   }
+            if (empty($result_UserEmail)) {
+                        return false;
+                                } else {
+                                    return $result_UserEmail; 
+                                    }
         } catch (PDOException $exception) {
             file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
               'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
@@ -186,32 +187,32 @@ class DBControllerBroData extends DatabaseBroData
     }
 
 
-
-
     // the function below testing variant for admin table  
     protected function testingAdminTable($query)
     { 
         try {
-        $pdo = self::connect();
-        if (empty($pdo)) {
-            throw new PDOException("PDO object is empty in updateAdminTable");
-          }
-        $sql_statement = $pdo->prepare($query);
-        if (empty($sql_statement)) {
-             throw new PDOException("SQL statement is empty in updateAdminTable");
-          }
+            $pdo = self::connect();
 
-        $result_updateAdminTable = $sql_statement->execute();
+            if (empty($pdo)) {
+                throw new PDOException("PDO object is empty in updateAdminTable");
+            }
+            $sql_statement = $pdo->prepare($query);
 
-        if (empty($result_updateAdminTable)) {
-            throw new PDOException("Method updateAdminTable doesn't return value after execution");
-               } else { #in success case return result
-                         return $result_updateAdminTable;
-                      } 
-        
+            if (empty($sql_statement)) {
+                throw new PDOException("SQL statement is empty in updateAdminTable");
+            }
+            $result_updateAdminTable = $sql_statement->execute();
+
+            if (empty($result_updateAdminTable)) {
+                throw new PDOException("Method updateAdminTable doesn't return value after execution");
+            } else { #in success case return result
+                return $result_updateAdminTable;
+            } 
+            
         } catch (PDOException $exception) {
             file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
-              'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                          }
+            'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+        }
     }
+
 }

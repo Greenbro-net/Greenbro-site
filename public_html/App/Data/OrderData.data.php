@@ -1,11 +1,13 @@
 <?php
 // TO DO the code below should be refactoring
 
+
 namespace App\Data;
 
-use App\Data\DBControllerData;
 
+use App\Data\DBControllerData;
 use Exception;
+
 
 class OrderData extends DBControllerData
 {
@@ -65,5 +67,4 @@ class OrderData extends DBControllerData
     
     }
 
-    
 }

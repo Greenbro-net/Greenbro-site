@@ -39,7 +39,7 @@ class OrderController extends Controller
     // the function below return united order from session model 
     public function call_set_united_order_items()
     {
-        return $this->load_model_obj('SessionModel')->get_united_order_items();
+        return $this->load_model_obj('SessionModel')->grab_united_order_items();
     }
      // the function below gets total_price for our customer order 
      public function set_total_price()

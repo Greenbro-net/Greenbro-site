@@ -98,6 +98,7 @@ class ComposerStaticInit7f199a971dc35ccfdb7670c568c48dfc
         'App\\Traits\\JsonReplyTrait' => __DIR__ . '/../..' . '/App/Traits/JsonReplyTrait.trait.php',
         'App\\Traits\\ModelTrait' => __DIR__ . '/../..' . '/App/Traits/ModelTrait.trait.php',
         'App\\Traits\\SessionTrait' => __DIR__ . '/../..' . '/App/Traits/SessionTrait.trait.php',
+        'App\\Traits\\SqlSetterTrait' => __DIR__ . '/../..' . '/App/Traits/SqlSetterTrait.trait.php',
         'App\\Traits\\ValidationTrait' => __DIR__ . '/../..' . '/App/Traits/ValidationTrait.trait.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );

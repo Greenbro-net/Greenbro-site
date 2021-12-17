@@ -146,12 +146,11 @@ $('body').click(function() {
             // alert(price);
         },
         error: function(data) {
-          alert("Error in onAdd funciton");
+          alert("Error in onAdd function");
         }
     });
     
 }
-
 
 
   // the function below calls in product-list.content.php and remove item from order_items table

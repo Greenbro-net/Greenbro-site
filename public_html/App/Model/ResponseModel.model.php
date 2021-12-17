@@ -1,43 +1,40 @@
 <?php
 
+
 namespace App\Model;
 
-use App\Data\DBControllerData;
 
+use App\Data\DBControllerData;
 use Exception;
+
 
 class ResponseModel extends DBControllerData 
 {
    //the method below grabs from `response` table 
    public function findItemResponse($product_id)
    {
-       try {
-       $query = "SELECT response.*, response_rating.response_id, response_rating.rating 
-       FROM response,response_rating WHERE response.response_id = response_rating.response_id AND response.user_id = response_rating.user_id
-       AND response.product_id = ?";
-
-       $params = array(
-           array(
-               "param_type" => "i",
-               "param_value" => $product_id
-           ));
-
-        $result_findItemResponse = $this->receiveResponseTable($query, $params);
+        try {
+            $query = "SELECT response.*, response_rating.response_id, response_rating.rating 
+            FROM response,response_rating WHERE response.response_id = response_rating.response_id AND response.user_id = response_rating.user_id
+            AND response.product_id = ?";
+            
+            $params = array(array("param_type" => "i",
+            "param_value" => $product_id));
+            $result_findItemResponse = $this->receiveResponseTable($query, $params);
         
-        if (empty($product_id)) {
-            throw new Exception("Method findItemResponse doesn't get variable of product_id");
-              }
-        if (empty($result_findItemResponse)) {
+            if (empty($product_id)) {
+                throw new Exception("Method findItemResponse doesn't get variable of product_id");
+            }
+            if (empty($result_findItemResponse)) {
                 return false;
-                } else {
-                    return $result_findItemResponse;
-                       }
-           } catch (Exception $exception) {
+            } else {
+                return $result_findItemResponse;
+            }
+        } catch (Exception $exception) {
             file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
-                'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                          }
+            'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+        }
     }
-
 
 
     // the method below adds new response in `response` table 
@@ -72,17 +69,17 @@ class ResponseModel extends DBControllerData
                     "param_value" => $created_at
                 ));
 
-        // if method was executed successfully it returns 1 or false
-        $result_addNewResponse = $this->updateResponseTable($query, $params);
-        if (empty($result_addNewResponse)) {
-            throw new Exception("Method addNewResponse wasn't successfully");
-                         } else {
-                             return $result_addNewResponse;
-                         }
+            // if method was executed successfully it returns 1 or false
+            $result_addNewResponse = $this->updateResponseTable($query, $params);
+            if (empty($result_addNewResponse)) {
+                throw new Exception("Method addNewResponse wasn't successfully");
+            } else {
+                return $result_addNewResponse;
+            }
         } catch (Exception $exception) {
             file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
-                'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                       }
+            'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+        }
     }
 
 
@@ -109,16 +106,16 @@ class ResponseModel extends DBControllerData
             $result_addNewRating = $this->updateResponseRatingTable($query, $params);
             if (empty($result_addNewRating)) {
                 throw new Exception("Method addNewRating wasn't successfully");
-                             } else {
-                                return $result_addNewRating;
-                                    }
+            } else {
+                return $result_addNewRating;
+            }
 
-            } catch (Exception $exception) {
-                file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
-                    'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                           }
-        
+        } catch (Exception $exception) {
+            file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+            'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+        }
     }
+
 
     // the method below checks quantity of comment for item by user from `response` table
     public function grabQuantityComment($user_id, $product_id)
@@ -143,14 +140,14 @@ class ResponseModel extends DBControllerData
 
             if (empty($result_grabQuantityComment)) {
                 return false;
-                } else {
-                    return true;
-                       }
+            } else {
+                return true;
+            }
 
-            } catch (Exception $exception) {
-                file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
-                    'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                           }
+        } catch (Exception $exception) {
+            file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+            'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+        }
     }
 
 
@@ -159,55 +156,54 @@ class ResponseModel extends DBControllerData
     {
         try {
             $query = "DELETE FROM `response` WHERE `user_id` = ?";
-
             $params = array(
                 array(
                     "param_type"  => "i",
                     "param_value" => $user_id
                 ));
-          $result_deleteResponseByUserid = $this->deleteFromResponseTable($query, $params);
-          if (empty($user_id)) {
-              throw new Exception("Method deleteResponseByUserid doesn't get argument of user_id");
-            }
-          if (empty($result_deleteResponseByUserid)) {
-              throw  new Exception("Method deleteResponseByUserid wasn't executed successful");
-          } else {
-              return $result_deleteResponseByUserid;
-                 }
+            $result_deleteResponseByUserid = $this->deleteFromResponseTable($query, $params);
           
-          } catch (Exception $exception) {
-              file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
-                  'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                         }
-  
+            if (empty($user_id)) {
+                throw new Exception("Method deleteResponseByUserid doesn't get argument of user_id");
+            }
+            if (empty($result_deleteResponseByUserid)) {
+                throw  new Exception("Method deleteResponseByUserid wasn't executed successful");
+            } else {
+                return $result_deleteResponseByUserid;
+            }
+          
+        } catch (Exception $exception) {
+            file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+            'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+        }
     }
+
 
     // the method below deletes user response rating by of user id
     public function deleteResponseRatingByUserid($user_id)
     {
         try {
               $query = "DELETE FROM `response_rating` WHERE `user_id` = ?";
-
               $params = array(
                   array(
                       "param_type"  => "i",
                       "param_value" => $user_id
                   ));
             $result_deleteResponseRatingByUserid = $this->updateResponseRatingTable($query, $params);
+            
             if (empty($user_id)) {
                 throw new Exception("Method deleteResponseRatingByUserid doesn't get argument of user_id");
-              }
+            }
             if (empty($result_deleteResponseRatingByUserid)) {
                 throw  new Exception("Method deleteResponseRatingByUserid wasn't executed successful");
             } else {
                 return $result_deleteResponseRatingByUserid;
-                   }
+            }
             
-            } catch (Exception $exception) {
-                file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
-                    'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                           }
-    
+        } catch (Exception $exception) {
+            file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+            'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+        }
     }
     
 }

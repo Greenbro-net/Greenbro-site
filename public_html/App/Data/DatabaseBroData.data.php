@@ -1,8 +1,11 @@
 <?php
 
+
 namespace App\Data;
 
+
 use PDO;
+
 
 class DatabaseBroData 
 {
@@ -11,12 +14,14 @@ class DatabaseBroData
     private static $username = DATABASE_USERNAME;
     private static $password = DATABASE_PASSWORD;
 
+
     protected static function connect() 
     {
         $pdo = new PDO("mysql:host=".self::$host.";dbname=".self::$dbName.";charset=utf8", self::$username, self::$password);
         $pdo->setAttribute(PDO::ERRMODE_EXCEPTION, PDO::FETCH_ASSOC);
         return $pdo;
     }
+    
     
     protected static function query($query, $params = array()) 
     {

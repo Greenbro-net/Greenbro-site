@@ -1,9 +1,12 @@
 <?php
 
+
 namespace App\Model;
+
 
 use App\Data\ItemData;
 use Exception;
+
 
 class AddItemModel extends ItemData
 {
@@ -12,7 +15,6 @@ class AddItemModel extends ItemData
     public function add_new_product($add_item_obj)
     {
         try {
-
             $query = "INSERT INTO `products`(`name`, `brand`, `category_id`, `mini_description`, `description`, `image`, `price`, `sale`, `quantity`, `datetime`, `visible`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
            
             $params = array(
@@ -70,11 +72,12 @@ class AddItemModel extends ItemData
                               return $result_add_new_product;
                                   }
 
-            } catch (Exception $exception) {
+        } catch (Exception $exception) {
                 file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
                 'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                           }
+        }
     }
+
 
     // the method below gets last id from products table
     public function get_last_products_id()
@@ -96,11 +99,10 @@ class AddItemModel extends ItemData
                                                   } else {
                                                       return $result_get_last_product_id;
                                                          }
-           }    catch (Exception $exception) {
+        } catch (Exception $exception) {
             file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
               'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                             }
-
+        }
     }
 
 
@@ -123,16 +125,16 @@ class AddItemModel extends ItemData
 
               } 
             //   return  $result_create_image_array;
-            } catch (Exception $exception) {
+        } catch (Exception $exception) {
                 file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
                 'Line: ' . $exception-> getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                           }
-        
+        }
     }
+
+
     // the method below checks images for right data type
     protected function is_file_image($key)
     {
-
         try {
             $result_is_file_image = getimagesize($_FILES["fileMulti"]["tmp_name"][$key]);
             
@@ -141,11 +143,13 @@ class AddItemModel extends ItemData
                 } else {
                     return $result_is_file_image;
                        }
-            } catch (Exception $exception) {
+        } catch (Exception $exception) {
                 file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
                 'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                           }
+        }
     }
+
+
     // the method below checks file exist or not
     protected function check_existing_of_file($target_file)
     {
@@ -153,12 +157,14 @@ class AddItemModel extends ItemData
             
             if (file_exists($target_file)) {
                 throw new Exception("Method check_existing_of_file have found file already exist");
-                } 
-            } catch (Exception $exception) {
+            } 
+        } catch (Exception $exception) {
                 file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
                 'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                           }
+        }
     }
+
+
     // the method below checks file size
     protected function check_file_size($key)
     {
@@ -166,12 +172,14 @@ class AddItemModel extends ItemData
             
             if ($_FILES["fileMulti"]["size"][$key] > 10000000) {
                 throw new Exception("Method check_file_size have found image to large");
-                } 
-            } catch (Exception $exception) {
+            } 
+        } catch (Exception $exception) {
                 file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
                 'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                           }
+        }
     }
+
+
     // the method below checks file type
     protected function check_file_type($imageFileType)
     {
@@ -179,24 +187,27 @@ class AddItemModel extends ItemData
             
             if ($imageFileType != "jpg" && $imageFileType != "jpeg") {
                 throw new Exception("Method check_file_type have found image type not allow");
-                } 
-            } catch (Exception $exception) {
+            } 
+        } catch (Exception $exception) {
                 file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
                 'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                           }
+        }
     }
+
+
     // the method below moves uploaded image
     protected function move_upload_image($key, $path)
     {
         try {
             if(!move_uploaded_file($_FILES["fileMulti"]["tmp_name"][$key], $path)) {
                 throw new Exception("Method move_upload_image has an error");
-                }
-            } catch (Exception $exception) {
+            }
+        } catch (Exception $exception) {
                 file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
                 'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                           } 
+        } 
     }
+
 
     // the method below saves jpg image 
     protected function save_jpeg_image($key, $path)
@@ -209,19 +220,21 @@ class AddItemModel extends ItemData
                 // exception will throw in unsuccessful case of function execution 
                 if (!imagejpeg($target_layer, $path)) {
                     throw new Exception("Function imagejpeg wasn't successful in save_jpeg_image method");
-                       }
-            }  catch (Exception $exception) {
+                }
+        }  catch (Exception $exception) {
                 file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
                 'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                            }
+        }
     }
+
+
     // the method below changes size of image
     protected function resize_image($image_resource_id, $width, $height) 
     {
         try {
               if (empty($image_resource_id) || empty($height) || empty($width)) {
                    throw new Exception("Method resize_image doesn't get parameter");
-                  }
+              }
                 $target_width = $width * 0.1; // makes image smaller in 10 times
                 $target_height = $height * 0.1; // makes image smaller in 10 times
                 $target_layer=imagecreatetruecolor($target_width,$target_height);
@@ -230,11 +243,11 @@ class AddItemModel extends ItemData
 
               if (empty($target_layer)) {
                   throw new Exception("Method resize_image doesn't return result");
-                  }
-            } catch (Exception $exception) {
+              }
+        } catch (Exception $exception) {
                 file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
                 'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                           }
+        }
     }
 
 
@@ -246,14 +259,15 @@ class AddItemModel extends ItemData
                 $result_mkdir = mkdir("images/item_images/$dir_name", 0755);
                 if (empty($result_mkdir)) {
                     throw new Exception("Method create_image_storage has error in mkdir function");
-                  }
+                }
             } 
-           } catch (Exception $exception) {
+        } catch (Exception $exception) {
             file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
             'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                          }  
+        }  
     }
     
+
     // the method below checks and downloads images
     public function organize_image_download()
     { // images with number 0 will be main image
@@ -288,15 +302,9 @@ class AddItemModel extends ItemData
             $path = "images/item_images/$dir_name/" . $name;
             
             // code below resize and save smaller image in folder 
-            $this->save_jpeg_image($key, $path);
-            
-        }
-      
+            $this->save_jpeg_image($key, $path); 
+        } 
     }
-
-    
-
-        
 
 }
 

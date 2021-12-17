@@ -1,6 +1,8 @@
 <?php
 
+
 namespace App\Traits;
+
 
 trait SessionTrait
 {
@@ -12,6 +14,7 @@ trait SessionTrait
         unset($_SESSION['email']);
     }
 
+
     // the method below for logout user from FB, unset Session 
     protected function unsetFbUserSession()
     {
@@ -22,6 +25,7 @@ trait SessionTrait
         unset($_SESSION['userData']['picture']['url']);
     }
 
+
     // the method below creates session for casual login
     private function createUserSession($loggedInUser) 
     {
@@ -30,6 +34,7 @@ trait SessionTrait
         $_SESSION['user_name'] = $loggedInUser[0]['username'];
         $_SESSION['email'] = $loggedInUser[0]['email'];
     }
+
 
     // the method below sets user_id from $_SESSION
     private function set_user_id_session()
@@ -41,6 +46,8 @@ trait SessionTrait
             $user_id_session = $this->user_id_session = trim($_SESSION['userData']['id']);
         }
     }
+
+
     // the method below gets user_id from $_SESSION
     private function get_user_id_session()
     {
@@ -55,11 +62,14 @@ trait SessionTrait
         unset($_SESSION["last_customer_id"]);
         unset ($_SESSION["united_order_items"]);
     }
+
+
     // the method below unsets last_customer_id
     private function unset_last_customer_id()
     {
         unset($_SESSION["last_customer_id"]);
     }
+
 
     // the method below checks is casual user log in or not 
     private function checkUserid()
@@ -68,8 +78,10 @@ trait SessionTrait
             return false;
         } else {
             return true;
-               }
+        }
     }
+
+    
     // the method below checks is user log in by FB
     private function checkFbUserid()
     {
@@ -77,7 +89,7 @@ trait SessionTrait
             return false;
         } else {
             return true;
-               }
+        }
     }
 
 }

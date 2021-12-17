@@ -1,8 +1,11 @@
 <?php
 
+
 namespace App\Data;
 
+
 use PDO;
+
 
 class DatabaseData 
 {
@@ -13,12 +16,14 @@ class DatabaseData
     // the property below for load_model method 
     protected $model;
 
+
     protected static function connect() 
     {
         $pdo = new PDO("mysql:host=".self::$host.";dbname=".self::$dbName.";charset=utf8", self::$username, self::$password);
         $pdo->setAttribute(PDO::ERRMODE_EXCEPTION, PDO::FETCH_ASSOC);
         return $pdo;
     }
+
 
     protected static function query($query, $params = array()) 
     {

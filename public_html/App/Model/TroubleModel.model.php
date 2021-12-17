@@ -1,6 +1,8 @@
 <?php
 
+
 namespace App\Model;
+
 
 class TroubleModel 
 {
@@ -17,4 +19,5 @@ class TroubleModel
         </section>
         ";
     }
+    
 }

@@ -15,33 +15,33 @@ $united_order_items = $_SESSION["united_order_items"]; //you can integerate your
   <div id="cart_item_code">
 <?php
 
-// $cartItem = $shoppingCart->getMemberCartItem($united_order_items);
-   $cartItem = $cart_controller_obj->call_getMemberCartItem($united_order_items);
+      // the code below checks out does $_SESSION["united_order_items"] set and method inside 
+      // will execute only in way it was setted
+      if (!empty($_SESSION["united_order_items"])) {
+          $cartItem = $cart_controller_obj->call_getMemberCartItem($united_order_items);
+      }
 
-   // if (empty($cartItem)) {
-      // die;
-   // }
 
-if (! empty($cartItem)) {
-   // the code below helps us avoid notice "undefined variable"
-   $item_quantity = 0;
-    $item_price = 0;
+      if (! empty($cartItem)) {
+          // the code below helps us avoid notice "undefined variable"
+          $item_quantity = 0;
+          $item_price = 0;
 
-    // the code below helps us avoid "invalid argument supplied for foreach()"
-    if (is_array($cartItem) || is_object($cartItem)){
-    if (! empty($cartItem)) {
-        foreach ($cartItem as $item) {
-            $item_quantity = $item_quantity + $item["quantity_of_item"];
-            // the code below counts sum of items in cart 
-            $item_price = $item_price + ($item["price"] * $item["quantity_of_item"]);
-                                     }
-                            }
-                                                    }
-   } else {
-   // the code below helps us avoid notice "undefined variable"
-   $item_price = 0;
-   $item_quantity = 0;
+          // the code below helps us avoid "invalid argument supplied for foreach()"
+          if (is_array($cartItem) || is_object($cartItem)) {
+              if (!empty($cartItem)) {
+                  foreach ($cartItem as $item) {
+                      $item_quantity = $item_quantity + $item["quantity_of_item"];
+                      // the code below counts sum of items in cart 
+                      $item_price = $item_price + ($item["price"] * $item["quantity_of_item"]);
+                  }
+               }
           }
+      } else {
+          // the code below helps us avoid notice "undefined variable"
+          $item_price = 0;
+          $item_quantity = 0;
+      }
 
 ?>
 <!-- the block of code below displays us items in our cart -->

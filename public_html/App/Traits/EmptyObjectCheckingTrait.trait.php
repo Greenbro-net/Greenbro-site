@@ -1,8 +1,13 @@
 <?php
 
+
 namespace App\Traits;
 
+
 use Exception;
+use ReflectionProperty;
+use ReflectionClass;
+
 
 /**
  * Deep inspection of <var>$input</var> object.
@@ -22,30 +27,30 @@ trait EmptyObjectCheckingTrait
     { // exceptions inside try block doesn't work properly
         if (empty($input)) {
             throw new Exception("Method object_has_properties doesn't get argument");
-                 }
+        }
 
-       try {
+        try {
             $visibility = ReflectionProperty::IS_PUBLIC;
             if (is_object($input)) {
                 $properties = (new ReflectionClass($input))->getProperties($visibility);
                 $c = count($properties);
                 for ($i = 0; $i < $c; ++$i) {
                 $properties[$i]->setAccessible(true);
-            
                 $value = $properties[$i]->getValue($input);
-                if (empty($value)) {
-                     return false;
-                     }
+                    if (empty($value)) {
+                        return false;
+                    }
                 }
             }
             return true;
        
      
-            } catch (Exception $exception) {
-                file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
-                'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                           }
+        } catch (Exception $exception) {
+            file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+            'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+        }
     }  
+
 }
 
 

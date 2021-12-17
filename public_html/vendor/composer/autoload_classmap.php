@@ -71,6 +71,7 @@ return array(
     'App\\Traits\\JsonReplyTrait' => $baseDir . '/App/Traits/JsonReplyTrait.trait.php',
     'App\\Traits\\ModelTrait' => $baseDir . '/App/Traits/ModelTrait.trait.php',
     'App\\Traits\\SessionTrait' => $baseDir . '/App/Traits/SessionTrait.trait.php',
+    'App\\Traits\\SqlSetterTrait' => $baseDir . '/App/Traits/SqlSetterTrait.trait.php',
     'App\\Traits\\ValidationTrait' => $baseDir . '/App/Traits/ValidationTrait.trait.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );
