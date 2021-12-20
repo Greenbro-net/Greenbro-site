@@ -10,7 +10,7 @@ use Exception;
 
 class ValidationData extends DBControllerBroData
 {
-    // the function below adds user data in 'registration' table 
+    // the method below adds user data in 'registration' table 
     public function addNewUser($username, $email, $phone_number, $password) 
     {
         try {
@@ -22,21 +22,18 @@ class ValidationData extends DBControllerBroData
             $params = array(
                 array(
                     "param_type" => "s",
-                    "param_value" => $username
-                ),
+                    "param_value" => $username),
                 array(
                     "param_type" => "s",
-                    "param_value" => $email
-                ),
+                    "param_value" => $email),
                 array(
                     "param_type" => "s",
-                    "param_value" => $phone_number
-                ),
+                    "param_value" => $phone_number),
                 array(
                     "param_type" => "s",
-                    "param_value" => $password
-                ));
-            // if function was executed successfully it returns 1
+                    "param_value" => $password));
+
+            // if method was executed successfully it returns 1
             $result_addNewUser = $this->updateRegistration($query, $params);
 
             if (empty($result_addNewUser)) {
@@ -44,7 +41,6 @@ class ValidationData extends DBControllerBroData
             } else {
                 return $result_addNewUser;
             }
-
         } catch (Exception $exception) {
             file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
             'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());

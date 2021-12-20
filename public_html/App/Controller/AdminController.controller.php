@@ -109,7 +109,7 @@ class AdminController extends Controller
                 $this->access_admin_routing();
             } else {
                 throw new Exception("Got empty parameter in checking_access_form_data");
-                   }
+            }
         } catch (Exception $exception) {
             file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
             'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
@@ -131,5 +131,5 @@ class AdminController extends Controller
             $this->load_model_obj('AdminModel')->add_new_manager($admin_object = new AdminController);
         }
     }
-    
+
 }
