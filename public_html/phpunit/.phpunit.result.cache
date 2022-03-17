@@ -1,1 +1,1 @@
-{"version":1,"defects":[],"times":[]}
+{"version":1,"defects":{"Warning":6,"SampleTest::testTrueAssertsToTrue":5,"SampleTest::testMockProductsAreReturned":4},"times":{"Warning":0.002,"SampleTest::testTrueAssertsToTrue":0.002,"SampleTest::testFalseAssertsToFalse":0,"SampleTest::testMockProductsAreReturned":0.547}}

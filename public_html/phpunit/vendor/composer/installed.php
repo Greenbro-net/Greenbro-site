@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '4575896e97f0ce9760c7c5164961ad3df346fe91',
+        'reference' => 'e8e2dfad1d5b9820b6ccb40caa52f6cf3b78aa71',
         'name' => 'alexander/phpunit',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '4575896e97f0ce9760c7c5164961ad3df346fe91',
+            'reference' => 'e8e2dfad1d5b9820b6ccb40caa52f6cf3b78aa71',
             'dev_requirement' => false,
         ),
         'doctrine/instantiator' => array(

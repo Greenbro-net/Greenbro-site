@@ -1,11 +1,16 @@
 {
     "name": "alexander/phpunit",
     "autoload": {
-        "psr-4": {
-            "App\\": "app"
-        }
+        
+            
+            "classmap": [ "../App/Controller", "../App/Traits", "../App/Model"
+                , "../App/Data", "../App/Core", "../../Configuration.php", "app"]
+    
+           
+    
     },
     "require": {
         "phpunit/phpunit": "^9.5"
     }
+    
 }
