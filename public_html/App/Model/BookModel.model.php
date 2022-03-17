@@ -11,7 +11,7 @@ use PDO;
 
 class BookModel extends DBControllerData
 {
-    private function getBooks()
+    public function getBooks()
     {
         try {
 
@@ -36,7 +36,6 @@ class BookModel extends DBControllerData
         }
 
     }
-
 
     public function showBooks()
     {   

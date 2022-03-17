@@ -7,7 +7,7 @@ use App\Controller\TroubleController;
 
 
 require_once "vendor/autoload.php";
-require_once "../config.php";
+require_once "../Configuration.php";
 require_once "../fb_config.php";
 
 

@@ -1,9 +1,12 @@
 <?php
 
+
 namespace App\Model;
+
 
 use App\Data\DBControllerBroData;
 use Exception;
+
 
 class AdminModel extends DBControllerBroData
 {

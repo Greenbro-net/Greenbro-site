@@ -11,8 +11,8 @@ use PDO;
 
 class GoodsModel extends DBControllerData
 {
-   private function getGoods()
-   {
+    public function getGoods()
+    {
         try {
             $sql = "SELECT P.*,  COUNT(R.product_id) as response_count 
             FROM `products` P

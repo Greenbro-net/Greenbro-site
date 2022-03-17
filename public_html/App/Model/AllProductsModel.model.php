@@ -11,7 +11,7 @@ use PDO;
 
 class AllProductsModel extends DBControllerData
 {
-    private function getAllProducts()
+    public function getAllProducts() : array
     {
         try {
 

@@ -11,7 +11,7 @@ use PDO;
 
 class FoodModel extends DBControllerData
 {
-    private function getFood()
+    public function getFood()
     {
         try {
             $sql = "SELECT P.*,  COUNT(R.product_id) as response_count 

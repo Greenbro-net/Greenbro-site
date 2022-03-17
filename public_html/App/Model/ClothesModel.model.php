@@ -11,7 +11,7 @@ use PDO;
 
 class ClothesModel extends DBControllerData
 {
-    private function getClothes()
+    public function getClothes()
     {
         try {
            $sql = "SELECT P.*,  COUNT(R.product_id) as response_count 
