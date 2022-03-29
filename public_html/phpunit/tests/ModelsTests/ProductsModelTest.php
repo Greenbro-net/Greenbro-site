@@ -2,6 +2,9 @@
 
 
 
+namespace App\UnitTest\ModelsTests;
+
+
 use App\Model\AllProductsModel;
 use App\Model\BookModel;
 use App\Model\ClothesModel;
@@ -11,7 +14,7 @@ use App\Model\GoodsModel;
 // use App\Core\Configuration;
 
 // ModelTest works only in singular form
-class ModelTest extends \PHPUnit\Framework\TestCase
+class ProductsModelTest extends \PHPUnit\Framework\TestCase
 {
     // the test below for AllProductsModel testing
     public function testMockAllProductsModel()

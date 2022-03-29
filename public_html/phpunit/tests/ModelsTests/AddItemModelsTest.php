@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\UnitTest;
+namespace App\UnitTest\ModelsTests;
 
 
 use PHPUnit\Framework\TestCase;
