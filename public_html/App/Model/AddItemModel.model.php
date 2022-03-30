@@ -151,7 +151,7 @@ class AddItemModel extends ItemData
 
 
     // the method below checks file exist or not
-    protected function check_existing_of_file($target_file)
+    public function check_existing_of_file($target_file)
     {
         try {
             
@@ -181,7 +181,7 @@ class AddItemModel extends ItemData
 
 
     // the method below checks file type
-    protected function check_file_type($imageFileType)
+    public function check_file_type($imageFileType)
     {
         try {
             

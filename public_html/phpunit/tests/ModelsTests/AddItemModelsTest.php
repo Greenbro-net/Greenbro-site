@@ -32,7 +32,7 @@ class AddItemModelsTest extends TestCase
     public function mock_check_file_type()
     {
         $AddItemModelObject = new \App\Model\AddItemModel();
-        $ResultOfMethod = $AddItemModelObject->check_file_type("../images/AAA.jpg");
+        $ResultOfMethod = $AddItemModelObject->check_file_type("jpg"); //image type in directory
         $this->assertEmpty($ResultOfMethod);
     }
     

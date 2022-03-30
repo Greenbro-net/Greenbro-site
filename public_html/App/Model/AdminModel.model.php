@@ -25,7 +25,7 @@ class AdminModel extends DBControllerBroData
 
 
     // the method below checks in table admin manager name
-    public function check_manager_name($admin_object)
+    public function check_manager_name(object $admin_object)
     {
         try {
             if (empty($admin_object->manager_name)) {
@@ -34,10 +34,10 @@ class AdminModel extends DBControllerBroData
 
             $query = "SELECT `manager_name` FROM `admin` WHERE `manager_name` = ?";
             $params = array(
-                 array(
-                     "param_type" => "s",
-                     "param_value" => $admin_object->manager_name
-                 ));
+                array(
+                    "param_type" => "s",
+                    "param_value" => $admin_object->manager_name
+                ));
             $result_check_manager_name = $this->selectAdminTable($query, $params);
 
             if (empty($result_check_manager_name)) {
@@ -83,9 +83,8 @@ class AdminModel extends DBControllerBroData
     {
         return (string)md5($admin_object->admin_captcha_numbers);
     }
+
     // the method below checking captcha
-
-
     private function checking_captcha($admin_object)
     {
         try {
@@ -110,10 +109,10 @@ class AdminModel extends DBControllerBroData
             }
 
             if (password_verify($admin_object->manager_password, $result_get_manager_data['0']['manager_password'])) {
-                 return true; // password equal each other return true 
+                return true; // password equal each other return true 
             } else {
-                 return false;
-                    }
+                return false;
+            }
         } catch (Exception $exception) {
                 file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
                 'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
@@ -124,17 +123,17 @@ class AdminModel extends DBControllerBroData
     // the method below organises validation of manager data
     public function organise_manager_validation_data($admin_object)
     {
-       $result_manager_name = $this->check_manager_name($admin_object);
-       $result_get_manager_data = $this->get_manager_data($result_manager_name);
+        $result_manager_name = $this->check_manager_name($admin_object);
+        $result_get_manager_data = $this->get_manager_data($result_manager_name);
 
-       // checking manager password below
-     if ($this->match_manager_password($admin_object, $result_get_manager_data) && 
-         $this->checking_captcha($admin_object)) {
-         $this->set_access_session(); // this is success case
-         return true;
-     }  else {
+        // checking manager password below
+        if ($this->match_manager_password($admin_object, $result_get_manager_data) && 
+            $this->checking_captcha($admin_object)) {
+            $this->set_access_session(); // this is success case
+            return true;
+        }  else {
             echo "Password or captcha doesn't match each other";
-             }
+        }
     }
 
 

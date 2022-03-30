@@ -12,7 +12,7 @@ class DatabaseData
 {
     protected static function connect() 
     {
-        $pdo = new PDO("mysql:host=".Configuration::get_host().";dbname=".Configuration::get_dbName().";charset=utf8", 
+        $pdo = new PDO("mysql:host=".Configuration::get_host().";dbname=".Configuration::get_db_name().";charset=utf8", 
             Configuration::get_username(), Configuration::get_password());
         $pdo->setAttribute(PDO::ERRMODE_EXCEPTION, PDO::FETCH_ASSOC);
         return $pdo;

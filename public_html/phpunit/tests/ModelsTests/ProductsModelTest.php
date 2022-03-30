@@ -1,7 +1,6 @@
 <?php
 
 
-
 namespace App\UnitTest\ModelsTests;
 
 
@@ -11,7 +10,6 @@ use App\Model\ClothesModel;
 use App\Model\FoodModel;
 use App\Model\GoodsModel;
 
-// use App\Core\Configuration;
 
 // ModelTest works only in singular form
 class ProductsModelTest extends \PHPUnit\Framework\TestCase
