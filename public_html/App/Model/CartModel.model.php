@@ -16,7 +16,6 @@ class CartModel extends DBControllerData
         include CONTENT . 'cart_item.content.php';
     }
 
-
     // $united_order_items is on the DB table 'order_items'
     // the result of function will displays in our Shopping Cart section
     public function getMemberCartItem($united_order_items)

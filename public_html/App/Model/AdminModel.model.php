@@ -138,7 +138,7 @@ class AdminModel extends DBControllerBroData
 
 
     // the method below crypt password
-    protected function get_crypted_password($admin_object)
+    public function get_crypted_password($admin_object)
     {
         return  password_hash($admin_object->manager_password, PASSWORD_BCRYPT );
     }
