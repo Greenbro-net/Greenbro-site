@@ -11,4 +11,6 @@ fbdatadeletionController.controller.php
 fb_config.php
 CoreData.data.php
 # PHPMailerModel.model.php
-
+Configuration.php
+.phpunit.result.cache
+phpunit/.phpunit.result.cache

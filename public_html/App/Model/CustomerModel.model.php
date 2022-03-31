@@ -50,7 +50,7 @@ class CustomerModel extends CustomerData
 
 
     // the method below for checking customer name before insert it to table `customers`
-    public function  checking_customer_name($recipient_name, $recipient_last_name)
+    public function  checking_customer_name($recipient_name, $recipient_last_name): bool
     {   
         // the function below return all customers which we have in table customers 
         try {
@@ -80,7 +80,7 @@ class CustomerModel extends CustomerData
 
 
     // the function below for checking customer data before insert it to table `customers`
-    public function checking_customer_data($user_email, $recipient_mobile_number)
+    public function checking_customer_data($user_email, $recipient_mobile_number): bool
     {   
         // the function below return all customers which we have in table customers
         try {
