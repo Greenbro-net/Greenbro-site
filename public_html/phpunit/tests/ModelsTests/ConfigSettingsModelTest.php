@@ -12,7 +12,7 @@ class ConfigSettingsModelTest extends \PHPUnit\Framework\TestCase
     {
         $ConfigSettingsModelObject = new \App\Model\ConfigSettingsModel();
         $ResultOfMethod = $ConfigSettingsModelObject->get_json();
-        $this->assertJsonStringEqualsJsonFile("../../config_settings.json", json_encode($ResultOfMethod));
+        $this->assertJsonStringEqualsJsonFile("../config_settings.json", json_encode($ResultOfMethod));
     }
     
 }

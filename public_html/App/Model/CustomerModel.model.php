@@ -14,22 +14,21 @@ class CustomerModel extends CustomerData
     public  function get_customer_data()
     { 
         try {
-    // will check does we have the same customer data(last name, mobile number, email) in customers table
-    $sql = "SELECT  `user_email`, `recipient_mobile_number` FROM customers";
-    $stmt = $this->connect()->prepare($sql);
-    $stmt->execute();
+            // will check does we have the same customer data(last name, mobile number, email) in customers table
+            $sql = "SELECT  `user_email`, `recipient_mobile_number` FROM customers";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute();
 
-    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    return $results;
-             if (empty($results)) {
-                 throw new Exception("get_customer_data returns empty results");
-                                  }
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
+                if (empty($results)) {
+                    throw new Exception("get_customer_data returns empty results");
+                }
             } catch (Exception $exception) {
-                    file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
-                      'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
-                                           }
+                file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .
+                'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
+            }
     }
-
 
     // the method below grabs customer name and last_name from customer table 
     public  function get_customer_name()
