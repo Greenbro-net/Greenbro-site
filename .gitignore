@@ -16,3 +16,4 @@ Configuration.php
 phpunit/.phpunit.result.cache
 public_html/phpunit/.phpunit.result.cache
 # test.php
+.vscode/launch.json
