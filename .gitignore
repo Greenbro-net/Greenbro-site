@@ -14,3 +14,5 @@ CoreData.data.php
 Configuration.php
 .phpunit.result.cache
 phpunit/.phpunit.result.cache
+public_html/phpunit/.phpunit.result.cache
+# test.php

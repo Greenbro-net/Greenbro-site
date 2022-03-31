@@ -10,7 +10,7 @@ use Exception;
 class MessageModel
 {
     // the method below returns correct word for quantity of responses
-    public static function choose_right_case($quantity_of_responses) 
+    public static function choose_right_case($quantity_of_responses): string 
     {
         try {
             if (empty($quantity_of_responses)) {
