@@ -13,7 +13,10 @@ class ConfigSettingsModel
     public function get_json()
     {
         try {
-            $object = file_get_contents("config_settings.json");
+
+            $object = file_exists("config_settings.json") ? file_get_contents("config_settings.json") 
+                : file_get_contents("../config_settings.json");
+
             $json_object = json_decode($object);
 
             if (empty($json_object)) {
