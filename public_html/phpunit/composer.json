@@ -4,7 +4,7 @@
         
             
             "classmap": [ "../App/Controller", "../App/Traits", "../App/Model"
-                , "../App/Data", "../App/Core", "../../Configuration.php", "app"]
+                , "../App/Data", "../App/Core", "../../Configuration.php", "app", "../vendor"]
     
            
     
