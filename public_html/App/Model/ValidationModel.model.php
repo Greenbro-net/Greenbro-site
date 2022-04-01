@@ -39,7 +39,7 @@ class ValidationModel extends ValidationData
 
 
     //Find user by email. Email is passed in by the Controller.
-    public function findUserByEmail($email) 
+    public function findUserByEmail($email): bool
     {
         try {
             $query = "SELECT * FROM `registration` WHERE email = ?";
@@ -50,7 +50,7 @@ class ValidationModel extends ValidationData
                     "param_value" => $email));
 
             if (empty($email)) {
-                throw new Exception("Function findUserByEmail doesn't get email parameter");
+                throw new Exception("Method findUserByEmail doesn't get email parameter");
             }
             //Check if email is already registered
             // if function was executed successful it returns string with number
@@ -67,9 +67,8 @@ class ValidationModel extends ValidationData
         }
     }
 
-
     //Find user by username. Username is passed in by the Controller.
-    public function findUserByUsername($username) 
+    public function findUserByUsername(string $username): bool
     {
         try {
             $query = "SELECT * FROM `registration` WHERE username = ?";
@@ -95,7 +94,6 @@ class ValidationModel extends ValidationData
             'Line: ' . $exception->getLine() . '<br />' .'Trace: ' . $exception->getTraceAsString());
         }
     }
-
 
     // The method below gets user email uses for it user_id 
     public function findEmailByUserid($user_id) 

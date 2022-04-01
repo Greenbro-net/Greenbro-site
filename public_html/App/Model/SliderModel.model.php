@@ -17,7 +17,12 @@ class SliderModel
                 throw new Exception("Method grab_images doesn't get parameter");
             }
             $filenameArray = [];
-            $path = "images/item_images/$folder_id/";
+
+
+            $path = file_exists("images/item_images/$folder_id/") ? "images/item_images/$folder_id/" 
+                : "../images/item_images/$folder_id/";
+
+
             // the loop below goes throw all files in folder
             foreach(scandir($path) as $file) {
                 if($file !== '.' && $file !== '..') {
