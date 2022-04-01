@@ -118,7 +118,7 @@ class ResponseModel extends DBControllerData
 
 
     // the method below checks quantity of comment for item by user from `response` table
-    public function grabQuantityComment($user_id, $product_id)
+    public function grabQuantityComment($user_id, $product_id): bool
     {
         try {
             $query = "SELECT `response_id` FROM `response` WHERE `user_id` = ? AND `product_id` = ?";

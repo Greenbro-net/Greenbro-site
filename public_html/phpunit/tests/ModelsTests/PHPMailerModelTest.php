@@ -12,13 +12,13 @@ use \PHPMailer\PHPMailer\Exception;
 class PHPMailerModelTest extends \PHPUnit\Framework\TestCase
 {
     // the unittest method below for sent_letter()
-    // /** @test */
+    /** @test */
     public function mock_sent_letter()
     {
         $mail = new PHPMailer(true);
         $PHPMailerModelObject = new \App\Model\PHPMailerModel();
         $ResultOfMethod = $PHPMailerModelObject->sent_letter(105520210621);
-        $this->assertTrue($ResultOfMethod);
+        $this->assertNotTrue($ResultOfMethod);
     }
     
 }
