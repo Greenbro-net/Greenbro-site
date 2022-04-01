@@ -24,7 +24,7 @@ class SessionModel extends DBControllerData
 
 
     // the function below get current date
-    protected function get_unite_date()
+    public function get_unite_date()
     {  
         try {
             $result_get_united_date = date("Ymd");
@@ -42,7 +42,7 @@ class SessionModel extends DBControllerData
 
 
     // the method below gets last order_items_id from order_items table
-    protected function get_last_id()
+    public function get_last_id()
     {
         try { 
             $query = "SELECT * FROM `order_items` WHERE order_items_id = (
@@ -68,7 +68,7 @@ class SessionModel extends DBControllerData
 
 
     // the function below set value for $_SESSION["united_order_items"]
-    protected function set_session()
+    public function set_session()
     {   
         try { 
             //the is below controls creating of new $_SESSION 
@@ -88,8 +88,7 @@ class SessionModel extends DBControllerData
         }
     }
 
-
-    // the method below returns $united_order_items for other functions 
+    // the method below returns $united_order_items for other methods 
     public function grab_united_order_items()
     {   
         try {

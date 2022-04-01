@@ -10,7 +10,7 @@ use Exception;
 class SliderModel
 {
    // This method is invoked by the AJAX, displays images for slider   
-   public function grab_images($folder_id)
+   public function grab_images($folder_id): void
    {
        try {
             if (empty($folder_id)) {
