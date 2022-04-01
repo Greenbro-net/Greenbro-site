@@ -6,7 +6,7 @@ namespace App\Model;
 
 class TroubleModel 
 {
-    public function show404()
+    public function show404(): void
     {
         echo "
         <section id=\"page_404\" class=\"cases-links\">
