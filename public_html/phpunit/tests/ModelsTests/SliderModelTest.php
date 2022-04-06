@@ -12,7 +12,7 @@ class SliderModelTest extends \PHPUnit\Framework\TestCase
     {
         $SliderModelObject = new \App\Model\SliderModel();
         $ResultOfMethod = $SliderModelObject->grab_images(241);
-        $this->assertEmpty($ResultOfMethod);
+        $this->assertIsString($ResultOfMethod);
     }
     
 }

@@ -6,6 +6,7 @@ namespace App\UnitTest\ModelsTests;
 
 class ValidationModelTest extends \PHPUnit\Framework\TestCase
 {
+
     // the unittest method below for loginUser()
     /** @test */
     public function mock_loginUser()
@@ -50,5 +51,5 @@ class ValidationModelTest extends \PHPUnit\Framework\TestCase
         $ResultOfMethod = $ValidationModelObject->findPhoneNumberByUserid(535);
         $this->assertIsArray($ResultOfMethod);
     } 
-    
+
 }

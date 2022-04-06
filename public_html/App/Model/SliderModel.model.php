@@ -10,7 +10,7 @@ use Exception;
 class SliderModel
 {
    // This method is invoked by the AJAX, displays images for slider   
-   public function grab_images($folder_id): void
+   public function grab_images($folder_id): string
    {
        try {
             if (empty($folder_id)) {
@@ -31,7 +31,8 @@ class SliderModel
             }
             // the function below deletes the same values with array 
             array_unique($filenameArray);   
-            echo json_encode($filenameArray);
+            // echo json_encode($filenameArray);
+            return json_encode($filenameArray);
             
         } catch (Exception $exception) {
             file_put_contents("my-errors.log", 'Message:' . $exception->getMessage() . '<br />'.   'File: ' . $exception->getFile() . '<br />' .

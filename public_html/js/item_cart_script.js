@@ -64,7 +64,7 @@ $(document).ready(function () {
       // the ajax method below loads images with necessary folder for slider
       $.ajax({
         type: "POST",
-        url: url+"://greenbro."+domen_part+"/slider/get_slider_images",
+        url: url+"://greenbro."+domen_part+"/slider/display_slider_images",
         data: {id: id},
         dataType: "json",
         success: function(data) {

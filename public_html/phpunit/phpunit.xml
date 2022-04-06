@@ -1,12 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- "app/bootstrap.php" -->
-<phpunit bootstrap="vendor/autoload.php" 
-        colors="true"
-        verbose="true"
-        stopOnFailure="false">
-    <testsuites>
-        <testsuite name="Test suite">
-            <directory>tests</directory>
-        </testsuite>
-    </testsuites>
-</phpunit> 
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    colors="true"
+    processIsolation="false"
+    stopOnFailure="false"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+  <coverage processUncoveredFiles="true">
+    <include>
+      <!-- the code below for covering code with unittest -->
+      <directory suffix=".php">../App/Model/</directory>
+      <directory suffix=".php">../App/Controller/</directory>
+      <directory suffix=".php">../App/Core/</directory>
+      <directory suffix=".php">../App/Traits/</directory>
+
+       <directory suffix=".php">../App/Data/</directory>
+       <!-- <directory suffix=".php">../App/Data/CustomerData.data.php</directory>
+       <directory suffix=".php">../App/Data/DatabaseBroData.data.php</directory>
+      <directory suffix=".php">../App/Data/DatabaseData.data.php</directory> -->
+      
+      <!-- <directory suffix=".php">../App/Data/DatabaseData.data.php</directory> -->
+
+      <!-- <directory suffix=".php">../App/Data/DBControllerBroData.data.php</directory>
+      <directory suffix=".php">../App/Data/DBControllerData.data.php</directory> -->
+      
+     
+
+      <!-- <directory suffix=".php">../App/Data/ItemData.data.php</directory>
+      <directory suffix=".php">../App/Data/OrderData.data.php</directory>
+      <directory suffix=".php">../App/Data/ResponseExpandData.data.php</directory>
+      <directory suffix=".php">../App/Data/ShoppingCartData.data.php</directory>
+      <directory suffix=".php">../App/Data/ValidationData.data.php</directory> -->
+    </include>
+    <report>
+      <!-- the code below create file report -->
+      <!-- <clover outputFile="phpunit.coverage.xml"/> -->
+    </report>
+  </coverage>
+  <php>
+    <ini name="memory_limit" value="-1"/>
+    <ini name="apc.enable_cli" value="1"/>
+  </php>
+  <!-- Add any additional test suites you want to run here -->
+  <testsuites>
+    <testsuite name="App">
+      <directory>./tests</directory>
+    </testsuite>
+    <testsuite name="receipt">
+      <directory>./tests</directory>
+      <!-- do not test file below -->
+      <!-- <exclude>../App/Data/DBControllerData.data.php</exclude>  -->
+    </testsuite>
+  </testsuites>
+</phpunit>
